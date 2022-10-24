@@ -38,11 +38,11 @@ https://mbynae.github.io/codingclass/coding/site/site2/index_teacher.html
 
 ## 퀴즈 이펙트   
 https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect01.html   
-https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect02tml   
-https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect03html   
-https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect04html   
-https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect05html   
-https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect06tml   
+https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect02.html   
+https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect03.html   
+https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect04.html   
+https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect05.html   
+https://mbynae.github.io/codingclass/coding/javascript/effect/quizEffect06.html   
 
 ## 서치 이펙트   
 https://mbynae.github.io/codingclass/coding/javascript/effect/searchEffect01.html   
