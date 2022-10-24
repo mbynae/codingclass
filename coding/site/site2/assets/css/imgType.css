@@ -1,0 +1,76 @@
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 32%;
+    background-color: #ccc;
+    position: relative;
+    overflow: hidden;   /*밑의 호버 효과로 글이 내려갔을때 내려간 부위를 숨겨줌 */
+}
+.image__box {}
+.image__box img {
+    vertical-align: top;    /* img는 인라인구조라 약간의 여백이 생기는데 그걸 제거해주는 방식 */
+    height: 100%;
+    transition: all 0.6s ease-in-out;   /* hover의 동작 조절 */
+}
+.image__desc {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);    /* 블러효과 주는 방법 */
+    padding: 23px 20px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.1);
+    transition: all 0.5s ease-in-out;   /* hover의 동작 조절 */
+}
+.img1 .image__desc {background: rgba(0,0,0,0.1);}
+.img2 .image__desc {background: rgba(0,0,0,0.1);}
+.img3 .image__desc {background: rgba(0,0,0,0.1);}
+
+.image:hover .image__desc {
+    bottom: 0;
+}
+.image:hover .image__box img {
+    transform: scale(1.03);     /* 마우스 올렸을때 이미지가 살짝 커지게 해줌 */
+}
+.image__desc .more:hover {
+    text-decoration: underline;
+}
+
+.image__desc h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #000;
+}
+.image__inner .image:last-child .image__desc h3 {
+    color: #fff;
+}
+.image__desc a {
+    font-size: 16px;
+    color: #000;
+}
+.image__inner .image:last-child .image__desc a {
+    color: #fff;
+}
+
+@media (max-width: 960px){
+
+}
+@media (max-width: 600px){
+    .image__inner {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        padding: 210px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
+    }
+}

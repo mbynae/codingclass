@@ -1,0 +1,76 @@
+
+.textCard__wrap {
+    background: #F6F8FD;
+}
+
+.textCard__wrap h2 {}
+.textCard__wrap > p {
+    color: #777;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.textCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.textCard_cont {
+    width: 32%;
+    background: #fff;
+    border-radius: 10px;
+}
+.textCard_cont > div {
+    padding: 30px;
+}
+.textCard_cont p {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+    height: 210px;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-bottom: 22px;
+}
+
+.textCard_name {
+    display: flex;
+    padding: 25px 30px;
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 25px;
+}
+.textCard_icon {
+    margin-right: 13px;
+}
+.textCard_icon img {
+    width: 54px;
+    height: 54px;
+}
+
+.textCard_namestar span {
+    display: inline-block;
+    font-size: 26px;
+    line-height: 1.28;
+    margin-bottom: 4px;
+}
+.textCard_namestar span em {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.textCard_cont > div > span {
+    display: block;
+    text-align: center;
+}
+.textCard_cont > div > span a {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #fff;
+    padding: 8px 18px 4px 18px;
+    background-color: #4857ec;
+    border-radius: 40px;
+
+
+}

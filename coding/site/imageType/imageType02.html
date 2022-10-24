@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .font {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        
+        /* content */
+        .img_inner {
+            height: 520px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+        }
+        .img01 {
+            width: 32%;
+            height:inherit;
+            background-image: url(img/img02_bg01.jpg);
+            position: relative;
+        }
+        .img02 {
+            width: 32%;
+            height:inherit;
+            background-image: url(img/img02_bg02.jpg);
+            position: relative;
+        }
+        .img03 {
+            width: 32%;
+            height:inherit;
+            background-image: url(img/img02_bg03.jpg);
+            position: relative;
+        }
+        .img01 .text {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            background-color: rgb(139, 101, 82, 0.1);
+        }
+        .img01 .text h3 {
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        .img01 .text a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+        }
+        .img02 .text {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            background-color: rgb(61, 38, 32, 0.1);
+        }
+        .img02 .text h3 {
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        .img02 .text a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+        }
+        .img03 .text {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            background-color: rgb(206, 222, 220, 0.1);
+        }
+        .img03 .text h3 {
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        .img03 .text a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section id="imgType01" class="font section">
+        <h2>간편한 한끼 식사 패스트푸드</h1>
+        <p>많은 사람들이 즐겨먹는 패스트푸드입니다.</p>
+        <div class="img_inner container">
+            <div class="img01">
+                <div class="text">
+                    <h3>스테이크 햄버거</h3>
+                    <a href="/">자세히 보기</a>
+                </div>
+            </div>
+            <div class="img02">
+                <div class="text">
+                    <h3>하와이안 피자</h3>
+                    <a href="/">자세히 보기</a>
+                </div>
+            </div>
+            <div class="img03">
+                <div class="text">
+                    <h3>저염 감자튀김</h3>
+                    <a href="/">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

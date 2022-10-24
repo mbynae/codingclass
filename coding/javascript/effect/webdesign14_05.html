@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이팩트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/nixgon/NixgonFonts.css" rel="stylesheet">
+    <style>
+       .ex_box {
+            font-weight: 500;
+            font-size: 20px;
+            border: 1px solid #797575;
+            margin-top: 13px;
+            padding: 10px;
+       }
+       .ex_img {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+       }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(다수) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:piowm123@gmailcom">piowm123@gmailcom</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+
+        //문제 정보
+        const quizInfo = [
+            { //05
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "5. ",
+                answerAsk : "색의 활용 효과에 대한 설명으로 틀린 것은?",
+                answerChoice : {
+                    1: "밝은 바탕에 어두운 색 글자보다 어두운 바탕에 밝은 색글자가 더 굵고 커 보인다",
+                    2: "같은 크기의 노란색 공과 파란색 공을 비교하면 노란색공이 더 가볍게 느껴진다",
+                    3: "천장을 좀 더 높게 보이게 하려면 벽면과 동일계열의 고명도 색을 천장에 칠한다.",
+                    4: "상의를 하의보다 더 어두운 색상으로 하면 키가 더 커 보인다"
+                },
+                answerResult : "4" ,
+                answerEx : "하의를 밝은 색으로 하면 더 짧아 보이기 때문에 상의를 밝은색 하의를 어두운 색으로 하면 하체가 더 길어보인다."
+            },
+            { //06
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "6. ",
+                answerAsk : "자연적 또는 인공적 모양 중에서 ( A )은/는 외관으로 나타나는 윤곽을 나타내지만, ( B )은/는 좀 더 넓은 의미의 일반적인 ( A )와/과 모양을 나타내며, 눈으로 파악한 대상물의 기본적 특성을 제시한다. 괄호 안에 들어갈 알맞은 용어는?",
+                answerChoice : {
+                    1: "A : 점, B : 형",
+                    2: "A : 선, B : 형태",
+                    3: "A : 형, B : 면",
+                    4: "A : 형, B : 형태"
+                },
+                answerResult : "4" ,
+                answerEx : "형은 2차원적인 표현이고, 형태는 3차원적인 표현이다. 따라서 형은 나타나기는 하지만 눈으로 파악할 수 있는건 형태이다."
+            },
+            { //10
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "10. ",
+                answerAsk : "율동(rhythm)의 요소로 볼 수 없는 것은?",
+                answerChoice : {
+                    1: "점증",
+                    2: "반복",
+                    3: "변칙",
+                    4: "대칭"
+                },
+                answerResult : "4" ,
+                answerEx : "대칭은 균형의 요소입니다"
+            },
+            { //12
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "12. ",
+                answerAsk : "형태의 분류 중 이념적 형태에 대한 설명으로 옳은 것은?",
+                answerChoice : {
+                    1: "자연형태, 인위적 형태로 분류할 수 있다",
+                    2: "눈으로 볼 수 있고 손으로 만질 수 있는 모든 형태를 말한다",
+                    3: "점, 선, 면의 이동형태에 따라 입체를 형성하기 때문에 추상적 형태라고 한다.",
+                    4: "현실적으로 존재하는 형태를 말한다."
+                },
+                answerResult : "3" ,
+                answerEx : "이념적 형태는 실제적 감각으로 지각할 수는 없지만, 느껴지는 순수형태입니다. "
+            },
+            { //13
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "13. ",
+                answerAsk : "먼셀 표색계의 채도에 대한 설명으로 가장 옳은 것은?",
+                answerChoice : {
+                    1: "채도는 색의 밝고 어두운 정도를 말하며 검정을 0 으로하고 흰색으로 10 으로 한다.",
+                    2: "여러 유채색을 정원 모양으로 배열하여 표현한 것을 채도라 한다",
+                    3: "채도는 1에서 14 단계로 표기하며 채도가 높을수록 선명하다",
+                    4: "5R4/12에서 5는 채도를 의미한다."
+                },
+                answerResult : "3" ,
+                answerEx : "색의 밝고 어두운 정도는 명도이며, 채도는 색의 강렬함을 표현하고 있기 때문에 높을 수록 선명합니다."
+            },
+            { //16
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "15. ",
+                answerAsk : "아르누보는 신예술이라는 의미로 전통적 양식에서 탈피하고 새로운 미를 창조하려는 신예술 운동을 주장한 인물은?",
+                answerChoice : {
+                    1: "윌리암 모리스(Morris. W)",
+                    2: "앙리 반 데 벨데(Van de velde. Henri)",
+                    3: "헤르만 무테지우스(Muthesius. H)",
+                    4: "구스타프 클링트(Klimt. G)"
+                },
+                answerResult : "2" ,
+                answerEx : "앙리 반 데 벨데(Van de velde. Henri)는 윌리엄 모리스의 영향을 받아 아르누보라는 신예술을 주장한 벨기에의 건축가입니다."
+            },
+            { //19
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "19. ",
+                answerAsk : "제품 디자인(Product Design) 분야로 거리가 먼 것은?",
+                answerChoice : {
+                    1: "영상 디자인",
+                    2: "완구 디자인",
+                    3: "가전 디자인",
+                    4: "가구 디자인"
+                },
+                answerResult : "1" ,
+                answerEx : "영상 디자인은 4차원 시각 디자인에 속합니다."
+            },
+            { //20
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "20. ",
+                answerAsk : "책을 열심히 보다가 시선을 돌리면 검정색 활자가 흰색 활자로 나타나는 현상은?",
+                answerChoice : {
+                    1: "부의 잔상",
+                    2: "정의 잔상",
+                    3: "동화 현상",
+                    4: "매스 효과"
+                },
+                answerResult : "1" ,
+                answerEx : "원래의 색과 반대로 보이는 잔상이 생기는 것 입니다."
+            },
+            { //22
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "22. ",
+                answerAsk : "다음 중 HTML에 대한 설명으로 틀린 것은?",
+                answerChoice : {
+                    1: "HTML은 대소문자를 구분한다.",
+                    2: "ASCII 문자로 되어 있는 일반 Text 형태이다",
+                    3: "HTML로 제작된 페이지는 웹브라우저에서 해석되어 실행된다.",
+                    4: "HTML의 문서는 태그(tag)로 구성되어 있다"
+                },
+                answerResult : "1" ,
+                answerEx : "대-소문자를 구분하는 것은 자바스크립트 입니다."
+            },
+            { //23
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "23. ",
+                answerAsk : "지역 간 또는 국가 간과 같이 지리적으로 완전하게 떨어진곳을 연결하는 통신망은?",
+                answerChoice : {
+                    1: "VAN",
+                    2: "WAN",
+                    3: "MAN",
+                    4: "LAN"
+                },
+                answerResult : "2" ,
+                answerEx : "VAN는 기간통신사업자로부터 회선을 임대/임차하여 고품질의 정보서비스를 제공하는 통신망이며, MAN은 도시와 도시를 연결하는 통신망으로 도시권정보통신망,LAN은 가까운 거리 및 제한된 지역 및 건물 등의 통신망입니다."
+            },
+            { //24
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "24. ",
+                answerAsk : "OSI 7 계층 중 프로세스 간의 대화 제어 및 동기점을 이용한 효율적인 데이터 복구를 제공하는 계층은?",
+                answerChoice : {
+                    1: "세션 계층",
+                    2: "네트워크 계층",
+                    3: "물리 계층",
+                    4: "전송 계층"
+                },
+                answerResult : "1" ,
+                answerEx : "네트워크 계층은 별개의 네트워크 간에 데이터 패킷을 주고 받음으로써 이러한 연결이 만들어지는 인터넷 통신 프로세스의 일부이며, 물리 계층은 컴퓨터 네트워킹의 OSI 7계층 모델에서 가장 낮은 첫 번째 계층이고, 전송 계층은 계층 구조의 네트워크 구성요소와 프로토콜 내에서 송신자와 수신자를 연결하는 통신 서비스를 제공을 뜻합니다."
+            },
+            { //32
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "32. ",
+                answerAsk : "자바 스크립트에 대한 설명으로 틀린 것은?",
+                answerChoice : {
+                    1: "HTML 문서 내에 자바 스크립트가 삽입된 형태로 존재한다.",
+                    2: "자바 스크립트 작성 시 변수 타입의 선언 없이 사용가능하다.",
+                    3: "웹브라우저에 의해 코드 자체가 번역된다  ",
+                    4: "절차 지향(Procedure-Oriented) 언어이다."
+                },
+                answerResult : "4" ,
+                answerEx : "자바스크립트는 객체 지향적인 언어입니다."
+            },
+            { //33
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "33. ",
+                answerAsk : "일반적으로 웹서버가 동작하는 과정을 순서대로 옳게 나열한 것은?",
+                answerChoice : {
+                    1: "연결설정→클라이언트가 정보요청→서버의 응답→연결종료",
+                    2: "연결설정→서버의 응답→클라이언트가 정보요청→연결종료",
+                    3: "클라이언트가 정보요청→연결설정→서버의 응답→연결종료",
+                    4: "클라이언트가 정보요청→서버의 응답→연결설정→연결종료"
+                },
+                answerResult : "1" ,
+                answerEx : "IP등 기본적으로 연결구성요소를(연결설정) 하고 -> 클라이언트(pc)가 서버에 정보요청을 보냅니다 (정보요청) -> 요청에 서버가 응답합니다(서버응답) -> 파일전송등 기능을 사용하고 서버에 연결 종료를 신청합니다(연결종료)"
+            },
+            { //34
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "34. ",
+                answerAsk : "자바스크립트에서 일정한 시간마다 브라우저 상태를 파악하거나 동작을 수행하는데 사용되는 함수는?",
+                answerChoice : {
+                    1: "window.setInterval()",
+                    2: "window.setTimer()",
+                    3: "window.timer()",
+                    4: "window.setTime()"
+                },
+                answerResult : "1" ,
+                answerEx : "setTimeout()을 이용해 일정 시간이 지난 후에 함수를 실행하는 방법, setInterval()을 이용해 일정 시간 간격을 두고 함수를 실행하는 방법입니다."
+            },
+            { //35
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "35. ",
+                answerAsk : "교육기관을 의미하는 인터넷 도메인으로 틀린 것은?",
+                answerChoice : {
+                    1: "hs",
+                    2: "edu",
+                    3: "ac",
+                    4: "or"
+                },
+                answerResult : "4" ,
+                answerEx : "hs - highschool 고등학교, edu - education 교육, ac - academy 학교, or - organizacion 기관 입니다."
+            },
+            { //40
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "40. ",
+                answerAsk : "웹페이지 제작 시 사용되는 스타일시트(CSS)에 대한 설명으로 틀린 것은?",
+                answerChoice : {
+                    1: "내부 스타일시트 적용 시 〈HTML〉와 〈/HTML〉 내에서 자유롭게 정의할 수 있다.",
+                    2: "Inline CS와 Internal CS가 부분적으로 충돌할 경우, 충돌하지 않는 Internal CS는 그대로 상속 적용된다.",
+                    3: "외부스타일시트의 파일 타입(확장자)은 .CSS 이다",
+                    4: "웹 문서 내에 특정 영역에만 영향을 주기 위해 〈SPAN〉,〈DIV〉 태그를 사용한다."
+                },
+                answerResult : "1" ,
+                answerEx : "내부 스타일 시트 적용시, 주로 <HEAD></HEAD> 태그 내에서 CSS 스타일을 적용합니다."
+            },
+            { //44
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "44. ",
+                answerAsk : "웹 사이트에 등재할 이미지의 크기가 클 경우 크기를 조정하기 위한 가장 올바른 방법은?",
+                answerChoice : {
+                    1: "웹에서 소스 수정으로 사이즈를 조정한다.",
+                    2: "드림위버에서 이미지 크기를 줄인다",
+                    3: "포토샵의 이미지 사이즈에서 픽셀 수를 줄인다",
+                    4: "나모 웹 에디터에서 웹용으로 저장할 때 Quality를 낮춘다."
+                },
+                answerResult : "3" ,
+                answerEx : "웹으로 사이즈를 조정하면 원하는 곳을 골라서 줄일 수 없으며, 드림 위버는 어도비에서 나온 웹 개발 시스템입니다. 또한 Quality는 투명도를 조절하는 코드입니다."
+            },
+            { //48
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "48. ",
+                answerAsk : "선(Line)만으로 입체를 생성하며, 처리속도가 빠르지만 무게감, 부피, 실체감을 느낄 수 없는 3차원 모델링 방법은?",
+                answerChoice : {
+                    1: "와이어 프레임 모델(Wire-frame model)",
+                    2: "서페이스 모델(Surface model)",
+                    3: "솔리드 모델(Solid model)",
+                    4: "파라메트릭 모델(Parametric model)"
+                },
+                answerResult : "1" ,
+                answerEx : "와이어 프레임은 선으로만 3D모델링을 할 수 있습니다. 모델 작성이 쉽고, 처리 속도가 빠르며, 3면 투시도 작성이 유리하지만 물리적 성질을 계산 할 수 없고, 숨은선 제거가 어려움의 등의 장점과 단점이 있습니다."
+            },
+            { //50
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "50. ",
+                answerAsk : "1. 점묘법과 같이 제한된 수의 색상들을 사용하여 다양한 색상을 시각적으로 섞어서 만드는 것이다. 2. 예를 들어 노란색과 빨간색을 섞어서 기술적으로 잘 배치하면 주황색과 같이 보이도록 할 수 있다. 등의 특징을 가진 것은?",
+                answerChoice : {
+                    1: "Halftone",
+                    2: "Gradation",
+                    3: "Pixe",
+                    4: "Dithering"
+                },
+                answerResult : "4" ,
+                answerEx : "제한된 수의 색상을 사용하여 다양한 색을 시각적으로 혼합해 만드는 것은 Dithering을 의미합니다"
+            },
+            { //53
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "53. ",
+                answerAsk : "웹사이트 내에서 움직이는 배너광고를 제작하고자 할 때 사용할 프로그램으로 가장 거리가 먼 것은?",
+                answerChoice : {
+                    1: "Flash",
+                    2: "Image Ready",
+                    3: "Directo",
+                    4: "Illustrator"
+                },
+                answerResult : "4" ,
+                answerEx : "일러스트 레이터는 벡터 이미지를 제작하는 정교한 디지털 제작 프로그램입니다."
+            },
+            { //54
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "54. ",
+                answerAsk : "플래시(Flash)에서 맨 앞과 맨 끝 키 프레임에만 변화를 주면 중간 과정의 애니메이션을 만들어 주는 것을 무엇이라고 하는가?",
+                answerChoice : {
+                    1: "Motion",
+                    2: "Tweening",
+                    3: "Transform",
+                    4: "Guide"
+                },
+                answerResult : "2" ,
+                answerEx : "Tweening는 중간에, 사이에 라는 뜻이며 플레시에서는 키프레임 사이를 자동으로 채워주는 기능입니다."
+            },
+            { //55
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "55. ",
+                answerAsk : "일반적으로 Photoshop에서 검정색과 흰색의 이미지로 구성되어 선택된 영역이 합성되지 않도록 마스크 역할을 하는 메뉴는?",
+                answerChoice : {
+                    1: "조정 레이어(Adjustment Layer)",
+                    2: "알파채널(Alpha Channel)",
+                    3: "Z 버퍼(Z-buffer)",
+                    4: "히스토리(History)"
+                },
+                answerResult : "2" ,
+                answerEx : "알파채널은 α 채널과 이미지 처리 분야에 있고, 각 화소에 대해 색상 표현의 데이터로부터 분리한 보조 데이터를 일컫습니다. 보통 화상 마스크, 복구 화상 합성 등에 쓰입니다."
+            },
+            { //56
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "56. ",
+                answerAsk : "대상물의 위치 이동으로 움직임을 표현하는 것으로 종이 등에 특정한 형태를 그리고 잘라낸 후 각각의 종이들을 한 장면씩 움직여 가며 촬영하는 애니메이션 기법은?",
+                answerChoice : {
+                    1: "컷 아웃 애니메이션",
+                    2: "셀 애니메이션",
+                    3: "투광 애니메이션",
+                    4: "스톰모션 애니메이션"
+                },
+                answerResult : "1" ,
+                answerEx : "셀 애니메이션은 그림을 한장씩 직접 그려 만드는 것이며, 투광 애니메이션은 그림자로 애니메이션을 표현하며, 스톰 모션은 프레임 마다 조금씩 움직여 만들어 나가는 애니메이션이다"
+            },
+        ];
+
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        function updateQuiz(){
+            const exam = [];
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz__type">${question.answerType}</span>
+                        <h2 class="quiz__question">
+                            <span class="number">${question.answerNum}. </span>
+                            <div class="ask">
+                                ${question.answerAsk}
+                            </div>
+                        </h2>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">   <!-- name은 input에서만 쓸 수 있다. -->
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">   
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">   
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">   
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>
+                </div>
+            `)
+
+            quizWrap.innerHTML = exam.join("");
+        }
+        updateQuiz();
+
+         //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+            const quizView = document.querySelectorAll(".quiz__view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz__view");
+                console.log(quizSelects)
+                if(userAnswer == question.answerResult){
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
+        }
+        document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+    </script>
+</body>
+
+</html>

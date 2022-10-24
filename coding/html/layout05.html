@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 문병내</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록구조/인라인구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃05</h2>
+                <p class="t_desc">
+                    이번 레이아웃은 전체 영역이 들어간 구조에서 심화된 레이아웃입니다.
+                    세분화된 블록을 설정하기 위해 컨테이너 안에 또 다시 블록을 잡아 세분화해야 합니다.
+                </p>
+
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYQdFgOOEWNcm4e2JZ0JnGj%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D64%253A107" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    컨테이너 안에 float 방식을 쓸수록 구조가 복잡해지며 이 경우 clear을 주어야 할 블록을 알기 힘들기 때문에 clearfix 방식을 사용하는게 낫습니다.<br>
+                    컨텐츠 블록을 따로 만들어 해당 블록에 clearfix를 적용하면 정렬할 수 있습니다. 
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    padding: 0;
+    margin: 0;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EEEBE9;
+}
+#header .h1 {
+    width: 100%;
+    height: 100px;
+    background-color: #D5CCC9;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #B9AAA5;
+}
+#nav .b1 {
+    width: 100%;
+    height: 100px;
+    background-color: #9D8980;
+}
+#main {
+    width: 100%;
+    height: 780px;
+    background-color: #886F65;
+}
+.contents .cont1 {
+    width: 100%;
+    height: 100px;
+    background-color: #74574A;
+}
+.contents .cont2 {
+    width: 100%;
+    height: 200px;
+    background-color: #684D43;
+}
+.contents .cont3 {
+    width: 50%;
+    height: 480px;
+    background-color: #594139;
+    float: left;
+}
+.contents .cont4 {
+    width: 50%;
+    height: 480px;
+    background-color: #4A352F;
+    float: left;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #4E342E;
+}
+#footer .f1 {
+    width: 100%;
+    height: 100px;
+    background-color: #3E2723;
+}
+.container {
+    width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.3);
+}
+/* 
+    float으로 인한 영역 깨짐 방지법
+    1. 깨지는 영역에 clear: both를 설정한다.
+    2. 부모 박스 영역에 overflow: hidden을 설정한다. 
+    // 오버플로우 히든은 지정한 영역을 제외하곤 보여주지 않게 하는거기 때문에 외부의 애니메이션 같은게 들어오면 안보이는 문제가 발생
+    3. clearfix를 설정한다.
+*/
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after {
+    clear: both;
+}
+
+@media (max-width: 1220px){
+    .container {
+        width: 96%;
+    }
+    .contents .cont1 {
+        width: 30%;
+        height: 780px;
+        float: left;
+    }
+    .contents .cont2 {
+        width: 70%;
+        height: 390px;
+        float: left;
+    }
+    .contents .cont3 {
+        width: 35%;
+        height: 390px;
+    }
+    .contents .cont4 {
+        width: 35%;
+        height: 390px;
+    }
+}
+@media (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+    .contents .cont1 {
+        width: 30%;
+        height: 780px;
+        float: left;
+    }
+    .contents .cont2 {
+        width: 70%;
+        height: 260px;
+        float: left;
+    }
+    .contents .cont3 {
+        width: 70%;
+        height: 260px;
+        float: left;
+    }
+    .contents .cont4 {
+        width: 70%;
+        height: 260px;
+        float: left;
+    }
+}
+@media (max-width: 480px){
+    .contents .cont1 {
+        width: 100%;
+        height: 150px;
+        float: left;
+    }
+    .contents .cont2 {
+        width: 100%;
+        height: 210px;
+        float: left;
+    }
+    .contents .cont3 {
+        width: 100%;
+        height: 210px;
+        float: left;
+    }
+    .contents .cont4 {
+        width: 100%;
+        height: 210px;
+        float: left;
+    }
+}
+</code></pre>
+                </div>     
+
+                <hr>
+
+                <h3 class="t_tit2">flex를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    이번 레이아웃을 만들기 위해선 컨테이너 안에서 좌,우의 정렬을 동시에 해주어야 하기 때문에 상당히 복잡해집니다.
+                    따라서 좌측과 우측을 두 블록으로 나누어 각각 flex를 적용해야 합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+#wrap {}
+#header {
+    height: 100px;
+    background-color: #EEEBE9;
+}
+#nav {
+    height: 100px;
+    background-color: #B9AAA5;
+}
+#main {
+    height: 780px;
+    background-color: #886F65;
+}
+#footer {
+    height: 100px;
+    background-color: #4E342E;
+}
+.container {
+    width: 1200px;
+    height: inherit;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 auto;
+}
+.contents {}
+.contents .left {}
+.contents .left .con1 {
+    width: 100%;
+    height: 100px;
+    background-color: #74574A;
+}
+.contents .right {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contents .right .con2 {
+    width: 100%;
+    height: 200px;
+    background-color: #684D43;
+}
+.contents .right .con3 {
+    width: 50%;
+    height: 480px;
+    background-color: #594139;
+}
+.contents .right .con4 {
+    width: 50%;
+    height: 480px;
+    background-color: #4A352F;
+}
+@media (max-width: 1220px){
+    .container {
+        width: 96%;
+    }
+    .contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contents .left {
+        width: 30%;
+    }
+    .contents .left .con1 {
+        width: 100%;
+        height: 780px;
+    }
+    .contents .right {
+        width: 70%;
+    }
+    .contents .right .con2 {
+        width: 100%;
+        height: 390px;
+    }
+    .contents .right .con3 {
+        width: 50%;
+        height: 390px;
+    }
+    .contents .right .con4 {
+        width: 50%;
+        height: 390px;
+    }
+}
+@media (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+    .contents .right .con2 {
+        width: 100%;
+        height: 260px;
+    }
+    .contents .right .con3 {
+        width: 100%;
+        height: 260px;
+    }
+    .contents .right .con4 {
+        width: 100%;
+        height: 260px;
+    }
+}
+@media (max-width: 480px){
+    .contents .left {
+        width: 100%;
+        height: 150px;
+    }
+    .contents .left .con1 {
+        width: 100%;
+        height: 150px;
+    }
+    .contents .right {
+        width: 100%;
+        height: 630px;
+    }
+    .contents .right .con2 {
+        height: 210px;
+    }
+    .contents .right .con3 {
+        height: 210px;
+    }
+    .contents .right .con4 {
+        height: 210px;
+    }
+}
+</code></pre>
+                </div>
+
+                <hr>
+
+                <h3 class="t_tit2">grid를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    이와같이 복잡한 레이아웃에서는 gird 방식이 편할 수 있습니다. 적용할 부위만 grid를 적용하여 부모요소만 
+                    수정하면 정렬이 수월해지기 때문입니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+}
+#wrap {}
+#header {
+    height: 100px;
+    background-color: #EEEBE9;
+}
+#nav {
+    height: 100px;
+    background-color: #B9AAA5;
+}
+#main {
+    height: 780px;
+    background-color: #886F65;
+}
+#footer {
+    height: 100px;
+    background-color: #4E342E;
+}
+.container {
+    width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.3);
+}
+.contents {
+    display: grid;
+    grid-template-areas: 
+        "cont1 cont1"
+        "cont2 cont2"
+        "cont3 cont4"
+    ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 200px 480px;
+}
+.contents .cont1 {
+    background-color: #74574A;
+    grid-area: cont1;
+}
+.contents .cont2 {
+    background-color: #684D43;
+    grid-area: cont2;
+}
+.contents .cont3 {
+    background-color: #594139;
+    grid-area: cont3;
+}
+.contents .cont4 {
+    background-color: #4A352F;
+    grid-area: cont4;
+}
+
+@media (max-width: 1220px){
+    .container {
+        width: 96%;
+    }
+    .contents {
+        grid-template-areas: 
+            "cont1 cont2 cont2"
+            "cont1 cont3 cont4"
+        ;
+        grid-template-columns: repeat(3, 1fr); /* 자동으로 3등분 1fr 3번 쓰든가 repeat(3, 3.3333 혹은 1fr) 쓰기*/
+        grid-template-rows: repeat(2, 1fr) /* 이건 부모요소에 너비와 높이값을 정해줬기 때문에 가능함 */
+    }
+}
+@media (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+    .contents {
+        grid-template-areas: 
+            "cont1 cont2"
+            "cont1 cont3"
+            "cont1 cont4"
+        ;
+        grid-template-columns: 30% 70%; 
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px){
+    .contents {
+        grid-template-areas: 
+            "cont1"
+            "cont2"
+            "cont3"
+            "cont4"
+        ;
+        grid-template-columns: 100%; 
+        grid-template-rows: 150px 210px 210px 210px; 
+    }
+}
+</code></pre>
+                </div><br>
+                <h4 class="t_tit3" style="font-size: 20px;">결과</h4>
+                <div class="t_iframe">
+                    <iframe scrolling="no" title="레이아웃05" src="https://codepen.io/mbynae/embed/ZExxxwq?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/mbynae/pen/ZExxxwq">
+                        레이아웃05</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+</html>

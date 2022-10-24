@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스오버/마우스엔터</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit" style="margin-bottom: 25px;">mouseOver vs mouseEnter</h2>
+            <p class="t_desc2">
+                mouseOver/mouseOut과 mouseEnter/mouseLeave는 마우스 커서가 요소에 진입/이탈할 시 발동하는 메서드입니다. 
+            </p>
+           
+            <hr>
+
+            <h3 class="t_tit2">○ 마우스 오버와 마우스 엔터의 차이</h3>
+            <p class="t_desc">
+                mouseOver와  mouseEnter의 차이는 <i>이벤트 버블링의 발생 여부</i>에 있습니다.<br>
+                mouseOver/mouseOut는 이벤트 버블링이 발생하며, mouseEnter/mouseLeave는 발생하지 않습니다.
+            </p>
+
+            <h3 class="t_tit2" style="font-size: 18px;">※ 이벤트 버블링이란?</h3>
+            (이벤트 버블링 이미지)
+            <p class="t_desc" style="margin-bottom: 10px;">
+                이벤트 버블링은 자식 요소의 이벤트 핸들러를 발동시 최상위까지 모든 부모 요소의 이벤트 핸들러가 같이 발동되는 것을 말합니다.<br>
+                위의 이미지를 예로 들어면 3번의 자식 요소 이벤트 핸들러가 발동시 부모 요소인 2번의 이벤트 핸들러가 발동되고 그 다음 2번의 부모 요소인 1번의 이벤트 핸들러가 발동됩니다.
+            </p>
+            <p class="t_desc">
+                이런 흐름을 '이벤트 버블링’이라고 부릅니다. 이벤트가 제일 깊은 곳에 있는 요소에서 시작해 부모 요소를 거슬러 올라가며 발생하는 모양이 마치 물속 거품(bubble)과 닮았기 때문입니다.
+            </p>
+
+
+            <h3 class="t_tit2" style="font-size: 18px;">▶ 예시</h3>
+
+            <div class="t_iframe" style="min-height: 500px; padding-top: 0;">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/mbynae/embed/NWMPEJL?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/mbynae/pen/NWMPEJL">
+                    Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <div class="t_desc">(출처 : <a href="https://velog.io/@commi1106/MouseOver%EC%99%80-MouseEnter%EC%9D%98-%EC%B0%A8%EC%9D%B4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81" target="_blank" style="text-decoration: underline;">클릭</a>)</div>
+            <p class="t_desc">
+                예시처럼 mouseOver는 상위 박스도 이벤트 핸들러가 발동하지만 mouseEnter는 발동하지 않는걸 볼 수 있습니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+</html>

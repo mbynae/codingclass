@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 숨김 기능</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <style>
+        .w_uplist {
+            border: 1px dotted black;
+            padding: 5px 10px;
+            max-width: 1000px;
+        }
+        .w_list {
+            color: blueviolet;
+            padding: 1px 0;
+            border-bottom: 1px inset #e6cbcb;
+        }
+        .w_list2 {
+            padding: 1px 0;
+            border-bottom: 1px inset #e6cbcb;
+        }
+        .t__em {
+            font-style: normal;
+            font-weight: bold;
+        }
+        .t_color1 {
+            color: red !important;
+        }
+        .t_color2 {
+            color: yellowgreen !important;
+        }
+        .t_color3 {
+            color: rgba(255, 0, 0, 0.5) !important;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">요소 숨김 기능</h2>
+            <p class="t_desc2">
+                CSS에서 사용할 수 있는 5가지의 요소 숨김 기능입니다.
+            </p>
+            <p class="t_desc" style="margin-top: 40px;">
+                CSS는 숨기고 싶은 문자나 블록 등을 화면에 안보이게 처리할 수 있습니다.<br>
+                방식에 따라 영역을 인식하거나 애니메이션을 적용할 수 있는 차이점이 있습니다.
+            </p>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>방식</th>
+                        <th>설명</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">display: none;</td>
+                        <td>diplay는 요소를 화면에 어떻게 보여줄지 정해주며 none는 안보이게 처리합니다.</td>
+                        <td>
+                            - 영역 인식X<br>
+                            - 애니메이션X
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">opacity : 0;</td>
+                        <td>opacity는 요소의 불투명도를 설정하며 0으로 갈수록 투명해집니다.</td>
+                        <td>
+                            - 영역 인식O<br>
+                            - 애니메이션O
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">visibility: hidden;</td>
+                        <td>visibility는 요소의 가시성을 나타내며 보이거나 숨기거나 겹쳐보이게 해줍니다. hidden은 숨겨줍니다.</td>
+                        <td>
+                            - 영역 인식O<br>
+                            - 애니메이션O
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">width: 0; height: 0;</td>
+                        <td>
+                            아무 내용이 들어가지 않은 블록을 숨기는 방식입니다.
+                            블록 내에 문자나 이미지 등이 들어간다면 적용되지 않습니다.
+                        </td>
+                        <td>
+                            - 영역 인식X<br>
+                            - 애니메이션X
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transform: scaleX(0)</td>
+                        <td>
+                            transform은 요소의 형태 변형시켜주며 scale은 요소의 크기를 늘리거나 줄여줍니다.<br>
+                            0으로 갈수록 작아지며 0이 되면 안보이게 됩니다.
+                        </td>
+                        <td>
+                            - 영역 인식X<br>
+                            - 애니메이션O
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

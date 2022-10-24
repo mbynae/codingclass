@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <!-- <h1><a href="../javascript01.html">Quiz</a> <em>객관식(다수) 유형</em></h1> -->
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+                <li><a href="searchEffect07.html">7</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>indexOf( )/search( )를 이용하여 CSS 속성 검색하기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+            </div>
+            <div class="search__info">
+                <div>CSS 속성 갯수 : <span class="num"></span></div>
+            </div>
+
+            <div class="search__list">
+                <div class="css">
+                    <ul>
+                        <li data-name="align-content"><strong>align-content</strong> : align-content 속성은 콘텐츠 아이템의 상하 관계 정렬 상태를 설정합니다. </li>
+                        <li data-name="align-items"><strong>align-items</strong> : align-items 속성은 콘텐츠 아이템의 내부 상하 관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self"><strong>align-self</strong> : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
+                        <li data-name="all"><strong>all</strong> : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                        <li data-name="animation"><strong>animation</strong> : animation은 애니메이션과 관련된 속성을 일괄적으로 설정합니다. </li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay는 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction는 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration는 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode는 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count은 애니메이션의 반복 횟수를 설정합니다.</li>
+                        <li data-name="animation-name"><strong>animation-name</strong> : animation-name은 애니메이션 keyframe 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state은 애니메이션 진행상태를 설정합니다.</li>
+                        <li data-name="animation-timeline"><strong>animation-timeline</strong> : animation-timeline은 요소에 적용학 스크롤 애니메이션을 설명하는 하나 이상의 규칙 이름을 지정합니다.</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : animation-timing-function은 애니메이션 움직임의 속도를 설정합니다.</li>
+                        <li data-name="appearance"><strong>appearance</strong> : appearance은  운영체제 및 브라우저에 기본적으로 설정되어 있는 모양들을 해제하거나 추가합니다.</li>
+                        <li data-name="aspect-ratio"><strong>aspect-ratio</strong> : aspect-ratio는 이미지나 동영상을 비율대로 줄이거나 늘리는 데 사용됩니다.</li>
+                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter는 요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다.</li>
+                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility은 요소의 뒷면이 사용자를 향할 때 보여야 하는지 지정합니다.</li>
+                        <li data-name="background"><strong>background</strong> : background는 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong> : background-attachment는 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : background-blend-mode는 배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                        <li data-name="background-clip"><strong>background-clip</strong> : background-clip는 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                        <li data-name="background-color"><strong>background-color</strong> : background-color는 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image"><strong>background-image</strong> : background-image는 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-origin"><strong>background-origin</strong> : background-origin는 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position"><strong>background-position</strong> : background-position는 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-x"><strong>background-position-x</strong> : background-position-x는 백그라운드 이미지의 x축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-y"><strong>background-position-y</strong> : background-position-y는 백그라운드 이미지의 y축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-repea"><strong>background-repea</strong> : background-repeat는 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size"><strong>background-size</strong> : 	background-size는 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="block-size"><strong>block-size</strong> : block-size는 기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다.</li>
+                        <li data-name="border"><strong>border</strong> : border는 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                        <li data-name=""><strong></strong> : </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:piowm123@gmailcom">piowm123@gmailcom</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");           //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+
+        //속성 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+
+        //검색 영역
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+
+                if(cssName.indexOf(searchWord)){
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");    //보임 (indexOf값이 0이 되는 값만 hide를 지워줌)
+                }
+            });
+        });
+    </script>
+</body>
+</html>

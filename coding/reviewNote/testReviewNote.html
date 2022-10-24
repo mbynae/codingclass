@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript Test 오답노트</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+
+        .result {
+            padding: 10px;
+        }
+        .result > details >summary {
+            cursor: pointer;
+        }
+        .t_box {
+            padding: 20px !important;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            color: #666;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>javascript Test 오답노트</h1>
+
+    <div id="sample1" class="sample">
+        <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">function q2() {
+    const array = [10, 31, 1, 2, 3 ,4, 32];
+    return array.sort();
+}
+
+console.log(q2());
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample01_result">
+                    1 10 2 3 31 32 4
+                    <div class="t_box">
+                        <strong>해설</strong><br>
+                        sort( )는 순서대로 정렬하는 메서드로 함수가 포함되지 않으면 유니코드 값에 따라 정렬됨<br>
+                        따라서 1 2 3 같은 숫자 순이 아닌 앞자리가 가장 빠른 순인 1 10 2 3 순이 되는 것
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div id="sample2" class="sample">
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">function q3() {
+    const array = [10, 31, 1, 2, 3 ,4, 32];
+    return array.filter(x => String(x).length >= 2);
+}
+
+console.log(q3());    
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample01_result">
+                    10 31 32
+                    <div class="t_box">
+                        <strong>해설</strong><br>
+                        String( )는 배열값을 문자열로 만들어주는 메서드<br>
+                        숫자가 문자열이 되었으므로 각 문자열의 length는 길이값이 됨<br>
+                        따라서 길이값 2 이상인 2자리 수가 정답
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">function q7() {
+    const str = "taraeaea";
+    return str.split('').map(word => {
+        if(word !== "a") return word;
+    }).join('');
+}
+
+console.log(q7());
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample01_result">
+                    tree
+                    <div class="t_box">
+                        <strong>해설</strong><br>
+                        split( )으로 문자열을 각각 하나의 문자열로 분해하고 "a"가 아닌 문자열을 반환하는 문제<br>
+                        return은 반환이자 종료의 의미를 갖지만 각각의 배열 문자열에 적용되므로 t 하나로 끝나지 않음<br>
+                        또한 a의 경우 undefined가 반환되지만 join( )에 의해 생략이 되버림
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">function q8() {
+    let answer = 0;
+    const array = [1,2,3,4,5];
+    for(let i = 3; i &lt; 8; i++) {
+        if(array.includes(i) && 0) {
+            answer++;
+        }
+    }
+    return answer;
+}
+
+console.log(q8());
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample01_result">
+                    0
+                    <div class="t_box">
+                        <strong>해설</strong><br>
+                        include의 반환값을 물어보는 문제<br>
+                        해당되는 값을 반환하면 true가 되고 없으면 false를 반환하는데 if문에서 true면 통과가 되는 식<br>
+                        하지만 && 0 에 의해 무조건 false가 포함되는 함정이 있어서 답은 0이됨
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">function q10(arr) {
+    let flag = false;
+    let n = 1;
+    while(!flag) {
+        n++;
+        for(let i = 1; i &lt; arr.length; i++) {
+            if((arr[0] * n) % arr[i] === 0) {
+                flag = true;
+            }
+            else {
+                flag = false;
+                break;
+            }
+        }
+    }
+    return arr[0] * n
+}
+
+console.log(q10([2,6,8,14]));
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample01_result">
+                    168
+                    <div class="t_box">
+                        <strong>해설</strong><br>
+                       6,8,14의 최소공배수를 구하는 문제<br>
+                       while문의 flag가 false면 반복 실행되고 결국 if문이 전부 true가 되어야 함수가 중지되고 값이 반환됨<br>
+                       2*n의 값을 6과 8과 14로 나누어 나머지가 0이 되는 최소값은 168이므로 답이 168이됨 
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        // document.write("****** 정답 ******<br><br>");
+        // //sample1
+        // //01. 변수 : 데이터 저장소
+        // {
+        //     var x = 100; //변수 x에 숫자 100을 저장
+        //     var y = 200; //변수 y에 숫자 200을 저장
+        //     var z = "javascript"; //변수 z에 문자 javascript 저장
+
+        //     document.write("*** 01. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample2
+        // //02. 변수 : 데이터 저장 + 데이터 변경
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x = 300;    //변수 x에 값이 100에서 300으로 변경
+        //     y = 400;
+        //     z = "jquery";
+
+        //     document.write("*** 02. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample3
+        // //변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+        // {
+        //     let x = 100;
+        //     let y = 200;
+        //     let z = "javascript";
+        //     x += 300;       // x = x + 300; (대입연산자)
+        //     y -= 400;       // y = y + 400;
+        //     z += "jquery";  // z = z + "jquery";
+            
+        //     document.write("*** 03. 변수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br><br>");
+        // }
+
+        // //sample4
+        // //상수 : 데이터 저장소 : 데이터 값이 변하지 않음
+        // {
+        //     const x = 100;
+        //     const y = 200;
+        //     const z = "javascript";
+        //     // x = 300;
+        //     // y = 400;
+        //     // z = "jquery";
+        //     //Uncaught TypeError: Assignment to constant variable.
+
+        //     document.write("*** 04. 상수 ***<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br>");
+        //     document.write("에러발생<br><br>");
+        // }
+
+        // //sample5
+        // //배열 : 여러 개의 데이터 저장 : 표현 방법1
+        // {   
+        //     const arr = new Array();    //배열 선언
+        //     arr[0] = 100;               //첫번재 배열 저장소에 숫자 100을 저장
+        //     arr[1] = 200;               //두번재 배열 저장소에 숫자 200을 저장
+        //     arr[2] = "javascript";      //세번재 배열 저장소에 문자 javascript를 저장
+
+        //     document.write("*** 05. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample06
+        // //배열 : 표현 방법2
+        // {
+        //     const arr = new Array(100, 200, "javascript");
+
+        //     document.write("*** 06. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample07
+        // //배열 : 표현 방법3
+        // {
+        //     const arr = [];     
+        //     arr[0] = 100;              
+        //     arr[1] = 200;              
+        //     arr[2] = "javascript";   
+
+        //     document.write("*** 07. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample08
+        // //배열 : 표현 방법4
+        // {
+        //     const arr = [100, 200, "javascript"];    
+
+        //     document.write("*** 08. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br><br>");
+        // }
+
+        // //sample09
+        // //객체 : 데이터 저장(키와 값) : 표현 방법1 : 배열 스타일
+        // {
+        //     const obj = new Object();
+        //     obj[0] = 100;
+        //     obj[1] = 200;
+        //     obj[2] = "javascript";
+
+        //     document.write("*** 09. 객체 ***<br>");
+        //     document.write(obj[0], "<br>");
+        //     document.write(obj[1], "<br>");
+        //     document.write(obj[2], "<br><br>");
+        // }
+
+        // //sample10
+        // //객체 : 데이터 저장(키와 값) : 표현 방법2
+        // {
+        //     const obj = new Object();
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 10. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample11
+        // //객체 : 데이터 저장(키와 값) : 표현 방법3 : 키워드 생략
+        // {
+        //     const obj = {};
+        //     obj.a = 100;
+        //     obj.b = 200;
+        //     obj.c = "javascript";
+
+        //     document.write("*** 11. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample12
+        // //객체 : 데이터 저장(키와 값) : 표현 방법4 
+        // {
+        //     const obj = {a:100, b:200, c:"javascript"};
+
+        //     document.write("*** 12. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample13
+        // //객체 : 데이터 저장(키와 값) : 표현 방법5 : 배열 속에 객체
+        // {
+        //     const obj = [
+        //         {a:100, b:200},
+        //         {c:"javascript"}
+        //     ];
+
+        //     document.write("*** 13. 객체 ***<br>");
+        //     document.write(obj[0].a, "<br>");
+        //     document.write(obj[0].b, "<br>");
+        //     document.write(obj[1].c, "<br><br>");
+        // }
+
+        // //sample14
+        // //객체 : 데이터 저장(키와 값) : 표현 방법6 : 객체 속에 배열
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200, 300],
+        //         c: "javascript"
+        //     }
+        //     document.write("*** 14. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample15
+        // //객체 : 데이터 저장(키와 값) : 표현 방법7 : 객체 속에 변수
+        // {
+        //     const a = 100;
+        //     const b = 200;
+        //     const c = "javascript";
+
+        //     const obj = { a, b, c }
+
+        //     document.write("*** 15. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.c, "<br><br>");
+        // }
+
+        // //sample16
+        // //객체 : 데이터 저장(키와 값) : 표현 방법8 : 객체 속에 함수
+        // {
+        //     const obj = {
+        //         a: 100,
+        //         b: [200,300],
+        //         c: "javascript",
+        //         d: function(){
+        //             document.write("javascript가 실행되었습니다.<br>");
+        //         },
+        //         e: function(){
+        //             document.write( obj.c + "가 실행되었습니다.<br>");
+        //         },
+        //         f: function(){
+        //             document.write( this.c + "가 실행되었습니다.<br>");
+        //         }
+        //     }
+
+        //     document.write("*** 16. 객체 ***<br>");
+        //     document.write(obj.a, "<br>");
+        //     document.write(obj.b, "<br>");
+        //     document.write(obj.b[0], "<br>");
+        //     document.write(obj.b[1], "<br>");
+        //     document.write(obj.c, "<br>");
+        //     obj.d();
+        //     obj.e();
+        //     obj.f();
+        // }
+
+    </script>
+</body>
+
+</html>

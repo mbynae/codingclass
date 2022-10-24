@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+
+    <style>
+        /* reset */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'GmarketSans';
+            
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* header */
+        .h_tit {
+            margin-top: 120px;
+            text-align: center;
+        }
+        .h_tit h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .h_tit h2 {
+            font-size: 22px;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        /* content */
+        .container {
+            width: 1160px;
+            padding: 70px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            
+
+        }
+        .card {
+            width: 275px;
+            margin: 0 auto;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        .card_text {
+            padding-left: 4px;
+            position: relative;
+        }
+        .card_text > h3 {
+            font-size: 22px;
+            padding: 20px 0 10px 0;
+            display: inline-block;
+        }
+        .card_text > p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        .c_arrow {
+            position: absolute;
+            left: 250px;
+            top: 18px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="h_tit">
+            <h1>네모네모 재밌는 LEGO!</h1>
+            <h2>
+                남녀노소 누구나 좋아하는 레고입니다.<br>
+                가지각색의 모양으로 아주 다양하고 창의적인 모형을 만들어 보세요!
+            </h2>
+        </div>
+    </header>
+    <section id="section" class="container">
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg01.jpg" alt="기본 레고 블럭">
+                </figure>
+                <div class="card_text">
+                    <h3>기본적인 레고 블럭</h3>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                    <p>
+                        가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg02.jpg" alt="추가 레고 블럭">
+                </figure>
+                <div class="card_text">
+                    <h3>다양한 레고 블럭</h3>
+                    <p>
+                        또한 레고는 기본 블럭뿐만 아니라 직사각형, 원통형 등등 여러가지 모양의 블럭이 있습니다.
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg03.jpg" alt="사람 및 동물 레고 블럭">
+                </figure>
+                <div class="card_text">
+                    <h3>더 많은 레고 블럭</h3>
+                    <p>
+                        사람 모양이나 동물, 도구, 자동차 등 블럭 모양이 아니더라도 다양한 형형태를 제공합니다.
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg04.jpg" alt="다양한 조합">
+                </figure>
+                <div class="card_text">
+                    <h3>다양한 표현 방식</h3>
+                    <p>
+                        여러가지 다양한 블럭을 조합해서 수 많은 형태의 모형을 제작해보세요!
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg05.jpg" alt="조립 방법">
+                </figure>
+                <div class="card_text">
+                    <h3>레고 조합 방법</h3>
+                    <p>
+                        레고의 조합 방법은 간단합니다. 블럭의 돌출된 부분과 다른 블럭의 흠이난 부분을 연결하면 끝이죠.
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg06.jpg" alt="레고 모형">
+                </figure>
+                <div class="card_text">
+                    <h3>레고로 만든 모형</h3>
+                    <p>
+                        이렇게 만들어진 모형은 집, 탈것, 마을 등 여러가지가 있으며 특정 테마부터 오리지널까지 다양합니다.
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg07.jpg" alt="콜라보레이션">
+                </figure>
+                <div class="card_text">
+                    <h3>콜라보레이션</h3>
+                    <p>
+                        또한 유명 캐릭터나 인물, 물건 등과 콜라보레이션을 하여 제공중인 레고도 있습니다.
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card2_bg08.jpg" alt="레고 역사">
+                </figure>
+                <div class="card_text">
+                    <h3>레고의 역사</h3>
+                    <p>
+                        이러한 레고는 1932년 덴마크 빌룬에 문을 연 목공소에서 출발합니다. 당시 자투리 목재로 만든 완구가...
+                    </p>
+                    <a class="btn" href="/">
+                        <span aria-hidden="true" class="c_arrow">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#CD5252"/>
+                                <path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/>
+                            </svg>                            
+                        </span>
+                    </a>
+                </div>
+            </article>
+    </section>
+    <footer></footer>
+</body>
+</html>

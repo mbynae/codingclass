@@ -1,0 +1,81 @@
+//mixin (단축키. 자주쓰는걸 이런식으로 단축키를 지정해서 다른곳에 쓸 수 있다.)
+
+
+@mixin flex_sb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+}
+
+
+//가운데 정렬
+@mixin flex_ce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin position_ce {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin position_auto {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* 이미지 대체(ir) 효과 */
+@mixin ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 블라인드 효과 */
+@mixin blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden
+}
+
+/* 클리어 픽스 */
+@mixin clearfix {
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        bottom: 0; 
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+@mixin border_bottom {
+    position: relative;
+    border-bottom: 3px solid black;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+    }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형01</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1GothicLow/NexonLv1GothicLow.css');
+
+        .font {
+            font-family: 'NexonLv1GothicLow';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > p {
+            font-size: 16px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+
+        /* content */
+        .box {
+            width: 32%;
+            height: 260px;
+            background-color: #f6f6f6;
+        }
+        .box:nth-child(1),
+        .box:nth-child(2),
+        .box:nth-child(3) {
+            margin-bottom: 20px;
+        }
+        .content {
+            margin: 20px;
+        }
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo_color1 {
+            background: rgba(255, 0, 0, 0.3);
+        }
+        .logo_color2 {
+            background: rgba(255, 245, 0, 0.3);
+        }
+        .logo_color3 {
+            background: rgba(0, 254, 41, 0.3);
+        }
+        .logo_color4 {
+            background: rgba(0, 102, 255, 0.3);
+        }
+        .logo_color5 {
+            background: rgba(158, 0, 255, 0.3);
+        }
+        .logo_color6 {
+            background: rgba(184, 184, 184, 0.3);
+        }
+        .logo > img {
+            width: 24px;
+            height: 24px;
+
+        }
+        .content > h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .content > p {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            word-break: keep-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .content > span a {
+            font-size: 16px;
+            color: #666;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType01" class="section font">
+        <p>테스트 유형01</p>
+        <h2>6가지 색의 연상과 느낌</h2>
+        <div class="container">
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color1">
+                        <img src="img/img01_logo01.png" alt="">
+                    </figure>
+                    <h3>빨간색(Red)</h3>
+                    <p>
+                        색의 3원색 중 하나인 빨간색은 뜨겁고
+                        정렬적이며 한편으론 위험하거나 분노하는
+                        느낌을 나타냅니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color2">
+                        <img src="img/img01_logo02.png" alt="">
+                    </figure>
+                    <h3>노란색(Yellow)</h3>
+                    <p>
+                        CYMK의 Y를 담당하는 노란색은 명랑하고
+                        활달적이며 달콤한 음식이나 과일의 느낌을 
+                        내포하지만 주의와 경고의 느낌도 냅니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color3">
+                        <img src="img/img01_logo03.png" alt="">
+                    </figure>
+                    <h3>초록색(Green)</h3>
+                    <p>
+                        색의 3원색인 초록색은 숲과 자연을 연상하며
+                        평온함과 평화, 안정, 휴식, 젊음 등 마음이
+                        진정되는 느낌을 나타냅니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color4">
+                        <img src="img/img01_logo04.png" alt="">
+                    </figure>
+                    <h3>파란색(Blue)</h3>
+                    <p>
+                        색의 3원색 중 하나인 파란색은 시원한
+                        바다와 명쾌하고 상쾌한 느낌을 내지만
+                        한편으론 냉정함과 추위의 느낌도 납니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color5">
+                        <img src="img/img01_logo05.png" alt="">
+                    </figure>
+                    <h3>보라색(Purple)</h3>
+                    <p>
+                        보라색은 신비하고 고귀하고 우아하며 고귀
+                        한 느낌 주며 또한 포도같은 달콤한 느낌도 
+                        주지만 고독과 외로움을 상징하기도 합니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+            <article class="box">
+                <div class="content">
+                    <figure class="logo logo_color6">
+                        <img src="img/img01_logo06.png" alt="">
+                    </figure>
+                    <h3>흰색(White)</h3>
+                    <p>
+                        흰색은 순백하고 깨끗하며 평화와 조화, 
+                        시선집중 같은 주목을 이끄는 느낌을 줍니다.
+                    </p>
+                    <span><a href="#">더보기</a></span>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

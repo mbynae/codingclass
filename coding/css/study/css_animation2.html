@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 애니메이션</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <style>
+        .t_tit2 {
+            font-size: 23px !important;
+        }
+
+        .bs-callout-info {
+            background-color: #f4f8fa;
+            border-color: #5bc0de;
+        }
+        .bs-callout {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 3px solid #20add8;
+        }
+
+        .svgBox {padding: 40px;}
+        .svgBox > svg {
+            width: 160px; height: 160px; background: #FFEBEE;
+            margin: 6px;
+        }
+        .bs-docs-section .sample h3 {
+            background: #f6f6f6;
+            height: 40px;
+            padding-top: 13px;
+            margin-bottom: 0;
+        }
+        .bs-docs-section .sample h3, .h3 {
+            font-size: 24px;
+        }
+        .bs-docs-section .sample {
+            box-shadow: 0px 100px 80px rgb(0 0 0 / 7%), 0px 41.7776px 33.4221px rgb(0 0 0 / 5%), 0px 22.3363px 17.869px rgb(0 0 0 / 4%), 0px 12.5216px 10.0172px rgb(0 0 0 / 4%), 0px 6.6501px 5.32008px rgb(0 0 0 / 3%), 0px 2.76726px 2.21381px rgb(0 0 0 / 2%);
+            margin-bottom: 40px;
+        }
+        .bs-docs-section .sample > h3 > span {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-color: #E96E4C;
+            border-radius: 50%;
+            margin-left: 15px;
+            position: relative;
+        }
+        .bs-docs-section .sample > h3 > span::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #E6A935;
+            border-radius: 50%;
+            position: absolute;
+            left: 23px;
+            top: 0;
+            box-sizing: border-box;
+        }
+        .bs-docs-section .sample  h3 > span::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #85C33D;
+            border-radius: 50%;
+            position: absolute;
+            left: 45px;
+            top: 0;
+            box-sizing: border-box;
+        }
+        .bs-docs-section pre {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">CSS</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 애니메이션 효과</h2>
+            <p class="t_desc2">
+                CSS를 이용해 애니메이션 효과를 주는 방법입니다.
+            </p>
+
+            <hr>
+
+            <!-- Walking Animation -->    
+            <style>
+                .step {
+                    height: 700px;
+                    background: #ffe8d9;
+                    position: relative;
+                }
+                .step .stepbox {
+                    width: 800px; height: 600px;
+                    background: url(https://mbynae.github.io/coding/animation/img/img.jpg);
+                    border-radius: 0;
+                    position: absolute;
+                    left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);
+                    animation: ani 0.5s steps(24, start) infinite;
+                }
+                .step .stepbox.start {
+                    animation-play-state: running;
+                }
+                .step .stepbox.stop {
+                    animation-play-state: paused;
+                }
+                @keyframes ani {
+                    0% {background-position: 0 0;}
+                    100% {background-position: -19200px 0;}
+                }
+                .stepBtn {
+                    position: absolute; left: 15px; top: 20px;
+                }
+                .stepBtn a {
+                    background: #e16162; color: #fff;
+                    padding: 10px;
+                    margin: 3px;
+                    border-radius: 3px;
+                }
+
+            </style>
+            <div class="bs-docs-section">
+                <h2 id="intro2" class="page-header">포토샵을 이용한 애니메이션</h2>
+                <p class="t_desc">이번 애니메이션 효과는 포토샵을 이용해 여러개의 이미지를 하나로 이어 붙인 후 css를 사용해 애니메이션을 주는 효과입니다.</p>
+
+                <h3 class="t_tit2">▶ 포토샵으로 이미지 만들기</h3>
+                <p class="t_disc">
+                    CSS로 사진같은 이미지의 애니메이션을 구현하기 위해선 여러장의 이미지를 이어붙여야 합니다.
+                </p>
+                <br>
+                <div class="t_iframe">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvtJEkLq40SNKptdhlujEzy%2F%25EB%25B6%2580%25ED%258A%25B8%25EC%258A%25A4%25ED%258A%25B8%25EB%259E%25A9%3Fnode-id%3D8%253A2" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="t_tit2">▶ CSS로 애니메이션 구현하기</h3>
+                <p class="t_disc">백그라운드로 이어붙인 이미지를 불러온 후 애니메이션 속성으로 각 이미지를 연속적으로 보여줌으로써 애니메이션이 구현됩니다.</p>
+                <p class="t_disc">이 때 step은 이미지의 초당 프레임을 나타내며 이미지가 24장일때 24를 쓰면 1초에 모든 이미지가 연속적으로 보여집니다.</p>
+                <div class="sample">
+                    <h3><span></span><em class="sr-only">border-radius</em></h3>
+                    <div class="timing step">
+                        <div class="stepbox"></div>
+                        <span class="stepBtn">
+                            <a href="#" class="stepBtnStart">Start</a>
+                            <a href="#" class="stepBtnStop">Stop</a>
+                        </span>
+                    </div>
+                </div>
+<pre class="line-numbers language-css"><code>&lt;style&gt;
+    .step {
+        height: 700px;
+        background: #ffe8d9;
+        position: relative;
+    }
+    .step .stepbox {
+        width: 800px; height: 600px;
+        background: url(https://mbynae.github.io/coding/animation/img/img.jpg);
+        border-radius: 0;
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        animation: ani 0.5s steps(24, start) infinite;
+    }
+    .step .stepbox.start {
+        animation-play-state: running;
+    }
+    .step .stepbox.stop {
+        animation-play-state: paused;
+    }
+    @keyframes ani {
+        0% {background-position: 0 0;}
+        100% {background-position: -19200px 0;}
+    }
+    .stepBtn {
+        position: absolute; left: 15px; top: 20px;
+>&lt;/style>    }
+    .stepBtn a {
+        background: #e16162; color: #fff;
+        padding: 10px;
+        margin: 3px;
+        border-radius: 3px;
+    }
+&lt;/style&gt;
+
+&lt;div class="timing step"&gt;
+    &lt;div class="stepbox"&gt;&lt;/div&gt;
+    &lt;span class="stepBtn"&gt;
+        &lt;a href="#" class="stepBtnStart"&gt;Start&lt;/a&gt;
+        &lt;a href="#" class="stepBtnStop"&gt;Stop&lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $(".stepBtnStart").click(function(e){
+        e.preventDefault();
+        $(".stepbox").removeClass("stop").addClass("start");
+    });
+    $(".stepBtnStop").click(function(e){
+        e.preventDefault();
+        $(".stepbox").removeClass("start").addClass("stop");
+    });
+&lt;/script&gt;
+
+
+</code></pre>   
+            </div>
+            <!-- //Walking Animation -->
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/animation/css.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <!-- 자바스크립트 -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(".stepBtnStart").click(function(e){
+            e.preventDefault();
+            $(".stepbox").removeClass("stop").addClass("start");
+        });
+        $(".stepBtnStop").click(function(e){
+            e.preventDefault();
+            $(".stepbox").removeClass("start").addClass("stop");
+        });
+    </script>
+</body>
+</html>

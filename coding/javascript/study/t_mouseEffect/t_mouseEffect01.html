@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스이펙트 01</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용한 마우스 효과 만들기 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">마우스 이펙트 01 - 마우스 따라다니기</h3>
+            <p class="t_box">마우스 커서에 따라 위치를 지정하거나 효과를 주는 방법입니다.</p>  
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/mouseEffect01.html" frameborder="0"></iframe>
+            </div>
+
+            <hr style="margin-top: 180px;">
+
+            <!-- HTML -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ HTML 파트</h4>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;
+                What &lt;span class="style1"&gt;we&lt;/span&gt; have to do is to be &lt;span class="style2"&gt;forever&lt;/span&gt; curiously testing &lt;span class="style3"&gt;new&lt;/span&gt; opinions and courting new impressions.
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;span class="style4"&gt;우리가&lt;/span&gt; 해야할 일은 &lt;span class="style5"&gt;끊임없이&lt;/span&gt; 호기심을 갖고 &lt;span class="style6"&gt;새로운&lt;/span&gt; 생각을 시험해보고 새로운 인상을 받는 것이다.
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+  
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+</code></pre>
+            </div>
+
+            <!-- CSS -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ CSS 파트</h4>
+            <div class="t_code">
+<pre><code>/* mouseType */
+    #mouseType {}
+    .mouse__cursor {}
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        overflow: hidden;
+        cursor: none;
+    }
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 500;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 2.2vw;
+        font-weight: 400;
+    }
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed #cdff06;
+        color: #cdff06;
+    }
+    @media (max-width: 800px){
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.3;
+            text-align: center;
+            word-break: keep-all;
+        }
+    }
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background-color: rgba(255,255,255 0.3);
+        user-select: none;  /* 아래거랑 세트로 마우스 선택이 안되게 하는 방법 */
+        pointer-events: none;
+        transition: 
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.6s,
+        border-radius 0.3s
+        ;
+    }
+    .mouse__cursor.style1 {
+        background-color: rgb(205, 255, 5, 0.3);
+        border-color: #cdff06;
+    }
+    .mouse__cursor.style2 {
+        background-color: rgb(107, 255, 9, 0.3);
+        border-color: rgb(107, 255, 9);
+        transform: scale(2) rotateY(720deg);
+    }
+    .mouse__cursor.style3 {
+        background-color: rgb(9, 255, 111, 0.3);
+        border-color: rgb(9, 255, 111);
+        transform: scale(1.5) rotateX(720deg);
+    }
+    .mouse__cursor.style4 {
+        background-color: rgb(9, 255, 234, 0.3);
+        border-color: rgb(9, 255, 234);
+        transform: scale(10);
+    }
+    .mouse__cursor.style5 {
+        background-color: rgb(9, 157, 255, 0.3);
+        border-color: rgb(9, 157, 255);
+        border-radius: 0;
+        transform: scale(1.5);
+    }
+    .mouse__cursor.style6 {
+        background-color: rgb(103, 9, 255, 0.3);
+        border-color: rgb(103, 9, 255);
+        transform: scaleX(1.6) skew(45deg) rotateX(720deg); 
+        border-radius: 10px;
+    }
+    .mouse__info {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
+    }
+</code></pre>
+            </div>
+
+            <!-- JAVASCRIPT -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ JAVASCRIPT 파트</h4>
+            <div class="t_code">
+<pre><code>window.addEventListener("mousemove", (event) => {
+    document.querySelector(".clientX").innerText = event.clientX
+    document.querySelector(".clientY").innerText = event.clientY
+    document.querySelector(".offsetX").innerText = event.offsetX
+    document.querySelector(".offsetY").innerText = event.offsetY
+    document.querySelector(".pageX").innerText = event.pageX
+    document.querySelector(".pageY").innerText = event.pageY
+    document.querySelector(".screenX").innerText = event.screenX
+    document.querySelector(".screenY").innerText = event.screenY
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+window.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX - 25 + "px";   //단위를 붙여줘야 실행 됨 (-25는 커서의 위치를 원 가운데로 위치하게 함)
+    cursor.style.top = e.clientY - 25 + "px";
+});
+
+const style = document.querySelectorAll(".mouse__wrap span");
+
+style.forEach((span) => {   
+    let attr = span.getAttribute("class");      //getAttribute : 클래스 속성값 가져옴
+
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+    });
+});
+</code></pre>
+            </div>
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※위치 출력 속성</h4>
+            <p class="t_box">
+                client :  브라우저 기준 좌표 값<br>
+                offset : 요소 기준 좌표 값<br>
+                page : 페이지 기준 좌표 값<br>
+                screenY : 디바이스 기준 좌표 값
+            </p>
+            <p class="t_desc">
+                위치를 출력해주는 이벤트 속성을 통해 마우스 커서의 좌표값을 나타낼 수 있습니다.
+            </p>
+            <p class="t_desc">
+                또한 이 좌표 값을 활용하면 커서의 좌표값에 따른 다양한 효과를 넣을 수 있는 응용 방식을 알 수 있습니다.
+            </p>
+
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/mouseEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

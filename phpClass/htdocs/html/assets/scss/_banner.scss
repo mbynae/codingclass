@@ -1,0 +1,144 @@
+#banner h2 {
+    @include blind;
+}
+
+.banner__inner {
+    @include flex_sb;
+    position: relative;
+    padding: 60px 0;
+    border-bottom: 2px solid $black;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+    }
+
+    .img {
+        width: 30%;
+        border-radius: 50%;
+        overflow: hidden;
+        // border: 2px solid #000;
+        filter: saturate(0%);
+        transition: all 0.31s;
+    }
+
+    
+    .desc {
+        width: 65%;
+        font-size: 1.7rem;
+        font-weight: 300;
+        line-height: 1.5;
+        word-break: keep-all;
+    }
+
+    em {
+        color: $font-em;
+        position: relative;
+        transition: color 0.3s;
+
+        &::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            background: $bg-em;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: all 0.6s;
+        }
+    }
+
+    &:hover .img {
+        filter: saturate(100%);
+    }
+
+    &:hover .desc em {
+        color: #000;
+    }
+
+    &:hover .desc em::before {
+        width: 100%;
+    }
+}
+
+.banner__inner2 {
+    @include border-bottom;
+    padding: 60px 0;
+    text-align: center;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+    }
+
+    .img {
+        width: 25%;
+        margin: 0 auto;
+        filter: saturate(0%);
+        transition: all 0.31s;
+        margin-bottom: 2rem;
+    }
+
+    
+    .desc {
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.5;
+        word-break: keep-all;
+
+        .alert {
+            margin-top: 10px;
+            // background: $black;
+            color: $black;
+            padding: 10px 30px;
+            display: inline-block;
+        }
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+
+    em {
+        color: $font-em;
+        position: relative;
+        transition: color 0.3s;
+
+        &::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            background: $bg-em;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: all 0.6s;
+        }
+    }
+
+    &:hover .img {
+        filter: saturate(100%);
+    }
+
+    &:hover .desc em {
+        color: #000;
+    }
+
+    &:hover .desc em::before {
+        width: 100%;
+    }
+}

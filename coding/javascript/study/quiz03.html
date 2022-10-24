@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 만들기03</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+                <li><a href="element.html">요소 선택</a></li>  
+                <li><a href="join_push_pop.html">join/push/pop</a></li>  
+                <li><a href="quiz01.html">퀴즈 만들기01</a></li>  
+                <li><a href="quiz02.html">퀴즈 만들기02</a></li>  
+                <li><a href="quiz03.html">퀴즈 만들기03</a></li>  
+                <li><a href="quiz04.html">퀴즈 만들기04</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기</h2>
+            <p class="t_desc2">
+                자바스크립트 함수를 활용하여 퀴즈 만들기입니다.
+            </p>
+            <p class="t_desc">
+                이번 퀴즈 만들기는 <a href="https://mbynae.github.io/coding/javascript/study/quiz02.html" target="_blank" style="text-decoration: underline;">퀴즈 만들기02</a>의 
+                심화 학습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">퀴즈 만들기 03</h3>
+            <p class="t_box">이번 퀴즈는 여러개의 주관식 문제를 만드는 유형입니다.</p>  
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/quizEffect03.html" frameborder="0"></iframe>
+            </div>
+            <p class="t_desc" style="margin-top: 10px;">
+                여러개의 문제를 만들기 위해선 객체를 활용하여 각각의 블록에 맞는 실행값을 넣어야 합니다. 
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 선택자</h3>
+            <div class="t_code">
+<pre><code>//선택자
+const quizType = document.querySelectorAll(".quiz__type");                   //퀴즈 종류   //문제가 여러개라 "All"을 넣음
+const quizNumber = document.querySelectorAll(".quiz__question .number");     //퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz__question .ask");           //퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");     //정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz__answer .result");       //정답 결과
+const quizInput = document.querySelectorAll(".quiz__answer .input");         //사용자 정답
+const quizView = document.querySelectorAll(".quiz__view");                   //강아지 애니메이션 출력
+
+//문제 정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2016년 7월 10일", 
+        answerNum: "1. ", 
+        answerAsk: "먼저 본 색의 영향으로 나중에 보는 색이 다르게 보이는 현상은?",
+        answerResul:"계시대비"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 7월 10일",
+        answerNum: "2. ",
+        answerAsk: "오스트발트(Ostwald) 색상환은 무채색 축을 중심으로 몇 색상이 배열되어 있는가?",
+        answerResul:"24"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 7월 10일", 
+        answerNum: "3. ", 
+        answerAsk: "애니메이션 제작의 특수 효과 중 하나로 축소형으로 입체 모델을 만들고 여기에 다른 기법을 병합하여 장면을 만드는 것은?",
+        answerResul:"미니어처 효과"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 7월 10일", 
+        answerNum: "4. ",
+        answerAsk: "네트워크를 통해 데이터 통신을 실행하는데 사용되는 일련의 규칙을 무엇이라고 하는가?",
+        answerResul:"프로토콜"
+    }
+];
+</code></pre>
+            </div>
+            <p class="t_desc">
+                우선 quiz02와 다른점은 querySelector가 여러개의 저장 값을 보내주기 위해 여러개의 값이 있다는 것을 알려줘야 합니다.
+                이럴 때 사용하는 것이 <i>querySelectorAll</i>입니다.<br><br>
+                또한 여러개의 문제를 만들어내기 위해 <i>객체</i>를 활용하여 각각의 키와 값을 부여해야 합니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 요소 매서드</h3>
+            <div class="t_code">
+<pre><code class="language-js">//문제 출력(for문)
+for( let i=0; i&lt;quizInfo.length; i++){
+
+    quizType[i].textContent = quizInfo[i].answerType;
+
+    quizNumber[i].textContent = quizInfo[i].answerNum;
+
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+
+    quizResult[i].textContent = quizInfo[i].answerResul;
+};
+
+//문제 출력(forEach문)
+quizInfo.forEach((e, i) => {        //그냥 i만 쓰면 요소값으로 인식해서 e, i로 써줌(forEach는 순서대로 인식하기 때문)
+    quizType[i].textContent = quizInfo[i].answerType;
+
+    quizNumber[i].textContent = quizInfo[i].answerNum;
+
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+
+    quizResult[i].textContent = quizInfo[i].answerResul;
+});
+
+//정답 숨기기(일반적인 방식)
+quizResult[0].style.display = "none";
+quizResult[1].style.display = "none";
+quizResult[2].style.display = "none";
+quizResult[3].style.display = "none";
+
+//정답 숨기기(for문)
+for( let i=0; i&lt;quizInfo.length; i++){
+quizResult[i].style.display = "none";
+};
+
+//정답 숨기기(forEach문)
+quizInfo.forEach((e, i) => {
+    quizResult[i].style.display = "none";
+});
+</code></pre>
+            </div>
+            <p class="t_desc">
+                여러개의 문제를 블록에 놓기 위해 각 문제마다 실행문을 넣을 경우 코드가 너무 길어지게 됩니다.
+                이러한 문제를 해결하기 위해 for문이나 forEach문을 활용하면 더 간단한 코드로 완성할 수 있습니다.<br>
+                for문과 forEach문은 서로 변환해 쓸 수 있어야 합니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 이벤트 매서드</h3>
+            <div class="t_code">
+<pre><code class="language-js">//정답 확인
+// quizConfirm.addEventListener("click", () => {    //문제가 여러개이기 때문에 이대로는 실행이 안된다. 그래서 forEach를 이용해서 4개인걸 자바스크립트에 알려줘야 한다.
+    // alert("ddd")
+// });
+quizConfirm.forEach((btn, num) => {
+    btn.addEventListener("click", () => {
+        
+        //사용자 정답
+        const userWord = quizInput[num].value.toLowerCase().trim();
+        
+        //사용자 정답 == 문제 답안 
+        if(userWord == quizInfo[num].answerResul){
+            //정답
+            // alert("정답");
+            quizView[num].classList.add("like");
+            quizConfirm[num].style.display = "none";
+        } else {
+            //오답
+            // alert("오답");
+            quizView[num].classList.add("dislike");
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        };
+    });
+});
+</code></pre>
+            </div>
+            <p class="t_desc">
+               이벤트 매서드 역시 단일 값과 다르게 여러개의 값이 있을때는 forEach문을 활용하여 반드시 여러개의 값이 있다는 것을 알려주어야 합니다.<br>
+               또한, 각 문제의 위치를 알려주기 위해 elememt와 index를 넣어 위치와 실행해야할 값을 지정해주어야 올바른 위치에 실행값이 적용됩니다.
+            </p>
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/quizEffect03.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

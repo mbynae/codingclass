@@ -1,0 +1,272 @@
+
+@import url('https://webfontworld.github.io/NanumBarunGothic/NanumBarunGothic.css');
+
+.nanum {
+    font-family: 'NanumBarunGothic';
+    font-weight: 400;
+}
+
+/* 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+i {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
+
+/* 공통 */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* aside */
+#aside {
+    width: 30%;
+    padding-top: 20px;
+}
+.a_logo {
+    display: flex;
+    margin-bottom: 50px;
+
+}
+.a_logo figure img {
+    width: 40px;
+    height: 40px;
+}
+.a_logo span {
+    font-size: 22px;
+    padding-left: 10px;
+    margin-top: 8px;
+    font-weight: 700;
+    color: #666;
+}
+
+.nav {}
+.top_menu {
+    margin-bottom: 20px;
+}
+.top_menu i {
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.top_menu .sub_menu {}
+.top_menu .sub_menu li {}
+.top_menu .sub_menu li a {}
+
+
+
+/* main */
+#main {
+    width: 70%;
+    height: auto;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* slide */
+
+#slide_section {
+
+}
+.slide_wrap {
+    width: 100%;
+}
+.slide_img {
+    width: 700px;
+    height: 300px;
+    overflow: hidden;
+}
+.slide_inner {
+    width: 700px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+.slide {
+    width: 700px;
+    height: 300px;
+    background: url(../img/main_slide.jpg) no-repeat center / cover;
+    position: relative;
+}
+.slide::before {
+    content: '';
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.slide:nth-child(1):before {content: '이미지1';}
+.slide:nth-child(2):before {content: '이미지2';}
+.slide:nth-child(3):before {content: '이미지3';}
+.slide:nth-child(4):before {content: '이미지1';}
+
+
+/* tab_section */
+#tab_section {
+    width: 100%;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+.main_tab {
+    margin-bottom: 40px;
+}
+.main_tab h2 {
+    text-align: center;
+}
+.main_tab h2 .left {
+    font-weight: 700;
+    color: #666;
+    font-size: 25px;
+    cursor: pointer;
+}
+.main_tab h2 .right {
+    font-weight: 700;
+    color: #666;
+    font-size: 25px;
+    cursor: pointer;
+}
+.main_tab h2 .left.tab_open {
+    color: #000;
+}
+.main_tab h2 .right.tab_open {
+    color: #000;
+}
+
+.main_icon {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.main_icon figure {
+    margin-bottom: 15px;
+}
+.main_icon figure img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+}
+.main_icon span {
+    font-weight: 700;
+}
+
+/* card */
+#card_section {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.card_inner {
+    border: 1px solid #cfc9c9;
+    width: 32%;
+    padding: 30px 19px;
+    background-color: #fff;
+    position: relative;
+}
+.card_inner h3 {
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.card_inner .card_img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.card_inner .card_text {}
+.card_inner .card_text ul {
+
+}
+.card_inner .card_text li {
+    font-size: 13px;
+    padding-bottom: 7px;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.plus_icon {
+}
+.plus_icon img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#footer {
+    width: 100%;
+    height: 140px;
+    background-color: #dee4ee;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer_logo {
+    padding: 20px;
+}
+.footer_logo figure img {
+    width: 70px;
+    height: 70px;
+}
+.footer_logo div {
+    font-size: 22px;
+    margin: 8px auto;
+    font-weight: 700;
+    color: #666;
+}
+
+.footer_text {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.footer_text address {
+    margin-bottom: 5px;
+}
+.footer_text p {
+    margin-bottom: 5px;
+}
+.banner {
+    height: 68px;
+    margin-left: 120px;
+    margin-bottom: 20px;
+}
+.banner figure {
+    display: flex;
+    flex-wrap: wrap;
+}
+.banner figure img {
+    width: 80px;
+    height: 68px;
+}

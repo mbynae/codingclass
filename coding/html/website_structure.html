@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 문병내</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록구조/인라인구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="website_structure.html">구조 관련 요소</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit" style="margin-bottom: 25px;">구조 관련 요소</h2>
+                <p class="t_desc">
+                    HTML의 구조를 나타내는 요소입니다.
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">Semantic Web</h3>
+                <p class="t_desc2">
+                    시맨틱 웹이란 웹에 존재하는 수많은 웹페이지들에 메타데이터(Metadata)를 부여하여, 기존의 잡다한 데이터 집합이었던 웹페이지를 '의미'와 '관련성'을 가지는 거대한 데이터베이스로 구축하고자 하는 방식입니다.
+                </p>
+                <table class="t_table" style="margin-top: 10px !important;">
+                    <thead>
+                        <tr>
+                            <th>요소 유형</th>
+                            <th>태그명</th>
+                            <th>태그의 의미 및 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce" rowspan="12">블록 레벨 요소</td>
+                            <td class="ce" rowspan="2">&lt;header&gt;<br>&lt;/header&gt;</td>
+                            <td>
+                                1. HTML 문서의 헤더 영역을 의미하는 태그로 제목이나 네비게이션, 검색 등의 내용들을 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">&lt;section&gt;<br>&lt;/section&gt;</td>
+                            <td>
+                                1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며 섹션주제에 대한 제목 요소(&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">&lt;footer&gt;<br>&lt;/footer&gt;</td>
+                            <td>
+                                1. HTML 문서의 푸터영역을 의미하는 태그로섹션 작성자나 저작권에 대한 정보, 관련된 무서의 링크를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">&lt;nav&gt;<br>&lt;/nav&gt;</td>
+                            <td>
+                                1. HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그입니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소 블록 레벨 요소를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">&lt;article&gt;<br>&lt;/article&gt;</td>
+                            <td>
+                                1. HTML 문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며 제목 요소 (&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소 블록 레벨 요소를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">&lt;aside&gt;<br>&lt;/aside&gt;</td>
+                            <td>
+                                1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며, HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용됩니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소 블록 레벨 요소를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h3 class="t_tit2" style="font-size: 18px">[예시]</h3>
+                <div class="t_iframe">
+                    <iframe scrolling="no" title="Untitled" src="https://codepen.io/mbynae/embed/OJvBraV?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/mbynae/pen/OJvBraV">
+                        Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+                <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;style&gt;
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            font-style: normal;
+        }
+        h1, h2 ,h3 ,h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* header */
+        #header {
+            margin: 30px;
+            height: 200px;
+            background-color: #2fa32f;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .h_side {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .h_side &gt; div {
+            background-color: #eee;
+            width: 70%;
+            height: 70%;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            text-align: center;
+        }
+        .h_side &gt; div &gt; span {
+            margin: 20px 0;
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .h_main {
+            width: 90%;
+        }
+        .h_header {
+            height: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+        .h_header &gt;span {
+            background-color: black;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .h_nav {
+            height: 50%;
+            position: relative;
+            
+        }
+        .h_nav &gt; nav {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 90%;
+            height: 70%;
+            line-height: 70px;
+            text-align: center;
+            
+        }
+        .h_nav &gt; nav &gt; span {
+            margin: 0 60px;
+        }
+        .n_nav {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+
+        /* div */
+        #div {
+            margin: 0 30px 30px 30px;
+            height: 700px;
+            background-color: #2fa32f;
+            position: relative;
+        }
+        #div &gt; h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: black;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .d_contaioner {
+            height: 700px;
+            display: flex;
+        }
+        .content1 {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content1 &gt; .c1_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 90%;
+            height: 90%;
+        }
+        .content1 &gt; .c1_box &gt; span {
+            margin: 20px 20px;
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .content1 &gt; .c1_box &gt; h2 {
+            text-align: center;
+            line-height: 500px;
+        }
+        .content2 {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content2 &gt; .c2_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 90%;
+            height: 90%;
+        }
+        .content2 &gt; .c2_box &gt; span {
+            margin: 20px 20px;
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .content2 &gt; .c2_box &gt; h2 {
+            text-align: center;
+            line-height: 500px;
+        }
+        .d_aside {
+            width: 30%;
+            height: 100%;
+        }
+        .article {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .article &gt; .art_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 86%;
+            height: 277px;
+        }
+        .article &gt; .art_box &gt; span {
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .article &gt; .art_box &gt; h2 {
+            text-align: center;
+            line-height: 240px;
+        }
+        .ad {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ad &gt; .ad_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 86%;
+            height: 277px;
+        }
+        .ad &gt; .ad_box &gt; span {
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .ad &gt; .ad_box &gt; h2 {
+            text-align: center;
+            line-height: 240px;
+        }
+
+        /* footer */
+        #footer {
+            margin: 0 30px;
+            height: 150px;
+            background-color: #2fa32f;
+            position: relative;
+        }
+        #footer &gt; h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: black;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .f_container {
+            width: 40%;
+            height: 100%;
+            margin-left: 10%;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .f_container .adr_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 100%;
+            height: 40%;
+            text-align: right;   
+            position: relative;    
+        }
+        .f_container .adr_box &gt; h2{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .f_container .adr_box &gt; address {
+            display: inline;
+            margin-right: 30px;
+            line-height: 60px;
+
+        }
+        .f_container .p_box {
+            background-color: #eee;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            width: 100%;
+            height: 40%;
+            text-align: right;   
+            position: relative;     
+        }
+        .f_container .p_box &gt; h2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: gray;
+            color: #fff;
+            padding: 3px 30px;
+        }
+        .f_container .p_box &gt; p {
+            display: inline;
+            margin-right: 30px;
+            line-height: 60px;
+        }
+    &lt;/style&gt;
+
+    &lt;header id="header"&gt;
+        &lt;div class="h_side"&gt;
+            &lt;div&gt;
+                &lt;span&gt;h1&lt;/span&gt;
+                &lt;h1&gt;반응형웹&lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="h_main"&gt;
+            &lt;div class="h_header"&gt;
+                &lt;span&gt;header&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="h_nav"&gt;
+                &lt;nav&gt;
+                    &lt;span&gt;MENU01&lt;/span&gt;
+                    &lt;span&gt;MENU02&lt;/span&gt;
+                    &lt;span&gt;MENU03&lt;/span&gt;
+                    &lt;span&gt;MENU04&lt;/span&gt;
+                    &lt;span&gt;MENU05&lt;/span&gt;
+                &lt;/nav&gt;
+                &lt;span class="n_nav"&gt;nav&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div id="div"&gt;
+        &lt;h1&gt;div&lt;/h1&gt;
+        &lt;div class="d_contaioner"&gt;
+            &lt;div class="content1"&gt;
+                &lt;div class="c1_box"&gt;
+                    &lt;span&gt;section&lt;/span&gt;
+                    &lt;h2&gt;콘텐츠 그룹1&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="content2"&gt;
+                &lt;div class="c2_box"&gt;
+                    &lt;span&gt;section&lt;/span&gt;
+                    &lt;h2&gt;콘텐츠 그룹2&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="d_aside"&gt;
+                &lt;div class="article"&gt;
+                    &lt;div class="art_box"&gt;
+                        &lt;span&gt;article&lt;/span&gt;
+                        &lt;h2&gt;주요 기사&lt;/h2&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="ad"&gt;
+                    &lt;div class="ad_box"&gt;
+                        &lt;span&gt;aside&lt;/span&gt;
+                        &lt;h2&gt;광고&lt;/h2&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer id="footer"&gt;
+        &lt;h1&gt;footer&lt;/h1&gt;
+        &lt;div class="f_container"&gt;
+            &lt;div class="adr_box"&gt;
+                &lt;h2&gt;address&lt;/h2&gt;
+                &lt;address&gt;경기도 부천시 오정구 삼정도 032)674-5685 1coxpib@naver.com&lt;/address&gt;
+            &lt;/div&gt;
+            &lt;div class="p_box"&gt;
+                &lt;h2&gt;p&lt;/h2&gt;
+                &lt;p&gt;COPYRIGHT ⓒ ALL right reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+
+</code></pre>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+</html>

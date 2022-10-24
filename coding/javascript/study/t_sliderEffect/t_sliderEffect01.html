@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 슬라이더 이펙트 01</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이더 이펙트</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용한 슬라이드 효과 만들기 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">슬라이더 이펙트 01 - 트랜지션 효과</h3>
+            <p class="t_box">일정 시간 간격으로 이미지를 자동으로 바꿔 출력해주는 효과입니다.</p>  
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0; margin-bottom: -120px;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/sliderEffect01.html" frameborder="0"></iframe>
+            </div>
+
+            <hr style="margin-top: 180px;">
+
+            <!-- HTML -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ HTML 파트</h4>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="sliderType01" &gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg11-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg12-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg13-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg14-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg15-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                5장의 이미지가 일정 간격으로 바뀌므로 우선 5장의 이미지를 img 태그를 활용해서 추가합니다.
+            </p>
+
+            <!-- CSS -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ CSS 파트</h4>
+            <div class="t_code">
+<pre><code>/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before{content:'이미지1';}
+.slider:nth-child(2)::before{content:'이미지2';}
+.slider:nth-child(3)::before{content:'이미지3';}
+.slider:nth-child(4)::before{content:'이미지4';}
+.slider:nth-child(5)::before{content:'이미지5';}
+.slider:nth-child(1){z-index: 5;}
+.slider:nth-child(2){z-index: 4;}
+.slider:nth-child(3){z-index: 3;}
+.slider:nth-child(4){z-index: 2;}
+.slider:nth-child(5){z-index: 1;}
+
+@media (max-width: 800px){
+    .slider__img {
+        width: 400px;
+        height: 225PX;
+    }
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                5장의 이미지를 diplay:flex와 position: absolute를 사용해 한 곳으로 모아놓습니다.
+            </p>
+            <p class="t_desc">
+                그 다음은 일정 시간 간격으로 이미지가 최상위로 올라와 보이도록 하기 위해 각 사진을 z-index로 수직 위치를 조절합니다.
+                이 위치는 이후 뒤에 나올 스크립트로 로테이션 되도록 조정이 됩니다.
+            </p>
+            <p class="t_desc">
+                특정 위치의 요소를 선택하는 선택자는 nth-child를 사용합니다. first-child는 첫번째 요소 last-child는 마지막 요소이며,
+                nth-child( )는 괄호 안의 숫자의 순서 해당하는 요소를  선택합니다.
+            </p>
+
+            <!-- JAVASCRIPT -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ JAVASCRIPT 파트</h4>
+            <div class="t_code">
+<pre><code>//자바 스크립트 이미지 슬라이더 출력 부분
+const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");
+const slider = document.querySelectorAll(".slider");
+
+let currentIndex = 0;               //현재 보이는 이미지
+let sliderCount = slider.length     //이미지 갯수
+
+setInterval(() => {
+    let nextIndex = (currentIndex + 1) % slider.length;    //다음 이미지
+
+    slider[currentIndex].style.opacity = "0";  //첫번째 이미지를 안보이게
+    slider[nextIndex].style.opacity = "1";     //두번째 이미지를 보이게
+
+    currentIndex = nextIndex;
+    //currentIndex에 0이 들어가면 나머지 몫인 1이 nextIndex가 됨
+    //이 후 nextIndex 값이 currentIndex 값이 되므로 currentIndex는 1이됨
+    //currentIndex가 1 그 담 나머지 몫인 nextIndex가 2가 됨
+    //currentIndex가 4가 되면 나머지 몫은 0이 되므로 nextIndex는 0
+    //그럼 currentIndex가 0이 되므로 첨부터 반복됨
+}, 3000);   //1000 = 1초
+</code></pre>
+            </div>
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※setInterval( )</h4>
+            <p class="t_box">
+                setInterval( )은 함수를 일정시간 기다린 후 실행하도록 해주는 메서드입니다.<br>
+                마지막 부분에 숫자를 넣어 기다릴 시간을 정할 수 있습니다. ex)  1000 = 1초, 2000 = 2초, 3000 = 3초
+            </p>
+            <p class="t_desc">
+                setInterval( ) 메서드로 3초마다 이미지가 바뀌도록 조정했습니다.<br>
+                현재 보이는 이미지의 opacity를 0으로, 다음 이미지를 1로 해서 이미지가 바뀌는 원리이며,
+                카운트 변수인 currentIndex의 값에 1을 더한 값을 사진의 수 만큼 나눈 몫을 대입해
+                지속적으로 로테이션이 돌아가도록 합니다. 
+            </p>
+
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/sliderEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+#card {
+    h2 {
+        display: inline-block;
+        font-size: 1rem;
+        border: 1px solid $black;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        margin-top: 50px;
+    }
+}
+
+.card__inner {
+    @include flex_sb;
+    padding-bottom: 70px;
+    @include border_bottom;
+
+    > div {
+        width: 24%;
+
+        figure {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                filter: saturate(0%);
+                transition: all 0.3s;
+                
+                &:hover {
+                    filter: saturate(100%);
+                }
+            }
+            .go {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $black;
+                text-align: center;
+                line-height: 31px;
+                font-weight: 300;
+                font-size: 0.8em;
+                transform: translateX(100px) rotate(760deg);
+                opacity: 0;
+                transition: all 0.6s ease;
+            }
+
+            &:hover .go {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+
+        h3 {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-top: 0.3em;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+    }
+}

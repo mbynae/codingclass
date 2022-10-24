@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        #size_table {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="basic.html">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+                <li><a href="font_units.html">단위</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="contents">
+        <article class="article">
+            <h2>1. 문자 관련 스타일</h2>
+            <p>문자의 글꼴을 지정하는 속성입니다.</p> <br>
+
+            <h2>2. font-size 단위</h2>
+            <p>
+                문자의 크기를 지정하는 속성입니다.<br>
+                글자 크기는 기본 16px이며 다음과 같은 속성이 있습니다.
+            </p>
+            <table class="table" id="size_table">
+                <thead>
+                    <tr>
+                        <th>속성</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">px</td>
+                        <td>해상도에 따라 상대적으로 달라지는 기본 단위입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">%</td>
+                        <td>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">em</td>
+                        <td>부모 요소의 글자 크기를 100% 기준으로 계산한 100분의 1단위입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">rem</td>
+                        <td>em과 비슷하지만 부모 요소가 아닌 최상위 요소의 크기를 기준으로 하는 100분의 1단위입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">vw</td>
+                        <td>뷰포트 너비값의 100분의 1단위입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="center">vh</td>
+                        <td>뷰포트 높이값의 100분의 1단위입니다.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </article>
+    </section>
+        
+
+
+</body>
+</html>

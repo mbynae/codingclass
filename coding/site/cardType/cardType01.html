@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');    /* import는 css 내부에서 쓰는 폰트 태그 */
+
+        .nexon {
+            font-family: "NexonLv1Gothic";
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-around;
+        }
+        .card {
+            width: 32%;
+            background: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            overflow: hidden;           /* 여기부터 아래까지 1줄 효과 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+            overflow: hidden;           /* 여기부터 아래까지 3줄 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+        }
+        .card__body .btn {}
+    </style>
+</head>
+<body>
+    <section id="cardType01" class="card__wrap nexon section">
+        <h2>크고 작은 리트리버</h2>
+        <p>크고 작은 그리고 귀엽고 친근한 리트리버 이야기 입니다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">        <!-- 그림 넣을때 쓰는 웹표준 준수 하기 위한 태그 -->
+                    <img src="img/card_bg01_01.jpg" alt="아기 리트리버에 대해 알아보기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">아기 리트리버</h3>
+                    <p class="desc">작은 리트리버는 호기심이 왕성합니다. 그리고 작고 귀엽죠. 어린 리트리버는 털의 색깔이 흰색에 가깝지만 시간이 지날수록 점차 색이 진해집니다.</p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">       <!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그-->
+                            <svg width="71" height="8" viewBox="0 0 71 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M70.3536 4.35355C70.5488 4.15829 70.5488 3.84171 70.3536 3.64645L67.1716 0.464466C66.9763 0.269204 66.6597 0.269204 66.4645 0.464466C66.2692 0.659728 66.2692 0.976311 66.4645 1.17157L69.2929 4L66.4645 6.82843C66.2692 7.02369 66.2692 7.34027 66.4645 7.53553C66.6597 7.7308 66.9763 7.7308 67.1716 7.53553L70.3536 4.35355ZM0 4.5H70V3.5H0V4.5Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01_02.jpg" alt="아기 리트리버에 대해 알아보기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">골든 리트리버</h3>
+                    <p class="desc">성인이 된 리트리버는 매우 온순하며 사람을 좋아하고 잘 따릅니다. 또한 똑똑하기도 해서 전세계적으로 많은 사랑을 받는 견종으로 손꼽히고 있습니다.</p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">
+                            <svg width="71" height="8" viewBox="0 0 71 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M70.3536 4.35355C70.5488 4.15829 70.5488 3.84171 70.3536 3.64645L67.1716 0.464466C66.9763 0.269204 66.6597 0.269204 66.4645 0.464466C66.2692 0.659728 66.2692 0.976311 66.4645 1.17157L69.2929 4L66.4645 6.82843C66.2692 7.02369 66.2692 7.34027 66.4645 7.53553C66.6597 7.7308 66.9763 7.7308 67.1716 7.53553L70.3536 4.35355ZM0 4.5H70V3.5H0V4.5Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01_03.jpg" alt="아기 리트리버에 대해 알아보기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">레브라도 리트리버</h3>
+                    <p class="desc">레브라도 리트리버는 골든 리트리버보다 털의 색이 연하고 길이가 짧습니다. 골든 트리버 보다 비교적 경계심이 많지만 섬세한 성격으로 안내견 역할을 자주 맡습니다.</p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">
+                            <svg width="71" height="8" viewBox="0 0 71 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M70.3536 4.35355C70.5488 4.15829 70.5488 3.84171 70.3536 3.64645L67.1716 0.464466C66.9763 0.269204 66.6597 0.269204 66.4645 0.464466C66.2692 0.659728 66.2692 0.976311 66.4645 1.17157L69.2929 4L66.4645 6.82843C66.2692 7.02369 66.2692 7.34027 66.4645 7.53553C66.6597 7.7308 66.9763 7.7308 67.1716 7.53553L70.3536 4.35355ZM0 4.5H70V3.5H0V4.5Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

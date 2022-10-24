@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너타입01</title>
+
+    <link rel="stylesheet" href="../site1/assets/css/fonts.css">
+    <link rel="stylesheet" href="../site1/assets/css/reset.css">
+    <link rel="stylesheet" href="../site1/assets/css/common.css">
+
+
+    <style>
+         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+        .banner__wrap {
+            position: relative;
+        }
+        .banner__inner {
+            position: relative;
+            height: 100%;
+        }
+        .banner__text h3 {
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+        .banner__text p {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+        .banner__text a {
+            background: #FF3344;
+            padding: 10px 75px;
+            display: inline-block;
+            color: #fff;
+            font-size: 18px;
+        }
+        .banner__imgs {
+            position: absolute;
+            right: 0;
+            top: -60px;
+            width: 400px;
+            height: 400px;
+        }
+        .banner__imgs .i1 {
+            width: 100%;
+            height: 100%;
+            background: url(../site2/assets_teacher/img/header_gradient@2x.png);
+            background-size: contain;
+        }
+        .banner__imgs .i2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 70%;
+            height: 700%;
+            background: url(../site2/assets_teacher/img/slider_bg04.png) no-repeat;
+            background-size: contain;
+        }
+        .banner__dots span {
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .banner__dots .d1 {
+            width: 23px;
+            height: 23px;
+            background-color: #4857EC;
+            left: 9%;
+            top: 20%;
+        }
+        .banner__dots .d2 {
+            width: 46px;
+            height: 46px;
+            background-color: #2FEFB1;
+            left: 80%;
+            top: 15%;
+        }
+        .banner__dots .d3 {
+            width: 49px;
+            height: 49px;
+            background-color: #4857EC;
+            left: 50%;
+            top: 65%;
+        }
+        .banner__dots .d4 {
+            width: 35px;
+            height: 35px;
+            background-color: #FF3344;
+            left: 40%;
+            top: 60%;
+        }
+        .banner__dots .d5 {
+            width: 32px;
+            height: 32px;
+            background-color: #2FEFB1;
+            left: 15%;
+            top: 86%;
+        }
+    </style>
+</head>
+<body>
+    <section id="bannerType" class="banner__wrap section gmarket skyblue">
+        <h2 class="blind">배너 영역</h2> 
+        <div class="banner__inner container">
+            <div class="banner__text">
+                <h3>유튜버 웹보이</h3>
+                <p>
+                    더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.
+                </p>
+                <a href="#" target="_blank" title="유튜브 채널 이동">바로가기</a>
+            </div>
+            <div class="banner__imgs">
+                <div class="i1"></div>
+                <div class="i2"></div>
+            </div>
+        </div>
+        <div class="banner__dots" aria-label="hidden">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+        </div>
+    </section>
+</body>
+</html>

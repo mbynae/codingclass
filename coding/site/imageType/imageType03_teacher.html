@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/yangheeryu/GowunBatang.css');
+
+        .gowun {
+            font-family: 'GowunBatang';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .container-fluid {
+            width: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        /* ir 효과(이미지 대체 효과 == alt) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* image_type */
+        .image_inner {
+            display: grid;
+            grid-template-areas: 
+                "box1 box1 box2 box3"
+                "box1 box1 box4 box5"
+            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px; /*그리드에서 박스간 마진을 주는 방법 */
+        }
+        .image_inner .image {
+            position: relative;
+            overflow: hidden;
+        }
+        .image_inner .image:nth-child(1) {
+            grid-area: box1;
+            background-image: url(img/img03_bg01.jpg);
+            background-size: cover;
+        }
+        .image_inner .image:nth-child(2) {
+            grid-area: box2;
+        }
+        .image_inner .image:nth-child(3) {
+            grid-area: box3;
+        }
+        .image_inner .image:nth-child(4) {
+            grid-area: box4;
+        }
+        .image_inner .image:nth-child(5) {
+            grid-area: box5;
+        }
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+        }
+        .image:hover .image__desc {
+            bottom: 0;
+        } 
+        .image__desc h3 {
+            font-size: 20px;
+        }
+        .image__desc p {
+            font-size: 16px;
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .image__sns {
+            position: absolute;
+            right: -100px;
+            top: 10px;
+            transition: all 0.5s ease;
+        }
+        .image__sns a {
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 5px;
+            background-image: url(img/image_bg03_icon.svg);
+        }
+        .image__sns a:nth-child(1) {}
+        .image__sns a:nth-child(2) {
+            background-position: -50px 0;
+        }
+        .image__sns a:nth-child(3) {
+            background-position: -100px 0;
+        }
+        .image__sns a:nth-child(4) {
+            background-position: -150px 0;
+        }
+        .image__sns a:nth-child(5) {
+            background-position: -200px 0;
+        }
+        .image:hover .image__sns {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="imgType01" class="image__wrap gowun section">
+        <h2>세계 7대 불가사의</h1>
+        <p>2007년 7월 7일 새롭게 지정된 과거 인류의 놀라운 기적 세계 7대 불가사의를 소개합니다. </p>
+        <div class="image_inner .container-fluid">
+            <article class="image">
+                <!-- <figure class="image__box">
+                    <img src="img/img03_bg01.jpg" alt="">
+                </figure> -->
+                <div class="image__desc">
+                    <h3>멕시코</h3>
+                    <p>치젠이트사</p>
+                </div>
+                <div class="image__sns">
+                    <a href="/" class="link"><span class="blind ir">페이스북</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/img03_bg02.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>멕시코</h3>
+                    <p>치젠이트사</p>
+                </div>
+                <div class="image__sns">
+                    <a href="/" class="link"><span class="blind ir">페이스북</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/img03_bg03.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>멕시코</h3>
+                    <p>치젠이트사</p>
+                </div>
+                <div class="image__sns">
+                    <a href="/" class="link"><span class="blind ir">페이스북</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/img03_bg04.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>멕시코</h3>
+                    <p>치젠이트사</p>
+                </div>
+                <div class="image__sns">
+                    <a href="/" class="link"><span class="blind ir">페이스북</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/img03_bg05.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>멕시코</h3>
+                    <p>치젠이트사</p>
+                </div>
+                <div class="image__sns">
+                    <a href="/" class="link"><span class="blind ir">페이스북</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                    <a href="/" class="link"><span class="blind ir">페이지 이동</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

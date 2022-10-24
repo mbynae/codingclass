@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 애니메이션</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .t_tit2 {
+            font-size: 23px !important;
+        }
+
+        .svgBox {padding: 40px;}
+        .svgBox > svg {
+            width: 160px; height: 160px; background: #FFEBEE;
+            margin: 6px;
+        }
+        .bs-docs-section .sample h3 {
+            background: #f6f6f6;
+            height: 40px;
+            padding-top: 13px;
+            margin-bottom: 0;
+        }
+        .bs-docs-section .sample h3, .h3 {
+            font-size: 24px;
+        }
+        .bs-docs-section .sample {
+            box-shadow: 0px 100px 80px rgb(0 0 0 / 7%), 0px 41.7776px 33.4221px rgb(0 0 0 / 5%), 0px 22.3363px 17.869px rgb(0 0 0 / 4%), 0px 12.5216px 10.0172px rgb(0 0 0 / 4%), 0px 6.6501px 5.32008px rgb(0 0 0 / 3%), 0px 2.76726px 2.21381px rgb(0 0 0 / 2%);
+            margin-bottom: 40px;
+        }
+        .bs-docs-section .sample span {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-color: #E96E4C;
+            border-radius: 50%;
+            margin-left: 15px;
+            position: relative;
+        }
+        .bs-docs-section .sample span::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #E6A935;
+            border-radius: 50%;
+            position: absolute;
+            left: 23px;
+            top: 0;
+            box-sizing: border-box;
+        }
+        .bs-docs-section .sample span::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #85C33D;
+            border-radius: 50%;
+            position: absolute;
+            left: 45px;
+            top: 0;
+            box-sizing: border-box;
+        }
+        .bs-docs-section pre {
+            margin-bottom: 60px;
+        }
+        @font-face {
+            font-family: 'SCoreDream';
+            font-weight: 900;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.eot?#iefix') format('embedded-opentype'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.woff2') format('woff2'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.woff') format('woff'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.ttf') format("truetype");
+            font-display: swap;
+        }
+        .svg7 {display: flex;}
+        .text-wrap {
+            background-color: #e3f3fd;
+            width: 160px;
+            height: 160px;
+            margin: 6px;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .text-clip {
+            font-size: 70px;
+            text-align: center;
+            font-family: "SCoreDream";
+            text-transform: uppercase;
+            line-height: 170px;
+            -webkit-text-fill-color: #0d47a1;
+        }
+        .svg7 text {
+            font-size: 70px;
+            text-align: center;
+            font-family: "SCoreDream";
+            text-transform: uppercase;
+            line-height: 170px;
+            -webkit-text-fill-color: #0d47a1;
+        }
+        .text-clip.c2 {
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-image: url(https://mbynae.github.io/coding/animation/img/bg.png);
+            background-size: 100%;
+        }
+        .text-clip.c3 {
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-image: linear-gradient(60deg, #ff5858, #f09819);
+        }
+        .text-clip.c4 {
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 2px #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">CSS</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document container">
+            <h2 class="t_tit">SGV</h2>
+            <p class="t_desc2">
+                스케일러블 벡터 그래픽스(Scalable Vector Graphics, SVG)는 2차원 벡터 그래픽을 표현하기 위한 XML 기반의 파일 형식으로, 1999년 W3C(World Wide Web Consortium)의 주도하에 개발된 오픈 표준의 벡터 그래픽 파일 형식입니다. SVG 형식의 이미지와 그 작동은 XML 텍스트 파일들로 정의 되어 검색화·목록화·스크립트화가 가능하며 필요하다면 압축도 가능합니다.
+            </p>
+            <div class="t_box">
+                <ul>
+                    <li>1. 인터넷 익스플로러9 버전 이상부터 지원됩니다.</li>
+                    <li>2. XML을 이용하여 라인, 곡선, 기하학적인 그래픽 표현이 가능합니다.</li>
+                    <li>3. 벡터 방식이기 때문에 확대하거나 축소가 가능합니다.</li>
+                    <li>4. DOM 단위로 컨트롤이 가능하지만 문서 복잡도가 증가되면 렌더링이 느려집니다.</li>
+                </ul>
+            </div>
+            <div class="t_desc">시작하기에 앞서 SGV Intro에 대한 내용은 <a href="https://piowm123.tistory.com/83?category=954494" target="_blank" style="text-decoration: underline;">여기</a>를 클릭해주세요.</div>
+
+            <hr>
+
+            <!-- Intro8 -->
+            <style>
+                .ani1 {
+                    width: 100px; height: 100px;
+                    x: 30px; y: 30px;
+                    fill: none;
+                    stroke: #880E41;
+                    stroke-width: 2px;
+                    stroke-dasharray: 50;
+                    stroke-dashoffset: 50;
+                    animation: ani1 1s infinite linear alternate-reverse;
+                }
+                @keyframes ani1 {
+                    0%   {stroke-dashoffset: 50;}
+                    100% {stroke-dashoffset: 0;}
+                }
+                .ani2 {
+                    width: 100px; height: 100px;
+                    x: 30px; y: 30px;
+                    fill: none;
+                    stroke: #880E41;
+                    stroke-width: 2px;
+                    stroke-dasharray: 400;
+                    stroke-dashoffset: 400;
+                    animation: ani2 2s infinite linear alternate-reverse;
+                }
+                @keyframes ani2 {
+                    0%   {stroke-dashoffset: 400;}
+                    100% {stroke-dashoffset: 0;}
+                }
+                .ani3 {
+                    animation: ani3 1s infinite linear alternate-reverse;
+                    stroke-dasharray: 230px;
+                    stroke-dashoffset: 230px;
+                }
+                @keyframes ani3 {
+                    0%   {stroke-dashoffset: 230px;}
+                    100% {stroke-dashoffset: 0;}
+                }
+                .ani4 {
+                    animation: ani4 1s infinite linear alternate-reverse;
+                    stroke-dasharray: 605px;
+                    stroke-dashoffset: 605px;
+                }
+                @keyframes ani4 {
+                    0%   {stroke-dashoffset: 605px;}
+                    100% {stroke-dashoffset: 0;}
+                }
+                .ani5 {
+                    animation: ani5 1s infinite linear alternate-reverse;
+                    stroke-dasharray: 411px;
+                    stroke-dashoffset: 411px;
+                }
+                @keyframes ani5 {
+                    0%   {stroke-dashoffset: 411px;}
+                    100% {stroke-dashoffset: 0;}
+                }
+                .ani6 {
+                    animation: ani6 1s infinite linear alternate-reverse;
+                    stroke-dasharray: 614px;
+                    stroke-dashoffset: 614px;
+                }
+                @keyframes ani6 {
+                    0%   {stroke-dashoffset: 614px;}
+                    100% {stroke-dashoffset: 0;}
+                }
+            </style>
+            <div class="bs-docs-section">
+                <h2 id="intro8" class="page-header">애니메이션</h2>
+                <div class="sample">
+                    <h3><span></span><em class="sr-only">svg</em></h3>
+                    <div class="svgBox svg8">
+                        <svg>
+                            <rect class="ani1"></rect>
+                        </svg>
+                        <svg>
+                            <rect class="ani2"></rect>
+                        </svg>
+                        <svg style="background: #E3F3FD">
+                            <path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/>
+                        </svg>
+                        <svg style="background: #E3F3FD">
+                            <path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+                            c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+                            c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+                            c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/>
+                        </svg>
+                        <svg style="background: #E3F3FD">
+                            <path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+                            s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+                            c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/>
+                        </svg>
+                        <svg style="background: #E3F3FD">
+                            <path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+                            c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+                            c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+                            z"/>
+                        </svg>
+                    </div>
+                </div>
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg8"&gt;
+&lt;svg&gt;
+    &lt;rect class="ani1"&gt;&lt;/rect&gt;
+&lt;/svg&gt;
+&lt;svg&gt;
+    &lt;rect class="ani2"&gt;&lt;/rect&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+    c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+    c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+    c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+    s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+    c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/&gt;
+&lt;/svg&gt;
+&lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+    c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+    c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+    z"/&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <!-- //Intro8 --> 
+
+            <iframe height="500" style="width: 100%;" scrolling="no" title="Text-Animation" src="https://codepen.io/mbynae/embed/mdLeWNj?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/mbynae/pen/mdLeWNj">
+                Text-Animation</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

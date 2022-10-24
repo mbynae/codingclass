@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 04</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+
+        .sebang {
+            font-family: 'SebangGothic';
+            font-weight: 400;
+        }
+        .squeare {
+            font-family: 'NanumSquare';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;    /* 이미지는 인라인 구조기 때문에 여백이 생기는데 그걸 제거해주는 태그 */
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > h2.tit {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .section > h2.tit span {
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-family: 'SebangGothic';
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+
+        /* cardType 04 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;;
+        }
+        .card.first {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 30px;
+            position: relative;
+        }
+        .card.first::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            left: 0;
+            top: -55%;
+        }
+        .card.first::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .card.first .card__header {
+            width: 68%;
+        }
+        .card.first .card__contents {
+            width: 30%;
+            position: relative;
+        }
+        .card.first .card__contents .sub {
+            font-size: 14px;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .card.first .card__contents .title {
+            font-size: 36px;
+            line-height: 1.3;
+            word-break: keep-all;
+            margin-bottom: 50px;
+        }
+        .card.first .card__contents .desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .card.first .card__contents .more {
+            display: none;
+        }
+        .card {
+            width: 24%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card__header {
+            width: 28%;
+        }
+        .card__contents {
+            width: 68%;
+        }
+        .card__contents .sub {
+            display: none;
+        }
+        .card__contents .title {
+            font-family: 'SebangGothic';
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .card__contents .desc {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+        .card__contents .more {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType04" class="card__wrap section squeare">
+        <h2 class="tit"><span>Fruit</span></h2>
+        <div class="card__inner container">
+            <article class="card first">
+                <figure class="card__header">
+                    <img src="img/card_bg_04_big01.jpg" alt="fruit">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Fruit</span>
+                    <h3 class="title">새콤 달콤 최고의 과일 네가지!  </h3>
+                    <p class="desc">
+                        열대 과일의 계절이 돌아왔습니다. 
+                        모두가 즐기며 몸에도 좋은 음식이자, 각종 요리의 
+                        재료로도 쓰이는  최고의 향신료입니다!
+                    </p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg_04_small02.jpg" alt="fruit">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Fruit</span>
+                    <h3 class="title">새콤 달콤 최고의 과일 네가지!  </h3>
+                    <p class="desc">
+                        열대 과일의 계절이 돌아왔습니다. 
+                        모두가 즐기며 몸에도 좋은 음식이자, 각종 요리의 
+                        재료로도 쓰이는  최고의 향신료입니다!
+                    </p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg_04_small03.jpg" alt="fruit">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Fruit</span>
+                    <h3 class="title">새콤 달콤 최고의 과일 네가지!  </h3>
+                    <p class="desc">
+                        열대 과일의 계절이 돌아왔습니다. 
+                        모두가 즐기며 몸에도 좋은 음식이자, 각종 요리의 
+                        재료로도 쓰이는  최고의 향신료입니다!
+                    </p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg_04_small04.jpg" alt="fruit">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Fruit</span>
+                    <h3 class="title">새콤 달콤 최고의 과일 네가지!  </h3>
+                    <p class="desc">
+                        열대 과일의 계절이 돌아왔습니다. 
+                        모두가 즐기며 몸에도 좋은 음식이자, 각종 요리의 
+                        재료로도 쓰이는  최고의 향신료입니다!
+                    </p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg_04_small05.jpg" alt="fruit">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Fruit</span>
+                    <h3 class="title">새콤 달콤 최고의 과일 네가지!  </h3>
+                    <p class="desc">
+                        열대 과일의 계절이 돌아왔습니다. 
+                        모두가 즐기며 몸에도 좋은 음식이자, 각종 요리의 
+                        재료로도 쓰이는  최고의 향신료입니다!
+                    </p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

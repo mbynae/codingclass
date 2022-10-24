@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록/인라인 구조</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">블록/인라인 구조</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">블록 구조/ 인라인 구조</h2>
+
+            <h3 class="t_tit2">블록 구조</h2>
+            <p class="t_desc2">
+                블록 요소는 기본적으로 줄 바꿈이 일어나는 형태로 영역의 너비가 상위 영역의 전체 너비만큼 만들어지는 형태입니다. 
+                블록 요소에는 일부를 제외한 블록 요소를 포함하고, 인라인 요소까지 포함 가능합니다. 
+            </p>
+
+            <h3 class="t_tit2">인라인 구조</h2>
+            <p class="t_desc2">
+                인라인 요소는 글자와 같이 옆으로 나열되는 형태로 줄 바꿈이 일어나지 않는 요소입니다. 인라인은 안의 글자와 같은 내용 길이에 맞게 크기를 차지하는 성질이 있으며,
+                width, height, margin(top,bottom) 등 box관련 속성이 적용이 안됩니다.
+            </p>
+
+            <h3 class="t_tit2">인라인-블록 구조</h2>
+            <p class="t_desc2">
+                옆으로 나열되는 성격을 가진 인라인 속성과 폭을 가지는 스타일이 모두 적용되는 블록 속성 두 가지 모두의 성질을 가진 구조입니다.
+            </p>
+
+            <h4 class="t_tit2" style="font-size: 20px; margin-top: 20px;">▶ 블록 구조를 갖는 태그</h2>
+
+            <div style="border: 1px solid #000; padding: 10px 0 0 10px;">
+                <p class="t_desc" style="font-size: 17px; font-weight: 700; line-height: 1.6;">
+                    div, p, h1~h6, ul, li, ol, table, form, section, footer 등
+                </p>
+            </div>
+
+            <h2 class="t_tit2" style="font-size: 20px; margin-top: 20px;">▶ 인라인 구조를 갖는 태그</h2>
+
+            <div style="border: 1px solid #000; padding: 10px 0 0 10px;">
+                <p class="t_desc" style="font-size: 17px; font-weight: 700; line-height: 1.6;">
+                    span, a, em, i, strong, b, del, ins, sub, sup, textarea 등
+                    
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

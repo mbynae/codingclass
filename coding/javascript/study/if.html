@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 제어하기</title>
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>    
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+                <li><a href="element.html">요소 선택</a></li>  
+                <li><a href="join_push_pop.html">join/push/pop</a></li>  
+                <li><a href="quiz01.html">퀴즈 만들기01</a></li>  
+                <li><a href="quiz02.html">퀴즈 만들기02</a></li>  
+                <li><a href="quiz03.html">퀴즈 만들기03</a></li>  
+                <li><a href="quiz04.html">퀴즈 만들기04</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <li><a href="#sample01">01. if문</a></li>
+                <li><a href="#sample02">02. if문 생략</a></li>
+                <li><a href="#sample03">03. 다중 if문</a></li>
+                <li><a href="#sample04">04. 중첩 if문</a></li>
+                <li><a href="#sample05">05. 삼항 연산자</a></li>
+                <li><a href="#sample06">06. switch문</a></li>
+                <li><a href="#sample07">07. break문</a></li>
+                <li><a href="#sample08">08. continue문</a></li>
+            </ul>
+        </div>
+        <div class="main_sample">
+            <div class="document">
+                <!-- 01. if문 -->
+                <div id="sample01" class="sample">
+                    <h3>01. if문</h3>
+                    <p>
+                        변수는 데이터를 저장하는 저장소 입니다.
+                        이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">if(1){   //if문은 참 거짓을 판별할 수 있다 조건식에 무엇을 넣으면 뭐가 나오는지 아는게 중요
+    document.write("실행되었습니다(true).");   
+} else {
+    document.write("실행되었습니다(false).");
+}
+</code></pre>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample01_result">
+                                <script>
+                                {
+                                    if(1){ 
+                                        document.write("실행되었습니다(true).");   
+                                    } else {
+                                        document.write("실행되었습니다(false).");
+                                    }
+                                }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--02. if문 생략  -->
+                <div id="sample02" class="sample">
+                    <h3>02. if문 생략</h3>
+                    <p>
+                        if문은 생략해서 줄여 쓸 수도 있습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+
+if(num) document.write("실행되었습니다(true).")
+else document.write("실행되었습니다(false).")
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample02_result">
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        if(num) document.write("실행되었습니다(true).")
+                                        else document.write("실행되었습니다(false).")
+                                        
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!--03. 다중 if문-->
+                <div id="sample03" class="sample">
+                    <h3>03. 다중 if문</h3>
+                    <p>
+                        if문은 여러개의 조건문을 넣어 도출될 값을 여러개로 지정할 수 있습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    const num = 100;
+
+    if( num == 90 ){
+        document.write("실행되었습니다(num==90)");
+    } else if( num == 100 ){
+        document.write("실행되었습니다(num==90)");
+    } else if( num == 110 ){
+        document.write("실행되었습니다(num==90)");
+    } else if( num == 120 ){
+        document.write("실행되었습니다(num==90)");
+    } else {
+        document.write("실행되었습니다(num==값이 없음)");
+    }
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample03_result">
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        if( num == 90 ){
+                                            document.write("실행되었습니다(num==90)");
+                                        } else if( num == 100 ){
+                                            document.write("실행되었습니다(num==90)");
+                                        } else if( num == 110 ){
+                                            document.write("실행되었습니다(num==90)");
+                                        } else if( num == 120 ){
+                                            document.write("실행되었습니다(num==90)");
+                                        } else {
+                                            document.write("실행되었습니다(num==값이 없음)");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!--04. 중첩 if문-->
+                <div id="sample04" class="sample">
+                    <h3>04. 중첩 if문</h3>
+                    <p>
+                        if문 안에 if문을 넣어 여러개의 조건을 거쳐 결과값을 도출 할 수 도 있습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    const num = 100;
+
+    if( num == 100 ){
+        document.write("실행되었습니다.(1)");
+        if ( num == 100){
+            document.write("실행되었습니다.(2)")
+            if ( num == 100){
+                document.write("실행되었습니다.(3)");
+            }
+        }
+    } else {
+        document.write("실행되었습니다.(4)");
+    }
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample04_result">
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        if( num == 100 ){
+                                            document.write("실행되었습니다.(1)");
+                                            if ( num == 100){
+                                                document.write("실행되었습니다.(2)")
+                                                if ( num == 100){
+                                                    document.write("실행되었습니다.(3)");
+                                                }
+                                            }
+                                        } else {
+                                            document.write("실행되었습니다.(4)");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- if문 예제1 -->
+                <h3 class="t_tit3" style="margin-top: 30px">[예제 ex3-15(교제 342page)]</h3>
+                <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;if 문&lt;/title&gt;
+    &lt;script&gt;
+        var classification = prompt('아동, 청소년, 성인 중 선택 입력', '');
+        switch (classification) {
+            case '아동':
+                classification += ': 입장료 무료';
+            case '청소년':
+                classification += ': 입장료 2,000원';
+                break;
+            case '성인':
+                classification += ': 입장료 5,000원';
+                break;
+            default:
+                classification += '입력 값을 다시 확인하세요.';
+        }
+        document.write(classification);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <div class="result">
+                    <p><a href="answer/ex3-15.html" target="_blank"><u>결과보기 클릭</u></a></p>
+                </div>
+
+                <!-- if문 예제2 -->
+                <h3 class="t_tit3">[if문 예제 (교제 343page 예제 ex3-16)]</h3>
+                <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;if 문&lt;/title&gt;
+    &lt;script&gt;
+        var html = Number(prompt('html 점수입력', ''));
+        var css = Number(prompt('css 점수입력', ''));
+        var javascript = Number(prompt('javascript 점수입력', ''));
+        var ave = (html + css + javascript) / 3;
+        var comment;
+        if (avg &gt;= 60) {
+            if (htmle &lt; 40) {
+                comment = 'HTML' + '40점 미만 불합격';
+            } else if (css &lt; 40) {
+                comment = 'CSS' + '40점 미만 불합격';
+            } else if (javascript &lt; 40) {
+                comment = 'javascript' + '40점 미만 불합격';
+            } else {
+                comment = '평균' + avg + '점 합격';
+            }
+        } else {
+            comment = '평균' + avg + '점 불합격';
+        }
+        document.write(comment);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <div class="result">
+                    <p><a href="answer/ex3-16.html" target="_blank"><u>결과보기 클릭</u></a></p>
+                </div>
+                
+
+                <hr>
+             
+                <!--05. 삼항 연산자-->
+                <div id="sample05" class="sample">
+                    <h3 style="margin-top: 40px;">05. 삼항 연산자</h3>
+                    <p>
+                        조건부 연산자(삼항 연산자)는 조건이 성립시 연산을 하는 방식이며 회원가입 등의 소스에서 자주 쓰입니다.<br>
+                        조건부 연산자는 줄여 쓸 수 있으며 소스가 복잡해 질수록 줄여 쓰는 방식이 더 효과적입니다. 
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    const num = 100;
+
+    //num의 값이 100이면 true를 출력하고 아니면 false를 출력하세요
+    if( num == 100){
+        document.write("실행되었습니다(true).");
+    } else {
+        document.write("실행되었습니다(false).");
+    }
+
+    //위의 것을 한줄로 생략한 방식 (소스가 복잡해지면 이게 더 좋음)
+    (num == 100) ? document.write("실행되었습니다(true).") : document.write("실행되었습니다(false).");
+
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample05_result">
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        //num의 값이 100이면 true를 출력하고 아니면 false를 출력하세요
+                                        if( num == 100){
+                                            document.write("실행되었습니다(true).");
+                                        } else {
+                                            document.write("실행되었습니다(false).");
+                                        }
+
+                                        //위의 것을 한줄로 생략한 방식 (소스가 복잡해지면 이게 더 좋음)
+                                        (num == 100) ? document.write("실행되었습니다(true).") : document.write("실행되었습니다(false).");
+
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!--06. switch문-->
+                <div id="sample06" class="sample">
+                    <h3 style="margin-top: 40px;">06. switch문</h3>
+                    <p class="t_desc">
+                        switch문은 다중 if문과 비슷하나 if문과 다르게 특정 조건에 만족했을 경우 블록을 스스로 빠져나가지 못합니다.
+                        이 때문에 <i>"break"</i>를 주어 제어해야 합니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    const num = 100;
+
+    switch( num ){
+        case 100 : 
+            document.write("실행되었습니다.(num==100)");
+            break;
+        case 110 : 
+            document.write("실행되었습니다.(num==100)");
+            break;
+        case 120 : 
+            document.write("실행되었습니다.(num==100)");
+            break;     
+        case 130 : 
+            document.write("실행되었습니다.(num==100)");
+            break;            
+        default :
+            document.write("실행되었습니다.(num==값이 없음)");
+    }
+}
+</code></pre>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample0_result">
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        switch( num ){
+                                            case 100 : 
+                                                document.write("실행되었습니다.(num==100)");
+                                                break;
+                                            case 110 : 
+                                                document.write("실행되었습니다.(num==100)");
+                                                break;
+                                            case 120 : 
+                                                document.write("실행되었습니다.(num==100)");
+                                                break;     
+                                            case 130 : 
+                                                document.write("실행되었습니다.(num==100)");
+                                                break;            
+                                            default :
+                                                document.write("실행되었습니다.(num==값이 없음)");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!--07. break문-->           
+                <div id="sample07" class="sample">
+                    <h3 style="margin-top: 40px;">07. break문</h3>
+                    <p>
+                        break는 조건문에서 조건을 정해줬을때 거기까지만 실행하도록 제어해주는 태그입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    for( let i=1; i&lt;=20; i++){ 
+        document.write(i);
+        if( i == 10 ){        // = : 오른쪽에 있는걸 왼쪽으로 넣기, == : 둘이 같다, === 함수값인지 무엇인지까지 전부 같은지 확인
+            break;  //break는 조건문에서 조건을 정해줬을때 거기까지만 실행하도록 제어해주는 태그
+        }
+    }   
+}
+</code></pre>
+                        </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample07_result">
+                                <script>
+                                    {
+                                        for( let i=1; i<=20; i++){ 
+                                            document.write(i);
+                                            if( i == 10 ){   
+                                                break; 
+                                            }
+                                        }   
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!--08. continue문-->           
+                <div id="sample08" class="sample">
+                    <h3 style="margin-top: 40px;">08. continue문</h3>
+                    <p>
+                        continue는 특정 조건을 만족했을 경우 계속 진행하도록 해주는 태그입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    for( let i=1; i&lt;=20; i++){ 
+        
+        if( i == 10 ){      
+            continue; 
+        } document.write(i);    //순서대로 처리하기 때문에 실행문이 위에 있을땐 10을 출력하나 아래에 있으면 출력하지 않음
+    }   
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample08_result">
+                                <script>
+                                    {
+                                        for( let i=1; i<=20; i++){ 
+                                            
+                                            if( i == 10 ){      
+                                                continue; 
+                                            } document.write(i);
+                                        }   
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- //main --> 
+
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer --> 
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+    <script>
+        // //(제어문 :조건문, 반복문, 중지, 건너뛰기)    //교제 340page
+        // // 01. if문
+        // {
+        //     //false, 0(false), 1>10(틀린 조건식 false), undefinded(false), null(false)
+        //     //true, 1(true), "0"(문자는 true), 0<10(맞는 조건식 true), [](배열 true), {}(객체 true)
+        //     if(1){   //if문은 참 거짓을 판별할 수 있다 조건식에 무엇을 넣으면 뭐가 나오는지 아는게 중요
+        //         document.write("실행되었습니다(true).");   
+        //     } else {
+        //         document.write("실행되었습니다(false).");
+        //     }
+        // }
+
+        // //02. if문 생략
+        // {
+        //     const num = 100;
+
+        //     if(num) document.write("실행되었습니다(true).")
+        //     else document.write("실행되었습니다(false).")
+            
+        // }
+
+        // //03. 다중 if문
+        // {
+        //     const num = 100;
+
+        //     if( num == 90 ){
+        //         document.write("실행되었습니다(num==90)");
+        //     } else if( num == 100 ){
+        //         document.write("실행되었습니다(num==90)");
+        //     } else if( num == 110 ){
+        //         document.write("실행되었습니다(num==90)");
+        //     } else if( num == 120 ){
+        //         document.write("실행되었습니다(num==90)");
+        //     } else {
+        //         document.write("실행되었습니다(num==값이 없음)");
+        //     }
+        // }
+
+        // // 04. 중첩 if문
+        // {
+        //     const num = 100;
+
+        //     if( num == 100 ){
+        //         document.write("실행되었습니다.(1)");
+        //         if ( num == 100){
+        //             document.write("실행되었습니다.(2)")
+        //             if ( num == 100){
+        //                 document.write("실행되었습니다.(3)");
+        //             }
+        //         }
+        //     } else {
+        //         document.write("실행되었습니다.(4)");
+        //     }
+        // }
+
+        // //05. 조건부 연산자(삼항 연산자)
+        // {
+        //     const num = 100;
+
+        //     //num의 값이 100이면 true를 출력하고 아니면 false를 출력하세요
+        //     if( num == 100){
+        //         document.write("실행되었습니다(true).");
+        //     } else {
+        //         document.write("실행되었습니다(false).");
+        //     }
+
+        //     //위의 것을 한줄로 생략한 방식 (소스가 복잡해지면 이게 더 좋음)
+        //     (num == 100) ? document.write("실행되었습니다(true).") : document.write("실행되었습니다(false).");
+
+        // }
+
+        // //06. switch문  //다중 if문과 비슷한 방식이지만 잘 쓰이진 않음. 다중 if문과 switch문을 서로 바꿀 줄 알아야 한다.
+        // {
+        //     const num = 100;
+
+        //     switch( num ){
+        //         case 100 : 
+        //             document.write("실행되었습니다.(num==100)");
+        //             break;
+        //         case 110 : 
+        //             document.write("실행되었습니다.(num==100)");
+        //             break;
+        //         case 120 : 
+        //             document.write("실행되었습니다.(num==100)");
+        //             break;     
+        //         case 130 : 
+        //             document.write("실행되었습니다.(num==100)");
+        //             break;            
+        //         default :
+        //             document.write("실행되었습니다.(num==값이 없음)");
+        //     }
+        // }
+
+        // //07. while문   //while문과 for문을 서로 바꿔 쓸 수 있어야 함
+        // {
+        //     let num = 1;
+
+        //     while( num <= 5){
+        //         document.write("실행되었습니다.");
+        //         num++;
+        //     }
+
+        //     // //for
+        //     // for (let i=0; i<=4; i++){
+        //     //     document.write("실행되었습니다");
+        //     // }
+        // }
+
+        // //08. do while문(반복문)    //while문은 조건을 먼저 계산하고 출력하는데 do while은 한번 출력 후 조건을 계산한다
+        // {
+        //     let num = 1;
+
+        //     do {
+        //         document.write("실행되었습니다2.");
+        //         num++;
+        //     } while (num <= 5);
+        // }
+
+        // //09 for문
+        // {
+        //     for( let i = 1; i<100; i++ ){
+        //         document.write(i++,"실행되었습니다.")
+        //     }
+
+        //     //이전에 배운 for문     위의 내용이랑 비교하여 알아두기
+        //     // let num = [1,2,3,4,5,6];
+
+        //     // for(let i =0; i<num.length; i++){
+        //     //     document.write(num[i],"실행되었습니다.");
+        //     // }
+        // }
+        // document.write("<br><br>");
+        // //10. 중첩 for문
+        // {
+        //     for( let i=1; i<=2; i++){
+        //         document.write(i + "실행");
+        //         for( let j=1; j<=5; j++){
+        //             document.write(j + "실행");     //i가 한번 실행되면 j가 5번 실행됨
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+</html>

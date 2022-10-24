@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지/텍스트 유형01</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <style>
+        .desc {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 이미지/텍스트 유형입니다. 
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">○ 이미지/텍스트 유형 01</h2>
+            <p class="t_desc">
+                이미지/텍스트 유형은 한 아티클에 이미지 구역과 텍스트 구역이 조합되어 있는 유형입니다.
+            </p>
+            <div class="t_iframe" style="min-height: 400px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="500" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D873%253A1225" allowfullscreen></iframe>
+            </div>
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">▶ HTML 파트</h3>
+             <div class="t_code">
+<pre><code class="language-css">&lt;section id="imgTextType" class="mgText__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;유용한 사이트 살펴보기&lt;/h2&gt;
+    &lt;div class="imgText__inner container"&gt;
+        &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;이미지 텍스트 유형01&lt;/span&gt;
+            &lt;h3&gt;유용한 사이트 살펴보기&lt;/h3&gt;
+            &lt;p&gt;
+                웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.
+            &lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt; 튜토리얼 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;웹폰트 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;CSS 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;WebGL 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Youtube 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img1"&gt;
+            &lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img2"&gt;
+            &lt;a href="/" class="blue"&gt;튜토리얼 사이트&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <div class="desc">
+                텍스트 구역과 2개의 이미지 구역을 나누어 총 3가지 구역을 설정합니다.<br>
+                이미지의 경우 CSS를 이용해 배경으로 넣기 위해 각각의 이미지 구역에 클래스를 지정하였습니다. 
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">▶ CSS 파트</h3>
+            <div class="t_code">
+<pre><code class="language-css">/* fonts */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+.nexon {
+font-family: 'NexonLv1Gothic';
+font-weight: 400;
+}
+/* reset */
+* {
+margin: 0;
+padding: 0;
+}
+a {
+text-decoration: none;
+color: #000;
+}
+img {
+width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+font-weight: normal;
+}
+em, i, address {
+font-style: normal;
+}
+/* common */
+.container {
+width: 1160px;
+padding: 0 20px;
+margin: 0 auto;
+min-width: 1160px;
+}
+.section {
+padding: 120px 0;
+}
+.section > h2 {
+font-size: 50px;
+line-height: 1;
+text-align: center;
+margin-bottom: 20px;
+}
+.section > p {
+font-size: 22px;
+font-weight: 300;
+color: #666;
+text-align: center;
+margin-bottom: 70px;
+}
+.gray {
+background-color: #f5f5f5;
+}
+.section > span {
+display: block;
+text-align: center;
+font-size: 16px;
+text-decoration: underline;
+text-underline-position: under;
+margin-bottom: 16px;
+}
+.mb70 {
+margin-bottom: 70px !important;
+}
+/* 블라인드 효과 */
+.blind{
+position: absolute;
+clip: rect(0 0 0 0);
+width: 1px;
+height: 1px;
+margin: -1px;
+overflow: hidden
+}
+/* 목록 초기화 */
+li,
+ol,
+ul {
+list-style: none;
+}
+
+/* imgTextType */
+.imgText__inner {
+display: flex;
+justify-content: space-between;
+}
+.imgText__inner > div {
+width: 32%;
+height: 500px;
+}
+.imgText__txt span {
+font-size: 16px;
+color: #666;
+text-decoration: underline;
+text-underline-position: under;
+margin-bottom: 20px;
+display: block;
+}
+.imgText__txt h3 {
+font-size: 50px;
+font-weight: 300;
+word-break: keep-all;
+line-height: 1.4;
+margin-bottom: 20px;
+}
+.imgText__txt p {
+font-size: 18px;
+font-weight: 300;
+line-height: 1.5;
+margin-bottom: 10px;
+color: #666;
+}
+.imgText__txt ul {
+font-size: 18px;
+font-weight: 300;
+line-height: 1.6;
+}
+.imgText__txt ul li {
+position: relative;
+padding-left: 20px;
+}
+.imgText__txt ul li a {
+color:#666;
+}
+.imgText__txt ul li::before {
+content: '';
+width: 5px;
+height: 5px;
+border-radius: 50%;
+position: absolute;
+left: 5px;
+top: 9px;
+background: #666;
+}
+.imgText__img {
+border-radius: 10px;
+position: relative;
+}
+.imgText__img  a {
+position: absolute;
+left: 30px;
+bottom: 30px;
+background-color: #7c2b39;
+color: #fff;
+padding: 10px 30px;
+font-size: 18px;
+border-radius: 30px;
+display: inline-block;
+}
+.imgText__img  a.blue {
+background-color: #2b387c;
+}
+.imgText__img.img1 {
+background: url(img/imgText_bg01.jpg) no-repeat center / cover;
+}
+.imgText__img.img2 {
+background: url(img/imgText_bg02.jpg) no-repeat center / cover;
+}
+</code></pre>
+           </div>
+           <div class="desc">
+               이번 유형은 기존과 다르게 큰 제목 부분을 blind 효과로 가렸습니다.  blind 효과를 잘 활용하면 웹표준을 준수할 수 있습니다.
+           </div>
+           <div class="desc">
+                css는 공통 부분을 잘 활용하면 상당히 편해집니다. 또한 css를 부분 별로 나누어 외부 시트를 만들면 필요한 부분만 적용해 전반적인 작업이 빨라질 수 있습니다.
+            </div>
+           <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 10px;">※ 텍스트 밑줄 효과 </h3>
+           <div class="t_box" >
+                <strong>text-decoration</strong><br>
+                선으로 텍스트를 꾸미는 속성입니다. <br><br>
+                
+                none : 선을 만들지 않습니다.<br>
+                line-through : 글자 중간에 선을 만듭니다.<br>
+                overline : 글자 위에 선을 만듭니다.<br>
+                underline : 글자 아래에 선을 만듭니다.<br>
+                initial : 기본값으로 설정합니다.<br>
+                inherit : 부모 요소의 속성값을 상속받습니다.<br><br>
+
+                text-decoration: underline 으로 텍스트 밑 줄을 그을 시 텍스트에 딱 붙어서 그어집니다. 이런 문제를 해결하기 위한 속성 또한 존재합니다.<br><br>
+
+                <strong>text-underline-position: under</strong><br>
+                텍스트의 밑 줄 위치를 텍스트의 약간 밑으로 내립니다.
+           </div>
+
+
+
+            <h3 class="t_tit2">※ 완성된 형태</h3>
+            <div class="t_iframe" style="min-height: 800px; margin-top: 20px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/site/imgTextType/imgTextType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/imgTextType/imgTextType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

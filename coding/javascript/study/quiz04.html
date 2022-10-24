@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 만들기02</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+                <li><a href="element.html">요소 선택</a></li>  
+                <li><a href="join_push_pop.html">join/push/pop</a></li>  
+                <li><a href="quiz01.html">퀴즈 만들기01</a></li>  
+                <li><a href="quiz02.html">퀴즈 만들기02</a></li>  
+                <li><a href="quiz03.html">퀴즈 만들기03</a></li>  
+                <li><a href="quiz04.html">퀴즈 만들기04</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기</h2>
+            <p class="t_desc2">
+                자바스크립트 함수를 활용하여 퀴즈 만들기입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">퀴즈 만들기 04</h3>
+            <p class="t_box">이번 퀴즈는 객관식 유형으로 사용자가 선택한 답안을 정답과 비교하여 출력해주는 방식입니다.</p>  
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/quizEffect04.html" frameborder="0"></iframe>
+            </div>
+            <p class="t_desc" style="margin-top: 10px;">
+                이번 퀴즈는 객관식이기 때문에 사용자가 선택하기 위한 보기 문항과 체크 방식을 만들고 보기 문항에 선택자를 지정해야합니다.<br>
+                요소 매서드와 이벤트 매서드 역시 사용자가 선택한 문항을 매치하여 결과를 출력하는 방식으로 만들어야 합니다.  
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 보기 문항 만들기</h3>
+            <div class="t_code">
+<pre><code>//CSS
+.quiz__selects {
+    margin: 5px 0;
+}
+.quiz__selects label {
+    display: flex;
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span {
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: "NixgonFonts";
+    font-weight: 700;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 15px;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0px 0px 0px 4px #eb7c32;      /* 박스에 그림자를 주는 태그 순서대로 x축 y축 블러효과 거리 */
+    transition: all 0.25s;      /* 시간차를 두고 서서히 반응하도록 해주는 태그 */
+}
+.quiz__selects label input:checked + span {          
+    background-color: #f3e1d5;
+}  /* 대등한 관계일때 +를 넣어서 적용 가능 */
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0px 0px 0px 10px #eb7c32;
+}
+
+
+//HTML
+&lt;div class="quiz__answer"&gt;
+    &lt;div class="quiz__selects"&gt;
+        &lt;label for="select1"&gt;
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;   &lt;!-- name은 input에서만 쓸 수 있다. --&gt;
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;   
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;   
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;   
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                객관식 문항을 만들어 주기 위해 'label'과 'input'을 사용하여 각 문항과 이름을 매칭해주었습니다.<br><br>
+                input의 'radio'는 문항을 중복되지 않게 체크할 수 있는 태그이지만 호환성을 위해 css의 가상요소를 활용하여 새로 만들었으며,
+                사용자가 클릭시 체크를 한 것을 javascript에 알려줄 수 있도록 하였습니다.  
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 문제 정보</h3>
+            <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                   //퀴즈 종류   //문제가 여러개라 "All"을 넣음
+const quizNumber = document.querySelector(".quiz__question .number");     //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");           //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");     //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");       //정답 결과
+const quizView = document.querySelector(".quiz__view");                   //강아지
+const quizSelects = document.querySelector(".quiz__selects");             //객관식 보기
+const quizChoice = quizSelects.querySelectorAll(".choice");               //객관식 보기 (문제가 많아지면 choice가 너무 많아지기 때문에 효율적으로 찾기 위해 위치를 document가 아닌 좀 더 한정적인 부분으로 정해줌)
+const quizSelect = quizSelects.querySelectorAll(".select");               //객관식 보기
+
+//문제 정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2022년 01회",
+        answerNum: "1",
+        answerAsk: "전자메일 서비스에 연관된 프로토콜(Protocol)이 아닌 것은?" ,
+        answerChoice: ["IMAP", "NNTP", "POP3", "SMTP"],
+        answerResult: "2",
+        answerEx : "NNTP는 뉴스 서버 간에 유즈넷 뉴스 기사(netnews)를 전송하고 최종 사용자 클라이언트 애플리케이션에 의해 기사를 구독, 게시할 수 있게 하기 위한 애플리케이션 프로토콜입니다."
+    }
+];
+</code></pre>
+            </div>
+            <p class="t_desc">
+                주관식 유형과 다르게 보기 문항을 만들었기 때문에 선택자가 추가됐으며 문제가 4지선다인 만큼 문항쪽 선택자는 'querySelectorAll'을 사용합니다.<br><br>
+                이번 유형에는 오답 시 해설도 넣어보겠습니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 문제 출력</h3>
+            <div class="t_code">
+<pre><code class="language-js">function updateQuiz(){      //문제 출력이 여러개니까 하나로 묶어주기 위해 함수안에 넣어버림
+        
+    //문제 출력
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx;
+
+    //보기 출력
+    for(let i=0; i&lt;4; i++){
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    };
+    
+    //해설 숨기기
+    quizResult.style.display = "none";
+};
+updateQuiz();   //실행문
+</code></pre>
+            </div>
+            <p class="t_desc">
+               함수와 출력문이 늘어날수록 충돌날 가능성이 높아질 수 있기 때문에 미연에 방지하면서 가독성도 높히기 위해 
+               비슷한 부분을 함수로 하나로 묶어주는게 좋습니다.<br><br>
+               
+               각 보기에 들어갈 문항을 출력해 주기 위해 반복문을 사용하는데 이번엔 한 문제만 만들기 때문에 for문도 간단하게 한번만 사용합니다.<br>
+               문제가 여러개라면 다중 for문을 사용해야 합니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">○ 정답 확인 및 출력</h3>
+            <div class="t_code">
+<pre><code class="language-js">//정답 확인
+function answerQuiz(){
+    
+    //사용자 선텍 답안 == 문제 정답
+    //사용자가 클릭한 input --> checked
+
+    for(let i=0; i&lt;quizSelect.length; i++){
+        if(quizSelect[i].checked == true){      //사용자가 체크한걸 확인하기 위한 작업 (보기에 체크가 된 상태)
+            //체크된 번호 == 문제 번호 확인
+            if(quizSelect[i].value == quizInfo[0].answerResult){
+                // alert("정답입니다.")
+                quizView.classList.add("like");
+            } else {
+                // alert("틀렸습니다.")
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+                quizConfirm.style.display = "none";
+            }
+        }
+    }
+};
+
+//정답 클릭
+quizConfirm.addEventListener("click", answerQuiz);      //만들어진 함수를 안에 넣을 수 있다.
+</code></pre>
+            </div>
+            <p class="t_desc">
+               객관식 유형은 클릭시 그대로 정답을 확인해주는 주관식 유형보다 더 복잡한데 사용자가 클릭한 문항을 체크하고 정답과 매칭하는 작업을 해야하기 때문입니다.<br>
+               보기의 문항을 체크하기 위해 if문을 활용하여 if(quizSelect[i].checked == true) 형태를 썼는데 css에서 만들어 놓은 체크 확인을 
+               여기 자바스크립트에 매칭하여 선택이 맞다면 true, 아니라면 false를 구분하여 다음 단계로 넘어가게 합니다.<br><br>
+
+               그 다음 단계는 true로 매칭된 문항을 정답과 확인하여 정답인지 오답인지를 출력하는 단계입니다.
+               각 문항마다 value값으로 문항 번호에 맞는 1~4를 넣었으며 if문 안에 다시 if문을 사용하여 사용자가 택한 문항의 value값과 정답의 번호를 매칭하는 작업을 합니다.<br>
+               이 후 주관식 유형과 똑같이 정답과 오답을 알려주는 애니메이션을 넣으면 구조가 완성됩니다.<br><br>
+               
+               마지막으로 정답 클릭 시 행동을 해주는 이벤트 요소를 함수 밖으로 뺐는데 이런식으로 함수를 외부에 쓰고 함수 이름을 가져오는 형태로도 적용할 수 있습니다. 
+
+            </p>
+
+
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/quizEffect04.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

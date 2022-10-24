@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 만들기05</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+                <li><a href="element.html">요소 선택</a></li>  
+                <li><a href="join_push_pop.html">join/push/pop</a></li>  
+                <li><a href="quiz01.html">퀴즈 만들기01</a></li>  
+                <li><a href="quiz02.html">퀴즈 만들기02</a></li>  
+                <li><a href="quiz03.html">퀴즈 만들기03</a></li>  
+                <li><a href="quiz04.html">퀴즈 만들기04</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기</h2>
+            <p class="t_desc2">
+                자바스크립트 함수를 활용하여 퀴즈 만들기입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">퀴즈 만들기 05</h3>
+            <p class="t_box">
+                이번 퀴즈는 <a href="https://piowm123.tistory.com/23" target="_blank" style="text-decoration: underline">퀴즈 유형04</a>의 
+                심화 버전으로 여러개의 객관식 문항 만들기 입니다.
+            </p>  
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/quizEffect05.html" frameborder="0"></iframe>
+            </div>
+            <p class="t_desc" style="margin-top: 10px;">
+                이번 유형은 모든 문제를 html이 아닌 스크립트로 출력하고 추가로 전체 문제 수와 정답인 문제 수를 알려주는 방식이 추가됩니다.  
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">1. 문제 정보</h3>
+            <div class="t_code">
+<pre><code>const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2009년 05회",
+        answerNum: "1",
+        answerAsk: "다음 중 커뮤니케이션 디자인의 설명으로 틀린 것은?" ,
+        answerChoice: {
+            1: "라틴어 'Communicare'를 어원으로 한다.",
+            2: "두 개 이상의 개체가 기호를 매개로 무언가를 공유하는 것이다.",
+            3: "운동과 시선을 중시하는 디자인이다.",
+            4: "사람과 사람사이에 기호에 의해서 의미를 전달하는 과정이다.",
+        },
+        answerResult: "3",
+        answerEx : "3번. 커뮤니케이션은 대화나 상호작용을 의미합니다. 따라서 3번은 커뮤니케이션으로 보기 힘듭니다."
+    },
+    {
+        answerType: "웹디자인기능사 2009년 05회",
+        answerNum: "2",
+        answerAsk: "망막에서 일어나는 변화에 관계없이 그 사물에 대해 지속적으로 고정적인 인식을 하고 있는 현상은?" ,
+        answerChoice: {
+            1: "운동시",
+            2: "형태시",
+            3: "항상성",
+            4: "지각성",
+        },
+        answerResult: "3",
+        answerEx : "3번. 항상성이란 생체가 여러 가지 환경 변화에 대응하여 생명 현상이 제대로 일어날 수 있도록 일정한 상태를 유지하는 성질. 또는 그런 현상을 말합니다."
+    },
+    {
+        answerType: "웹디자인기능사 2009년 05회",
+        answerNum: "3",
+        answerAsk: "빅터 파파넥(Papanek victor)이 주장한 디자인의 복합 기능에 포함되지 않는 것은?" ,
+        answerChoice: {
+            1: "방법",
+            2: "연상",
+            3: "효과",
+            4: "미학",
+        },
+        answerResult: "3",
+        answerEx : "3번. 빅터 파파텍은 디자인계에 디자이너의 윤리의식과 사회적 책임으로써 디자인, 생태디자인의 개념을 도입하였으며, 6가지 디자인의 목적으로 용도, 필요성, 연상, 미학, 목적지향성, 방법 을 제시했습니다."
+    }
+]
+</code></pre>
+            </div>
+            <p class="t_desc">
+                자바 스크립트는 배열 안에 객체를 여러개 넣을 수 있으며 예시와 같이 중괄호와 중괄호를 ","로 구분합니다. 
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">2. 문제 출력</h3>
+            <div class="t_code">
+<pre><code>//문제 정보
+const quizInfo = [...
+
+//선택자
+const quizWrap = document.querySelector(".quiz__wrap");
+
+// 문제 출력
+const updateQuiz = () =&gt; {
+    const exam = [];
+
+    quizInfo.forEach((question, number) =&gt; {
+        exam.push(`
+            &lt;div class="quiz"&gt;
+                &lt;span class="quiz__type"&gt;${question.answerType}&lt;/span&gt;
+                &lt;h2 class="quiz__question"&gt;
+                    &lt;span class="number"&gt;${question.answerNum}. &lt;/span&gt;
+                    &lt;div class="ask"&gt;
+                        ${question.answerAsk}
+                    &lt;/div&gt;
+                &lt;/h2&gt;
+                &lt;div class="quiz__view"&gt;
+                    &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                    &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="quiz__answer"&gt;
+                    &lt;div class="quiz__selects"&gt;
+                        &lt;label for="select1${number}"&gt;
+                            &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt;   &lt;!-- name은 input에서만 쓸 수 있다. --&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select2${number}"&gt;
+                            &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt;   
+                            &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select3${number}"&gt;
+                            &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt;   
+                            &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select4${number}"&gt;
+                            &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt;   
+                            &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `);
+    });
+
+    exam.push(`
+        &lt;div class="quiz__confirm"&gt;
+            &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="ex"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    `);
+    quizWrap.innerHTML = exam.join('');
+};
+updateQuiz();
+</code></pre>
+            </div>
+            <p class="t_desc">
+                이번엔 문제가 들어가 틀을 구성하는 부분을 html이 아닌 스크립트에 넣고 출력시키는 방법입니다.<br>
+                문자열을 추가하는 방법은 배열 뒤에 하나 이상의 요소를 추가하는 push( ) 메소드를 사용합니다. 또한 메소드 안에 
+                "``"를 사용하면 태그를 활용할 수 있습니다.<br>
+            </p>
+            <p class="t_desc">
+                push( ) 메소드는 배열로 반환하기 때문에 요소마다 콤마가 적용됩니다. 콤마를 해제하기 위해선 
+                요소를 결합하여 문자열로 반환하는 join( ) 메소드 안에 ("")를 넣으면 됩니다.<br>
+                join( )과 push( ) 메소드에 대한 내용은 <a href="https://piowm123.tistory.com/28" target="_blank" style="text-decoration: underline">여기</a>를 참조하세요. 
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 18px; margin-top: 30px;">※ 템플릿 문자열</h3>
+            <p class="t_box">
+                &{변수}
+            </p>
+            <p class="t_desc">
+                템플릿 문자열은 문자열과 변수의 결합을 좀 더 편하게 하기 위한 방식입니다. 문자열 사이에 들어갈 변수 출력 내용을
+                &{변수}를 삽입하여 출력할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">3. 정답 확인</h3>
+            <div class="t_code">
+<pre><code>
+// 정답 확인
+const answerQuiz = () => {
+    const quizSelects = document.querySelectorAll(".quiz__selects");                    //객관식 보기
+
+    // 사용자가 체크한 보기 == 문제 정답
+    quizInfo.forEach((question, number) => {
+        const userSelector = `input[name=select${number}]:checked`;                     //사용자가 체크한 것
+        const quizSelectsWrap = quizSelects[number];                                    //전체 보기
+        const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;   // and 이후 빈괄호는 정답 체크를 안했을 때 오류나는 것을 방지하기 위해 넣음
+        const quizView = document.querySelectorAll(".quiz__view");                      // 강아지
+
+        console.log(userAnswer)
+        if(userAnswer == question.answerResult){
+            quizView[number].classList.add("like");                                                             // 일치한 개수를 하나씩 증가시켜 총 맞은 개수가 나옴
+
+    } else {
+        quizView[number].classList.add("dislike");
+        const divBox = document.createElement("div");                               // 이런식으로 태그 추가가 가능
+        quizSelectsWrap.appendChild(divBox).innerHTML = `&lt;p class="result"&gt;${question.answerEx}&lt;/p&gt;`;        // 틀린 것만 해설 나오게 해줌
+    }
+});
+
+// 정답 클릭
+document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+            <p class="t_desc">
+                문제 출력은 유형04와 다르게 forEach문을 사용하여 출력합니다.<br>
+                forEach의 index를 사용하여 각 문제의 보기를 구분하고 사용자가 문항을 해당 보기에 해당하는 밸류값(1~4)을 불러옵니다. 
+            </p>
+            <p class="t_desc">
+                if문을 이용하여 불러운 밸류 값이 정해놓은 정답(1~4)과 같으면 정답 화면을, 틀리면 오답 화면을 출력합니다.
+            </p>
+            <p class="t_desc">
+                또한 if문을 사용해서 틀린 부분을 출력할때 해설 객체를 출력하면 틀린 문항만 해설을 불러 올 수 있습니다.<br>
+                참고로 createElement는 태그 요소를 생성할 수 있으며, appendChild는 선택한 요소 안에 자식 요소를 추가해줍니다.
+                이것으로 html에 직접 틀을 잡지 않아도 내용을 첨가할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit3" style="font-size: 20px; margin-top: 30px;">4. 맞은 문항 수 출력</h3>
+            <div class="t_code">
+<pre><code>
+    //선택자
+    const quizWrap = document.querySelector(".quiz__wrap");
+    let quizScore = "";     // 맞은 갯수를 세기 위한 변수
+
+    // 정답 확인
+    const answerQuiz = () =&gt; {
+        const quizSelects = document.querySelectorAll(".quiz__selects");                    //객관식 보기
+
+        // 사용자가 체크한 보기 == 문제 정답
+        quizInfo.forEach((question, number) =&gt; {
+            const userSelector = `input[name=select${number}]:checked`;                     //사용자가 체크한 것
+            const quizSelectsWrap = quizSelects[number];                                    //전체 보기
+            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;   // and 이후 빈괄호는 정답 체크를 안했을 때 오류나는 것을 방지하기 위해 넣음
+            const quizView = document.querySelectorAll(".quiz__view");                      // 강아지
+
+            console.log(userAnswer)
+            if(userAnswer == question.answerResult){
+                quizView[number].classList.add("like");
+                quizScore++;                                                                // 일치한 개수를 하나씩 증가시켜 총 맞은 개수가 나옴
+
+            } else {
+                quizView[number].classList.add("dislike");
+                const divBox = document.createElement("div");                               // 이런식으로 태그 추가가 가능
+                quizSelectsWrap.appendChild(divBox).innerHTML = `&lt;p class="result"&gt;${question.answerEx}&lt;/p&gt;`;        // 틀린 것만 해설 나오게 해줌
+            }
+        });
+
+        //전체 문제 수
+        const totalBox = document.createElement("div");
+        quizWrap.appendChild(totalBox).innerHTML = `&lt;p class="ex_box"&gt;총 ${quizInfo.length}문제 중 &lt;strong&gt;${quizScore}개&lt;/strong&gt; 맞았습니다.&lt;/p&gt;`;
+        console.log(quizInfo.length);
+
+        //내가 맞춘 수
+        const goodBox = document.createElement("div");
+        if(quizScore &gt;= 40){
+            quizWrap.appendChild(goodBox).innerHTML = `&lt;p class="ex_box" style="font-weight: 700; color: green;&gt;합격입니다!&lt;/p&gt;`;
+        } else {
+            quizWrap.appendChild(goodBox).innerHTML = `&lt;p class="ex_box" style="font-weight: 700; color: red;"&gt;불합격입니다..&lt;/p&gt;`;
+        }
+    }
+</code></pre>
+            </div>
+            <p class="t_desc">
+                전체 문항수는 배열의 수를 나타내는 length로 나타낼 수 있으며, quizInfo.length를 사용하면 변수인 quizInfo안에 있는 배열 수,
+                즉 총 문제의 수를 출력이 가능합니다.
+            </p>
+            <p class="t_desc">
+                맞은 문항 수는 변수를 하나 만들어 if문의 정답 조건 안에 해당 변수를 1씩 추가시키면 마찬가지로 변수.length로 나타낼 수 있습니다.
+            </p>
+
+
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/quizEffect05.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

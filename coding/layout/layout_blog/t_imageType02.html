@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형02</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 이미지 안에 텍스트를 넣는 유형입니다. 
+            </p>
+            <p class="t_desc" style="margin-top: 15px;">
+                이미지 유형 01에 대해선 <a href="https://piowm123.tistory.com/42" target="_blank" style="text-decoration:underline" >이 곳</a>에서 보실 수 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">이미지 유형 사이트 만들기 02</h3>
+            <p class="t_desc" style="margin-top: 15px;">
+                3개의 이미지 안에 텍스트와 링크를 넣는 유형입니다.<br>
+                이번 유형은 이미지와 텍스트에 몇가지 효과가 추가되었습니다. 
+            </p>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D571%253A101" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">이미지 유형 02 코드</h3>
+
+             <div class="t_code">
+<pre><code class="language-css">//CSS 파트
+&lt;style&gt;
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .font {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 ,h3 ,h4 ,h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    img {
+        width: 100%;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section &gt; h2 {     /* &gt;는 바로 밑에 있는 자식을 의미 */
+        font-size: 50px;
+        line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section &gt; p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    /* blind : 텍스트를 안보이게 숨기는 방법 */
+    .blind {
+        position:absolute;
+        clip:rect(0 0 0 0);
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden;
+    }
+    
+    /* content */
+    .image__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .image {
+        width: 32%;
+        background-color: #ccc;
+        position: relative;
+        overflow: hidden;   /*밑의 호버 효과로 글이 내려갔을때 내려간 부위를 숨겨줌 */
+    }
+    .image__box {}
+    .image__box img {
+        vertical-align: top;    /* img는 인라인구조라 약간의 여백이 생기는데 그걸 제거해주는 방식 */
+        height: 100%;
+        transition: all 0.6s ease-in-out;   /* hover의 동작 조절 */
+    }
+    .image__desc {
+        position: absolute;
+        left: 0;
+        bottom: -100px;
+        width: 100%;
+        text-align: center;
+        backdrop-filter: blur(10px);    /* 블러효과 주는 방법 */
+        padding: 23px 20px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.1);
+        transition: all 0.5s ease-in-out;   /* hover의 동작 조절 */
+    }
+    .img1 .image__desc {background: rgba(0,0,0,0.1);}
+    .img2 .image__desc {background: rgba(0,0,0,0.1);}
+    .img3 .image__desc {background: rgba(0,0,0,0.1);}
+
+    .image:hover .image__desc {
+        bottom: 0;
+    }
+    .image:hover .image__box img {
+        transform: scale(1.03);     /* 마우스 올렸을때 이미지가 살짝 커지게 해줌 */
+    }
+    .image__desc .more:hover {
+        text-decoration: underline;
+    }
+    
+    .image__desc h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    .image__desc a {
+        font-size: 16px;
+        color: #fff;
+    }
+
+&lt;/style&gt;
+
+
+//HTML 파트
+&lt;section id="imgType01" class="image__wrap font section"&gt;
+    &lt;h2&gt;간편한 한끼 식사 패스트푸드&lt;/h1&gt;
+    &lt;p&gt;많은 사람들이 즐겨먹는 패스트푸드입니다.&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img02_bg01.jpg" alt="햄버거"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;스테이크 햄버거&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img02_bg02.jpg" alt="햄버거"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;하와이안 피자&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img3"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img02_bg03.jpg" alt="햄버거"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;저염 감자튀김&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                레이아웃을 만드는건 이미지 유형 01이랑 똑같이 박스 3개를 잡고 해당 박스에 이미지와 텍스트를 추가하면 됩니다.
+            </p>
+            <h4 class="t_tit2" style="font-size: 18px;">▶ 블러 효과</h4>
+            <p class="t_desc" style="margin-top: 15px;">
+                CSS에서 박스의 블러 효과를 줘서 이미지에 뒤가 약간 비치는 블러 효과의 공간을 만들 수 있습니다.
+            </p>
+            <p class="t_desc">
+                background: rgba(0,0,0,0.1);에서 rgba의 a는 색상의 투명도를 설정합니다. 낮은 숫자일수록 투명해지고 높은 숫자일수록 선명해집니다.<br>
+                이 효과를 사용하면 뒤의 이미지가 비치는 박스를 만들 수 있습니다.
+            </p>
+            <p class="t_desc">
+                또한 backdrop-filter: blur( ); 효과로 블러 효과를 줄 수 있습니다. 괄호 안에 설정할 값을 넣어 블러 효과의 정도를 지정할 수 있습니다.
+            </p>
+
+            <h4 class="t_tit2" style="font-size: 18px;">▶ 호버 효과</h4>
+            <p class="t_desc" style="margin-top: 15px;">
+                호버 효과를 이용하면 마우스를 해당 위치에 놓았을 때 설정한 애니메이션 효과를 줄 수 있습니다.<br>
+                호버 효과를 주고 싶은 곳에 ":hover"을 적고 마우스를 올렸을 떄 변화를 주고 싶은 상태를 설정하면 됩니다.<br>
+            </p>
+            <p class="t_desc">
+                이 때 "transition: all" 를 사용하면 시간 간격을 두고 서서히 변화하도록 할 수 있습니다.<br>
+                "ease-in-out"는 변하는 시간 동안 각 구간마다 변하는 속도를 지정합니다. ease-in은 천천-보통,
+                ease-out은 보통-천천히, ease-in-out은 천천히-보통-천천히 속도가 조절됩니다.
+            </p>
+            <p class="t_desc">
+                "transform: scale( )"은 이미지의 크기를 조절해줍니다. 괄호 안에 1보다 숫자가 작으면 크기가 줄어들고,
+                1보다 크면 크기가 커집니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">※ 완성된 형태</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/site/imageType/imageType02_teacher.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/imageType/imageType02_teacher.html" target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

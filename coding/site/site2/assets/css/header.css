@@ -1,0 +1,35 @@
+body {
+  overflow: overlay;
+  box-sizing: border-box;
+}
+
+/* headerType */
+#header {
+  display: flex;
+  justify-content: center;
+}
+.header__inner {
+  position: fixed;
+  width: 100%;
+  background: rgba(246, 248, 253, 0.4);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+}
+.header__logo {
+  padding: 20px 0 20px 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+.header__menu {
+  margin-bottom: 20px;
+}
+.header__menu li {
+  display: inline;
+}
+.header__menu li a {
+  margin: 0 50px 10px 50px;
+}
+.header__menu li a:hover {
+  border-bottom: 2px solid black;
+}

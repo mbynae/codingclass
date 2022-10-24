@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스이펙트</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+        .t_underline {
+            text-decoration: underline;
+        }
+        .t_codeBox {
+            display: inline-block;
+            border: 1px solid #f5f5f5;
+            padding: 5px 10px;
+            width: 100%;
+            background-color: rgb(252, 213, 155);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+
+
+        .mt20 {
+            margin-top: 20px !important;
+        }
+        .mt30 {
+            margin-top: 30px !important;
+        }
+        .mt40 {
+            margin-top: 40px !important;
+        }
+        .mt160 {
+            margin-top: 160px !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <div class="main_top">
+                <h2 class="t_tit">마우스 이펙트</h2>
+                <p class="t_desc2">
+                    자바스크립트를 이용한 마우스 효과 만들기 입니다.
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">마우스 이펙트 02 - 마우스 따라다니기(GSAP)</h3>
+                <p class="t_box">
+                    이번 효과는 <a href="" target="_blank" class="t_underline">마우스 이펙트 01</a>과 같지만 스크립트를 <i>GSAP</i>로 만드는 작업입니다.
+                </p>  
+                <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe src="https://mbynae.github.io/coding/javascript/effect/mouseEffect02.html" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <hr style="margin-top: 180px;">
+
+            <div class="main_content1" style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">GSAP</h4>
+                <p class="t_desc mt20" >
+                    GSAP는 GrennSock에서 개발한 애니메이션 효과를 쉽게 사용할 수 있도록 제공하는 타임라인 기반의 애니메이션 자바스크립트 라이브러리로 애니메이션 스크립트를 보다 쉽게 사용할 수 있도록 해줍니다.<br>
+                    또한 GSAP를 사용하면 자바스크립트로 구현할 때 보다 좀 더 애니메이션 효과가 부드러워지는 느낌이 납니다.<br>
+                    GSAP 설치에 대한 설명은 <a href="" target="_blank" class="t_underline">이쪽</a>을 참조해 주세요.
+                </p>
+                <div class="t_codeBox">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code>&lt;스크립트 파트&gt;
+const cursor = document.querySelector(".mouse__cursor");
+const cursor2 = document.querySelector(".mouse__cursor2");
+const span = document.querySelectorAll(".mouse__wrap span");
+const menu = document.querySelectorAll("#header li a");
+const modal = document.querySelector(".modal__btn");
+
+window.addEventListener("mousemove", e => {
+    // 커서 좌표값 할당
+    // cursor.style.left = e.pageX -12 + "px";
+    // cursor.style.top = e.pageY -12 + "px";
+    // cursor2.style.left = e.pageX -15 + "px";
+    // cursor2.style.top = e.pageY -15 + "px";
+
+    //GSAP
+    gsap.to(cursor, {duration: 0.1, left: e.pageX -12, top: e.pageY -12});
+    gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY -15});
+
+    // 오버 효과
+    // mouseenter / mouseover / 이벤트 버블링
+    span.forEach(span => {
+        span.addEventListener("mouseenter", () => {
+            cursor.classList.add("active");
+            cursor2.classList.add("active");
+        });
+
+        span.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active");
+            cursor2.classList.remove("active");
+        });
+    });
+
+    menu.forEach(menu => {
+        menu.addEventListener("mouseenter", () => {
+            cursor.classList.add("active2");
+            cursor2.classList.add("active2");
+        });
+
+        menu.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active2");
+            cursor2.classList.remove("active2");
+        });
+    });
+
+    modal.addEventListener("mouseenter", () => {
+        cursor.classList.add("active2");
+        cursor2.classList.add("active2");
+    });
+
+    modal.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+    });
+    
+
+    // span.forEach(function(){
+    //     this.addEventListener("mouseenter", function(){});   //예전엔 함수를 이렇게 썼고 이때 this를 씀. 화살표함수에선 this를 못씀
+    // });
+});
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc mt20">
+                    GSAP를 사용하기 위해선 GSAP를 사용한다고 선언 후 사용해야 합니다. GSAP의 애니메이션 효과 사용법은<br>
+                    <a href="" target="_blank" class="t_underline">https://greensock.com/gsap/</a>를 참조해 주세요.
+                </p>
+                <div class="t_link">
+                    <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/mouseEffect02.html" target="_blank">원본 소스 보기</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

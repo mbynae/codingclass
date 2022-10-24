@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃03</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E1F5FE;
+            height: 100%;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        #header {
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            display: grid;
+            grid-template-areas: 
+                "aside section section"
+                "aside article1 article1"
+                "aside article2 article2"
+            ;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 260px 260px 260px;
+        }
+        #aside {
+            background-color: #4FC3F7;
+            grid-area: aside;
+        }
+        #section {
+            background-color: #29B6F6;
+            grid-area: section;
+        }
+        #article1 {
+            background-color: #03A9F4;
+            grid-area: article1;
+        }
+        #article2 {
+            background-color: #039BE5;
+            grid-area: article2;
+        }
+        #footer {
+            height: 100px;
+            background-color: #0288D1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="main">
+            <div id="aside"></div>
+            <div id="section"></div>
+            <div id="article1"></div>
+            <div id="article2"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

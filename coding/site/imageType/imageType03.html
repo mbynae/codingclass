@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .font {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        /* ir 효과(이미지 대체 효과 == alt) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        
+        /* content */
+        .image__inner {
+            width: 1700px;
+            min-width: 1700px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main_img {
+            width: 49%;
+            height: inherit;
+            position: relative;
+            transition: all 0.3s ease-in;
+        }
+        .main_img:hover {
+            transform: scale(1.02);
+        }
+        .main_img > a > figure > img {
+            width: 100%;
+            height: 500px;
+        }
+        .main_text {
+            color: #fff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 10px;
+        }
+        .main_text > span {
+            font-size: 30px;
+            -webkit-text-stroke: 1px #f5f5f5;
+        }
+        .main_text > h3 {
+            font-size: 50px;
+            -webkit-text-stroke: 1px #f5f5f5;
+        }
+        .sub_img {
+            width: 49%;
+            height: inherit;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sub_article {
+            width: 48.5%;
+            height: 240px;
+            background-color: #f5f5f5;
+            position: relative;
+            transition: all 0.3s ease-in;
+        }
+        .sub_article:hover {
+            transform: scale(1.02);
+        }
+        .sub_article:nth-child(1),
+        .sub_article:nth-child(2) {
+            margin-bottom: 20px;
+        }
+        .sub_article:nth-child(1),
+        .sub_article:nth-child(3) {
+            margin-right: 20px;
+        }
+        .sub_fug {
+            width: 100%;
+            height: 240px;
+
+        }
+        .sub_fug > figure > img {
+            width: 100%;
+            height: 240px;
+        }
+        .sub_text {
+            color: #fff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 10px;
+        }
+        .sub_text > span {
+            font-size:15px;
+            -webkit-text-stroke: 0.5px #f5f5f5;
+        }
+        .sub_text > h3 {
+            font-size: 25px;
+            -webkit-text-stroke: 0.5px #f5f5f5;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section id="imgType01" class="image__wrap section">
+        <h2 class="font">세계 7대 불가사의</h1>
+        <p class="font">2007년 7월 7일 새롭게 지정된 과거 인류의 놀라운 기적 세계 7대 불가사의를 소개합니다. </p>
+        <div class="image__inner container">
+            <article class="main_img"><a href="https://ko.wikipedia.org/wiki/%EC%B9%98%EC%B2%B8%EC%9D%B4%ED%8A%B8%EC%82%AC" target="_blank">
+                <figure>
+                    <img src="img/img03_bg01.jpg" alt="치젠이트사">
+                </figure>
+                <div class="main_text">
+                    <span>멕시코</span>
+                    <h3>치젠이트사</h3>
+                </div>
+            </a></article>
+            <article class="sub_img">
+                <div class="sub_article">
+                    <a href="https://ko.wikipedia.org/wiki/%ED%8E%98%ED%8A%B8%EB%9D%BC" target="_blank">
+                        <div class="sub_fug">
+                            <figure>
+                                <img src="img/img03_bg02.jpg" alt="페트라">
+                            </figure>
+                        </div>
+                        <div class="sub_text">
+                            <span>요르단</span>
+                            <h3>페트라</h3>
+                        </div>  
+                    </a>
+                </div>
+                <div class="sub_article">
+                    <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%B6%94_%ED%94%BD%EC%B6%94" target="_blank">
+                        <div class="sub_fug">
+                            <figure>
+                                <img src="img/img03_bg03.jpg" alt="마추픽추">
+                            </figure>
+                        </div>
+                        <div class="sub_text">
+                            <span>페루</span>
+                            <h3>마추픽추</h3>
+                        </div>  
+                    </a>
+                </div>
+                <div class="sub_article">
+                    <a href="https://ko.wikipedia.org/wiki/%EC%BD%9C%EB%A1%9C%EC%84%B8%EC%9B%80" target="_blank">
+                        <div class="sub_fug">
+                            <figure>
+                                <img src="img/img03_bg04.jpg" alt="콜로세움">
+                            </figure>
+                        </div>
+                        <div class="sub_text">
+                            <span>이탈리아</span>
+                            <h3>콜로세움</h3>
+                        </div>  
+                    </a>
+                </div>
+                <div class="sub_article">
+                    <a href="https://ko.wikipedia.org/wiki/%ED%83%80%EC%A7%80%EB%A7%88%ED%95%A0" target="_blank">
+                        <div class="sub_fug">
+                            <figure>
+                                <img src="img/img03_bg05.jpg" alt="타지마할">
+                            </figure>
+                        </div>
+                        <div class="sub_text">
+                            <span>인도</span>
+                            <h3>타지마할</h3>
+                        </div>  
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

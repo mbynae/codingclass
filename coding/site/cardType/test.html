@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            height: 750px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        /* card */
+        .card_inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: 23%;
+            margin: 0 20px 50px 0;
+        }
+        .card > figure {
+            margin-bottom: 20px;
+        }
+        .card > div {
+            position: relative;
+        }
+        .card > div > h3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 10px;
+
+        }
+        .card > p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #666;
+        }
+        .arrow > a > img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="wrap section gmark">
+        <h2>네모네모 재밌는 LEGO!</h2>
+        <p>
+            남녀노소 누구나 좋아하는 레고입니다.<br>
+            가지각색의 모양으로 아주 다양하고 창의적인 모형을 만들어 보세요!
+        </p>
+        <div class="container">
+            <div class="card_inner">
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_01.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_02.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_03.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_04.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_05.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_06.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_07.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="img/card_bg02_08.jpg" alt="">
+                    </figure>
+                    <div>
+                        <h3>기본적인 레고 블럭</h3>
+                        <figure class="arrow">
+                            <a href="/"><img src="img/arrow.svg" alt=""></a>
+                        </figure>
+                    </div>
+                    <p>가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

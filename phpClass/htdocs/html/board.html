@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <!-- SEO -->
+    <meta name="author" content="piowm123">
+    <meta name="description" content="PHP 사이트 만들기입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, piowm123">
+    <meta name="robots" content="all">
+
+    <!-- 아이콘 -->
+    <link rel="icon" href="assets/img/icon_256.png"/>
+    <link rel="shortcut icon" href="assets/img/icon_256.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/icon_256.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon_192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon_16.png" />
+
+</head>
+<body class="">
+
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+
+    <header id="header">
+        <div class="header__inner container">
+            <div class="left">
+                <ul>
+                    <li><a href="#" class="star"></a></li>
+                </ul>
+            </div>
+            <h1><a href="#">PHP BLOG</a></h1>
+            <nav class="right">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="joinAgree.html">회원가입</a></li>
+                </ul>
+            </nav>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">블로그</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                    <li><a href="#">연락처</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="banner">
+            <h2>블로그 소개입니다.</h2>
+            <div class="banner__inner container">
+                <div class="img">
+                    <img src="assets/img/bg01.jpg" alt="이미지">
+                </div>
+                <div class="desc">
+                    어떤 일이라도 <em>노력</em>하고 즐기면  그 결과는 <em>빛</em>을 바란다고 생각합니다.
+                    신입의 <em>열정</em>과 <em>도전정신</em>을 깊숙히 새기며 <em>배움</em>에 있어 겸손함을
+                    유지하며 세부적인 곳까지 파고드는 <em>개발자</em>가 되겠습니다.
+                </div>
+            </div>
+        </section>
+        <!-- //banner -->
+
+        <section id="board" class="container">
+            <h2>게시판 영역입니다.</h2>
+            <div class="board__inner">
+                <div class="board__search">
+                    <div class="left">
+                        * 총 <em>1111</em>건의 게시물이 등록되어 있습니다.
+                    </div>
+                    <div class="right">
+                        <form action="boardSearch.php" name="boardSearch" method="get">
+                            <fieldset>
+                                <legend>게시판 검색 영역입니다.</legend>
+                                <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요." aria-label="search" required>
+                                <select name="searchOption" id="searchOption">
+                                    <option value="title">제목</option>
+                                    <option value="content">내용</option>
+                                    <option value="name">등록자</option>
+                                </select>
+                                <button type="submit" class="searchBtn">검색</button>
+                                <a href="boardWrite.html" class="btn">글쓰기</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="board__table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 5%">
+                            <col>
+                            <col style="width: 10%">
+                            <col style="width: 10%">
+                            <col style="width: 7%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>등록자</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="boardView.html">게시판 제목입니다.</a></td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>199</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>95</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>599</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>39</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>게시판 제목입니다.</td>
+                                <td>이름</td>
+                                <td>2022.09.22</td>
+                                <td>99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="board__pages">
+                    <ul>
+                        <li><a href="#">처음으로</a></li>
+                        <li><a href="#">이전</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">다음</a></li>
+                        <li><a href="#">마지막으로</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //board -->
+
+
+    </main>
+    
+    <footer id="footer">
+        <h2>푸터 영역입니다.</h2>
+        <div class="footer__inner container">
+            <address>Copyright @2022 piowm123</address>
+            <div>blog by piowm123</div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- 로그인 팝법 -->
+    <div class="login__popup">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>로그인</h3>
+            </div>
+            <div class="login__content">
+                <form name="login" action="loginSave.php" method="post">
+                    <fieldset>
+                        <legend>로그인 입력폼</legend>
+                        <div>
+                            <label for="youEmail">이메일</label>
+                            <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style" required>
+                        </div>
+                        <div>
+                            <label for="youPass">비밀번호</label>
+                            <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
+                        </div>
+                        <button type="submit" class="input__button">로그인</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login__footer">
+                <div class="btn">
+                    <a href="#">회원가입</a>
+                    <a href="#">아이디 찾기</a>
+                    <a href="#">비밀번호 찾기</a>
+                </div>
+                <ul class="desc">
+                    <li>비밀번호 분실시 본인 책임입니다.</li>
+                    <li>회원가입하면 이익 없습니다. 도움 안됩니다.</li>
+                    <li>개발자가 초급이여서 개인 정보는 잘 팔릴겁니다.</li>
+                </ul>
+                <button type="button" class="btn-close"><span>닫기</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- 아이디 찾기 팝법 -->
+    <!-- 아이디 찾기 에러 팝법 -->
+    <!-- 아이디 찾기 완료 팝법 -->
+    <!-- 비밀번호 찾기 완료 팝법 -->
+    <!-- 비밀번호 찾기 에러 팝법 -->
+    <!-- 비밀번호 찾기 완료 팝법 -->
+
+    <script>
+        const login1 = document.querySelector(".nav li a");
+        const login2 = document.querySelector(".right li a");
+        const loginPopup = document.querySelector(".login__popup");
+        const btnClose = document.querySelector(".btn-close");
+
+
+        login1.addEventListener("click", () => {
+            loginPopup.classList.add("open");
+        });
+
+        login2.addEventListener("click", () => {
+            loginPopup.classList.add("open");
+        });
+        btnClose.addEventListener("click", () => {
+            loginPopup.classList.remove("open");
+        });
+    </script>
+</body>
+</html>

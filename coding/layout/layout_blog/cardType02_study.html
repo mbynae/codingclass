@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 정리</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 8개의 카드 유형 사이트 입니다.
+            </p>
+            <p class="t_desc">
+                이번에 만들 사이트는 <a href="https://piowm123.tistory.com/22" target="_blank"><u>카드 유형 01</u></a>의 심화 버전입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">카드 유형 사이트 만들기 02</h3>
+            <p class="t_desc" style="margin-top: 15px;">
+                이번 카드 유형은 8개의 카드가 4개씩 2층으로 이루어진 구조입니다.
+            </p>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D173%253A3" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px;">▶ HTML 파트</h3>
+            <p class="t_desc">
+                저번 유형보다 카드가 8개로 늘어났지만 크게 달라진 점은 없습니다.
+            </p>
+             <div class="t_code">
+<pre><code class="language-css">&lt;body&gt;
+    &lt;header id="header"&gt;
+        &lt;div class="h_tit"&gt;
+            &lt;h1&gt;네모네모 재밌는 LEGO!&lt;/h1&gt;
+            &lt;h2&gt;
+                남녀노소 누구나 좋아하는 레고입니다.&lt;br&gt;
+                가지각색의 모양으로 아주 다양하고 창의적인 모형을 만들어 보세요!
+            &lt;/h2&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section id="section" class="container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg01.jpg" alt="기본 레고 블럭"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;기본적인 레고 블럭&lt;/h3&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;p&gt;
+                        가장 기본적이고 심플한  레고 블럭 모양입니다. 아래 쪽 흠에 위쪽 부분을 끼워서 연결할 수 있습니다.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg02.jpg" alt="추가 레고 블럭"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;다양한 레고 블럭&lt;/h3&gt;
+                    &lt;p&gt;
+                        또한 레고는 기본 블럭뿐만 아니라 직사각형, 원통형 등등 여러가지 모양의 블럭이 있습니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg03.jpg" alt="사람 및 동물 레고 블럭"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;더 많은 레고 블럭&lt;/h3&gt;
+                    &lt;p&gt;
+                        사람 모양이나 동물, 도구, 자동차 등 블럭 모양이 아니더라도 다양한 형형태를 제공합니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg04.jpg" alt="다양한 조합"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;다양한 표현 방식&lt;/h3&gt;
+                    &lt;p&gt;
+                        여러가지 다양한 블럭을 조합해서 수 많은 형태의 모형을 제작해보세요!
+                    &lt;/p&gt;
+                    &lt;/a&gt;&lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg05.jpg" alt="조립 방법"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;레고 조합 방법&lt;/h3&gt;
+                    &lt;p&gt;
+                        레고의 조합 방법은 간단합니다. 블럭의 돌출된 부분과 다른 블럭의 흠이난 부분을 연결하면 끝이죠.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg06.jpg" alt="레고 모형"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;레고로 만든 모형&lt;/h3&gt;
+                    &lt;p&gt;
+                        이렇게 만들어진 모형은 집, 탈것, 마을 등 여러가지가 있으며 특정 테마부터 오리지널까지 다양합니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg07.jpg" alt="콜라보레이션"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;콜라보레이션&lt;/h3&gt;
+                    &lt;p&gt;
+                        또한 유명 캐릭터나 인물, 물건 등과 콜라보레이션을 하여 제공중인 레고도 있습니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card2_bg08.jpg" alt="레고 역사"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card_text"&gt;
+                    &lt;h3&gt;레고의 역사&lt;/h3&gt;
+                    &lt;p&gt;
+                        이러한 레고는 1932년 덴마크 빌룬에 문을 연 목공소에서 출발합니다. 당시 자투리 목재로 만든 완구가...
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span aria-hidden="true" class="c_arrow"&gt;       &lt;!--웹표준 준수하기 위해 보이스가 이걸 읽지 않도록 헤주는 태그--&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CD5252"/&gt;
+                                &lt;path d="M4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13L4 11ZM20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.3431 4.92893C13.9526 4.53841 13.3195 4.53841 12.9289 4.92893C12.5384 5.31946 12.5384 5.95262 12.9289 6.34315L18.5858 12L12.9289 17.6569C12.5384 18.0474 12.5384 18.6805 12.9289 19.0711C13.3195 19.4616 13.9526 19.4616 14.3431 19.0711L20.7071 12.7071ZM4 13L20 13L20 11L4 11L4 13Z" fill="white"/&gt;
+                            &lt;/svg&gt;                            
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                유형01 보다 길이만 늘어났을 뿐 다를 건 없습니다. 다만, 링크 화살표가 카드 제목 끝 쪽에 위치해있는데,
+                이 위치에 화살표를 배치하기 위해선 포지션 절대값을 주어야 합니다. 이에 대해선 CSS 파트에서 더 자세히
+                설명하겠습니다.
+            </p>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">▶ CSS 파트</h3>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    /* reset */
+    @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'GmarketSans';  
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* header */
+    .h_tit {
+        margin-top: 120px;
+        text-align: center;
+    }
+    .h_tit h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    .h_tit h2 {
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+
+    /* content */
+    .container {
+        width: 1160px;
+        padding: 70px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 275px;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-bottom: 50px;
+    }
+    .card_text {
+        padding-left: 4px;
+        position: relative;
+    }
+    .card_text &gt; h3 {
+        font-size: 22px;
+        padding: 20px 0 10px 0;
+        display: inline-block;
+    }
+    .card_text &gt; p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+    }
+    .c_arrow {
+        position: absolute;
+        left: 250px;
+        top: 18px;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                카드 유형 01에선 카드 3개가 한 줄로 이어져 있어서 'display:flex'만 주면 됐으나, 이번엔 2줄로 되어있기 때문에
+                'flex-wrap: wrap'을 써줘야 위아래로 정렬이 가능해집니다.<br><br>
+                
+                화살표의 경우 일반적인 방법으론 위치를 이동시킬 수 없습니다. 이 경우 'position: absolute'를 통해 위치를 강제로 이동시켜야 되는데,
+                이 때 'position: relative'를 기준이 되는 곳에 사용하면 해당 위치를 기준으로 좌표가 정해집니다. 이번엔 카드의 텍스트 부분이므로 
+                card_text 클래스에 기준을 잡았습니다.
+            </p>
+            
+            <p class="t_desc" style="margin-top: 20px;">
+                완성이 된 사이트는 <a href="https://mbynae.github.io/coding/site/cardType/cardType02.html" target="_blank"><u>이 곳</u></a>에서 보실 수 있습니다.
+            </p>
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/cardType/cardType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

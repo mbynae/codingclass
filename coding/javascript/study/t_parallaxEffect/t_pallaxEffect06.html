@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+        .t_underline {
+            text-decoration: underline;
+        }
+        .t_codeBox {
+            display: inline-block;
+            border: 1px solid #f5f5f5;
+            padding: 5px 10px;
+            width: 100%;
+            background-color: #fcd59b;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .t_box {
+            border: 1px solid #fcd59b;
+        }
+        .t_link_array {
+            display: flex;
+            justify-content: center;
+        }
+        .t_link:first-child {
+            margin-right: 40px;
+        }
+
+
+        .mt20 {
+            margin-top: 20px !important;
+        }
+        .mt30 {
+            margin-top: 30px !important;
+        }
+        .mt40 {
+            margin-top: 40px !important;
+        }
+        .mt160 {
+            margin-top: 160px !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <div class="main_top">
+                <h2 class="t_tit">패럴랙스 이펙트</h2>
+                <p class="t_desc2">
+                    자바스크립트를 이용해 스크롤 시 다양한 효과가 발생하는 이펙트 만들기 입니다.
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">패럴랙스 이펙트 06 - 텍스트 효과</h3>
+                <p class="t_box" style="margin-bottom: 40px;">스크롤을 내릴 때 텍스트의 각 문자가 시간차를 두고 등장하는 효과입니다.</p>  
+                <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe src="https://mbynae.github.io/coding/javascript/effect/parallaxEffect06.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            <!-- 파트 탑 -->
+
+            <hr style="margin-top: 180px;">
+
+            <div class="main_content1" style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">코드 보기</h4>
+                <p class="t_desc mt20" >
+                    스크롤 위치에 따라 문자를 나타내는건 쉽지만 각각의 문자를 따로 나타내게 하려면 split( )과 join( )메서드를 사용해야 합니다.
+                </p>
+                <div class="t_codeBox">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-html">-HTML파트-
+&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section1 --&gt;
+
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;피할수 없으면 즐겨라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section2 --&gt;
+
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;1퍼센트의 가능성, 그것이 나의 길이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section3 --&gt;
+
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section4 --&gt;
+
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;눈물과 더불어 빵을 먹어 보지 않은 자는 인생의 참다운 맛을 모른다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section5 --&gt;
+
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;폼은 일시적이지만, 클래스는 영원하다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section6 --&gt;
+
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;고개 숙이지 마십시오. 세상을 똑바로 정면으로 바라보십시오.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section7 --&gt;
+
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;자신을 내보여라. 그러면 재능이 드러날 것이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section8 --&gt;
+
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc split"&gt;인생에 뜻을 세우는데 있어 늦은 때라곤 없다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+</code></pre>
+<pre><code class="language-css">-CSS 파트-
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box; /*박스사이징-보더박스를 푸는 방법*/
+}
+#parallax__cont {
+    max-width: 1500px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.1); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 15vw;
+}
+.content__item:nth-child(2n) {  /*짝수만 선택하는 방법 even이라 적어도 된다.*/
+    margin-left: 0;
+    text-align: right;
+}
+
+.content__item__num {
+    font-size: 35vw;
+    font-family: "Lato";
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -7vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    left: auto;     /*레프트값 초기화*/
+    right: -5vw;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize; /*첫글자만 대문자로 바꾸는 방법*/
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    /* background-image: url(../assets/img/effect_bg05-min.jpg); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);   /*흑백효과*/
+    /* transition: all 1s; */
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/effect_bg01-min.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/effect_bg02-min.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/effect_bg03-min.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/effect_bg04-min.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/effect_bg05-min.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/effect_bg06-min.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/effect_bg07-min.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/effect_bg08-min.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/effect_bg09-min.jpg);
+}
+
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+#parallex__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallex__info li, .scroll {
+    line-height: 1.4;
+}
+
+@media (max-width: 800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+    #parallex__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* option */
+.split span {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    min-width: 1vw
+}
+.split span.show  {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* .split.show span {
+    opacity: 1;
+    transform: translateY(0);
+} */
+/* .split span:nth-child(1) {transition-delay: 100ms;}
+.split span:nth-child(2) {transition-delay: 150ms;}
+.split span:nth-child(3) {transition-delay: 200ms;}
+.split span:nth-child(4) {transition-delay: 250ms;}
+.split span:nth-child(5) {transition-delay: 300ms;}
+.split span:nth-child(6) {transition-delay: 350ms;}
+.split span:nth-child(7) {transition-delay: 400ms;}
+.split span:nth-child(8) {transition-delay: 450ms;}
+.split span:nth-child(9) {transition-delay: 500ms;}
+.split span:nth-child(10) {transition-delay: 550ms;}
+.split span:nth-child(11) {transition-delay: 600ms;}
+.split span:nth-child(12) {transition-delay: 650ms;}
+.split span:nth-child(13) {transition-delay: 700ms;}
+.split span:nth-child(14) {transition-delay: 750ms;}
+.split span:nth-child(15) {transition-delay: 800ms;}
+.split span:nth-child(16) {transition-delay: 850ms;}
+.split span:nth-child(17) {transition-delay: 900ms;}
+.split span:nth-child(18) {transition-delay: 950ms;}
+.split span:nth-child(19) {transition-delay: 1000ms;}
+.split span:nth-child(20) {transition-delay: 1050ms;}
+.split span:nth-child(21) {transition-delay: 1100ms;}
+.split span:nth-child(22) {transition-delay: 1150ms;}
+.split span:nth-child(23) {transition-delay: 1200ms;}
+.split span:nth-child(24) {transition-delay: 1250ms;}
+.split span:nth-child(25) {transition-delay: 1300ms;}
+.split span:nth-child(26) {transition-delay: 1350ms;}
+.split span:nth-child(27) {transition-delay: 1400ms;} */
+</code></pre>
+<pre><code class="language-js">-자바스크립트 파트-
+// 글씨 분리하기
+// let text = document.querySelector("#section1 .content__item__desc");
+// let splitText = text.innerText;
+// let splitWrap = splitText.split('').join('</span><span>');
+// text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+// console.log(splitWrap)
+
+// 글씨 전부 쪼개기 (forEach 사용)
+document.querySelectorAll(".split").forEach(text => {
+    let splitText = text.innerText;
+    let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+    splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+    text.innerHTML = splitWrap;
+    text.setAttribute("aria-label", splitText);
+});
+
+function scroll(){
+    let scrollTop = window.scrollY;
+    document.querySelector("#parallex__info .scroll").innerText = Math.round(scrollTop);
+
+    // CSS 클래스 추가 노가다 작업
+    // document.querySelectorAll(".content__item").forEach(item => {
+    //     if(scrollTop >= item.offsetTop){
+    //         item.querySelector(".split").classList.add("show");
+    //     }
+    // });
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        if(scrollTop >= item.offsetTop){
+            item.querySelectorAll(".split span").forEach((span, index) => {
+                span.classList.add("show");
+                let k = 100 + 50*index;
+                span.style.transitionDelay = `${k}ms`;
+            });
+        }
+    });
+
+    requestAnimationFrame(scroll);
+
+    // 첫번째 span --> 0.01초
+    // 두번째 span --> 0.02초
+    // 세번째 span --> 0.03초
+    // 네번째 span --> 0.04초
+    // 다섯번째 span --> 0.05초
+    // 여섯번째 span --> 0.06초
+}
+scroll();
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    split( ) 메서드로 각 문자를 배열로 분리하고 join( ) 메서드로 배열을 문자열로 바꾸는 동시에 각 문자에 span 태그를 추가해 문자마다 효과를 줄 태그를 만듭니다
+                    이 후 하나 하나 일일이 애니메이션에 딜레이를 넣을 수 도 있지만 forEach문의 index를 사용하면 스크립트로 간편히 처리할 수 있습니다.
+                </p>
+            </div>
+            <!-- 컨텐츠 파트1 -->
+
+            <div class="t_link_array">
+                <div class="t_link">
+                    <a href="https://mbynae.github.io/coding/javascript/effect/parallaxEffect06.html" target="_blank">원본 페이지 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/parallaxEffect06.html" target="_blank">원본 소스 보기</a>
+                </div>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

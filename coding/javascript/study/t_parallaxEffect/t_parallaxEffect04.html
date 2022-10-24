@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 슬라이드 이펙트</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+        .t_underline {
+            text-decoration: underline;
+        }
+        .t_codeBox {
+            display: inline-block;
+            border: 1px solid #f5f5f5;
+            padding: 5px 10px;
+            width: 100%;
+            background-color: rgb(252, 213, 155);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+
+
+        .mt20 {
+            margin-top: 20px !important;
+        }
+        .mt30 {
+            margin-top: 30px !important;
+        }
+        .mt40 {
+            margin-top: 40px !important;
+        }
+        .mt160 {
+            margin-top: 160px !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <div class="main_top">
+                <h2 class="t_tit">페럴랙스 이펙트</h2>
+                <p class="t_desc2">
+                    자바스크립트를 이용한 페럴랙스 효과 만들기 입니다.
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">페럴랙스 이펙트 04 -  나타나기</h3>
+                <p class="t_box">스크롤 바를 내릴 때 마다 컨텐츠에 애니메이션이 발동하는 효과합니다.</p>  
+                <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe src="https://mbynae.github.io/coding/javascript/effect/parallaxEffect04.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            <!-- //타이틀 -->
+
+            <hr style="margin-top: 180px;">
+
+            <div class="main_content1" style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">1. HTML 및 CSS 파트</h4>
+                <p class="t_desc mt20" >
+                    HTML은 이전과 같지만 CSS에 텍스트와 이미지가 움직이는 효과가 추가됩니다.
+                </p>
+                <div class="t_codeBox mt20">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-html">-HTML 파트-
+&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section1 --&gt;
+
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;피할수 없으면 즐겨라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section2 --&gt;
+
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;1퍼센트의 가능성, 그것이 나의 길이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section3 --&gt;
+
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section4 --&gt;
+
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;눈물과 더불어 빵을 먹어 보지 않은 자는 인생의 참다운 맛을 모른다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section5 --&gt;
+
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;폼은 일시적이지만, 클래스는 영원하다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section6 --&gt;
+
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;고개 숙이지 마십시오. 세상을 똑바로 정면으로 바라보십시오.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section7 --&gt;
+
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;자신을 내보여라. 그러면 재능이 드러날 것이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section8 --&gt;
+
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;인생에 뜻을 세우는데 있어 늦은 때라곤 없다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<pre><code class="language-css">-CSS 파트-
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box; /*박스사이징-보더박스를 푸는 방법*/
+}
+#parallax__cont {
+    max-width: 1500px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.1); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 15vw;
+}
+.content__item:nth-child(2n) {  /*짝수만 선택하는 방법 even이라 적어도 된다.*/
+    margin-left: 0;
+    text-align: right;
+}
+
+.content__item__num {
+    font-size: 35vw;
+    font-family: "Lato";
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -7vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    left: auto;     /*레프트값 초기화*/
+    right: -5vw;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize; /*첫글자만 대문자로 바꾸는 방법*/
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    /* background-image: url(../assets/img/effect_bg05-min.jpg); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);   /*흑백효과*/
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/effect_bg01-min.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/effect_bg02-min.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/effect_bg03-min.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/effect_bg04-min.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/effect_bg05-min.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/effect_bg06-min.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/effect_bg07-min.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/effect_bg08-min.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/effect_bg09-min.jpg);
+}
+
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+
+@media (max-width: 800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+    #parallex__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* 한번에 나타나기 */
+/* #contents > section {
+    opacity: 0;
+    transition: all 1s;
+}
+#contents > section.show {
+    opacity: 1;
+} */
+
+/* 개별적으로 나타나기 */
+#contents > section .content__item__num {
+    opacity: 0;
+    transform: translateY(200px);   /* 살짝 위에서 올라오게 해주는 느낌을 줌*/
+    transition: all 1s 0.1s cubic-bezier(0,-0.04, 0.01, 1.09);
+}
+#contents > section .content__item__title {
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: all 1s 0.3s cubic-bezier(0,-0.04, 0.01, 1.09);
+}
+#contents > section .content__item__imgWrap {
+    opacity: 0;
+    transform: translateY(200px) rotate(30deg) skew(20deg);
+    transition: all 1s 0.5s cubic-bezier(0,-0.04, 0.01, 1.09);
+}
+#contents > section .content__item__desc {
+    /* opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s 0.7s cubic-bezier(0,-0.04, 0.01, 1.09); */
+}
+
+#contents > section.show .content__item__num {
+    opacity: 0.07;
+    transform: translateY(0);
+}
+#contents > section.show .content__item__title {
+    opacity: 1;
+    transform: translateX(0);
+}
+#contents > section.show .content__item__imgWrap {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) skew(0deg);
+}
+#contents > section.show .content__item__desc {
+    /* opacity: 1;
+    transform: translateX(0); */
+}
+
+/* #contents > section:nth-child(odd) .content__item__title {
+    transform: translateX(100px);
+}
+#contents > section:nth-child(odd).show .content__item__title {
+    transform: translateY(0px);
+} */
+#contents > section:nth-child(even) .content__item__desc {
+    transform: translateX(-200);
+    opacity: 0;
+    transition: all 1s 0.7s cubic-bezier(0,-0.04, 0.01, 1.09);
+}
+#contents > section:nth-child(even).show .content__item__desc {
+    transform: translateX(0);
+    opacity: 1;
+}
+</code></pre>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //파트1 -->
+
+            <div center="main_content2"style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit2" style="margin: 50px 0 15px 0;">2. 스크립트 파트</h4>
+                <p class="t_desc mt20" >
+                    스크립트는 간단합니다. 스크롤바 좌표값이 각각의 컨텐츠 Y축 좌표값 보다 커질 시 CSS에서 만들어 둔 효과가 발생하도록 하면 됩니다.
+                </p>
+                <p class="t_desc mt20" >
+                    이 때 requestAnimationFrame( )를 사용해 재귀함수로 반복 작업을 하도록 합니다.
+                </p>
+                <div class="t_codeBox">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-js">-자바스크립트 파트-
+// window.addEventListener("scroll", scrollProgress);   //이렇게 쓰면 스크롤을 계속 감지해서 사이트가 느려짐
+
+//재귀함수 (자기 자신을 계속 실행)
+function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        if(scrollTop > item.offsetTop - window.innerHeight/2){    //조금 더 show가 빨리 붙을 수 있도록 좌표값을 빼서 조절
+            item.classList.add("show");
+        }
+    });
+    requestAnimationFrame(scroll);  //1분에 60번 실행시키는 함수로 브라우저에 최적화 할 수 있음
+}
+scroll();
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    재귀 함수에 대한 설명은 <a href="https://piowm123.tistory.com/95?category=954231" target="_blank" class="t_underline">이 쪽</a>을 참조해주세요.
+                </p>
+            </div>
+            <!-- //파트2 -->
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/parallaxEffect04.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

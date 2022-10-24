@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이더 타입 01</title>
+
+    <link rel="stylesheet" href="../site1/assets/css/fonts.css">
+    <link rel="stylesheet" href="../site1/assets/css/reset.css">
+    <link rel="stylesheet" href="../site1/assets/css/common.css">
+
+    <style>
+        .slider__inner {
+            margin-top: 70px;
+        }
+        .slider {
+            position: relative;
+        }
+        .slider_img {
+            background: url(../site1/assets/img/slider_bg01.jpg) no-repeat center / cover;
+        }
+        .slider_img .desc {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        .slider_img .desc span {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 1px 14px 0 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .slider_img .desc h3 {
+            font-size: 110px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: -8px;
+        }
+        .slider_img .desc p {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 130px;
+        }
+        .slider_img .desc .btn {}
+        .slider_img .desc .btn a {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 11px 50px;
+            display: inline-block;
+        }
+        .slider_img .desc .btn a.black {
+            background: #000;
+            color: #fff;
+        }
+        .slider__arrow a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 56px;
+            background-image: url(../site1/assets/img/slider_icon.svg);
+        }
+        .slider__arrow a.left {
+            left: 20px;
+        }
+        .slider__arrow a.right {
+            right: 20px;
+            background-position: -50px 0;
+        }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 25px;
+        }
+        .slider__dot a {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(../site1/assets/img/slider_icon.svg);
+            background-position: -20px -70px;
+        }
+        .slider__dot a.active {
+            background-position: 0 -70px;
+        }
+        .slider__dot a.play {
+            background-position: -40px -70px;
+        }
+        .slider__dot a.stop {
+            background-position: -60px -70px;
+        }
+    </style>
+</head>
+<body>
+    <section id="sliderType" class="slider__wrap">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider__inner">
+            <div class="slider">
+                <div class="slider_img">
+                    <div class="desc">
+                        <span>The Fruit</span>
+                        <h3>Sweet Fresh</h3>
+                        <p>
+                            싱싱한 과일이 왔어요~ 맛도 좋고 향도 좋고 몸에도 좋은 그 맛!<br>
+                            과일의 여러가지 쓰임새에 대해 알아봅시다~!
+                        </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                            <a href="#" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__arrow">
+                    <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                    <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="#" class="dot active"><span class="ir">1</span></a>
+                    <a href="#" class="dot"><span class="ir">2</span></a>
+                    <a href="#" class="dot"><span class="ir">3</span></a>
+                    <a href="#" class="play"><span class="ir">플레이</span></a>
+                    <a href="#" class="stop"><span class="ir">정지</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

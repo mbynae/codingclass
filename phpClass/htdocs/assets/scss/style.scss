@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "fonts"; //폰트
+@import "var"; //변수 설정
+@import "mixin";
+@import "reset"; //리셋 설정
+@import "common"; //공통 요소
+
+//레이아웃
+@import "header";
+@import "footer";
+
+//컨텐츠
+@import "banner";
+@import "card";
+@import "ad";
+
+@import "login";
+@import "join";

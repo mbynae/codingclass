@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 박스 안에 카드를 만드는 유형입니다. 
+            </p>
+            <p class="t_desc">
+                이번에 만들 사이트 역시 <a href="https://piowm123.tistory.com/22" target="_blank"><u>카드 유형 01</u></a>의 심화 버전입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">카드 유형 사이트 만들기 03</h3>
+            <p class="t_desc" style="margin-top: 15px;">
+                이번 카드 유형은 파란색 배경 안, 칸막이가 있는 박스에 카드 플롯이 3개 들어간 유형입니다.
+            </p>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D379%253A89" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">1. 컨테이너 만들기</h3>
+            <p class="t_desc">
+                컨텐츠를 넣기 전 레이아웃을 만들기 위한 컨테이너를 만듭니다.
+            </p>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+.arita {
+    font-family: "SCoreDream";
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+h1, h2 ,h3 ,h4 ,h5, h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+img {
+    width: 100%;
+}
+
+/* cardType */
+.wrap {
+    width: 100%;
+    height: 757px;
+    background-color: #2254c3;
+    display: flex;
+    align-items: center;
+}
+.container {
+    width: 1160px;
+    height: 517px;
+    margin: 0 auto;
+    min-width: 1160px;
+    background-color: #fff;
+}
+&lt;/style&gt;
+
+&lt;div class="wrap arita"&gt;
+    &lt;section class="container"&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                wrap을 파란색으로 칠해 배경을 만든 후 wrap 안에 컨테이너를 만듭니다.<br>
+                컨테이너를 중앙에 위치시키기 위해선 wrap에 'display: flex'와 'align-items: center'를 주어야 합니다.
+                'align-items'은 flex에서 수직 방향의 위치를 지정해 줍니다.
+            </p>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">2. 카드 만들기</h3>
+            <p class="t_desc">
+                컨텐츠를 넣기 전 컨텐츠가 들어갈 카드와 카드 사이의 칸막이를 만듭니다.
+            </p>
+            <figure>
+                <img style="width: 100%;" src="../../site/cardType/img/describe02.jpg" alt="카드">
+            </figure>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    /* cardType */
+    .wrap {
+        width: 100%;
+        height: 757px;
+        background-color: #2254c3;
+        display: flex;
+        align-items: center;
+    }
+    .container {
+        width: 1160px;
+        height: 517px;
+        margin: 0 auto;
+        min-width: 1160px;
+        background-color: #fff;
+        display: flex;
+        overflow: hidden;
+    }
+    .card {
+        width: 33.3333%;
+        height: 571px;
+        background-color: #cecece;
+        border-right: 1px solid #eeeeee;
+    }
+    .box {
+        width: 333.5px;
+        height: 465px;
+        margin: 26px;
+    }
+&lt;/style&gt;
+
+&lt;div class="wrap arita"&gt;
+    &lt;section class="container"&gt;
+        &lt;article class="card"&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                카드가 될 3개의 article을 만들고 오른쪽에 border를 줘서 테두리를 만듭니다. 이 때, 맨 우측 밖으로 테두리가 하나 남게 되는데
+                컨테이너에 'overflow: hidden'을 주면 남는 테두리를 제거할 수 있습니다.<br>
+                레이아웃을 만들땐 우선 블록에 임의의 색을 주면 한 눈에 알기 쉬워 작업하기 훨씬 쉬워집니다. 
+            </p>
+            <p class="t_desc">
+                그 다음 카드 안에 들어갈 컨텐츠 구역을 박스로 만들어주면 레이아웃 작업은 완료됩니다.
+            </p>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">3. 컨텐츠 입력</h3>
+            <p class="t_desc">
+                만들어놓은 레이아웃에 컨텐츠를 넣습니다.
+            </p>
+            <figure>
+                <img style="width: 100%;" src="../../site/cardType/img/describe03.jpg" alt="카드">
+            </figure>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    .box {
+        width: 333.5px;
+        height: 465px;
+        margin: 26px;
+        position: relative;
+    }
+    .box &gt; h2 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-top: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }
+    .box &gt; p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.7;
+        color: #666;
+        margin-top: 10px;
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+    .author {
+        text-align: right;
+        line-height: 1.17;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+    }
+    .author p {
+        font-size: 16px;
+        color: #dd2a2a;
+        padding: 0 12px 0 0;
+        margin-top: 1.5px;
+    }
+    .author p &gt; span {
+        color: #666666;
+    }
+&lt;/style&gt;
+
+&lt;div class="wrap arita"&gt;
+    &lt;section class="container"&gt;
+        &lt;article class="card"&gt;
+            &lt;div class="box"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card_bg_03_01.jpg" alt="도마뱀"&gt;
+                &lt;/figure&gt;
+                &lt;h2&gt;표범도마뱀붙이는 레오파드 게코라고도 불리며, 자연적으로 아시아, 아프가니스탄을 거쳐 인도 북부에 이르는&lt;/h2&gt;
+                &lt;p&gt;
+                    범도마뱀붙이는 도마뱀붙이류 중에선 큰 편이다. 유체의 체장은 7에서 10 센티미터, 무게는 2에서 5 그램에 달한다. 성체 암컷은 체장은 18에서 20 센티미터, 
+                &lt;/p&gt;
+                &lt;div class="author"&gt;
+                    &lt;p&gt;verdian chua&lt;br&gt;
+                        &lt;span&gt;Indonesia&lt;/span&gt;
+                    &lt;/p&gt;
+                    &lt;div&gt;
+                        &lt;img src="img/card_profile03_01.svg" alt="저자"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                카드에 넣을 사진과 텍스트를 넣으면 카드에 넣을 컨텐츠가 완성 됩니다.
+            </p>
+            <p class="t_desc">
+                아래의 저자 부분은 포지션 절대값을 주어서 위치를 지정했습니다. 'position: absolute'는 위치를 자유롭게 이동이 가능한데,
+                화면 전체가 기본 기준점이기 때문에 기준이 될 부위에 'position: relative'를 줘서 기준점을 옮길 수 있습니다. 여기선 카드 컨텐츠가
+                들어가는 박스를 기준으로 잡았습니다.
+            </p>
+            <p class="t_box" style="margin-bottom: 15px;">
+                <em style="font-style: normal; font-weight: 700; font-size: 17px;">▶ 한줄 효과</em><br>
+                text-overflow: ellipsis;<br>
+                display: -webkit-box;<br>
+                -webkit-line-clamp: 3;<br>
+                -webkit-box-orient: vertical;<br><br>
+                한줄 효과란 텍스트가 정해진 위치를 넘어갈 때, "..."으로 넘어간 부분을 생략하도록 하는 기능입니다.<br>
+                한줄 효과는 -webkit-line-clamp 부분을 조절해서 원하는 글의 줄 수를 조절할 수 있습니다.
+            </p>
+            <p class="t_desc">
+                카드 하나가 완성 되었으면 나머지 2곳에도 똑같이 적용하면 카드 유형03이 완성 됩니다. 완성이 된 사이트는 <a href="https://mbynae.github.io/coding/site/cardType/cardType03.html" target="_blank"><u>이 곳</u></a>에서 보실 수 있습니다.
+            </p>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/cardType/cardType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">※ ir 효과</h3>
+            <p class="t_box" style="margin-bottom: 15px;">
+                .ir {<br>
+                    display: block;<br>
+                    overflow: hidden;<br>
+                    font-size: 0;<br>
+                    line-height: 0;<br>
+                    text-indent: -9999px;<br>
+                }
+            </p>
+            <p class="t_desc">
+                이미지를 삽입할 땐 'alt'를 통해 이미지에 대한 설명을 해서 웹표준을 지키는 것이 중요합니다. 요즘엔 이미지 스프라이트 기법 등 
+                이미지를 백그라운드로 만드는 방식이 많아졌는데 이러한 방식은 alt를 사용할 수 없기 때문에 웹표준을 지키는 다른 방법 필요했습니다.<br>
+            </p>
+            <p class="t_desc">
+                ir 효과는 이런 문제를 해결하기 위해 나온 방식으로 css로 가상으로 대체 문자를 만들어서 alt와 같은 효과를 얻습니다. 
+            </p>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

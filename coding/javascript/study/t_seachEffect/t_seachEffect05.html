@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 서치 이펙트</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+        .t_underline {
+            text-decoration: underline;
+        }
+        .t_codeBox {
+            display: inline-block;
+            border: 1px solid #f5f5f5;
+            padding: 5px 10px;
+            width: 100%;
+            background-color: #fcd59b;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .t_box {
+            border: 1px solid #fcd59b;
+        }
+        .t_link_array {
+            display: flex;
+            justify-content: center;
+        }
+        .t_link:first-child {
+            margin-right: 40px;
+        }
+
+
+        .mt20 {
+            margin-top: 20px !important;
+        }
+        .mt30 {
+            margin-top: 30px !important;
+        }
+        .mt40 {
+            margin-top: 40px !important;
+        }
+        .mt160 {
+            margin-top: 160px !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <div class="main_top">
+                <h2 class="t_tit">서치 이펙트</h2>
+                <p class="t_desc2">
+                    자바스크립트를 이용한 검색 기능 효과 만들기 입니다.
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">서치 이펙트 05 - filter( )를 이용하여 속성의 중요도 보여주기</h3>
+                <p class="t_box" style="margin-bottom: 40px;">조건 적용이 가능한 filter( ) 메서드를 활용해 범위 검색을 하는 효과입니다. </p>  
+                <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe src="https://mbynae.github.io/coding/javascript/effect/searchEffect05.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            <!-- 파트 탑 -->
+
+            <hr style="margin-top: 180px;">
+
+            <div class="main_content1" style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">1. 중요도 정리 및 레이아웃 만들기</h4>
+                <p class="t_desc mt20" >
+                    속성 별 중요도(숫자)를 설정하고 시각적으로 알 수 있는 버튼을 만드는 작업입니다.
+                </p>
+                <div class="t_iframe" style="min-height: 800px; width: 100%; height: 200px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D2643%253A2" allowfullscreen></iframe>
+                </div>
+                <div class="t_codeBox mt160">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-html">-HTML-
+&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;filter( )를 이용하여 속성의 중요도 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li data-star="0" class="equel"&gt;&lt;a href="#"&gt;🌑🌑🌑🌑🌑&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="1" class="equel"&gt;&lt;a href="#"&gt;⭐🌑🌑🌑🌑&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="2" class="equel"&gt;&lt;a href="#"&gt;⭐⭐🌑🌑🌑&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="3" class="equel"&gt;&lt;a href="#"&gt;⭐⭐⭐🌑🌑&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="4" class="equel"&gt;&lt;a href="#"&gt;⭐⭐⭐⭐🌑&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="5" class="equel"&gt;&lt;a href="#"&gt;⭐⭐⭐⭐⭐&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li data-star="1" class="up"&gt;&lt;a href="#"&gt;⭐ 1개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="2" class="up"&gt;&lt;a href="#"&gt;⭐ 2개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="3" class="up"&gt;&lt;a href="#"&gt;⭐ 3개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="4" class="up"&gt;&lt;a href="#"&gt;⭐ 4개 이상&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;
+
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<pre><code class="language-css">-CSS-
+:root {
+    --htmlColor: #223547;
+    --cssColor: #5042a4;
+    --javascriptColor: #6842a4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor);
+}
+
+*:before, *:after {
+    box-sizing:border-box;
+}
+
+a {
+    color: var(--htmlColor);
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    position: relative;
+    display: inline;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'NexonLv1Gothic';
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 {
+    font-family: 'Tmon';
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label {
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__list {}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--htmlColor);
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__desc {
+    padding: 21px 40px 20px 60px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+    position: relative;
+}
+.search__desc::before {
+    content: '';
+    position: absolute;
+    left: 52px;
+    top: 20px;
+    height: 20px;
+    padding: 0.3px;
+    background: rgba(255,255,255,0.6);
+}
+
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }  
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 40px;
+    } 
+    .search__wrap input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+/* footer */
+#footer {
+    text-align: center;
+}
+
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+</code></pre>
+<pre><code class="language-js">-배열 데이터-
+const cssProperty = [
+    { star: 1, name: "accent-color", desc: "속성은 특정 요소에 색상을 지정할 때 사용됩니다." },
+    { star: 5, name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { star: 5, name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+    { star: 5, name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
+    { star: 5, name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
+    { star: 5, name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
+    { star: 5, name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
+    { star: 5, name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
+    { star: 5, name: "animation-duration", desc: "애니메이션 움직임 시간을 설정합니다." },
+    { star: 5, name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다." },
+    { star: 5, name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다." },
+    { star: 5, name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
+    { star: 3, name: "animation-play-state", desc: "애니메이션 진행상태를 설정 합니다." },
+    { star: 4, name: "animation-timeline", desc: "x" },
+    { star: 3, name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정 합니다." },
+    { star: 2, name: "appearance", desc: "운영체제 및 브라우저에 기본적으로 설정되어 있는 테마를 기반으로 요소를 표현합니다." },
+    { star: 1, name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수 있게 합니다." },
+    { star: 4, name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+    { star: 5, name: "backface-visibility", desc: "입체적인 모습의 뒷면의 가시성을 결정하는 속성이다." },
+    { star: 5, name: "background", desc: "백그라운드 속성을 일괄적으로 설정 합니다." },
+    { star: 1, name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정 합니다." },
+    { star: 1, name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정 합니다." },
+    { star: 2, name: "background-clip", desc: "백그라운드 이미지의 위치 기준점을 설정 합니다." },
+    { star: 5, name: "background-color", desc: "백그라운드 색을 설정 합니다." },
+    { star: 5, name: "background-image", desc: "백그라운드 이미지 속성을 설정 합니다." },
+    { star: 1, name: "background-origin", desc: "백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+    { star: 5, name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정 합니다." },
+    { star: 4, name: "background-position-x", desc: "백그라운드 이미지의 x축 위치 영역을 설정 합니다." },
+    { star: 4, name: "background-position-y", desc: "백그라운드 이미지의 y축 위치 영역을 설정 합니다." },
+    { star: 5, name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정 합니다." },
+    { star: 5, name: "background-size", desc: "백그라운드 이미지 사이즈를 설정 합니다." },
+    { star: 2, name: "block-size", desc: "기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다." },
+    { star: 5, name: "border", desc: "테두리 속성을 일괄적으로 설정 합니다." },
+    { star: 0, name: "border-block", desc: "X" },
+    { star: 0, name: "border-block-color", desc: "x" },
+    { star: 0, name: "border-block-end", desc: "x" },
+    { star: 0, name: "border-block-end-color", desc: "x" },
+    { star: 0, name: "border-block-end-style", desc: "x" },
+    { star: 0, name: "border-block-end-width", desc: "x" },
+    { star: 0, name: "border-block-start", desc: "x" },
+    { star: 0, name: "border-block-start-color", desc: "x" },
+    { star: 0, name: "border-block-start-style", desc: "x" },
+    { star: 0, name: "border-block-start-width", desc: "x" },
+    { star: 0, name: "border-block-style", desc: "x" },
+    { star: 0, name: "border-block-width", desc: "x" },
+    { star: 5, name: "border-bottom", desc: "아래쪽 속성을 일괄적으로 설정 합니다." },
+    { star: 5, name: "border-bottom-color", desc: "테두리 아래쪽 색 속성을 설정합니다." },
+    { star: 5, name: "border-bottom-left-radius", desc: "아래 왼쪽 모서리 굴곡을 설정합니다." },
+    { star: 5, name: "border-bottom-right-radius", desc: "아래 오른쪽 모서리 굴곡을 설정합니다." },
+    { star: 5, name: "border-bottom-style", desc: "아래쪽 테두리의 스타일 속성을 설정합니다." },
+    { star: 5, name: "border-bottom-width", desc: "아래쪽 테두리의 두께 속성을 설정합니다." },
+    { star: 4, name: "border-collapse", desc: "테이블의 테두리를 겹칠지, 떨어트릴지를 설정합니다." },
+    { star: 4, name: "border-color", desc: "모든 면의 테두리 색상을 설정 합니다." },
+    { star: 2, name: "border-end-end-radius", desc: "요소의 테두리 반경을 설정 합니다." },
+    { star: 2, name: "border-end-start-radius", desc: "요소의 테두리 반경을 설정 합니다." },
+    { star: 1, name: "border-image", desc: "요소의 주위에 이미지를 설정 합니다." },
+    { star: 1, name: "border-image-outset", desc: "테두리 상자와 테두리 이미지의 거리를 설정 합니다." },
+];
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    css 속성을 적은 배열 데이터에 이름과 설명 뿐만 아니라 중요도 표시를 위한 star 키 값을 추가했습니다.<br>
+                    또한 검색 효과를 위해 star값과 매칭하기 위한 data- 속성도 추가했습니다.
+                </p>
+            </div>
+            <!-- 컨텐츠 파트1 -->
+
+            <div center="main_content2"style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit2" style="margin: 50px 0 15px 0;">2-1. filter( ) 메서드를 활용해 검색 효과 만들기</h4>
+                <p class="t_desc mt20" >
+                    dataset 값과 객체 데이터의 star 키 값을 매치해 같은 값을 가진 변수를 함수로 실행해 해당 중요도 속성만 출력하도록 합니다. 
+                </p>
+                <div class="t_iframe" style="min-height: 800px; width: 100%; height: 200px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D2643%253A313" allowfullscreen></iframe>
+                </div>
+                <div class="t_codeBox mt160">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-js">-스크립트 파트-
+const searchList = document.querySelector(".search__list ul");
+const searchClick1 = document.querySelectorAll(".search__click ul li.equel");
+const searchClick2 = document.querySelectorAll(".search__click ul li.up");
+const searchStar = document.querySelector(".search__click ul li a").innerText;
+const searchInfo = document.querySelector(".search__info .num");
+
+
+// 출력하기
+function updateList(list){
+    listCSS = "";
+    
+    for (const data of list){
+        listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
+        
+    }
+    
+    searchList.innerHTML = listCSS;
+}
+    
+updateList(cssProperty);
+
+
+// 클릭하기
+searchClick1.forEach((star, index)=> {
+    star.addEventListener("click", () => {
+        const target = star.dataset.star;
+
+        const filterList = cssProperty.filter(data => data.star == target);
+        updateList(filterList);
+
+    });
+});
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    출력시 listCSS += 라고 한 이유는 = 를 사용하면 데이터가 변수의 데이터 수정 효과로 계속 덧씌워져서 마지막 데이터만 출력되기 때문입니다.<br>
+                    따라서 += 을 사용해 데이터 추가를 해야 모든 데이터가 출력됩니다.
+                </p>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    이벤트 메서드로 클릭 시 dataset.value(star.dataset.star)가 html에서 설정해둔 data 값을 호출합니다.<br>
+                    이 값을 filter( ) 메서드로 데이터 변수인 cssProperty의 star 키 값과 같은 값을 출력 함수에 매개변수로 넣어 실행하면 해당 속성 데이터만 출력하게 됩니다.
+                </p>
+            </div>
+            <!-- 컨텐츠 파트2 -->
+
+            <div center="main_content2-2"style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit2" style="margin: 50px 0 15px 0;">2-2. dataset.value를 안쓰고 활용</h4>
+                <p class="t_desc mt20" >
+                    dataset을 안쓰고 index값을 사용할 수 도 있습니다.
+                </p>
+                <div class="t_codeBox">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-js">-index 활용-
+// 클릭하기
+searchClick1.forEach((star, index)=> {
+    star.addEventListener("click", () => {
+        // const target = star.dataset.star;
+        // const filterList = cssProperty.filter(data => data.star == target);
+
+------- //index를 활용한 데이터 매칭 --------------------------------------
+        const filterList = cssProperty.filter(data => data.star == index);
+        updateList(filterList);
+    });
+});
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    searchClick1 변수는 중요도(별)의 li 이므로 인덱스 값은 중요도와 똑같이 0-5의 값이 나옵니다.
+                    따라서 dataset.value 대신 index를 넣어도 똑같은 결과를 얻게 됩니다.
+                </p>
+            </div>
+            <!-- 컨텐츠 파트2-2 -->
+
+            <div center="main_content3"style="margin: 50px 0 15px 0;">
+                <h4 class="t_tit2" style="margin: 50px 0 15px 0;">3. 범위 검색 및 중요도 숫자 별 치환</h4>
+                <p class="t_desc mt20" >
+                    filter( ) 메서드를 사용해 범위 검색 효과를 만들고 중요도의 숫자를 별 그림으로 출력하는 작업입니다.
+                </p>
+                <div class="t_iframe" style="min-height: 800px; width: 100%; height: 200px; padding-top: 0; margin-bottom: -120px;">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D2657%253A515" allowfullscreen></iframe>
+                </div>
+                <div class="t_codeBox mt160">
+                    <details>
+                        <summary>소스보기</summary>
+                        <div class="t_code">
+<pre><code class="language-js">-범위 검색 및 별 치환-
+// 출력하기
+function updateList(list){
+    listCSS = "";
+    
+    for (const data of list){
+        // listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
+
+--------//별 출력 switch문
+        switch (data.star) {
+            case 0:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;🌑🌑🌑🌑🌑&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 1:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;⭐🌑🌑🌑🌑&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 2:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;⭐⭐🌑🌑🌑&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 3:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;⭐⭐⭐🌑🌑&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 4:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;⭐⭐⭐⭐🌑&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 5:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;⭐⭐⭐⭐⭐&lt;/em&gt;&lt;/li&gt;`;
+            break;
+        }
+        }
+        searchList.innerHTML = listCSS;
+}
+    
+updateList(cssProperty);
+
+
+// 조건문 들어간 범위 검색-------------------------------------------------------
+searchClick2.forEach((star,index) => {
+    star.addEventListener("click", () => {
+        // const target = star.dataset.star;
+
+        // const filterList2 = cssProperty.filter(data => data.star >= target);
+        const filterList2 = cssProperty.filter(data => data.star >= index+1);
+        updateList(filterList2);
+    });
+});
+
+
+// 전체 속성 갯수 표시
+const searchNum = document.querySelectorAll(".search__list ul li").length;
+searchInfo.textContent = searchNum;
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <p class="t_desc" style="margin-top: 20px !important;">
+                    filter( ) 메서드는 find( ) 메서드와 같이 배열 값을 서치하는 메서드이지만 filter( ) 메서드는 조건부를 지정할 수 있다는 차이점이 있습니다.<br>
+                    이를 이용해 좀 더 다양한 검색 효과를 만들 수 가 있습니다.
+                </p>
+                <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">filter( ) 메서드</h4>
+                <p class="t_box">
+                    filter( ) 메서드는 주어진 함수의 조건을 만족하는 모든 요소를 모아 새로운 배열로 반환합니다.<br>
+                    find( )메서드와의 차이점은 조건을 사용할 수 있다는 것 입니다.<br><br>
+                    
+                    <strong>filter(e => e 조건 찾을 값)</strong>
+                </p>
+            </div>
+            <!-- 컨텐츠 파트3 -->
+
+            <div class="t_link_array">
+                <div class="t_link">
+                    <a href="https://mbynae.github.io/coding/javascript/effect/searchEffect05.html" target="_blank">원본 페이지 보기</a>
+                </div>
+                <div class="t_link">
+                    <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/searchEffect05.html" target="_blank">원본 소스 보기</a>
+                </div>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

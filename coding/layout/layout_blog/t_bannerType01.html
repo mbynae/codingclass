@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 유형01</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 배너 유형입니다. 
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">○ 슬라이드 유형 01</h2>
+            <p class="t_desc">
+                배너 유형은 컨텐츠 중간에 긴 가로로 긴 형식으로 삽입되는 유형으로 광고나 홍보용 컨텐츠 등이 자주 들어갑니다.
+            </p>
+            <div class="t_iframe" style="min-height: 400px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1144%253A1897" allowfullscreen></iframe>
+            </div>
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">▶ HTML 파트</h3>
+             <div class="t_code">
+<pre><code class="language-css">&lt;section id="bannerType" class="banner__wrap nexon"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt; 
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;저녁의 와인 한잔&lt;/h3&gt;
+        &lt;p class="desc"&gt;
+            오늘 밤은 좋은 무드를 가지고 와인 한잔 어떨까요?&lt;br&gt;
+            와인은 포도를 발효시켜 만든 오랜 역사를 가진 양조주입니다.
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형01&lt;/span&gt;
+    &lt;/div&gt;    
+&lt;/section&gt;
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">▶ CSS 파트</h3>
+            <div class="t_code">
+<pre><code class="language-css">.banner__inner {
+    background-image: url(../img/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+
+.banner__inner .small {
+    font-size: 16px;
+    text-decoration: underline;
+}
+</code></pre>
+           </div>
+
+            <h3 class="t_tit2">※ 완성된 형태</h3>
+            <div class="t_iframe" style="min-height: 800px; margin-top: 20px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/site/imgTextType/bannerType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/imgTextType/bannerType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

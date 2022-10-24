@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 애니메이션</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">강아지 애니메이션</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">강아지 애니메이션</h2>
+            <p class="t_desc2">
+                Fug와 SCSS를 활용해 만든 강아지 애니메이션입니다.
+            </p>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0; margin-bottom: 60px;">
+                <iframe scrolling="no" title="CSS Dog" src="https://codepen.io/mbynae/embed/ExEGwbp?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/mbynae/pen/ExEGwbp">
+                    CSS Dog</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <p class="t_desc">
+                Fug는 HTML을 간편히 쓰기 위해 나온 언어로 ".*" 형태로 class를 표현할 수 있습니다.
+                들여쓰기를 통해 부모요소와 자식요소를 구분하게 되지만 코드가 길어지면 육안으로 구별하기 힘들어질 수 있는 단점이 있습니다.
+            </p>
+            <p class="t_desc">
+                SCSS 역시 css를 좀 더 간편히 쓰기 위해 나온 언어입니다. "$"를 써서 변수 처럼 사용할 수 있으며,
+                하나의 구조에 여러개의 다른 선택자를 넣어 중첩해 사용할 수 있는 특징이 있습니다.
+            </p>
+
+            <h2 class="t_tit2">▶ 애니메이션 효과</h2>
+            <p class="t_box">
+                .dog-tail {<br>
+                    　　animation: dog-tail-segment $interval $easing infinite alternate;<br><br>
+                    
+                    　　@keyframes dog-tail-segment {<br>
+                        　　　　0% {transform: rotate(-20deg)}<br>
+                        　　　　100% {transform: rotate(20deg)}<br>
+                    　　}<br>
+                }
+            </p>
+            <p class="t_desc">
+                강아지 애니메이션에서 꼬리를 흔들 떄 사용된 애니메이션 예시입니다.<br>
+                애니메이션은 동작하고 싶은 요소에 "animantion"을 주고 동작 시간, 속도, 반복 횟수 등을 적어 움직이게 할 수 있습니다.<br>
+                또한 "keyframes"를 사용하면 프레임에 따라 좀 더 세부적으로 움직임을 구현할 수 있게 됩니다.
+            </p>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>속성</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">animation</td>
+                        <td>
+                            애니메이션 효과를 설정합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ease-in-out</td>
+                        <td>
+                            애니메이션의 시간 별 속도를 설정합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">infinite</td>
+                        <td>
+                            애니메이션을 계속 반복하도록 합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">alternate</td>
+                        <td>
+                            애니메이션이 한번 움직인 후 다음 행동을 반대 방향으로 움직이도록 설정합니다. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">keyframes</td>
+                        <td>
+                            애니메이션의 프레임 별 동작을 설정합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transform</td>
+                        <td>
+                            애니메이션의 동작 형태를 설정합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transform-origin</td>
+                        <td>
+                           애니메이션 동작 설정할 때 중심축을 설정합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">rotate</td>
+                        <td>
+                            애니메이션 동작 시 회전하도록 합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">translate</td>
+                        <td>
+                            애니메이션 동작 시 좌표 축에 따라 이동하도록 합니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 정리</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 형태</h2><br>
+            <p class="t_desc">
+                많은 사이트가 다양한 형태로 디자인되어 있으며 사이트는 크게 3가지로 분류됩니다.
+            </p>
+            <p class="t_desc2">
+                1. 웹표준 사이트<br>
+                2. 페럴렉스 사이트<br>
+                3. 포폴형 사이트<br>
+            </p>
+            <p class="t_desc">
+                또한 사이트는 큰 영역으로 구분해서 레이아웃을 형성합니다.
+            </p>
+            <p class="t_desc2">
+                메뉴 영역<br>
+                배너 영역<br>
+                컨텐츠 영역<br>
+                푸터 영역<br>
+            </p>
+            <p class="t_desc">
+                각 영역에는 여러가지 유형의 컨텐츠가 들어가게 되며 복합적인 유형으로 구성될 수 도 있습니다.
+            </p>
+            <p class="t_desc2">
+                메뉴 유형<br>
+                배너 유형<br>
+                이미지 유형<br>
+                슬라이드 유형<br>
+                동영상 유형<br>
+                카드 유형<br>
+                게시판 유형<br>
+                푸터유형<br>
+                이미지/텍스트(탭/슬라이드 등등) 유형<br>
+                텍스트 유형<br>
+            </p>
+            <p class="t_desc">
+                따라서 코딩을 시작하기 전에 전반적인 틀을 만들어 놓은 후 시작하는게 좋습니다.<br><br>
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">카드 유형 사이트 만들기 01</h3>
+            <p class="t_desc" style="margin-top: 15px;">
+                이번에 만들 간단한 카드 유형의 사이트 형태입니다. 
+            </p>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D4%253A78" allowfullscreen></iframe>
+            </div>
+
+            <p class="t_desc" style="margin-top: 50px;">
+                우선 헤더 부분을 만들기 위해 전반적인 리셋을 해준 후 제목과 소제목을 만들어 줍니다.
+            </p>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');    /* import는 css 내부에서 쓰는 폰트 태그 */
+
+    .nexon {
+        font-family: "NexonLv1Gothic";
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 ,h3 ,h4 ,h5, h6 {
+        font-weight: normal;
+    }
+    /* common */
+    .section {
+        padding: 120px 0;
+    }
+    .section &gt; h2 {     /* &gt;는 바로 밑에 있는 자식을 의미 */
+        font-size: 50px;
+        line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section &gt; p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;크고 작은 리트리버&lt;/h2&gt;
+        &lt;p&gt;크고 작은 그리고 귀엽고 친근한 리트리버 이야기 입니다.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                코드는 최대한 간결한게 좋습니다. 되도록 하나의 태그에 class를 넣고 '&lt;'를 사용하여 자식요소를 선택한다면
+                보다 간결하게 만들 수 있습니다.<br><br>
+
+                다음엔 본문에 들어갈 레이아웃 만들기 입니다. 
+            </p>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');    /* import는 css 내부에서 쓰는 폰트 태그 */
+
+    .nexon {
+        font-family: "NexonLv1Gothic";
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 ,h3 ,h4 ,h5, h6 {
+        font-weight: normal;
+    }
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section &gt; h2 {     /* &gt;는 바로 밑에 있는 자식을 의미 */
+        font-size: 50px;
+        line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section &gt; p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;크고 작은 리트리버&lt;/h2&gt;
+        &lt;p&gt;크고 작은 그리고 귀엽고 친근한 리트리버 이야기 입니다.&lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;&lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;&lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;&lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                우선 컨텐츠 부분을 잡기 위해 컨테이너 구역을 지정합니다. 그 후 컨텐츠가 들어가 3개의 블록을 만들어줍니다.<br><br>
+
+                마지막으로 컨텐츠 구역에 내용을 넣는 단계입니다.
+            </p>
+             <div class="t_code">
+<pre><code class="language-css">&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');    /* import는 css 내부에서 쓰는 폰트 태그 */
+
+    .nexon {
+        font-family: "NexonLv1Gothic";
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 ,h3 ,h4 ,h5, h6 {
+        font-weight: normal;
+    }
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section &gt; h2 {     /* &gt;는 바로 밑에 있는 자식을 의미 */
+        font-size: 50px;
+        line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section &gt; p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    /* cardType */
+    .card__inner {
+        display: flex;
+        justify-content: space-around;
+    }
+    .card {
+        width: 32%;
+        background: #f5f5f5;
+    }
+    .card__body {
+        padding: 24px;
+    }
+    .card__body .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .card__body .desc {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #666;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;크고 작은 리트리버&lt;/h2&gt;
+        &lt;p&gt;크고 작은 그리고 귀엽고 친근한 리트리버 이야기 입니다.&lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;        &lt;!-- 그림 넣을때 쓰는 웹표준 준수 하기 위한 태그 --&gt;
+                    &lt;img src="img/card_bg01.jpg" alt="아기 리트리버에 대해 알아보기"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;아기 리트리버&lt;/h3&gt;
+                    &lt;p class="desc"&gt;작은 리트리버는 호기심이 왕성합니다. 그리고 작고 귀엽죠. 어린 리트리버는 털의 색깔이 흰색에 가깝지만 시간이 지날수록 점차 색이 진해집니다.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg02.jpg" alt="아기 리트리버에 대해 알아보기"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;골든 리트리버&lt;/h3&gt;
+                    &lt;p class="desc"&gt;성인이 된 리트리버는 매우 온순하며 사람을 좋아하고 잘 따릅니다. 또한 똑똑하기도 해서 전세계적으로 많은 사랑을 받는 견종으로 손꼽히고 있습니다.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg03.jpg" alt="아기 리트리버에 대해 알아보기"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;레브라도 리트리버&lt;/h3&gt;
+                    &lt;p class="desc"&gt;레브라도 리트리버는 골든 리트리버보다 털의 색이 연하고 길이가 짧습니다. 골든 트리버 보다 비교적 경계심이 많지만 섬세한 성격으로 안내견 역할을 자주 맡습니다.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                각각의 블록에 내용과 사진을 넣으면 완성입니다.<br>
+                사진을 넣을 때 'figure' 태그를 써서 그 안에 이미지를 넣는 것이 웹표준을 준수하는 방법입니다.
+            </p>
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/cardType/cardType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

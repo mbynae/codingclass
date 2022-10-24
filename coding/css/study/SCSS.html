@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">SCSS</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">SCSS(Super CSS)</h2>
+            <p class="t_desc2">
+                CSS의 단점을 보완한 CSS 전처리기 언어입니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">※ CSS 전처리기 언어란?</h2>
+            <p class="t_box">
+               CSS의 단점을 보완하기 위해 문법을 바꾼 형태로 직접 동작시키지 않지만 코드를 작성시 CSS로 컴파일 해서 CSS가 웹으로 동작하도록 하는 언어입니다.
+            </p>
+
+            <h2 class="t_tit2">1. SCSS</h2>
+            <p class="t_desc">
+                SCSS는 현재 가장 많이 쓰이고 있는 CSS 전처리기 언어로 초기에 나온 SASS를 버전 업한 언어입니다. 
+            </p>
+
+            <h2 class="t_tit2" style="font-size: 20px; margin-top: 20px;">▶ SCSS 장점</h2>
+
+            <div style="border: 1px solid #000; padding: 10px 0 0 10px;">
+                <p class="t_desc" style="font-size: 17px; font-weight: 700; line-height: 1.6;">
+                    1. CSS보다 심플한 표기법으로 CSS를 구조화하여 표현할 수 있습니다.<br>
+                    2. 가독성과 재사용성을 높여주어 유지보수가 쉽습니다.<br>
+                    3. 변수를 사용해 CSS 속성값을 통일해 사용할 수 있습니다.<br>
+                    4. 선택자의 중첩 사용으로 편의성을 높여줍니다.<br>
+                    5. 조건문, 반복문을 사용해 동적으로 CSS 관리가 가능합니다.<br>
+                    6. 상속되는 선택자를 계층적으로 명시해서 불필요한 반복을 줄일 수 있습니다.
+                </p>
+            </div>
+            <h2 class="t_tit3" style="font-size: 18px; margin-top: 20px;">▶ 변수</h2>
+            <p class="t_desc">
+                "$"를 사용해서 요소를 변수로 만들 수 있습니다. 해당 변수에 CSS의 속성값을 저장할 수 있으며,
+                스타일시트 전체에 반복해 사용이 가능합니다.
+            </p>
+            <p class="t_box">
+                $font-stack: Helvetica, sans-serif;<br>
+                $primary-color: #333;<br><br>
+                
+                body {<br>
+                    　　font: 100% $font-stack;<br>
+                    　　color: $primary-color;<br>
+                }
+            </p>
+            <p class="t_desc">
+                SCSS가 처리될 때 변수에 저장된 값을 사용해 CSS에 배치된 변수값과 함께 CSS를 출력합니다.<br>
+                이러한 방식으로 코드의 일관성을 높일 수 있습니다. 
+            </p>
+
+            <h2 class="t_tit3" style="font-size: 18px; margin-top: 20px;">▶ 중첩</h2>
+            <p class="t_desc">
+                HTML에선 코드를 작성할 때 같은 코드를 반복하고 시각적인 계층 구조가 발생하게 되는데, CSS는 그렇지 않습니다.<br>
+                SCSS를 사용하면 선택자 안에 중첩해 사용하므로서 반복적인 사용을 줄이고 계층 구조를 사용한 것 처럼 일관적인 가독성이 증가하게 됩니다. 
+            </p>
+            <p class="t_box">
+                nav {<br>
+                    　　ul {<br>
+                        　　　　margin: 0;<br>
+                        　　　　padding: 0;<br>
+                        　　　　list-style: none;<br>
+                    　　}<br><br>
+                  
+                    　　li { display: inline-block; }<br><br>
+                  
+                    　　a {<br>
+                        　　　　display: block;<br>
+                        　　　　padding: 6px 12px;<br>
+                        　　　　text-decoration: none;<br>
+                    　　}<br>
+                  }
+            </p>
+            <p class="t_desc">
+                위의 예에서 ul, li, a의 선택자가 nav 안에 들어가 중첩되어 있어 쉽게 구별될 수 있음을 알 수 있습니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

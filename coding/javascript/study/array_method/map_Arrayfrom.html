@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map/Array.from</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .result {
+            padding-top: 10px;
+            margin-bottom: 80px;
+            margin-top: -15px;
+            background: rgba(165, 122, 67, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result summary {
+            margin-bottom: 10px;
+        }
+
+        .t_table {
+            text-align: center;
+        }
+
+        .t_table tr td {
+            background-color: #f5f5f5ef;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit" style="margin-bottom: 25px;">map( ) / Array.from( )</h2>
+            <p class="t_desc2">
+                map( ) 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환하는 메서드입니다.<br>
+                Array.from() 은 문자열 등 유사 배열(Array-like) 객체나 이터러블한 객체를 배열로 만들어주는 메서드입니다.
+            </p>
+
+            <hr>
+
+            <div id="t_numContent1">
+                <h3 class="t_tit2">map( ) 메서드</h3>
+                <p class="t_desc">
+                    메서드 안에 콜백함수를 넣어 반복문을 적용하는 메서드입니다. 기본적으로 forEach문과 같으나 forEach문은 배열을 반환하지 못하는데 map( ) 메서드는 배열 반환이 가능하다는 차이점이 있어 배열을 반환할 때 forEach문 대신 사용할 수 있습니다.
+                </p>
+                <p class="t_box">
+                    <strong>문법</strong><br>
+                    Array.map(el => el 연산자 반복할 값)
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">const arrNum = [100, 200, 300, 400, 500];
+const result = arrNum.map(el => el);
+
+document.querySelector(".sample13_N1").innerHTML = "1";
+document.querySelector(".sample13_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+document.querySelector(".sample13_M1").innerHTML = "arrNum.map(el => el)";
+document.querySelector(".sample13_P1").innerHTML = result; 
+
+
+const arrNum2 = [100, 200, 300, 400, 500];
+const result2 = arrNum.map(el => el + "j");     //이런식으로 정보 가공이 가능함
+
+document.querySelector(".sample13_N2").innerHTML = "2";
+document.querySelector(".sample13_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+document.querySelector(".sample13_M2").innerHTML = "arrNum.map(el => el + 'j')";
+document.querySelector(".sample13_P2").innerHTML = result2; 
+
+
+const arrNum3 = [100, 200, 300, 400, 500];
+const result3 = arrNum.map(el => el + 100);     //이런식으로 정보 가공이 가능함
+
+document.querySelector(".sample13_N3").innerHTML = "3";
+document.querySelector(".sample13_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+document.querySelector(".sample13_M3").innerHTML = "arrNum.map(el => el + 100)";
+document.querySelector(".sample13_P3").innerHTML = result3; 
+
+
+const arrNum4 = [{a:100}, {a:200}, {a:300}];
+const result4 = arrNum4.map(el => el.a);
+
+document.querySelector(".sample13_N4").innerHTML = "4";
+document.querySelector(".sample13_Q4").innerHTML = "[{a:100}, {a:200}, {a:300}]";
+document.querySelector(".sample13_M4").innerHTML = "arrNum.map(el => el.a)";
+document.querySelector(".sample13_P4").innerHTML = result4; 
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <div class="t_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 5%;">
+                                        <col style="width: 32%;">
+                                        <col style="width: 22%;">
+                                        <col style="width: 42%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>기본값</th>
+                                            <th>메서드</th>
+                                            <th>리턴값</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sample13_N1"></td>
+                                            <td class="sample13_Q1"></td>
+                                            <td class="sample13_M1"></td>
+                                            <td class="sample13_P1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sample13_N2"></td>
+                                            <td class="sample13_Q2"></td>
+                                            <td class="sample13_M2"></td>
+                                            <td class="sample13_P2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sample13_N3"></td>
+                                            <td class="sample13_Q3"></td>
+                                            <td class="sample13_M3"></td>
+                                            <td class="sample13_P3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sample13_N4"></td>
+                                            <td class="sample13_Q4"></td>
+                                            <td class="sample13_M4"></td>
+                                            <td class="sample13_P4"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <script>
+                                {
+                                    const arrNum = [100, 200, 300, 400, 500];
+                                    const result = arrNum.map(el => el);
+
+                                    document.querySelector(".sample13_N1").innerHTML = "1";
+                                    document.querySelector(".sample13_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+                                    document.querySelector(".sample13_M1").innerHTML = "arrNum.map(el => el)";
+                                    document.querySelector(".sample13_P1").innerHTML = result; 
+
+
+                                    const arrNum2 = [100, 200, 300, 400, 500];
+                                    const result2 = arrNum.map(el => el + "j");     //이런식으로 정보 가공이 가능함
+
+                                    document.querySelector(".sample13_N2").innerHTML = "2";
+                                    document.querySelector(".sample13_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+                                    document.querySelector(".sample13_M2").innerHTML = "arrNum.map(el => el + 'j')";
+                                    document.querySelector(".sample13_P2").innerHTML = result2; 
+
+
+                                    const arrNum3 = [100, 200, 300, 400, 500];
+                                    const result3 = arrNum.map(el => el + 100);     //이런식으로 정보 가공이 가능함
+
+                                    document.querySelector(".sample13_N3").innerHTML = "3";
+                                    document.querySelector(".sample13_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+                                    document.querySelector(".sample13_M3").innerHTML = "arrNum.map(el => el + 100)";
+                                    document.querySelector(".sample13_P3").innerHTML = result3; 
+
+
+                                    const arrNum4 = [{a:100}, {a:200}, {a:300}];
+                                    const result4 = arrNum4.map(el => el.a);
+
+                                    document.querySelector(".sample13_N4").innerHTML = "4";
+                                    document.querySelector(".sample13_Q4").innerHTML = "[{a:100}, {a:200}, {a:300}]";
+                                    document.querySelector(".sample13_M4").innerHTML = "arrNum.map(el => el.a)";
+                                    document.querySelector(".sample13_P4").innerHTML = result4; 
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //1번 -->
+
+            <div id="t_numContent2">
+                <h3 class="t_tit2">Array.from( ) 메서드</h3>
+                <p class="t_desc">
+                    Array.from( ) 메서드는 배열이 아닌 값을 배열로 반환해 줘 자주 사용되는 메서드입니다. 또한 메서드 안에 콜백함수 작성이 가능한 등 다양한 기능이 있습니다.
+                </p>
+                <p class="t_box">
+                    <strong>문법</strong><br>
+                    Array.from(변수)<br>
+                    Array.from(변수, 콜백함수)<br>
+                    Array.from(변수)<br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">const text = "javascript";
+const result = Array.from(text);    //배열로 바꿔줌
+
+document.querySelector(".sample14_N1").innerHTML = "1";
+document.querySelector(".sample14_Q1").innerHTML = "javascript";
+document.querySelector(".sample14_M1").innerHTML = "Array.from(text)";
+document.querySelector(".sample14_P1").innerHTML = result; 
+console.log(result);
+
+
+const text2 = "javascript";
+const result2 = Array.from(text2, el => el + "10");    //Array.from은 콜백함수도 가능함
+
+document.querySelector(".sample14_N2").innerHTML = "2";
+document.querySelector(".sample14_Q2").innerHTML = "javascript";
+document.querySelector(".sample14_M2").innerHTML = "Array.from(text2, el => el + '10')";
+document.querySelector(".sample14_P2").innerHTML = result; 
+console.log(result2);
+
+
+const text3 = "javascript";
+const result3 = [...text3].map(el => el);    //Array.from은 펼침 연산자 형태로 쓸 수 있음
+
+document.querySelector(".sample14_N3").innerHTML = "3";
+document.querySelector(".sample14_Q3").innerHTML = "javascript";
+document.querySelector(".sample14_M3").innerHTML = "[...text3].map(el => el)";
+document.querySelector(".sample14_P3").innerHTML = result3; 
+console.log(result3);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <div class="t_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 5%;">
+                                        <col style="width: 32%;">
+                                        <col style="width: 22%;">
+                                        <col style="width: 42%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>기본값</th>
+                                            <th>메서드</th>
+                                            <th>리턴값</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sample14_N1"></td>
+                                            <td class="sample14_Q1"></td>
+                                            <td class="sample14_M1"></td>
+                                            <td class="sample14_P1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sample14_N2"></td>
+                                            <td class="sample14_Q2"></td>
+                                            <td class="sample14_M2"></td>
+                                            <td class="sample14_P2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sample14_N3"></td>
+                                            <td class="sample14_Q3"></td>
+                                            <td class="sample14_M3"></td>
+                                            <td class="sample14_P3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <script>
+                                {
+                                    const text = "javascript";
+                                    const result = Array.from(text);    //배열로 바꿔줌
+
+                                    document.querySelector(".sample14_N1").innerHTML = "1";
+                                    document.querySelector(".sample14_Q1").innerHTML = "javascript";
+                                    document.querySelector(".sample14_M1").innerHTML = "Array.from(text)";
+                                    document.querySelector(".sample14_P1").innerHTML = result; 
+                                    console.log(result);
+
+
+                                    const text2 = "javascript";
+                                    const result2 = Array.from(text2, el => el + "10");    //Array.from은 콜백함수도 가능함
+
+                                    document.querySelector(".sample14_N2").innerHTML = "2";
+                                    document.querySelector(".sample14_Q2").innerHTML = "javascript";
+                                    document.querySelector(".sample14_M2").innerHTML = "Array.from(text2, el => el + '10')";
+                                    document.querySelector(".sample14_P2").innerHTML = result; 
+                                    console.log(result2);
+
+
+                                    const text3 = "javascript";
+                                    const result3 = [...text3].map(el => el);    //Array.from은 펼침 연산자 형태로 쓸 수 있음
+
+                                    document.querySelector(".sample14_N3").innerHTML = "3";
+                                    document.querySelector(".sample14_Q3").innerHTML = "javascript";
+                                    document.querySelector(".sample14_M3").innerHTML = "[...text3].map(el => el)";
+                                    document.querySelector(".sample14_P3").innerHTML = result3; 
+                                    console.log(result3);
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //2번 -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 단위</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <style>
+        .w_uplist {
+            border: 1px dotted black;
+            padding: 5px 10px;
+            max-width: 1000px;
+        }
+        .w_list {
+            color: blueviolet;
+            padding: 1px 0;
+            border-bottom: 1px inset #e6cbcb;
+        }
+        .w_list2 {
+            padding: 1px 0;
+            border-bottom: 1px inset #e6cbcb;
+        }
+        .t__em {
+            font-style: normal;
+            font-weight: bold;
+        }
+        .t_color1 {
+            color: red !important;
+        }
+        .t_color2 {
+            color: yellowgreen !important;
+        }
+        .t_color3 {
+            color: rgba(255, 0, 0, 0.5) !important;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 단위</h2>
+            <p class="t_desc2">
+                CSS에서 사용하는 단위입니다.
+            </p>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>단위</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">px</td>
+                        <td>
+                            가장 기본적인 단위입니다.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">em/rem</td>
+                        <td>
+                            em은 각 부모 요소의 폰트 크기를 기반으로 한 단위이며 1rem은 해당 폰트 픽셀 크기입니다.<br>
+                            rem은 최상위 요소의 폰트 크기를 기반으로 한 단위입니다. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">vw/vh</td>
+                        <td>
+                            뷰포트를 100개로 나눠 기준을 정한 단위입니다<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">vmin/vmax</td>
+                        <td>
+                            뷰포트 너비 또는 높이를 기준으로 하는 최대, 최소 값<br>
+                            1920x1080px 일때 1vmin = 10.8px / 1vmax = 19.2px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ch/ex</td>
+                        <td>
+                            폰트 사이즈의 특정 수치에 기반하는 단위<br>
+                            ch : 제로 문자인 0의 너비값의 고급 척도<br>
+                            (width:10ch 0의 10개만큼의 길이)
+                            ex : 현재 폰트의 x-높이 값 or em의 절반 값 <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>
+</body>
+</html>

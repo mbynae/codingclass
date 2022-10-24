@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기</h2><br>
+            <p class="t_desc2">
+                이번 사이트는 이미지 안에 텍스트를 넣는 유형입니다. 
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">이미지 유형 사이트 만들기 01</h3>
+            <p class="t_desc" style="margin-top: 15px;">
+                2개의 이미지 안에 텍스트와 링크를 넣는 유형입니다.
+            </p>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNb3JycwxXqPJJV7wkHV6MT%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D565%253A97" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2" style="font-size: 18px; margin-bottom: 15px;">이미지 유형01 코드</h3>
+
+             <div class="t_code">
+<pre><code class="language-css">//CSS 파트
+&lt;style&gt;
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .font {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 ,h3 ,h4 ,h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    img {
+        width: 100%;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section &gt; h2 {     /* &gt;는 바로 밑에 있는 자식을 의미 */
+        font-size: 50px;
+        line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section &gt; p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    /* blind : 텍스트를 안보이게 숨기는 방법 */
+    .blind {
+        position:absolute;
+        clip:rect(0 0 0 0);
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden;
+    }
+
+    /* content */
+    .container {
+        width: 100px;
+        height: 370px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .img01 {
+        width: 49%;
+        height: 100%;
+        background-color: rgb(97, 94, 94);
+        background-image: url(img/img_bg01.jpg);
+        position:relative
+    }
+    .text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin: 30px;
+    }
+    .text &gt; h3 {
+        font-size: 32px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .text &gt; p {
+        font-size: 16;
+        color: #fff;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    .text &gt; span {
+
+    }
+    .text &gt; span a {
+        font-size: 16px;
+        color: #fff;
+        display:block;
+        width: 120px;
+        height: 38px;
+        background-color: rgba(62, 60, 55, 0.7);
+        text-align: center;
+        line-height: 38px;
+    }
+    .img02 {
+        width: 49%;
+        height: 100%;
+        background-color: rgb(120, 89, 96, 0.7);
+        background-image: url(img/img_bg02.jpg);
+        position:relative
+    }
+&lt;/style&gt;
+
+
+//HTML 파트
+&lt;section id="imgType01" class="font section"&gt;
+    &lt;h2&gt;365일 언제나 맛있는 과일 쥬스&lt;/h1&gt;
+    &lt;p&gt;남녀노소 누구에게나 인기있는 생과일 쥬스를 소개합니다!&lt;/p&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="img01"&gt;
+            &lt;div class="text"&gt;
+                &lt;h3&gt;상큼한 오렌지 쥬스&lt;/h3&gt;
+                &lt;p&gt;
+                    톡 쏘는 맛과 시원하고 달달한 오랜지 쥬스입니다.&lt;br&gt;
+                    비타민C의 함유량도 엄청나요.
+                &lt;/p&gt;
+                &lt;span&gt;&lt;a href="#"&gt;자세히보기&lt;/a&gt; &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="img02"&gt;
+            &lt;div class="text"&gt;
+                &lt;h3&gt;달콤한 딸기 쥬스&lt;/h3&gt;
+                &lt;p&gt;
+                    달달하고 맛있는 딸기쥬스입니다.&lt;br&gt;
+                    한모금 마시면 잊을수가 없는 맛이죠.
+                &lt;/p&gt;
+                &lt;span&gt;&lt;a href="#"&gt;자세히보기&lt;/a&gt; &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <p class="t_desc" style="margin-top: 15px;">
+                카드 유형과 똑같이 2개의 박스를 만들고 해당 위치에 이미지와 텍스트를 넣어줍니다.<br>
+                이미지를 넣을때 HTML에 &lt;img&gt;를 활용해 이미지를 삽입하는 방식과 CSS에 background-img를 사용해서
+                이미지를 삽입하는 방식이 있습니다.<br>
+                background-img는 HTML에 이미지를 삽입하는 방식과 다르게 배경에 그림을 넣기 때문에 일반적인 방식으론 이미지에 링크를 넣을 수 없습니다.
+            </p>
+            <p class="t_desc" style="margin-top: 15px;">
+                텍스트는 하나로 묶어 position을 사용하면 쉽게 위치를 지정할 수 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">※ 완성된 형태</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://mbynae.github.io/coding/site/imageType/imageType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/site/imageType/imageType01.html" target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

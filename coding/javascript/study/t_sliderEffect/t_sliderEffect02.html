@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 슬라이더 이펙트 02</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이더 이펙트</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용한 슬라이드 효과 만들기 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">슬라이더 이펙트 02 - 좌로 이동하는 효과</h3>
+            <p class="t_box">
+                일정 시간 간격으로 이미지가 좌측으로 이동해 자동으로 바꿔 출력해주는 효과입니다.<br>
+                슬라이더 이펙트 01은 <a href="https://piowm123.tistory.com/62" target="black" style="text-decoration:underline;">이쪽</a>에서 볼 수 있습니다.
+
+            </p> 
+            <p class="t_desc">
+                이번 효과는 자바스크립트와 GSAP를 활용한 2가지 방식이 있습니다.
+
+            </p> 
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0; margin-bottom: -120px;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+            </div>
+
+            <hr style="margin-top: 180px;">
+
+            <!-- HTML -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ HTML 파트</h4>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+&lt;section id="sliderType01" &gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg16-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg17-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg18-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg19-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg20-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                01 유형과 같지만 이번 유형은 사진 전체가 좌측으로 이동해야 하기 때문에 한번 더 블록을 만들어 이동하는 파트를 주었습니다.
+            </p>
+
+            <!-- CSS -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ CSS 파트</h4>
+            <div class="t_code">
+<pre><code>/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {      /* 이미지가 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider__inner {    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4000px;
+    height: 500px;
+}
+.slider {           /* 개별적인 이미지 */
+    position: relative;
+    width: 800px;
+    height: 500px;
+    
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before{content:'인테리어1';}
+.slider:nth-child(2)::before{content:'인테리어2';}
+.slider:nth-child(3)::before{content:'인테리어3';}
+.slider:nth-child(4)::before{content:'인테리어4';}
+.slider:nth-child(5)::before{content:'인테리어5';}
+.slider:nth-child(1){z-index: 5;}
+.slider:nth-child(2){z-index: 4;}
+.slider:nth-child(3){z-index: 3;}
+.slider:nth-child(4){z-index: 2;}
+.slider:nth-child(5){z-index: 1;}
+
+@media (max-width: 800px){
+    .slider__img {
+        width: 400px;
+        height: 300PX;
+    }
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                이번 이미지들은 한곳에 모이지 않고 수평으로 나열되어야 합니다.<br>
+                그래서 position:absolute 대신 display:flex를 사용해 수평으로 나열시켰습니다.
+            </p>
+            <p class="t_desc">
+                또한 나열된 이미지가 정해진 위치의 이미지만 보이도록 이미지를 보여줄 블록에 overflow:hidden을 사용해
+                나머지 이미지 부분을 감추었습니다.
+            </p>
+
+            <!-- JAVASCRIPT -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ JAVASCRIPT 파트</h4>
+            <div class="t_code">
+<pre><code>//선택자
+const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");       //보이는 영역
+const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
+const slider = document.querySelectorAll(".slider");            //이미지
+
+
+let currentIndex = 0;
+let sliderCount = slider.length;
+
+sliderInner.style.transition = "all 0.6s"
+
+//sliderInner.style.transform += "translateX(-0px)";        800 * 0 
+//sliderInner.style.transform += "translateX(-800px)";      800 * 1
+//sliderInner.style.transform += "translateX(-1600px)";     800 * 2
+//sliderInner.style.transform += "translateX(-2400px)";     800 * 3
+//sliderInner.style.transform += "translateX(-3200px)";     800 * 4
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % sliderCount;
+
+    //if문을 사용한 방법
+    //if (currentIndex &lt; sliderCount-1){        // 삼항연산자 : (currentIndex &lt; sliderCount-1) ? currentIndex++ : currentIndex = 0;
+        //currentIndex++;
+    //} else {
+        //currentIndex = 0;
+    //};
+    
+    sliderInner.style.transform = "translateX("+ -800*currentIndex +"px)";
+    
+}, 2000);
+</code></pre>
+            </div>
+            <p class="t_desc">
+                수평으로 나열된 이미지가 2초마다 한번씩 좌측으로 이동해야 합니다. 따라서 사진 크기가 800px이므로 2초마다 800px 만큼 이동시키기 위한 패턴을 만들어야 합니다.<br>
+                좌측 이동이니 -800을 두고 해당 값이 순차적으로 0,1,2,3,4의 값이 곱해져야 합니다.<br>
+                곱해져야할 값의 변수를 currentIndex 로 두고 저번과 똑같이 나머지 몫인 currentIndex = (currentIndex + 1) % slider.length 쓰게 되면
+                -800*currentIndex로 패턴을 만들 수 있게 됩니다.
+            </p>
+            <p class="t_desc">
+                이 후 css의 trasnform 요소를 사용해 이동시키기만 하면 완성됩니다. 
+            </p>
+
+            <!-- GSAP 방식 -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ GSAP 방식</h4>
+            <div class="t_code">
+<pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    const slider = document.querySelectorAll(".slider");
+    let currentIndex = 0;
+
+    setInterval(() =&gt; {
+        currentIndex = (currentIndex + 1) % slider.length;
+
+        gsap.to(".slider__inner", {     //선택자 지정을 안해도 "" 안에 클래스를 지정할 수 있음
+            duration : 0.6,
+            x : -800*currentIndex
+        });
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                GSAP는 Jquery처럼 외부 링크를 적용해 쉽게 효과를 적용시켜주며, 특히 애니메이션 효과를 보다 쉽게 적용시키는데 특화 되어있는 효과입니다.
+            </p>
+            <p class="t_desc">
+                cdn으로 링크를 연결시켜 사용 준비를 하며, gsap를 선언해 사용합니다.<br>
+                GSAP의 큰 특징으로 선택자를 지정 안해도 클래스를 지정할 수 있다는 점이 있습니다.<br>
+                이로 인해 코드가 상당히 간결해지는 효과를 갖습니다.
+            </p>
+
+
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/sliderEffect02.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

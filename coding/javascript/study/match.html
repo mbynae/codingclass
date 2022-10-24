@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>match</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+                <li><a href="element.html">요소 선택</a></li>  
+                <li><a href="join_push_pop.html">join/push/pop</a></li>  
+                <li><a href="slice_substring _substr.html">slice( )/substring( )/substr( )</a></li>  
+                <li><a href="split_replace_replaceAll.html">split( )/replace( )/replaceAll( )</a></li>  
+                <li><a href="concat_repeat.html">concat( )/repeat( )</a></li>  
+                <li><a href="padStart_End.html">padStart( )/padEnd( )</a></li>  
+                <li><a href="quiz01.html">퀴즈 만들기01</a></li>  
+                <li><a href="quiz02.html">퀴즈 만들기02</a></li>  
+                <li><a href="quiz03.html">퀴즈 만들기03</a></li>  
+                <li><a href="quiz04.html">퀴즈 만들기04</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit" style="margin-bottom: 25px;">문자열 메소드 - match( )</h2>
+            <p class="t_desc2">
+                문자열을 검색하고 배열값을 반환하는 메서드입니다.
+            </p>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>매소드</th>
+                        <th>설명</th>
+                        <th>문법</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">match( )</td>
+                        <td>
+                            문자열(정규식)을 검색하고 배열값을 반환합니다.
+                        </td>
+                        <td>
+                            "문자열".match("검색값")<br>
+                            "문자열".match("정규식 표현")
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="t_desc" style="margin-top: 15px;">
+                match( ) 메소드는 문자열에서 찾고 싶은 문자가 포함되어 있는지 확인할 수 있습니다.<br>
+                또한 단어 뿐만 아니라 정규표현식을 사용해서 검색이 가능합니다. 
+            </p>  
+            <div class="t_code">
+<pre><code>{
+    const str1 = "javascript reference";
+    const currentStr1 = str1.match("javascript");      //javascript
+    const currentStr2 = str1.match("reference");       //reference
+    const currentStr3 = str1.match("r");               //r
+    const currentStr4 = str1.match(/reference/);       //reference
+    const currentStr5 = str1.match(/Reference/);       //null
+    const currentStr6 = str1.match(/Reference/i);      //reference
+    const currentStr7 = str1.match(/r/g);              //[r, r, r]
+    const currentStr8 = str1.match(/e/g);              //[e, e, e, e]
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+</html>

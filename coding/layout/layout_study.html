@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 정리</title>
+    <link rel="stylesheet" href="../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../javascript/assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">for문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">레이아웃 만들기</h2><br>
+            <p class="t_desc">레이아웃을 만드는 방법에는 크게 3가지가 있습니다.</p>
+            <p class="t_box">
+                01. float 방식<br>
+                02. flex 방식<br>
+                03. grid 방식
+            </p><br>
+            <p class="t_desc">각각의 방식에는 장단점이 있으며 상황에 따라 선택하여 사용하는게 좋습니다. </p>
+
+            <hr>
+
+            <h3 class="t_tit2">01. float 방식</h3>
+            <p class="t_desc">
+                float 방식은 기본적인 문서 배치의 흐름을 벗어나 페이지의 왼쪽이나 오른쪽으로 이동해 정렬하는 방식으로
+                clear을 통해 플로팅을 해제 하므로써 원하는 위치까지만 적용할 수 있습니다.<br>
+                하지만 일부 익스플로어에서는 적용이 되지 않으며 복잡해질수록 clear을 적용하기가 힘들어지는 단점이 있습니다.<br>
+                float 방식은 3가지로 나눠집니다.               
+            </p>
+            <h4 class="t_tit2">1-1. clear: both</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="GRxvrWB" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/mbynae/pen/GRxvrWB">
+            Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            <!-- 레이아웃01 반응형이미지 넣기 -->
+
+            <p><h3 class="t_tit2">1-2 overflow: hidden</h3></p>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="abYypqw" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/abYypqw">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            <!-- 레이아웃02 반응형이미지 넣기 -->
+
+            <p><h3 class="t_tit2">1-3. clear:fix</h3></p>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="mdxMRxz" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/mdxMRxz">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            <!-- 레이아웃03 반응형이미지 넣기 -->
+
+            <hr>
+
+            <h3 class="t_tit2">02. flex 방식</h3>
+            <p class="t_desc">
+                flex 방식은 float 방식보다 간단하며 자주 쓰이는 방식입니다. flex 방식은 레이아웃을 만들 때 아우 유연하고 동적인 구조를 유지할 수 있으며
+                플렉스 박스의 속성을 잘 활용하면 미디어쿼리 없이도 다양한 디바이스에 대응하는 반응형 레이아웃을 만들 수 도 있습니다.<br>
+                하지만 복잡한 구조에선 추가 작업이 필요하여 복잡해질 수 있는 단점도 존재합니다.
+            </p>
+
+            <h4 class="t_tit2">2-1. 간단한 flex 방식1</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="poLrROg" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/poLrROg">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h4 class="t_tit2">2-2. 간단한 flex 방식2</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="GRxvrXP" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/GRxvrXP">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h4 class="t_tit2">2-3. 심화 flex 방식</h4>
+            <p class="t_desc">
+            flex 방식은 한번에 하나의 블록만 옮길 수 있기 때문에 여러개의 블록이 있을 경우 정리하기 힘들 수 있다는 단점이 있습니다.<br>
+            이 경우, 옮겨야 할 블록들을 따로 묶어서 적용해야 제대로 정리가 가능합니다.  
+            </p>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="mdxMRza" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/mbynae/pen/mdxMRza">
+            Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <hr>
+
+            <h3 class="t_tit2">03. grid 방식</h3>
+            <p class="t_desc">
+                grid 방식은 부모 요소가 자식 요소를 컨트롤하여 레이아웃을 만드는 방식입니다. 만들기 위한 각 부분을 테이블 처럼 나눠서 구역별로 생성합니다.<br> 
+                적어야 할 코드가 위의 두 방식보다 많지만 부모 요소만 수정하면 모든 자식 요소가 수정이 되므로 복잡한 레이아웃을 만들때 유용합니다.<br>
+
+            </p>
+
+            <h4 class="t_tit2">3-1. 간단한 grid 방식1</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="yLKogra" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/yLKogra">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h4 class="t_tit2">3-2. 간단한 grid 방식2</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="WNzERBv" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/WNzERBv">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h4 class="t_tit2">3-3. 심화 grid 방식</h4>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="oNqeBrM" data-user="mbynae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/mbynae/pen/oNqeBrM">
+                Untitled</a> by mbynae (<a href="https://codepen.io/mbynae">@mbynae</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    
+    </script>
+</body>
+</html>

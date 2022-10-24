@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 마크업</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid #000;
+            padding: 0.6vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede; /* 줄 만드는 태그 안먹히면 아래쪽 패딩 주기 (dashed는 실선)*/
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid black;
+            background-color: #000;
+            color: white;
+            padding: 0.6vw 1vw 0.6vw 1vw;
+            word-break: keep-all; /*줄이 다음 단락으로 넘어갈때 단어 단위로 끊도록 해주는 태그*/
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+            margin-top: 2vw;
+        }
+        .article p {
+            margin-bottom: 2px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0; /*표의 떨어진 간격 붙이게하는 태그*/
+            border-collapse: collapse; /*표의 2줄 겹쳐졌을때 1줄로 바꿔주는 태그*/
+            margin-bottom: 10px; /*단축 mb10*/
+
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+
+        .article .box {
+            background-color: #f5f5f5; /*단축 bgc*/
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .script {
+            padding: 5px;
+            margin-top: 15px;
+        }
+        .script h4 {
+            font-weight: normal;
+            color: rgb(60, 85, 85);
+        }
+
+        /* 미디어 커리 */
+        @media (max-width: 800px){
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="$">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu"><!--교제 22페이지부터-->
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">W3C validator</a></li>
+                <li><a href="semantic_markup.html">시멘틱 마크업</a></li>
+                <li><a href="block_inline.html">블록/인라인 요소</a></li>
+            </ul>
+        </nav>
+
+        <article class="article">
+            <h2>시멘트 마크업(semantic_markup)</h2>
+            <p>
+                시멘틱(semantic)의 사전적 뜻은 '의미론적인' 정도로 해석할 수 있는데, 이것은 마크업을 할 때
+                의미에 부여하는 태그를 사용하라는 뜻입니다.
+            </p> <br>
+            <p>
+                HTML 문서는 보통 시각적인 방법으로 사용자들에게 정보를 전달하지만, 모든 사람들이 정보를 동일하게
+                받아들일 수 있는 환경이 아닐 수도 있어서, 이런 경우에 전달하려는 태그의 의미가 적절해야 합니다.
+            </p>
+            <div class="script">
+                <h4>[예시1]</h4>
+                <article class="numList">
+                    <p class="box">
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html lang="ko"&gt;<br>
+                        &lt;head&gt;<br>
+                        　　&lt;meta charset="UTF-8"&gt;<br>
+                        　　&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;  <br>  
+                        　　반응형웹<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;<br>
+                    </p>
+                </article>
+            </div>
+
+            "반응형웹"<br><br>
+
+            <p>이때 반응형 웹 부분을 마크업하면 제목 부분인 것을 알 수 있게 됩니다.</p>
+            <div class="script">
+                <h4>[예시2]</h4>
+                <article class="numList">
+                    <p class="box">
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html lang="ko"&gt;<br>
+                        &lt;head&gt;<br>
+                        　　&lt;meta charset="UTF-8"&gt;<br>
+                        　　&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;  <br>  
+                        　　&lt;h1&gt;&lt;반응형웹&gt;&lt;/h1&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;<br>
+                    </p>
+                </article>
+            </div>
+
+            <h1>"반응형웹"</h1>
+
+    
+        </article>
+    </section>
+</body>
+</html>

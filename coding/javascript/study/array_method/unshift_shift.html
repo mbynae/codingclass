@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unshift/shift</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .result {
+            padding-top: 10px;
+            margin-bottom: 80px;
+            margin-top: -15px;
+            background: rgba(165, 122, 67, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result summary {
+            margin-bottom: 10px;
+        }
+
+        .t_table {
+            text-align: center;
+        }
+
+        .t_table tr td {
+            background-color: #f5f5f5ef;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit" style="margin-bottom: 25px;">unshift( )/shift( ) 메서드</h2>
+            <p class="t_desc2">
+                unshift( ) 메서드는 배열 처음에 요소 추가 후 배열 갯수 반환합니다.<br>
+                shift( ) 배열 처음 요소를 삭제하고 삭제한 요소를 반환합니다.
+            </p>
+
+            <hr>
+
+            <div id="t_numContent1">
+                <h3 class="t_tit2">unshift( ) 메서드</h3>
+                <p class="t_desc">
+                    unshift( )메서드는 push( ) 메서드와 비슷한 효과입니다. push( ) 메서드는 배열의 뒤에 새로운 요소를 추가하고 반환하지만 unshift( ) 메서드는 배열의 첫
+                    부분에 새로운 요소를 추가하고 반환합니다.
+                </p>
+                <p class="t_box">
+                    <strong>기본 문법</strong><br>
+                    Array.unshift(추가할 배열 값);
+                </p>
+                <div class="t_code">
+                    <pre><code>const arrNum1 = [100, 200, 300, 400, 500];
+const arrNumUnshift = arrNum1.unshift(600);
+
+document.querySelector(".sample04_N1").innerHTML = "1";
+document.querySelector(".sample04_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+document.querySelector(".sample04_M1").innerHTML = "unshift( )";
+document.querySelector(".sample04_P1").innerHTML = arrNumUnshift; 
+document.querySelector(".sample04_A1").innerHTML = arrNum1;    
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <div class="t_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 5%;">
+                                        <col style="width: 32%;">
+                                        <col style="width: 13%;">
+                                        <col style="width: 13%;">
+                                        <col style="width: 37%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>기본값</th>
+                                            <th>메서드</th>
+                                            <th>리턴값</th>
+                                            <th>결과값</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sample04_N1"></td>
+                                            <td class="sample04_Q1"></td>
+                                            <td class="sample04_M1"></td>
+                                            <td class="sample04_P1"></td>
+                                            <td class="sample04_A1"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <script>
+                                const arrNum1 = [100, 200, 300, 400, 500];
+                                const arrNumUnshift = arrNum1.unshift(600);
+
+                                document.querySelector(".sample04_N1").innerHTML = "1";
+                                document.querySelector(".sample04_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+                                document.querySelector(".sample04_M1").innerHTML = "unshift( )";
+                                document.querySelector(".sample04_P1").innerHTML = arrNumUnshift;
+                                document.querySelector(".sample04_A1").innerHTML = arrNum1;    
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //1번 -->
+
+            <div id="t_numContent2">
+                <h3 class="t_tit2">shift( ) 메서드</h3>
+                <p class="t_desc">
+                    pop( ) 메서드가 배열의 마지막 요소를 제거하고 그 요소를 반환했다면 shift( ) 메서드는 첫번째 요소를 제거하고 반환합니다.
+                </p>
+                <p class="t_box">
+                    <strong>문법</strong><br>
+                    Array.shift( );
+                </p>
+                <div class="t_code">
+                    <pre><code>const arrNum2 = [100, 200, 300, 400, 500];
+const arrNumshift = arrNum2.shift();
+
+document.querySelector(".sample04_N2").innerHTML = "2";
+document.querySelector(".sample04_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+document.querySelector(".sample04_M2").innerHTML = "shift( )";
+document.querySelector(".sample04_P2").innerHTML = arrNumshift; 
+document.querySelector(".sample04_A2").innerHTML = arrNum2; 
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <div class="t_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 5%;">
+                                        <col style="width: 32%;">
+                                        <col style="width: 13%;">
+                                        <col style="width: 13%;">
+                                        <col style="width: 37%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>기본값</th>
+                                            <th>메서드</th>
+                                            <th>리턴값</th>
+                                            <th>결과값</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sample04_N2"></td>
+                                            <td class="sample04_Q2"></td>
+                                            <td class="sample04_M2"></td>
+                                            <td class="sample04_P2"></td>
+                                            <td class="sample04_A2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <script>
+                                const arrNum2 = [100, 200, 300, 400, 500];
+                                const arrNumshift = arrNum2.shift();
+
+                                document.querySelector(".sample04_N2").innerHTML = "2";
+                                document.querySelector(".sample04_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+                                document.querySelector(".sample04_M2").innerHTML = "shift( )";
+                                document.querySelector(".sample04_P2").innerHTML = arrNumshift;
+                                document.querySelector(".sample04_A2").innerHTML = arrNum2; 
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //2번 -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();   
+    </script>
+</body>
+
+</html>

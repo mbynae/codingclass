@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백그라운드 이미지/ir효과</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">백그라운드 이미지/ir효과</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">백그라운드 이미지 / ir 효과</h2>
+            <p class="t_desc2">
+                배경에 이미지를 넣고 웹접근성을 준수하는 효과입니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">1. 백그라운드 이미지</h2>
+            <p class="t_desc">
+               HTML에 이미지를 넣기 위해선 &lt;img&gt; 태그를 사용해야 합니다. 하지만 CSS를 이용해 배경에 이미지를 넣는 방법이 있습니다.<br>
+               'background-image: url("")' 을 사용하면 배경에 이미지를 직접 넣을 수 있습니다. 하지만, 이미지에 링크를 걸거나 이미지의 설멸을
+                적어 웹표준을 준수할 수는 없습니다.
+            </p>
+
+            <h2 class="t_tit2">2. ir 효과</h2>
+            <p class="t_desc">
+                <a href="https://piowm123.tistory.com/25" target="_blank" style="text-decoration: underline;">웹표준</a>을 준수하기 위해선 이미지에 
+                설명을 넣어야 하며 &lt;img&gt; 태그를 사용시 "alt"를 이용해 준수할 수 있습니다<br>
+                하지만 백그라운드 이미지는 직접 넣을 수 없는데 이 때 대신 사용하는 것이 ir 효과 입니다.
+            </p>
+            <h3 class="t_tit2" style="font-size: 18px;">▶ 의미있는 이미지의 대체 텍스트를 제공하는 경우</h2>
+            <p class="t_box">
+                ir {<br>
+                    　　display: block;<br>
+                    　　overflow: hidden;<br>
+                    　　font-size: 0;<br>
+                    　　line-height: 0;<br>
+                    　　text-indent: -9999px;<br>
+                }
+            </p>
+            <h3 class="t_tit2" style="font-size: 18px;">▶  의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주는 경우</h2>
+            <p class="t_box">
+                ir {<br>
+                    　　display: block;<br>
+                    　　overflow: hidden;<br>
+                    　　position: relative;<br>
+                    　　z-index: -1;<br>
+                    　　width: 100%;<br>
+                    　　height: 100%;<br>
+                }
+            </p>
+            <h3 class="t_tit2" style="font-size: 18px;">▶  대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 경우</h2>
+            <p class="t_box">
+                ir {<br>
+                    　　overflow: hidden;<br>
+                    　　position: absolute;<br>
+                    　　width: 0;<br>
+                    　　height: 0;<br>
+                    　　line-height: 0;<br>
+                    　　text-indent: -9999px;<br>
+                }
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

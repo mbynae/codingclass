@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃05 float</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #header .h1 {
+            width: 100%;
+            height: 100px;
+            background-color: #D5CCC9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #nav .b1 {
+            width: 100%;
+            height: 100px;
+            background-color: #9D8980;
+        }
+        #main {
+            width: 100%;
+            height: 780px;
+            background-color: #886F65;
+        }
+        .contents .cont1 {
+            width: 100%;
+            height: 100px;
+            background-color: #74574A;
+        }
+        .contents .cont2 {
+            width: 100%;
+            height: 200px;
+            background-color: #684D43;
+        }
+        .contents .cont3 {
+            width: 50%;
+            height: 480px;
+            background-color: #594139;
+            float: left;
+        }
+        .contents .cont4 {
+            width: 50%;
+            height: 480px;
+            background-color: #4A352F;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+        #footer .f1 {
+            width: 100%;
+            height: 100px;
+            background-color: #3E2723;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="h1"></div>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="container">
+                <div class="b1"></div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="contents container">
+                <div class="cont1"></div>
+                <div class="cont2"></div>
+                <div class="cont3"></div>
+                <div class="cont4"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="f1"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

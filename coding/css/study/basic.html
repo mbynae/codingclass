@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 기본 문법</h2>
+            <p class="t_desc2">
+                CSS를 정의하는 방법으로는 내부 스타일시트, 외부 스타일시트, 인라인 스타일시트 등이 있습니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">▶ 스타일 시트</h2>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>설명</th>
+                        <th>형태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">내부 스타일시트</td>
+                        <td>
+                            CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되는 형태입니다.
+                        </td>                        
+                        <td>
+                            <div class="t_code">
+<pre><code>&lt;style&gt;<br>
+    p {<br>
+        color: red;<br>
+    }<br>
+&lt;/style&gt;
+</code></pre>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">외부 스타일시트</td>
+                        <td>
+                            스타일 속정을 외부 HTML에 따로 저장하는 형태입니다.<br>
+                            외부 스타일시트는 그 스타일을 선언한 모든 HTML 페이지에 적용되며 *.css의 확장자를 가집니다.
+                        </td>                        
+                        <td>
+                            <div class="t_code">
+<pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
+</code></pre>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">@import</td>
+                        <td>
+                            CSS 안으로  다른 CSS 파일을 불러올 때 사용하며 CSS의 맨 윗줄에 기술합니다.
+                        </td>                        
+                        <td>
+                            <div class="t_code">
+<pre><code>@import url("style.css");
+</code></pre>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">인라인 스타일</td>
+                        <td>
+                            태그에 직접 CSS를 정의해주는 형태로, 해당 요소에 syle="" 형태로 기술합니다.<br>
+                            우선순위가 제일 높지만 공통으로 css를 수정할 수 없어 자주 사용하지는 않습니다.
+                        </td>                        
+                        <td>
+                            <div class="t_code">
+<pre><code>&lt;p style="color: red";&gt;
+</code></pre>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

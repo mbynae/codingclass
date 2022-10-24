@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">미디어쿼리</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>                
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="calculation.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>             
+                <li><a href="type.html">데이터 타입</a></li>  
+                <li><a href="function.html">함수</a></li>  
+                <li><a href="var.html">지역변수/전역변수</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">미디어쿼리(media query)</h2>
+            <p class="t_desc2">
+                뷰포트의 해상도에 따라 CSS를 분기시키는 기법으로 반응형 프로젝트에서 반드시 필요합니다.
+            </p>
+            <p class="t_desc">
+                뷰포트 해상도가 달라질 때 레이아웃이 깨질 수 있습니다. 이를 방지하기 위해 해상도마다 레이아웃을 다르게 지정해 주도록
+                해주는 것이 미디어쿼리입니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">1. &lt;link~media=""&gt;</h2>
+            <p class="t_box">
+                &lt;link rel="stylesheet&gt; media="all and (min-width: 1000px)" href=style_pc.css"
+            </p>
+            <p class="t_desc">
+                &lt;link&gt;를 사용하는 방식은 최소 가로폭이 일정치가 되었을 때 해당 스타일시트를 연결합니다.<br>
+                위의 예시는 1000px 이상일 때 style_pc.css를 연결합니다.
+            </p>
+            <p class="t_desc">
+                브라우저는 일단 모든 css를 내려받기 때문에 &lt;link&gt; 방식은 사이즈가 커지고 속도가 느려져 자주 사용하는 방식은 아닙니다.
+            </p>
+
+            <h2 class="t_tit2">2. @media</h2>
+            <p class="t_box">
+                @media all and (min-width: 1000px){<br>
+                    　　.container {<br>
+                        　　　　width: 96%<br>
+                    　　}<br>
+                }
+            </p>
+            <p class="t_desc">
+                하나의 CSS 파일 내부에서 조건에 따라 분기시키는 가장 일반적인 형태의 미디어쿼리 방식입니다.<br>
+                위의 예시 역시 마찬가지로 가로폭이 1000px 이상일시 적용됩니다.
+            </p>
+            <h2 class="t_tit3" style="font-size: 18px; margin-top: 20px;">▶ Media Type</h2>
+            <table class="t_table" style="margin-top: 10px !important;">
+                <thead>
+                    <tr>
+                        <th>media type</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">all</td>
+                        <td>
+                            모든 미디어 장치에 사용 (기본값)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">print</td>
+                        <td>
+                            프린터에 사용
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">screen</td>
+                        <td>
+                            PC, 태블릿, 스마트폰에 사용
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">speech</td>
+                        <td>
+                            스크린리더기가 페이지를 읽는데 사용
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="t_desc" style="margin: 15px 0;">
+                미디어타입을 사용해서 어떤 타입에 사용할지 구분할 수 있습니다. 
+            </p>
+            <p class="t_box">
+                @media screen and (min-width: 768px){<br>
+                    　　body {<br>
+                        　　　　color: blue;<br>
+                    　　}<br>
+                }
+            </p>
+            <p class="t_desc">
+                해당 예시는 PC나 모바일에서 화면이 768px 이하가 되었을 때 배경이 파란색이 됩니다.
+            </p>
+
+            <h2 class="t_tit2">3. media query를 흉내내는 script</h2>
+            <p class="t_box">
+                function inmitLayout( ) {<br>
+                    　　var widthWin = $(window).width( );<br>
+                    　　if (widthWin &lt; 1000) $('body').addClass('mob').removeClass('pc');<br>
+                    　　else $('body').removeClass('mob').addClass('pc');<br>
+                }
+            </p>
+            <p class="t_desc">
+                미리 만들어둔 script를 통해 창 크기가 바뀔 때마다 실행되어 레이아웃을 변화시킬 수 있습니다. 
+            </p>
+            <p class="t_desc">
+                위의 예시는 순서대로 창의 가로 크기를 재고 1000px보다 좁으면 body에 mob 클래스를 붙이고 pc 클래스는 제거하고, 1000px 이상에서는 pc 클래스를 붙이고,
+                mob 클래스는 제거해서 PC일때와 모바일일 때의 화면을 조절합니다.  
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

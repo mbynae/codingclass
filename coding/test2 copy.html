@@ -1,0 +1,193 @@
+<style>
+    /*  폰트 적용 */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap&subset=korean');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap');
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, p, figure {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+h1, h2, h3, h4, strong, th {
+    font-weight:normal;
+    font-family:inherit;
+    color:inherit;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.main-slider {
+    font-size:0;
+    position:relative;
+    width:100%;
+    height:300px;
+}
+.main-slider .slick-list,
+.main-slider .slick-track {
+    height:100%;
+}
+
+.main-slider .slick-slide {
+    position:relative;
+}
+
+.item {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.item-1 {
+    background-color:red;
+}
+
+.item-2 {
+    background-color:blue;
+}
+
+.item-3 {
+    background-color:green;
+}
+
+.item-4 {
+    background-color:gold;
+}
+
+.item-5 {
+    background-color:blue;
+}
+
+.inner-text {
+    width: 300px;
+    height: 200px;
+    margin: 20px 0 0 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.inner-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.inner-text::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.inner-text p {
+    font-size: 15px;
+    color: #fff;
+}
+
+.inner-slider {
+    margin: 50px;
+    width:400px;
+    position:relative;
+    z-index:1000;
+}
+
+.goods {
+    width:200px; height:200px;
+}
+
+.goods-1 {
+    background-color:skyblue;
+}
+
+.goods-2 {
+    background-color:pink;
+}
+
+.goods-3 {
+    background-color:darkred;
+}
+
+.goods-4 {
+    background-color:darkblue
+}
+
+.goods-5 {
+    background-color:darkcyan;
+}
+</style>
+
+
+
+
+
+<div class="main-slider">
+    <div class="item item-1">
+        <div class="inner-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+        </div>
+    </div>
+    <div class="item item-2">
+        <div class="inner-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+        </div>
+    </div>
+    <div class="item item-3">
+          <div class="inner-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+        </div>
+    </div>
+    <div class="item item-4">
+        <div class="inner-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+        </div>
+    </div>
+    <div class="item item-5">
+        <div class="inner-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, ea minima optio magnam harum, cupiditate, illum amet possimus consequatur exercitationem pariatur voluptate earum! Veritatis, minima inventore. Perspiciatis labore ducimus ipsum!</p>
+        </div>
+    </div>
+</div>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+
+    <!-- slick 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<script>
+    let mainSlider = $('.main-slider');
+let innerText = $('.inner-text');
+
+mainSlider.slick({
+    slidesToShow: 1,
+    dots: true,
+});
+
+mainSlider.on('wheel', function(e) {
+  e.preventDefault();
+
+  if (e.originalEvent.deltaY < 0) {
+    $(this).slick('slickPrev');
+  } else {
+    $(this).slick('slickNext');
+  }
+});
+
+innerText.on('wheel', function(e) {
+    e.stopPropagation();
+})
+</script>

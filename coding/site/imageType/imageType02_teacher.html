@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .font {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* >는 바로 밑에 있는 자식을 의미 */
+            font-size: 50px;
+            line-height: 1;     /* 피그마에서 lh가 auto인것은 코딩에서 1임 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 텍스트를 안보이게 숨기는 방법 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        
+        /* content */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 32%;
+            background-color: #ccc;
+            position: relative;
+            overflow: hidden;   /*밑의 호버 효과로 글이 내려갔을때 내려간 부위를 숨겨줌 */
+        }
+        .image__box {}
+        .image__box img {
+            vertical-align: top;    /* img는 인라인구조라 약간의 여백이 생기는데 그걸 제거해주는 방식 */
+            height: 100%;
+            transition: all 0.6s ease-in-out;   /* hover의 동작 조절 */
+        }
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: -100px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);    /* 블러효과 주는 방법 */
+            padding: 23px 20px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.5s ease-in-out;   /* hover의 동작 조절 */
+        }
+        .img1 .image__desc {background: rgba(0,0,0,0.1);}
+        .img2 .image__desc {background: rgba(0,0,0,0.1);}
+        .img3 .image__desc {background: rgba(0,0,0,0.1);}
+
+        .image:hover .image__desc {
+            bottom: 0;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.03);     /* 마우스 올렸을때 이미지가 살짝 커지게 해줌 */
+        }
+        .image__desc .more:hover {
+            text-decoration: underline;
+        }
+        
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .image__desc a {
+            font-size: 16px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="imgType01" class="image__wrap font section">
+        <h2>간편한 한끼 식사 패스트푸드</h1>
+        <p>많은 사람들이 즐겨먹는 패스트푸드입니다.</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <figure class="image__box">
+                    <img src="img/img02_bg01.jpg" alt="햄버거">
+                </figure>
+                <div class="image__desc">
+                    <h3>스테이크 햄버거</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img2">
+                <figure class="image__box">
+                    <img src="img/img02_bg02.jpg" alt="햄버거">
+                </figure>
+                <div class="image__desc">
+                    <h3>하와이안 피자</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img3">
+                <figure class="image__box">
+                    <img src="img/img02_bg03.jpg" alt="햄버거">
+                </figure>
+                <div class="image__desc">
+                    <h3>저염 감자튀김</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

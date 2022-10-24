@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 페럴랙스 이펙트 02</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .t_code {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">페럴랙스 이펙트</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용한 페럴랙스 효과 만들기 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">페럴랙스 이펙트 02 - 사이드 메뉴</h3>
+            <p class="t_box" style="margin-bottom: 40px;">
+                <a href="https://piowm123.tistory.com/82?category=965225" target="_blank" style="text-decoration: underline;">패럴랙스 01</a>과 동일한 효과이지만
+                매뉴를 사이드에 적용하는 방법입니다.
+            </p>  
+
+            <!-- HTML/CSS -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0;">▶ 화면 구성 형태</h4>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0; margin-bottom: 20px;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D618%253A3" allowfullscreen></iframe>
+            </div>
+            <p class="t_desc">
+                이번 효과는 패럴랙스 이펙트 01의 메뉴바를 사이드로 만들고 CSS를 이용해 지정된 부분을 강조하는 원을 그려야 합니다.<br><br>
+            </p>
+
+            (사이드 이미지)
+            <div class="t_code">
+<pre><code>//HTML 파트
+&lt;nav id="parallax__dot"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                사이드 메뉴는 패럴랙스 이펙트 01의 메뉴와 만드는 방법이 동일합니다.<br>
+                하지만 텍스트를 가려야 하기 때문에 일단 &lt;span&gt; 안에 텍스를 넣었습니다.<br><br>
+            </p>
+
+            <div class="t_code">
+<pre><code>//CSS 파트
+&lt;style&gt;
+    #parallax__dot {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2000;
+        background: rgba(0,0,0,0.4);
+        padding: 10px 20px;
+        border-radius: 30px;
+        z-index: 10000;
+    }
+    #parallax__dot li {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 12px 10px;
+        box-shadow: 0 0 0 2px rgba(255,255,255,1);
+        transition: box-shadow .2s ease
+    }
+    #parallax__dot li a {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        transition: transform .2s ease
+    }
+    #parallax__dot li.active {
+        box-shadow: 0 0 0 2px rgba(255,255,255,1);
+    }
+    #parallax__dot li.active a {
+        transform: scale(0.4);
+    }
+    #parallax__dot li span {
+        display: none;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                CSS로 &lt;li&gt;와 &lt;a&gt; 태그에 동일한 크기의 원을 그리고 &lt;a&gt; 태그에 position: absolute를 적용해 겹치게 합니다. 이 때 모습은 원이 겹쳐있어 하나의 원처럼 보입니다.
+            </p>
+            <p class="t_desc">
+                이제 각 원에 클래스(active)를 주어 활성화 된 &lt;a&gt; 태그의 원이 줄어들어 강조되도록 합니다.<br>
+                활성화 될 때 transition 효과를 주어 자연스럽게 바뀌도록 했습니다. 
+            </p>
+
+            <!-- JAVASCRIPT -->
+            <h4 class="t_tit3" style="font-size: 18px; margin: 40px 0 15px 0;">▶ JAVASCRIPT 파트</h4>
+            <h5 class="t_tit3" style="font-size: 16px; margin: 25px 0 15px 0;">Step1. 클릭시 화면 이동</h4>
+            <div class="t_code">
+<pre><code>&lt;script&gt;
+    document.querySelectorAll("#parallax__dot a").forEach(el => {
+        el.addEventListener("click", e => {
+            e.preventDefault();
+
+            document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                쿼리셀렉터로 원(parallax__dot)을 선택하고 이벤트 메서드로 클릭시 해당 이미지 위치로 이동하도록 합니다.
+            </p>
+            <p class="t_desc">
+                메뉴는 <a> 태그로 되어있어 링크가 활성화되기 때문에 preventDefault( ) 메서드를 사용해 효과가 발생하지 않도록 합니다.
+            </p>
+            <p class="t_desc">
+                선택이 화면을 이동하도록 하는 메서드는 scrollIntoView( ) 입니다. 쿼리셀렉터로 이동할 이미지를 선택 후 화면 이동 메서드를 사용해 이동시킵니다. 
+            </p>
+
+
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※ 스크롤 동적 처리 속성</h4>
+            <p class="t_box">
+                window.pageYOffset<br>
+                window.scrollY<br>
+                document.documentElement.scrollTop
+            </p>
+            <p class="t_desc">
+                위의 세가지 속성은 웹문서가 수직으로 얼마나 스크롤됐는지 픽셀 단위로 반환합니다.
+            </p>
+            <p class="t_desc">
+                하지만 각각 특정 브라우저에서 동작이 안할 수 있어 3가지를 동시에 쓰는데,<br>
+                "window.pageYOffset || window.scrollY || document.documentElement.scrollTop" 형태로 사용할 수 있습니다.
+            </p>
+
+            <h5 class="t_tit3" style="font-size: 16px; margin: 25px 0 15px 0;">Step2. 이미지 좌표값 표현</h4>
+            <div class="t_iframe" style="min-height: 400px; padding-top: 0; margin-bottom: 0px;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D15%253A28" allowfullscreen></iframe>
+            </div>
+            <div class="t_code">
+<pre><code>
+    const scroll = document.querySelector("#parallex__info .scroll span");
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;     //이런식으로 3가지를 다 써서 모든 브라우저에 적용되게 함 
+    
+        // info
+        document.querySelector(".scroll span").innerText = Math.round(scrollTop);   //Math.round() : 값을 반올림 해줌
+        
+        // document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
+        // document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
+        // document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
+        // document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
+        // document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
+        // document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
+        // document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
+        // document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
+        // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
+
+        for(let i=1; i&lt;=9; i++){
+            document.querySelector(".offset"+i).innerText = document.getElementById("section"+i).offsetTop;
+        };
+    });
+</code></pre>
+            </div>
+            <p class="t_desc">
+                스크립트를 통해 좌표값이 표시될 aside 구역에 각 이미지에 부여한 아이디 값을 넣고 offsetTop으로 각 이미지의 좌표값을 표시합니다.  
+            </p>
+            <p class="t_desc">
+                offsetTop은 요소의 Y축 좌표값을 표현해주며, offsetLeft는 X축 좌표값을 나타냅니다. 이 값은 문서를 기준으로 합니다.
+            </p>
+            <p class="t_desc">
+                9개의 이미지가 반복되어야 하기에 for문으로 처리하였습니다.
+            </p>
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※ 수학 메서드</h4>
+            <p class="t_box">
+                Math.round( ) : 요소의 값을 반올림 해주는 메서드<br>
+                Math.floor( ) : 요소의 값을 버림 해주는 메서드<br>
+                Math.ceil( ) : 요소의 값을 올림 해주는 메서드<br>
+                Math.max( ) : 요소의 가장 큰 값을 나타내는 메서드<br>
+                Math.min( ) : 요소의 가장 작은 값을 나타내는 메서드<br>
+                Math.abs( ) : 요소의 절대값을 나타내는 메서드<br>
+                Math.trulc( ) : 요소의 정수값만 나타내는 메서드<br>
+                Math.random( ) : 요소의 랜덤 값(0-1사이의 난수)을 나타내는 메서드
+            </p>
+
+            <h5 class="t_tit3" style="font-size: 16px; margin: 25px 0 15px 0;">Step3. 메뉴와 이미지 매칭</h4>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: 0px;">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FyUTTr3pTecOd5f2DVEGodj%2F%25EC%259D%25B4%25ED%258E%2599%25ED%258A%25B8-%25ED%259A%25A8%25EA%25B3%25BC%3Fnode-id%3D158%253A36" allowfullscreen></iframe>
+            </div>
+            <div class="t_code">
+<pre><code>window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;     //이런식으로 3가지를 다 써서 모든 브라우저에 적용되게 함 
+
+    // if(scrollTop >= document.getElementById("section1").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section2").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section3").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section4").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section5").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section6").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section7").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section8").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active");
+    // };
+    // if(scrollTop >= document.getElementById("section9").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active");
+    // };
+
+
+    //for
+    // for(let i=1; i&lt;=9; i++){
+    //     if(scrollTop >= document.getElementById("section"+i).offsetTop){
+    //         document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //             li.classList.remove("active");
+    //         });
+    //         document.querySelector("#parallax__nav li:nth-child("+i+")").classList.add("active");
+    //     };
+    // }
+    //forEach
+    document.querySelectorAll(".content__item").forEach((element, index) =>{
+        if(scrollTop >= element.offsetTop-2){
+            document.querySelectorAll("#parallax__nav li").forEach(li => {
+                li.classList.remove("active");
+            });
+            document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
+        };
+    });
+    // info
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);   //Math.round() : 값을 반올림 해줌
+
+    for(let i=1; i&lt;=9; i++){
+        document.querySelector(".offset"+i).innerText = document.getElementById("section"+i).offsetTop;
+    };
+});
+</code></pre>
+            </div>
+            <p class="t_desc">
+                if문을 이용해 스크롤 위치값이 이미지의 위치값과 크거나 같을 때, 즉 스크롤이 이미지 위치로 이동했을 때 이미지에 맞는 해당 메뉴에만 효과를 주는 방법입니다.
+            </p>
+            <p class="t_desc">
+                스크롤이 각 이미지에 도달했을 때 클래스를 부여해 효과를 발동시키는데, 한번 지날 때 부여된게 지속되기 때문에 각 이미지를 지나갈 때 전체 이미지의 효과를 주는 클래스를
+                제거하고 그 다음 해당 이미지에만 클래스를 부여해 해당 메뉴에만 효과가 부여하도록 합니다.
+            </p>
+            <p class="t_desc">
+                이 작업을 이미지 수 만큼 반복해야 하기에 for문 혹은 forEach문으로 반복문을 처리하면 코드를 간단하게 줄일 수 있습니다.
+            </p>
+
+            <h5 class="t_tit3" style="font-size: 16px; margin: 25px 0 15px 0;">Step4. 메뉴 클릭 시 부드럽게 이동하는 효과</h4>
+            <div class="t_code">
+<pre><code>window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;     //이런식으로 3가지를 다 써서 모든 브라우저에 적용되게 함 
+
+    document.querySelectorAll(".content__item").forEach((element, index) =>{
+        if(scrollTop >= element.offsetTop-2){
+            document.querySelectorAll("#parallax__nav li").forEach(li => {
+                li.classList.remove("active");
+            });
+            document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
+        };
+    });
+
+    // info
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);   //Math.round() : 값을 반올림 해줌
+
+    for(let i=1; i&lt;=9; i++){
+        document.querySelector(".offset"+i).innerText = document.getElementById("section"+i).offsetTop;
+    };
+});
+
+//스크롤 이동
+document.querySelectorAll("#parallax__nav li a").forEach(li => {
+    li.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"  //부드럽게 움직이도록 해줌
+        });
+    });
+});
+</code></pre>
+            </div>
+            <p class="t_desc">
+                메뉴를 클릭 시 해당 위치로 이동하는 방법은 html의 a태그 href를 사용해 구현할 수 있습니다.
+                하지만 이런 방식은 곧바로 이동할 뿐 애니메이션을 주듯 부드러운 움직임을 구현하지 않습니다.<br>
+                그래서 스크립트를 통해 움직임을 구현합니다.  
+            </p>
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※ scrollIntoView( )</h4>
+            <p class="t_box">
+                element.scrollIntoView( ) : 특정 요소 위치로 화면 스크롤을 이동시키는 메서드 <br>
+                - behavior : 전환 애니메이션을 정의 (smooth : 부드럽게 이동)
+            </p>
+            <p class="t_desc">
+                scrollIntoView( )는 스크롤의 위치를 이동시키는 메서드 입니다. 이 때 몇가지 효과를 줄 수 있는데 "behavior: smooth"를 사용 시 스크롤이 위아래로 부드럽게 이동하게 됩니다.
+            </p>
+
+            <h4 class="t_tit2" style="font-size: 18px; margin-top: 20px;">※ preventDefault( )</h4>
+            <p class="t_box">
+                event.preventDefault( ) : 특정 이벤트의 발생을 막아주는 메서드 <br>
+            </p>
+            <p class="t_desc">
+                preventDefault( )는 &lt;a&gt; 태그나 &lt;submit&gt; 태그 같은 몇몇 특정 기능을 갖는 태그의 효과를 비활성화 시켜줍니다.<br>
+                본문에선 메뉴에 &lt;a&gt; 태그가 주어져 있으므로 스크립트와 충돌이 나지 않게 preventDefault( ) 메서드로 비활성화 했습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0; margin-bottom: -120px;">
+                <iframe src="https://mbynae.github.io/coding/javascript/effect/parallaxEffect02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/mbynae/coding/blob/main/javascript/effect/parallaxEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+                     
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        
+    </script>
+</body>
+</html>

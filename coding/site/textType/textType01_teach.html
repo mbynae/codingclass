@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            text-underline-position: under;
+            margin-bottom: 16px;
+        }
+        .mb70 {
+            margin-bottom: 70px !important;
+        }
+
+        /* textType */
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text {
+            width: 32%;
+            margin-bottom: 2%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            transition: background 0.4s;
+        }
+        .text:hover {
+            background: #f5f5f5;
+        }
+        .text__title {
+            font-size: 24px;
+            line-height: 1;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            padding-top: 75px;
+        }
+        .text__title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: url(img/text_icon.svg)
+        }
+        .text.t1 .text__title::before {
+            background-position: 0 0;
+        }
+        .text.t2 .text__title::before {
+            background-position: -60px 0;
+        }
+        .text.t3 .text__title::before {
+            background-position: -120px 0;
+        }
+        .text.t4 .text__title::before {
+            background-position: -180px 0;
+        }
+        .text.t5 .text__title::before {
+            background-position: -240px 0;
+        }
+        .text.t6 .text__title::before {
+            background-position: -300px 0;
+        }
+        .text__desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .text_btn {
+            font-size: 16px;
+            line-height: 1;
+            text-decoration: underline;
+            text-underline-position: under;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType" class="text__wrap nexon section">
+        <span>테스트 유형01</span>
+        <h2 class="mb70">6가지 색의 연상과 느낌</h2>
+        <div class="text__inner container">
+            <div class="text t1">
+                <h3 class="text__title">빨간색(Red)</h3>
+                <p class="text__desc">
+                    색의 3원색 중 하나인 빨간색은 뜨겁고 정렬적이며 한편으론 위험하거나 분노하는 느낌을 나타냅니다.
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t2">
+                <h3 class="text__title">노란색(Yellow)</h3>
+                <p class="text__desc">
+                    CYMK의 Y를 담당하는 노란색은 명랑하고 활달적이며 달콤한 음식이나 과일의 느낌을 내포하지만 주의와 경고의 느낌도 냅니다.
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t3">
+                <h3 class="text__title">초록색(Green)</h3>
+                <p class="text__desc">
+                    색의 3원색인 초록색은 숲과 자연을 연상하며 평온함과 평화, 안정, 휴식, 젊음 등 마음이 진정되는 느낌을 나타냅니다.
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t4">
+                <h3 class="text__title">파란색(Blue)</h3>
+                <p class="text__desc">
+                    색의 3원색 중 하나인 파란색은 시원한 바다와 명쾌하고 상쾌한 느낌을 내지만 한편으론 냉정함과 추위의 느낌도 납니다.
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t5">
+                <h3 class="text__title">보라색(Purple)</h3>
+                <p class="text__desc">
+                    보라색은 신비하고 고귀하고 우아하며 고귀 한 느낌 주며 또한 포도같은 달콤한 느낌도 주지만 고독과 외로움을 상징하기도...
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t6">
+                <h3 class="text__title">흰색(White)</h3>
+                <p class="text__desc">
+                    흰색은 순백하고 깨끗하며 평화와 조화, 시선집중 같은 주목을 이끄는 느낌을 줍니다.
+                </p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

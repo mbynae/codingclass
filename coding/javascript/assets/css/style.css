@@ -1,0 +1,424 @@
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1GothicLow/NexonLv1GothicLow.css');
+
+/* 리셋 */
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1GothicLow';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* 모든 페이지 레이아웃 */
+body {
+    padding: 40px;
+}
+#header {
+    border-bottom: 1px dotted #eea34e;
+    padding-bottom: 40px;
+}
+#main {
+    padding: 40px 0;
+    border-bottom: 1px dotted #eea34e;
+}
+#footer {
+    padding: 40px 0px;
+    text-align: center;
+
+}
+#footer a {
+    color: #eea34e;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* contauner */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 헤더 영역 */
+#header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+#header h1 a {
+    display: block;
+    font-size: 70px;
+    font-weight: 700;
+    background: linear-gradient(to right, #eea34e, #eee34e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px dotted  #eea34e;
+    margin-bottom: 40px;
+}
+.header_nav ul li {
+    display: inline;
+}
+.header_nav ul li.active a { /* 붙여 쓸 시 자식 요소가 아닌 동등한 요소로 적용이 된다 */
+    background-color: #eea34e;
+    color: #fff;
+}
+.header_nav ul li a {
+    border: 1px solid #eea34e;
+    color: #af630c;
+    padding: 12px 25px 4px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 7px;
+    transition: all 0.2s;
+}
+.header_nav ul li a:hover {
+    background-color: #eea34e;
+    color: #fff;
+}
+.header_nav .study {
+    margin-top: 10px;
+}
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #fff;
+    color: #000;
+}
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
+
+/* 메인 샘플 */
+.main_sample {
+    margin-top: 40px;
+    border-top: 1px dotted #eea34e;
+    padding-top: 40px;
+}
+.main_sample h3 {
+    font-size: 18px; /*em은 자신의 부모를 기준으로, rem은 기본값인 루트를 기준으로 바뀜 (모바일 반응형을 할때 씀)*/
+    margin-bottom: 5px;
+
+}
+.main_sample p {
+    margin-bottom: 10px;
+    color: #666;
+}
+.main_sample .result {
+    margin-bottom: 80px;
+    margin-top: 10px;
+    background: rgba(165, 122, 67, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* intro_menu */
+.intro_menu {
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.2);
+    padding: 3vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    text-align: center;
+}
+.intro_menu li a {
+    color: #dbdbdb;
+    font-weight: 700;
+    text-shadow: -1px 0 #554eb1, 0 1px #554eb1, 1px 0 #554eb1, 0 -1px #554eb1;
+}
+@media (max-width: 600px){
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li a{
+        font-size: 16px;
+    }
+}
+
+/* sample */
+.sample {
+    margin-bottom: 80px;
+}
+.sample .table {
+    margin-bottom: 10px;
+}
+.sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6e6;
+    text-align: center;
+}
+.sample .table table tr th {
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table table tr td {
+    border: 1px solid #e6e6e6e6;
+    padding: 6px;
+}
+.sample .table table tr td[class*="_P"] {     /* [class*="_p"] 속성문자(여기에 해당하는 모든 문자 선택 교제112pg */
+    color: #fff;
+}
+.sample .table table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
+} 
+.sample .table.left tr td {
+    text-align: left;
+}
+.sample .table.left .ce {
+    text-align: center;
+}
+
+.sample .box {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #666;
+}
+.sample .view {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px ;
+}
+.sample .blue {
+    background-color: #d1e4f8;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    color: rgb(77, 73, 73);
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+}
+
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #a2cbfa;
+    border: 1px solid #4390e1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #4390e1;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #4390e1;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sample .sResult {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 80px;
+    margin-top: 10px;
+    background: rgba(165, 122, 67, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+.sample .button {
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+    padding: 20px;
+}
+.sample .button a {
+    border: 1px solid #4390e1;
+    color: #4390e1; 
+    border-radius: 40px;
+    padding: 10px 25px;
+    display: inline-block;
+    margin: 5px;
+}
+.sample .button a:hover {
+    background-color: #4390e1;
+    color: #fff;
+}
+
+.bottomBTn figure svg {
+    display: inline-block;
+    padding: 17px 20px;
+    border-radius: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(245, 245, 245, 0.7);
+}
+
+
+@media (max-width: 800px){
+    .sample .table{
+        overflow-x: scroll;     /*좌우 스크롤 형태로 만들어주는거*/
+    }
+    .sample .table table {
+        width: 780px
+    }
+    .sample .table table tr td[class*="_P"] {
+        color: #000;
+    }
+
+    .bottomBTn {
+        display: none;
+    }
+}
+    
+/* 티스토리 용 문서 */
+.document i {
+    font-style: normal;
+    position: relative;
+}
+.document hr {      /*칸막이 나눌때 쓰는 방법*/
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 44px;
+}
+.document i::before {          /* 가상 요소 */
+    content: '';
+    background-color: #2043f12f;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+.document .t_tit {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit2 {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit3 {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px !important;
+}
+.document .t_desc2 {    /* 박스와 라인 만들기*/
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding: 15px 20px !important;
+    border-left: 2px solid #0243f1;
+    background-color: #f9f9f9;
+}
+.document .t_box {
+    padding: 20px !important;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+.document .t_table {
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th {
+    background-color: #f9f9f9;
+}
+.document .t_table tr th,   /*,로 두개를 같이 적용 가능*/
+.document .t_table tr td {
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce{
+    text-align: center;
+}
+.document .t_iframe {
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+}
+.document .t_iframe iframe {
+    border: 1 solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.document .t_link a {
+    display: block;
+    width: 200px;
+    background: #f5f5f5;
+    margin: 40px auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    transition:  all 0.3s;
+}
+.document .t_link a:hover {
+    background: #d6d6d6;
+}
+
+
+
+@media (max-width: 800px){
+    body {
+        padding: 20px;
+    }
+}
+

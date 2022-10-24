@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .arita {
+            font-family: "SCoreDream";
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 ,h3 ,h4 ,h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        img {
+            width: 100%;
+        }
+
+
+        /* card_type */
+
+        body {
+            background-color: #2254c3;
+        }
+        .wrap {
+            width: 100%;
+            height: 757px;
+            display: flex;
+            align-items: center;
+        }
+        .container {
+            width: 1160px;
+            height: 517px;
+            margin: 0 auto;
+            min-width: 1160px;
+            background-color: #fff;
+            display: flex;
+            overflow: hidden;
+        }
+        .card {
+            width: 33.3333%;
+            height: 571px;
+            /* background-color: #cecece; */
+            border-right: 1px solid #eeeeee;
+        }
+        .box {
+            width: 333.5px;
+            height: 465px;
+            margin: 26px;
+            position: relative;
+        }
+        .box > h2 {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-top: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+        .box > p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #666;
+            margin-top: 10px;
+            overflow: hidden;  
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .author {
+            text-align: right;
+            line-height: 1.17;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+        }
+        .author p {
+            font-size: 16px;
+            color: #dd2a2a;
+            padding: 0 12px 0 0;
+            margin-top: 1.5px;
+        }
+        .author p > span {
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap arita">
+        <section class="container">
+            <article class="card">
+                <div class="box">
+                    <figure>
+                        <img src="img/card_bg_03_01.jpg" alt="도마뱀">
+                    </figure>
+                    <h2>표범도마뱀붙이는 레오파드 게코라고도 불리며, 자연적으로 아시아, 아프가니스탄을 거쳐 인도 북부에 이르는</h2>
+                    <p>
+                        범도마뱀붙이는 도마뱀붙이류 중에선 큰 편이다. 유체의 체장은 7에서 10 센티미터, 무게는 2에서 5 그램에 달한다. 성체 암컷은 체장은 18에서 20 센티미터, 
+                    </p>
+                    <div class="author">
+                        <p>verdian chua<br>
+                            <span>Indonesia</span>
+                        </p>
+                        <div>
+                            <img src="img/card_profile03_01.svg" alt="저자">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="box">
+                    <figure>
+                        <img src="img/card_bg_03_02.jpg" alt="도마뱀">
+                    </figure>
+                    <h2>볏도마뱀붙이는 크레스티드 게코라고 불리며, 뉴칼레도니아 남부에 자생하는 도마뱀붙이의 한 종이다.</h2>
+                    <p>
+                        크레스티드게코는 로버트 십이 지휘한 탐사 도중에 다시 발견되기 전까지 멸종된 것으로 알려져 있었다. CITES에 따라 보호종으로 분류되며, 애완동물로 인기가 있어서 많이 거래된다.
+                    </p>
+                    <div class="author">
+                        <p>Pierre Bamin<br>
+                            <span>Brighton</span>
+                        </p>
+                        <div>
+                            <img src="img/card_profile03_02.svg" alt="저자">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="box">
+                    <figure>
+                        <img src="img/card_bg_03_03.jpg" alt="도마뱀">
+                    </figure>
+                    <h2>토케이도마뱀붙이는 흔히 토케이게코라고 부르는 도마뱀붙이속, 일명 참도마뱀붙이류에 속한 야행수목성 도마뱀붙이류의 일종이다.</h2>
+                    <p>
+                        토케이는 '토케에'하고 우는 독특한 발성 때문에 '토케이'라는 이름이 붙었는데, 영어 명칭을 직역하여 토케이 게코라고 불린다. 토케이의 대표 적인 모프는 칼리코,몸이 하얗고 검은 반점과 눈이 검다.
+                    </p>
+                    <div class="author">
+                        <p>Dennis Schmidt<br>
+                            <span>Germany</span>
+                        </p>
+                        <div>
+                            <img src="img/card_profile03_03.svg" alt="저자">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

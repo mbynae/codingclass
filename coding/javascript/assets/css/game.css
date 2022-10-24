@@ -1,0 +1,183 @@
+@import url('https://webfontworld.github.io/DungGeunMo/DungGeunMo.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DungGeunMo';
+    font-weight: normal;
+    cursor: none;
+} 
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#header h1 {
+    font-size: 24px;
+    color: #fff;
+    padding: 5px 0;
+    font-weight: normal;
+}
+
+#header .time {
+    color: #fff;
+    transform: translateY(1px);
+}
+
+
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 18px;
+    color: #fff;
+    text-align: center;
+}
+#footer .agent {
+    color: #fff;
+}
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 65px;
+}
+.icon1 img {
+    width: 65px;
+}
+.icon1 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+}
+.icon2 {
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    width: 65px;
+}
+.icon2 img {
+    width: 65px;
+}
+.icon2 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+}
+.icon3 {
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    width: 65px;
+}
+.icon3 img {
+    width: 65px;
+}
+.icon3 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+}
+.icon4 {
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    width: 65px;
+}
+.icon4 img {
+    width: 65px;
+}
+.icon4 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+}
+.icon5 {
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    width: 65px;
+}
+.icon5 img {
+    width: 65px;
+}
+.icon5 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+}
+
+.mouse_cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    z-index: 10000;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    user-select: none;
+    pointer-events: none;
+}
+
+.gameWindowbar {
+    width: 100%;
+    height: 25px;
+    background: #223547;
+    position: relative;
+  }
+  .Windowbar_closeBtn {
+    width: 20px;
+    height: 20px;
+    background: url(../img/gameWindowbarBtn.svg) no-repeat center / cover;
+    position: absolute;
+    right: 5px;
+    top: 2.5px;
+  }
+
+  .close {
+    display: none;
+  }
+
+
+
+#footer .agent {
+
+}
+.mac #footer {}
+.window #footer {}
