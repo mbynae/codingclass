@@ -1,7 +1,9 @@
 # codingclass
 
-## 메인 페이지
-https://mbynae.github.io/codingclass/coding/index.html   
+
+## 메인 페이지지지지지ㅣ지지지.
+https://mbynae.github.io/codingclass/coding/index.html  
+
 
 ## 클래스   
 https://mbynae.github.io/codingclass/coding/class/index.html   
