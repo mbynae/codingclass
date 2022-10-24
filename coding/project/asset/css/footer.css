@@ -1,0 +1,20 @@
+/* footer */
+.footer {
+    margin-top: 50px;
+    background-color: #fafafa;
+    height: 80px;
+}
+.footer h2 {
+    padding-top: 27px;
+    text-align: center;
+    font-size: 16px;
+    color: #757575;
+}
+.footer button {
+    font-size: 16px;
+    background-color: #fafafa;
+    margin-left: 20px;
+}
+.footer button a {
+    color: #757575;
+}

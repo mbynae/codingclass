@@ -1,0 +1,104 @@
+#main_hospital {
+    width: 100%;
+    background: #F9FAFB;
+    padding-bottom: 200px;
+}
+
+.hospi__box {
+    padding-top: 140px;
+}
+
+.hospi__title {
+    width: 480px;
+    height: 300px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hospi__titleCont {
+    padding: 0 50px;
+}
+.hospi__titleCont span {
+    display: inline-block;
+    font-size: 20px;
+    color: #6CC4B3;
+    margin-bottom: 20px;
+}
+.hospi__titleCont p {
+    font-size: 32px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #505050;
+    margin-bottom: 20px;
+}
+.hospi__titleCont a {
+    font-size: 20px;
+    color: #6CC4B3;
+    padding: 5px 55px;
+    background-color: #FCFCFC;
+    box-shadow: 2px 2px 8px rgba(222, 222, 222, 0.25);
+    border-radius: 10px;
+}
+
+.hospi__contents {
+    width: 1020px;
+    padding-left: 10%;
+    margin: 0 auto;
+}
+.hospi__card {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 200px;   
+    display: flex;
+    justify-content: space-between;
+}
+.hospi__card:last-child {
+    margin: 0;
+}
+.hospi__text {
+    width: 440px;
+    height: 300px;
+    /* background: #666; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.hospi__textCont {
+    padding: 0 20px;
+} 
+.hospi__text span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.hospi__text span img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.hospi__text span h4 {
+    font-size: 20px;
+    color: #505050;
+    font-weight: 500;
+}
+.hospi__text address {
+    font-size: 16px;
+    color: #6CC4B3;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.hospi__text p {
+    font-size: 26px;
+    line-height: 1.4;
+    color: #505050;
+}
+.hospi__map {
+    width: 440px;
+    height: 300px;
+}
+.hospi__map img {
+    filter: drop-shadow(-10px 10px 15px rgba(222, 222, 222, 0.5));
+    border-radius: 30px;
+}

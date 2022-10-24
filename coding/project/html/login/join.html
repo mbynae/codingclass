@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 정보 입력 페이지</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../../asset/css/reset.css">
+    <link rel="stylesheet" href="../../asset/css/common.css">
+    <link rel="stylesheet" href="../../asset/css/font.css">
+    <link rel="stylesheet" href="../../asset/css/login/idPassCommon.css">
+
+    <!-- join -->
+    <link rel="stylesheet" href="../../asset/css/login/join.css">
+</head>
+<body>
+    <div class="join__popup">            
+        <div class="join__inner">
+            <h2>회원 가입</h2>
+            <form action="joinSave.php" name="join" method="post">
+                <fieldset>
+                        <legend class="blind">회원가입</legend>
+                        <div class="join__box">
+                            <h3>INFOMATION</h3>
+                            <div>
+                                <label class="blind" for="youName">이름</label>
+                                <input type="text" id="youName" name="youEmail" placeholder="이름" required>
+                            </div>
+                            <div class="choice_gender">
+                                <p class="blind" for="youGender">성별</p>
+                                <span>
+                                    <input type="radio" id="youGenderMale" name="youGender" value="male" required>
+                                    <label class="gender" for="youGenderMale">남자</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="youGenderFemale" name="youGender" value="female" required>
+                                    <label class="gender" for="youGenderFemale">여자</label>
+                                </span>
+                            </div>
+                            <div class="id_box">
+                                <label class="blind" for="youID">ID</label>
+                                <input type="text" id="youID" name="youEmail" placeholder="ID" required>
+                                <button type="button" class="ID_confirm">중복확인</button>
+                            </div>
+                            <div>
+                                <label class="blind" for="youPass">비밀번호</label>
+                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" required>
+                            </div>
+                            <div class="info_youPassc">
+                                <label class="blind" for="youPassc">비밀번호 확인</label>
+                                <input type="password" id="youPassc" name="youPass" placeholder="비밀번호 확인" required>
+                            </div>
+                            <h3>E-mail</h3>
+                            <div>
+                                <label class="blind" for="youEmail">이메일</label>
+                                <input type="email" id="youEmail" name="youEmail" placeholder="E-mail" required>
+                            </div>
+                            <h3>Phone</h3>
+                            <div>
+                                <label class="blind" for="youPhone">휴대폰번호</label>
+                                <input type="text" id="youPhone" name="youPhone" placeholder="전화번호를 입력해주세요." required>
+                            </div>
+                        </div>
+                </fieldset>                                  
+                <button class="join__btn" type="submit">가입하기</button>
+            </form>
+            <div class="close_btn">
+                <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
+                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
+                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 닫기 버튼
+        const joinPopup = document.querySelector(".join__popup");
+        const close_btn = document.querySelector(".close_btn");
+
+        close_btn.addEventListener("click", () => {
+            joinPopup.classList.add("close");
+            joinPopup.classList.remove(".show")
+            joinPopup.classList.add(".hide")
+        });
+    </script>
+</body>
+</html>

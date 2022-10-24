@@ -1,0 +1,91 @@
+.inner_height {
+    min-height: 517px;
+}
+
+/* 아이디 찾기 */
+.emailVerifi {
+    width: 100%;
+}
+.emailVerifi > form > fieldset {
+    margin-top: -10px;
+}
+.contentBox {
+    border-bottom: 1px dashed #6CC4B3;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+.contentBox p:first-child {
+    font-size: 20px;
+    color: #757575;
+    text-align: center;
+    margin: 40px 0;
+}
+.contentBox h5 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #757575;
+}
+.input__style {
+    display: block;
+    padding: 11px 20px;
+    width: 90.5%;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    border: 0;
+}
+.input__style:focus {
+    outline: none;
+}
+.input__style::placeholder {
+    color: #757575;
+}
+.first_input > .input__style {
+    margin-bottom: 10px;
+}
+input:required {
+    font-family: 'SCoreDream';
+    color: #505050;
+}
+
+.searchIdBox {
+    width: 100%;
+    border-bottom: 1px dashed #6CC4B3;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+.searchIdBox h5 {
+    font-size: 20px;
+}
+.searchIdBox > div {
+    text-align: center;
+}
+.confirm__btn {
+    display: block;
+    margin: 0 auto -15px auto;
+    font-size: 20px;
+    cursor: pointer;
+    color: #505050;
+    background-color: #fff;
+}
+
+/* 비밀번호 찾기 */
+.passVer_user {
+    margin-bottom: 30px;
+}
+.passVer_field {
+    margin-top: 0px !important;
+}
+.second_input > .input__style {
+    margin-bottom: 30px;
+}
+.contentBox p:last-child {
+    font-size: 14px;
+    color: #757575;
+    text-align: center;
+    /* margin-bottom: 20px; */
+}
+.passVer_conBox {
+    padding-bottom: 20px;
+}

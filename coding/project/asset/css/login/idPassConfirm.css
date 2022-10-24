@@ -1,0 +1,80 @@
+/* 아이디 찾음 */
+
+.inner_height {
+    height: 517px;
+}
+.search_contents {
+    border-bottom: 1px dashed #6CC4B3;
+    margin-bottom: 20px;
+}
+.id_find {
+    margin-bottom: 20px;
+}
+.findLogo {
+    padding-top: 9px;
+    margin-bottom: 9px;
+}
+.findLogo img {
+    width: 100%;
+}
+.id_find p {
+    font-size: 20px;
+    color: #757575;
+    text-align: center;
+}
+
+.searchIdBox {}
+.searchIdBox h5 {
+    font-size: 16px;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.searchIdBox .input__style {
+    font-size: 16px;
+    color: #757575;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.go_login {
+    text-align: center;
+}
+.go_login a {
+    font-size: 20px;
+    color: #505050;
+}
+input:required {
+    font-family: 'SCoreDream';
+    color: #505050;
+}
+
+
+/* 비밀번호 찾음 */
+.inner_height2 {
+    /* max-height: 542px; */
+}
+.id_find2 {
+    margin-bottom: 24.5px;
+}
+.findLogo2 {
+    margin-bottom: 22px;
+}
+.findLogo2 img {
+    width: 100%;
+    padding-top: 11px;
+}
+.id_find2 p {
+    font-size: 24px;
+    color: #757575;
+    text-align: center;
+}
+.searchPassBox {
+    margin-bottom: 22px;
+}
+.searchPassBox p {
+    font-size: 14px;
+    color: #757575;
+    text-align: center;
+}

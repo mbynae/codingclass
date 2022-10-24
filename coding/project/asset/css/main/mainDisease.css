@@ -1,0 +1,234 @@
+#main_disease {
+    width: 100%;
+    height: 2200px; /*임시*/
+    background: #FDFEFF;
+}
+.disease_box {
+    padding-top: 140px;
+}
+
+.disease__title {
+    /* width: 41%; */
+    width: 530px;
+    height: 300px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disease__titleCont {
+    padding: 0 50px;
+}
+.disease__titleCont span {
+    display: inline-block;
+    font-size: 20px;
+    color: #6CC4B3;
+    margin-bottom: 20px;
+}
+.disease__titleCont p {
+    font-size: 32px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #505050;
+    margin-bottom: 20px;
+}
+.disease__titleCont a {
+    font-size: 20px;
+    color: #6CC4B3;
+    padding: 5px 55px;
+    background-color: #FCFCFC;
+    box-shadow: 2px 2px 8px rgba(222, 222, 222, 0.25);
+    border-radius: 10px;
+}
+
+.disease__contents1 {
+    width: 1020px;
+    padding-right: 10%;
+    margin: 0 auto 150px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.disease__card {
+    width: 440px;
+    height: 300px;
+    background-color: #FDFEFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 30px; */
+}
+.disease__card:nth-child(1),
+.disease__card:nth-child(2) {
+    margin-bottom: 100px;
+}
+.disease__cardConts {
+    padding: 0 20px;
+    min-height: 270px;
+}
+.disease__cardConts span {
+    display: inline-block;
+    width: 100px;
+    height: 90px;
+
+}
+.disease__cardConts h4 {
+    font-size: 28px;
+    color: #6CC4B3;
+    font-weight: 500;
+    margin-bottom: 23px;
+}
+.disease__cardConts p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #505050;
+}
+.disease__card:nth-child(1) span {
+    width: 95px;
+    background-image: url(../../img/diseaseCard_icon.svg);
+}
+.disease__card:nth-child(2) span {
+    width: 87px;
+    background-image: url(../../img/diseaseCard_icon.svg);
+    background-position-x: -95px;
+}
+.disease__card:nth-child(3) span {
+    background-image: url(../../img/diseaseCard_icon.svg);
+    background-position-x: -182px;
+}
+.disease__card:nth-child(4) span {
+    background-image: url(../../img/diseaseCard_icon.svg);
+    background-position-x: -282px;
+}
+
+
+
+.disease__contents2 {
+    width: 500px;
+    /* height: 500px; */
+    margin: 0 auto;
+}
+.disease2__Title {
+    text-align: center;
+}
+.disease2__Title span {
+    display: inline-block;
+    font-size: 20px;
+    color: #6CC4B3;
+    margin-bottom: 20px;
+}
+.disease2__Title p {
+    font-size: 32px;
+    color: #505050;
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.disease__sliderBox {
+    width: 440px;
+    height: 420px;
+    margin: 0 auto;
+    /* background: #656665; */
+}
+.slider__category {
+    max-width: 120px;
+    font-size: 14px;
+    color: #6CC4B3;
+    padding: 2px 23px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    box-shadow: 1px 1px 4px 1px rgba(222, 222, 222, 0.25);
+    border-radius: 30px;
+}
+.slider__Box {
+    width: 440px;
+    height: 420px;
+    overflow: hidden;
+    /* background: #000; */
+    position: relative;
+    
+}
+.slider__Box::-webkit-scrollbar{
+    display:none;
+  }
+.slider__inner {
+    width: 440px;
+    height: 1000px;
+    /* background: #666; */
+    /* margin-top: 60px; */
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+.slider {
+    width: 440px;
+    height: 120px;
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 2px 2px 8px 1px rgba(222, 222, 222, 0.25);
+    border-radius: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.slider__contents {
+    text-align: center;
+}
+.slider__contents div {
+    display: inline-block;
+    width: 200px;
+    font-size: 16px;
+    color: #505050;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #505050;
+    transition: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.slider__contents p {
+    font-size: 18px;
+    color: #6CC4B3;
+    margin-bottom: 20px;
+    transition: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+
+}
+.slider__contents a {
+    font-size: 14px;
+    color: #505050;
+    transition: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.slider.nonfocus {
+    width: 350px;
+    height: 90px;
+    border-radius: 30px;
+    opacity: 0.7;
+    padding: 5px;
+}
+.slider.nonfocus .slider__contents div {
+    display: inline-block;
+    width: 200px;
+    font-size: 12px;
+    color: #505050;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #505050;
+}
+.slider.nonfocus .slider__contents p {
+    font-size: 16px;
+    color: #6CC4B3;
+    margin-bottom: 10px;
+
+}
+.slider.nonfocus .slider__contents a {
+    font-size: 12px;
+    color: #505050;
+    opacity: 0.7;
+}
+
+
+
+

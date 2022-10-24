@@ -1,0 +1,177 @@
+@import url("https://webfontworld.github.io/score/SCoreDream.css");
+
+body {
+    font-family: "SCoreDream";
+}
+.login_btn {
+    cursor: pointer;
+}
+.login__popup {
+    margin: 0 auto;
+    width: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login__inner {
+    width: 380px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+.login__header h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    color: #6cc4b3;
+    padding-bottom: 20px;
+    border-bottom: 0.5px dashed #6cc4b3;
+}
+.login__welcome > h3 {
+    color: #757575;
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+.login__welcome figure {
+    margin-bottom: 30px;
+}
+.login__welcome figure > img {
+    width: 320px;
+}
+.login__contents {
+    position: relative;
+    padding-bottom: 20px;
+}
+.login__contents .input__style {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    width: 100%;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.login__contents .placeholder:hover {
+    border: 0;
+}
+.login__contents .password::placeholder {
+    font-size: 16px;
+    color: #757575;
+}
+.text_input div:first-child .input__style {
+    margin-bottom: 10px;
+}
+.text_input div:last-child .input__style {
+    margin-bottom: 5px;
+}
+.login__contents .input__button {
+    border-radius: 10px;
+    width: 100%;
+    font-size: 16px;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.login__contents .btn {
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    padding: 0 0 0 25px;
+    font-size: 12px;
+    color: #757575;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+input[type="checkbox"] + label::after {
+    content:'✔';
+    font-size: 15px;
+    color: #757575;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:-2px;
+}
+input[id="loginBox"]:checked + label::after {
+    color: #6CC4B3;
+}
+.login__contents .btn {
+    display: flex;
+    justify-content: space-between;
+}
+.input__style:focus {
+    outline: none;
+}
+input:required {
+    font-family: 'SCoreDream';
+    color: #505050;
+}
+.btn_login {
+    width: 48%;
+    text-align: center;
+    padding: 5px 0;
+    box-shadow: 0px 2px 8px 1px rgba(225, 225, 225, 0.25);
+    border-radius: 10px;
+}
+.btn_kakao {
+    width: 48%;
+    text-align: center;
+    padding: 5px 0;
+    box-shadow: 0px 2px 8px 1px rgba(225, 225, 225, 0.25);
+    border-radius: 10px;
+}
+.login__contents .btn button {
+    font-size: 16px;
+    color: #6cc4b3; 
+    background: #fff;
+    cursor: pointer;
+}
+.login__contents .btn a {
+    font-size: 16px;
+    color: #f2da00;
+    background: #fff;
+}
+label {
+    font-size: 12px;
+    color: #757575;
+}
+input::placeholder {
+    font-family: "SCoreDream";
+    font-size: 16px;
+}
+.login__footer .footer_btn {
+    border-top: 1px dashed #6cc4b3;
+    display: flex;
+    justify-content: space-between;
+}
+.login__footer .footer_btn li {
+    display: inline;
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+}
+.login__footer .footer_btn li:first-child {
+    border-right: 1px dashed #6cc4b3;
+}
+.login__footer .footer_btn a {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 0 0 0;
+    color: #757575;
+    cursor: pointer;
+}
