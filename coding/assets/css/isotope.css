@@ -40,7 +40,7 @@
 
 /**** disabling Isotope CSS3 transitions ****/
 
-.isotope.no-transition,
+.isotope.no-transition,#f9c75f
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {
   -webkit-transition-duration: 0s;
@@ -72,7 +72,7 @@
   margin-bottom: 1%;
   float: left;
 
-  border-bottom: 3px solid #a5d5fa;
+  border-bottom: 3px solid #f8d079;
   background-color: #fff;
 }
 .color-shape:first-child:hover {
