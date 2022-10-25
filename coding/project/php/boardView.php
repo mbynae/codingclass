@@ -391,7 +391,7 @@
                     <fieldset>
                         <input class="search-txt" type="text" placeholder="검색어를 입력해주세요." required>
                         <button class="search-btn" type="submit">SEARCH</button>
-                        <a href="#" class="board_write">글쓰기</a>
+                        <a href="boardWrite.php" class="board_write">글쓰기</a>
                     </fieldset>
                 </form>
             </div>

@@ -45,7 +45,7 @@
                             <input type="checkbox" name="loginBox" id="loginBox" class="login__box">
                             <label for="loginBox">로그인 상태 유지</label>
                         </div>
-                        <div class="btn">
+                        <div class="loginBox_btn">
                             <div class="btn_login">
                                 <button>Login</button>
                             </div>

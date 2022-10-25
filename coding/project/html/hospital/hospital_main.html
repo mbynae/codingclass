@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병원 메인 페이지</title>
+
+    <!-- php 넣을시 삭제 -->
+    <link rel="stylesheet" href="../../asset/css/reset.css">
+    <link rel="stylesheet" href="../../asset/css/common.css">
+    <link rel="stylesheet" href="../../asset/css/header.css">
+    <link rel="stylesheet" href="../../asset/css/font.css">
+
+    <link rel="stylesheet" href="../../asset/css/login/idPassCommon.css">
+    <link rel="stylesheet" href="../../asset/css/login/login.css">
+    <!-- 여기까지 삭제 -->
+
+    <link rel="stylesheet" href="../../asset/css/hospital/hospital_main.css">
+    <style>
+               
+        
+    </style>
+</head>
+
+<body>
+    <header id="headerType" class="header__wrap">
+        <div class="header__inner container">
+            <div class="header__logo">
+                <a href="../php/main.php">winimal</a>
+            </div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#">A.hopsital</a></li>
+                    <li><a href="#">Disease</a></li>
+                    <li><a href="../php/board.php">Community</a></li>
+                    <li><a href="#">Pet shop</a></li>             
+                    <li><a href="../php/loginpopup.php" class="login">LOGIN</a></li>
+                </ul>
+            </nav>
+            <div class="ham_menu">
+                <input type="checkbox">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>                
+        </div>
+    </header>
+
+    <section id="searchType" class="container">
+        <div class="searchBox">
+            <form action="" method="POST" class="searchBox__form">
+                <div class="searchBox_inner">
+                    <button class="searchBtn">
+                        <img src="../../asset/img/searchBtn.svg" alt="찾기 버튼">
+                    </button>
+                    <input type="text" name="search" id="search" placeholder="궁금하신 내용을 검색해주세요." required>
+                </div>
+                <ul class="searchTag__box">
+                    <li class="searchTag"><a href="#">#중성화</a></li>
+                    <li class="searchTag"><a href="#">#유행병</a></li>
+                    <li class="searchTag"><a href="#">#겨울</a></li>
+                    <li class="searchTag"><a href="#">#동물병원</a></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+
+    <section id="mainSliderType" class="container">
+
+    </section>
+
+    <section id="infomationType" class="container">
+        <!-- 카테고리 박스 -->
+        <div class="Info_textBox">
+            <h2>동물병원 알아보기</h2>
+            <div class="category__box">
+                <div class="category__title">
+                    <h3>Catetory</h3>
+                    <nav class="category__titleChoice">
+                        <li><a href="#" class="cate1 tapActive">지역</a></li>
+                        <span>|</span>
+                        <li><a href="#" class="cate2">병명</a></li>
+                        <span>|</span>
+                        <li><a href="#" class="cate3">수술</a></li>
+                    </nav>
+                </div>
+                <form action="#" name="" method="" onsubmit="">
+                    <fieldset>
+                        <div class="category__contents regionCho tapActive">
+                            <div>
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+                            </div>
+                            <div>
+                                <label for="region2">경기도</label>
+                                <input type="radio" id="region2" name="region" value="경기도">
+                            </div>
+                            <div>
+                                <label for="region3">인천</label>
+                                <input type="radio" id="region3" name="region" value="인천">
+                            </div>
+                            <div>
+                                <label for="region4">충청도</label>
+                                <input type="radio" id="region4" name="region" value="충청도">
+                            </div>
+                            <div>
+                                <label for="region5">전라도</label>
+                                <input type="radio" id="region5" name="region" value="전라도">
+                            </div>
+                            <div>
+                                <label for="region6">강원도</label>
+                                <input type="radio" id="region6" name="region" value="강원도">
+                            </div>
+                            <div>
+                                <label for="region7">경상도</label>
+                                <input type="radio" id="region7" name="region" value="경상도">
+                            </div>
+                            <div>
+                                <label for="region8">제주도</label>
+                                <input type="radio" id="region8" name="region" value="제주도">
+                            </div>
+                        </div>
+                        <div class="category__contents diseaseCho">
+                            <div>
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+                            </div>
+                        </div>
+                        <div class="category__contents surgeryCho">
+                            <div>
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+                            </div>
+                        </div>
+                        <div class="category__confirm">
+                            <button>NO</span>
+                            <span>|</span>
+                            <button type="submit">YES</span>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- 이미지 박스 -->
+        <div class="hospital__contBox">
+            <div class="hospital__card">
+                <img src="" alt="">
+                <h4>배곧도담동물병원</h4>
+                <address>경기도 시흥시 배곧1로 27-16</address>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <div class="login__popup">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>winimal Login</h3>
+            </div>
+            <div class="login__welcome">
+                <h3>어서오세요! 위니멀에!</h3>
+                <figure>
+                    <img src="../../asset/img/loginWelcome.jpg" alt="login">
+                </figure>
+            </div>
+            <div class="login__contents">
+                <form name="login" action="loginSave.php" method="POST">
+                    <fieldset>
+                        <legend class="blind">로그인 입력폼</legend>
+                        <div class="text_input">
+                            <div>
+                                <label class="blind" for="youID"></label>
+                                <input type="id" name="youID" id="youID" placeholder="아이디를 입력해주세요." class="input__style" required>
+                            </div>
+                            <div>
+                                <label class="blind" for="youPass">비밀번호</label>
+                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호를 입력해주세요." class="input__style" required>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="loginBox" id="loginBox" class="login__box">
+                            <label for="loginBox">로그인 상태 유지</label>
+                        </div>
+                        <div class="loginBox_btn">
+                            <div class="btn_login">
+                                <button>Login</button>
+                            </div>
+                            <div class="btn_kakao">
+                                <a href="#">KaKao Login</a>            
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login__footer">
+                <div class="footer_btn">
+                    <li><a href="../php/joinAgree.php" class="loginpopup_joinBtn">회원가입</a></li>
+                    <li><a href="findIDPass.php">ID / PW 찾기</a></li>
+                </div>
+            </div>
+            <div class="close_btn">
+                <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
+                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
+                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="../../asset/js/header_hamburger.js"></script>
+<script>
+
+
+    //----------------php 넣을시 삭제하기-----------------------------------
+    //로그인창 닫기
+    const login = document.querySelector(".header__menu .login");
+    const loginpopup = document.querySelector(".login__popup");
+    const closeBtn = document.querySelector(".close_btn");
+
+    login.addEventListener("click", (e)=>{
+        e.preventDefault();
+        loginpopup.style.display = "block";
+        document.querySelector("body").classList.add("scrollStop");
+    })
+    closeBtn.addEventListener("click", ()=>{
+        loginpopup.style.display = "none";
+        document.querySelector("body").classList.remove("scrollStop");
+    })
+
+    // 헤더바 색깔 조절
+    const headerType = document.getElementById("headerType");
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.scrollY;
+
+        if(scrollTop > 0){
+            headerType.style.backgroundColor = "#fff";
+        } else {
+            headerType.style.backgroundColor = "transparent";
+        }
+    });
+    //-----------------------여기까지 삭제------------------------------------
+
+    const category = document.querySelectorAll(".category__titleChoice li a");
+    const categoryRegtion = document.querySelector(".cate1");
+    const categoryDisease = document.querySelector(".cate2");
+    const categorySurgery = document.querySelector(".cate3");
+    const categoryContents = document.querySelectorAll(".category__contents");
+    const regionChoice = document.querySelector(".regionCho");
+    const diseaseChoice = document.querySelector(".diseaseCho");
+    const surgeryChoice = document.querySelector(".surgeryCho");
+    const categoryCircle = document.querySelectorAll(".category__contents > div");
+    const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
+
+    categoryRegtion.addEventListener("click", (cate) => {
+        cate.preventDefault();
+        category.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categoryContents.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categoryRegtion.classList.add("tapActive");
+        regionChoice.classList.add("tapActive");
+    });
+    categoryDisease.addEventListener("click", (cate) => {
+        cate.preventDefault();
+        category.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categoryContents.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categoryDisease.classList.add("tapActive");
+        diseaseChoice.classList.add("tapActive");
+    });
+    categorySurgery.addEventListener("click", (cate) => {
+        cate.preventDefault();
+        category.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categoryContents.forEach((e) => {
+            e.classList.remove("tapActive");
+        });
+        categorySurgery.classList.add("tapActive");
+        surgeryChoice.classList.add("tapActive");
+    });
+
+    categoryCircleLab.forEach((e, i) => {
+        e.addEventListener("click", ()=>{
+            categoryCircle.forEach(rem => {
+                rem.classList.remove("tapActive");
+            })
+            categoryCircle[i].classList.add("tapActive");
+        });
+    });
+
+</script>
+</html>

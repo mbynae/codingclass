@@ -9,10 +9,12 @@ body {
 .login__popup {
     margin: 0 auto;
     width: 380px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10000;
 }
 .login__inner {
     width: 380px;
@@ -108,7 +110,7 @@ input[type="checkbox"] + label::after {
 input[id="loginBox"]:checked + label::after {
     color: #6CC4B3;
 }
-.login__contents .btn {
+.login__contents .loginBox_btn {
     display: flex;
     justify-content: space-between;
 }
@@ -133,13 +135,13 @@ input:required {
     box-shadow: 0px 2px 8px 1px rgba(225, 225, 225, 0.25);
     border-radius: 10px;
 }
-.login__contents .btn button {
+.login__contents .loginBox_btn button {
     font-size: 16px;
     color: #6cc4b3; 
     background: #fff;
     cursor: pointer;
 }
-.login__contents .btn a {
+.login__contents .loginBox_btn a {
     font-size: 16px;
     color: #f2da00;
     background: #fff;

@@ -90,7 +90,7 @@
                 <div class="board_btn">
                     <button type="submit" value="저장하기">작성 완료</button>
                     <span>|</span>
-                    <span><a href="board.html">취소</a></span>
+                    <span><a href="board.php">취소</a></span>
                 </div>
             </form>
 

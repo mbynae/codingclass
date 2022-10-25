@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="../asset/css/main/mainDisease.css">
     <link rel="stylesheet" href="../asset/css/main/mainparrallex.css">
 
-    <link rel="stylesheet" href="../asset/css/login/idPassCommon.css">
 
-    <link rel="stylesheet" href="../asset/css/login/login.css">
 
     <style>
         .reveal {
@@ -313,67 +311,8 @@
         </div>
     </section>
 
-    <div class="login__popup">
-        <div class="login__inner">
-            <div class="login__header">
-                <h3>winimal Login</h3>
-            </div>
-            <div class="login__welcome">
-                <h3>어서오세요! 위니멀에!</h3>
-                <figure>
-                    <img src="../asset/img/loginWelcome.jpg" alt="login">
-                </figure>
-            </div>
-            <div class="login__contents">
-                <form name="login" action="loginSave.php" method="POST">
-                    <fieldset>
-                        <legend class="blind">로그인 입력폼</legend>
-                        <div class="text_input">
-                            <div>
-                                <label class="blind" for="youID"></label>
-                                <input type="id" name="youID" id="youID" placeholder="아이디를 입력해주세요." class="input__style" required>
-                            </div>
-                            <div>
-                                <label class="blind" for="youPass">비밀번호</label>
-                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호를 입력해주세요." class="input__style" required>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="loginBox" id="loginBox" class="login__box">
-                            <label for="loginBox">로그인 상태 유지</label>
-                        </div>
-                        <div class="btn">
-                            <div class="btn_login">
-                                <button>Login</button>
-                            </div>
-                            <div class="btn_kakao">
-                                <a href="#">KaKao Login</a>            
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="login__footer">
-                <div class="footer_btn">
-                    <li><a href="../php/joinAgree.php" class="loginpopup_joinBtn">회원가입</a></li>
-                    <li><a href="findIDPass.php">ID / PW 찾기</a></li>
-                </div>
-            </div>
-            <div class="close_btn"><a href="main.php">
-                <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
-                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
-                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
-                </svg>
-            </a></div>
-        </div>
-    </div>
-
     <?php include "../include/footer.php"?>
     
-    <!-- <script src="../assets/js/gsap.min.js.js"></script> -->
-    <script src="../../asset/js/header_hamburger.js"></script>
-
     <script>
         //메인 페이지 패럴랙스 효과
         const hospiText = document.querySelectorAll(".hospi__text");
@@ -423,21 +362,95 @@
         }
         pallaxEffect();
 
-    </script>
 
-    <script>
-        const login = document.querySelector(".header__menu .login");
+        // 여기서부터 슬라이드
+        const sliderBox = document.querySelector(".slider__Box");
+        const sliderInner = document.querySelector(".slider__inner");
+        const slider = document.querySelectorAll(".slider");
 
-        const loginpopup = document.querySelector(".login__popup");
 
-        const closeBtn = document.querySelector(".close_btn");
+        let currentIndex = 0,
+            functionNum = 1,
+            sliderCount = slider.length,
+            sliderFirst = slider[0],
+            sliderLast = sliderCount-1,
+            sliderHeight = sliderFirst.offsetHeight + 20,
+            cloneFirst = slider[0].cloneNode(true),
+            // cloneSecond= slider[1].cloneNode(true),
+            cloneAlmost = slider[sliderLast-1].cloneNode(true),
+            cloneLast = slider[sliderLast].cloneNode(true);
 
-        login.addEventListener("click", ()=>{
-            loginpopup.classList.add("show");
-        })
-        closeBtn.addEventListener("click", ()=>{
-            loginpopup.classList.remove("show");
-        })
+        function sliderInit(){
+            sliderInner.appendChild(cloneFirst);
+            sliderInner.insertBefore(cloneLast, sliderFirst);
+            sliderInner.insertBefore(cloneAlmost, cloneLast);
+            sliderInner.style.transform = "translateY(-160px)";
+            currentIndex = 1;
+        }
+        sliderInit();
+
+        const slider2 = document.querySelectorAll(".slider");
+
+        function sliderFocus(){
+            slider2.forEach((e, i) => {
+                e.classList.add("nonfocus");
+                if(i == currentIndex+1){
+                    e.classList.remove("nonfocus");
+                }
+            })
+        }
+        sliderFocus();
+
+        function sliderDelay(){
+            setTimeout(()=>{
+                sliderWheel();
+            },1000);
+        }
+
+        sliderBox.addEventListener("wheel", (e) => {
+            e.preventDefault();
+        });
+
+        function sliderWheel(){
+            sliderBox.addEventListener("wheel", (e) => {
+                // console.log(e.deltaY)
+            
+                if(e.deltaY > 0){
+                    currentIndex++;
+                    slideEffect();
+                } else {
+                    currentIndex--;
+                    slideEffect();
+                }
+            },{
+                once: true
+            });
+        }
+        sliderWheel();
+
+        function slideEffect(){
+            console.log("translateY(-"+ 120 * currentIndex +"px)")
+            sliderInner.style.transform = "translateY(-"+ 120 * currentIndex +"px)";
+            sliderInner.style.transition = "all 0.7s cubic-bezier(0.7, 0, 0.3, 1)";
+            sliderFocus();
+            sliderDelay();
+
+            setTimeout(() => {
+                if (currentIndex == sliderCount){
+                    sliderInner.style.transform = "translateY(0px)";
+                    sliderInner.style.transition = "0s";
+                    currentIndex = 0;
+                    sliderFocus();
+                    return;
+                } else if (currentIndex == 0){
+                    sliderInner.style.transform = "translateY(-"+ sliderHeight * sliderCount +"px)";
+                    sliderInner.style.transition = "0s";
+                    currentIndex = sliderCount;
+                    sliderFocus();
+                    return;
+                }
+            }, 700)
+        }
 
     </script>
 </body>
