@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>질병 메인</title>
+
+    <link rel="stylesheet" href="../../asset/css/reset.css">
+    <link rel="stylesheet" href="../../asset/css/common.css">
+    <link rel="stylesheet" href="../../asset/css/font.css">
+    <link rel="stylesheet" href="../../asset/css/header.css">
+
+    <link rel="stylesheet" href="../../asset/css/disease/Banner.css">
+    <link rel="stylesheet" href="../../asset/css/disease/inormation.css">
+
+    <style>
+
+        /* diseaseSlider */
+        #diseaseSlider {
+            margin-bottom: 120px;
+        }
+        .diseaseSlider__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .diseaseSlider__inner > img {
+            line-height: 150px;
+            width: 18px;
+        }
+        .diseaseSlider__card {
+            width: 25%;
+            padding: 20px;
+            box-shadow: 2px 2px 8px 1px rgba(210, 210, 210, 0.25);
+            border-radius: 20px;
+        }
+        .diseaseSlider__card > h3 {
+            font-size: 20px;
+            color: #6CC4B3;
+            margin-bottom: 20px;
+        }
+        .diseaseSlider__card__bottom {
+            display: flex;
+            justify-content: space-between;
+            color: #757575;
+            font-size: 14px;
+        }
+
+        /* diseaseTap */
+        .diseaseTap__inner > h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #6cc4b3;
+            margin-bottom: 30px;
+        }
+        .diseaseTap__card__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .diseaseTap__card {
+            position: relative;
+            width: 25%;
+            padding: 30px;
+            margin-bottom: 78px;
+            box-shadow: 2px 2px 8px 2px rgba(222, 222, 222, 0.25);
+            border-radius: 30px;
+        }
+        .diseaseTap__card:last-child {
+            margin-bottom: 40px;
+        }
+        .diseaseTap__card > img {
+            display: block;
+            left: 50%;
+            margin: 0 auto;
+            width: 32px;
+            height: 32px;
+            margin-top: 25px;
+        }
+        .diseaseTap__card > h3 {
+            margin-top: 15px;
+            text-align: center;
+            color: #6CC4B3;
+        }
+        .diseaseTap__card > P {
+            margin-top: 10px;
+            text-align: center;
+            color: #6CC4B3;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .diseaseTap__card > em {
+            font-size: 16px;
+            line-height: 22px; 
+            text-align: center;
+            color: #757575;
+        }
+
+        .board__pages {
+            margin: 70px 0 20px 0;
+        }
+        .board__pages ul {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .board__pages ul li a {
+            padding: 13px 10px;
+            color: #505050;
+        }
+        .board__pages ul li.active a {
+            color: #6cc4b3;
+        }
+    </style>
+    
+
+</head>
+
+<!-- header -->
+<header id="headerType" class="header__wrap">
+    <div class="header__inner container">
+        <div class="header__logo">
+            <a href="#">winimal</a>
+        </div>
+        <nav class="header__menu">
+            <ul>
+                <li><a href="#">A.hopsital</a></li>
+                <li><a href="#">disease</a></li>
+                <li><a href="#">community</a></li>
+                <li><a href="#">pet shop</a></li>
+                <li class="login"><a href="#">LOGOUT</a></li>
+            </ul>
+        </nav>
+        <div class="ham_menu">
+            <input type="checkbox">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</header>
+<!-- //header -->
+<body>
+
+    <section id="searchType" class="container">
+        <div class="searchBox">
+            <form action="" method="POST" class="searchBox__form">
+                <div class="searchBox_inner">
+                    <button class="searchBtn">
+                        <img src="../../asset/img/searchBtn.svg" alt="찾기 버튼">
+                    </button>
+                    <input type="text" name="search" id="search" placeholder="궁금하신 내용을 검색해주세요." required>
+                </div>
+                <ul class="searchTag__box">
+                    <li class="searchTag"><a href="#">#중성화</a></li>
+                    <li class="searchTag"><a href="#">#유행병</a></li>
+                    <li class="searchTag"><a href="#">#겨울</a></li>
+                    <li class="searchTag"><a href="#">#동물병원</a></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+
+    <section id="infomationType" class="container">
+        <div class="Info_textBox">
+            <h2>질병 알아보기</h2>
+            <div class="category__box">
+                <div class="category__title">
+                    <h3>Catetory</h3>
+                    <nav class="category__titleChoice">
+                        <li><a href="#" class="tapActive">부위</a></li>
+                        <span>|</span>
+                        <li><a href="#">병명</a></li>
+                        <span>|</span>
+                        <li><a href="#">이상 증세</a></li>
+                    </nav>
+                </div>
+                <div class="category__contents">
+                    <li>서울</li>
+                    <li>경기도</li>
+                    <li>인천</li>
+                    <li>충청도</li>
+                    <li>전라도</li>
+                    <li>강원도</li>
+                    <li>경상도</li>
+                    <li>제주도</li>
+                </div>
+                <div class="category__confirm">
+                    <span><a href="#">NO</a></span>
+                    <span>|</span>
+                    <span><a href="#">YES</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diseaseSlider">
+        <div class="diseaseSlider__inner container">
+            <img src="../../asset/img/LeftLine.svg" alt="">
+            <div class="diseaseSlider__card">
+                <h3>강아지 종합백신</h3>
+                <div class="diseaseSlider__card__bottom">
+                    <p>평균가</p>
+                    <p>35000원</p>
+                </div>
+            </div>
+            <div class="diseaseSlider__card">
+                <h3>안과</h3>
+                <div class="diseaseSlider__card__bottom">
+                    <p>평균가</p>
+                    <p>21,000원</p>
+                </div>
+            </div>
+            <div class="diseaseSlider__card">
+                <h3>슬개골 탈구 수술</h3>
+                <div class="diseaseSlider__card__bottom">
+                    <p>평균가</p>
+                    <p>1,135,000원</p>
+                </div>
+            </div>
+            <img src="../../asset/img/RightLine.svg" alt="">
+        </div>
+    </section>
+
+
+    <section id="diseaseTap">
+        <div class="diseaseTap__inner container">
+            <h2>반려동물들을 아프게 하는<br>
+                질병들을 알아봐요</h2>
+            <div class="diseaseTap__card__wrap">
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+                <div class="diseaseTap__card">
+                    <img src="../../asset/img/dog1.jpg" alt="">
+                    <h3>질병 이름</h3>
+                    <p>치료비 20000원</p>
+                    <em>구토, 식욕감퇴, 체력저하 소변을 보기 힘들어 함, 소변량 감소 등의 증상이 나타나면 당뇨를 의심해봐야합니다.</em>
+                </div>
+            </div>
+            <div class="board__pages">
+                <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>    
+</body>
+</html>

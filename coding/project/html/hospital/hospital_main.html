@@ -87,6 +87,7 @@
                 </div>
                 <form action="#" name="" method="" onsubmit="">
                     <fieldset>
+                        <!-- 지역 카테고리 -->
                         <div class="category__contents regionCho tapActive">
                             <div>
                                 <label for="region1">서울</label>
@@ -121,12 +122,14 @@
                                 <input type="radio" id="region8" name="region" value="제주도">
                             </div>
                         </div>
+                        <!-- 질병 카테고리 -->
                         <div class="category__contents diseaseCho">
                             <div>
                                 <label for="region1">서울</label>
                                 <input type="radio" id="region1" name="region" value="서울">
                             </div>
                         </div>
+                        <!-- 수술명 카테고리 -->
                         <div class="category__contents surgeryCho">
                             <div>
                                 <label for="region1">서울</label>
@@ -164,7 +167,7 @@
 
 
 
-
+    <!-- php에 넣을시 삭제할것 -->
     <div class="login__popup">
         <div class="login__inner">
             <div class="login__header">
@@ -220,6 +223,7 @@
             </div>
         </div>
     </div>
+    <!-- 여기까지 삭제 -->
 
 </body>
 
@@ -267,39 +271,48 @@
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
 
-    categoryRegtion.addEventListener("click", (cate) => {
-        cate.preventDefault();
-        category.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categoryContents.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categoryRegtion.classList.add("tapActive");
-        regionChoice.classList.add("tapActive");
+    category.forEach((cate, index) => {
+        cate.addEventListener("click", (link)=>{
+            link.preventDefault();
+            category.forEach((all) => {
+                all.classList.remove("tapActive");
+                cate.classList.add("tapActive");
+            });
+        })
     });
-    categoryDisease.addEventListener("click", (cate) => {
-        cate.preventDefault();
-        category.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categoryContents.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categoryDisease.classList.add("tapActive");
-        diseaseChoice.classList.add("tapActive");
-    });
-    categorySurgery.addEventListener("click", (cate) => {
-        cate.preventDefault();
-        category.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categoryContents.forEach((e) => {
-            e.classList.remove("tapActive");
-        });
-        categorySurgery.classList.add("tapActive");
-        surgeryChoice.classList.add("tapActive");
-    });
+    // categoryRegtion.addEventListener("click", (cate) => {
+    //     cate.preventDefault();
+    //     category.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categoryContents.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categoryRegtion.classList.add("tapActive");
+    //     regionChoice.classList.add("tapActive");
+    // });
+    // categoryDisease.addEventListener("click", (cate) => {
+    //     cate.preventDefault();
+    //     category.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categoryContents.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categoryDisease.classList.add("tapActive");
+    //     diseaseChoice.classList.add("tapActive");
+    // });
+    // categorySurgery.addEventListener("click", (cate) => {
+    //     cate.preventDefault();
+    //     category.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categoryContents.forEach((e) => {
+    //         e.classList.remove("tapActive");
+    //     });
+    //     categorySurgery.classList.add("tapActive");
+    //     surgeryChoice.classList.add("tapActive");
+    // });
 
     categoryCircleLab.forEach((e, i) => {
         e.addEventListener("click", ()=>{
