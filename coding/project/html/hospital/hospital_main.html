@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    <!-- php 넣을 시 삭제 -->
     <header id="headerType" class="header__wrap">
         <div class="header__inner container">
             <div class="header__logo">
@@ -46,6 +47,7 @@
             </div>                
         </div>
     </header>
+    <!-- 여기까지 삭제 -->
 
     <section id="searchType" class="container">
         <div class="searchBox">
@@ -67,7 +69,20 @@
     </section>
 
     <section id="mainSliderType" class="container">
-
+        <div class="slider__text">
+            <div class="slider__textName">
+                <h3>배곧도담병원</h3>
+                <span><a href="#" class="ir">버튼</a></span>
+                <div class="slider__tag">
+                    <span>#수술</span>
+                    <span>#예방접종</span>
+                </div>
+            </div>
+            <p>
+                배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+            </p>
+            <a href="#">더 알아보기</a>
+        </div>
     </section>
 
     <section id="infomationType" class="container">
@@ -150,12 +165,102 @@
         <!-- 이미지 박스 -->
         <div class="hospital__contBox">
             <div class="hospital__card">
-                <img src="" alt="">
-                <h4>배곧도담동물병원</h4>
-                <address>경기도 시흥시 배곧1로 27-16</address>
-                <div>
-                    <span></span>
-                    <span></span>
+                <img src="../../asset/img/hospitalCard_cont1.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>배곧도담동물병원</h4>
+                    <address>경기도 시흥시 배곧1로 27-16</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#수술</span>
+                    <span>#예방접종</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont2.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>디오빌동물병원</h4>
+                    <address>서울 영등포구 당산로 222</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#종합</span>
+                    <span>#미용</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont3.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>미소로동물병원</h4>
+                    <address>서울 영등포구 영신로 238 미소로</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#슬개골</span>
+                    <span>#중성화</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont4.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>온누리종합동물병원</h4>
+                    <address>서울 영등포구 도신로 186</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#특수진료</span>
+                    <span>#노령견</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont5.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>위드동물병원</h4>
+                    <address>경기 시흥시 정왕대로 230</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#최소절개</span>
+                    <span>#중성화</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont6.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>메종동물병원</h4>
+                    <address>서울 중구 다산로 230</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#수술전문</span>
+                    <span>#호텔</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont7.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>배곧도담동물병원</h4>
+                    <address>경기도 시흥시 배곧1로 27-16</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#수술</span>
+                    <span>#예방접종</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont8.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>바우미우동물병원</h4>
+                    <address>서울 중구 다산로 175</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#종합</span>
+                    <span>#위생</span>
+                </div>
+            </div>
+            <div class="hospital__card">
+                <img src="../../asset/img/hospitalCard_cont9.jpg" alt="">
+                <div class="hospital__cardText">
+                    <h4>라온동물병원</h4>
+                    <address>서울 용산구 회나무로13길 6</address>
+                </div>
+                <div class="hospital__cardTag">
+                    <span>#16년차</span>
+                    <span>#영어진료</span>
                 </div>
             </div>
         </div>
@@ -260,6 +365,8 @@
     });
     //-----------------------여기까지 삭제------------------------------------
 
+
+    //카테고리 선택 선택자
     const category = document.querySelectorAll(".category__titleChoice li a");
     const categoryRegtion = document.querySelector(".cate1");
     const categoryDisease = document.querySelector(".cate2");
@@ -271,6 +378,7 @@
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
 
+    //카테고리 선택
     category.forEach((cate, index) => {
         cate.addEventListener("click", (link)=>{
             link.preventDefault();
@@ -278,42 +386,16 @@
                 all.classList.remove("tapActive");
                 cate.classList.add("tapActive");
             });
+            categoryContents.forEach((cont) => {
+                cont.classList.remove("tapActive");
+                if(category[index].classList.contains("tapActive")){
+                    categoryContents[index].classList.add("tapActive");
+                }
+            });
         })
     });
-    // categoryRegtion.addEventListener("click", (cate) => {
-    //     cate.preventDefault();
-    //     category.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categoryContents.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categoryRegtion.classList.add("tapActive");
-    //     regionChoice.classList.add("tapActive");
-    // });
-    // categoryDisease.addEventListener("click", (cate) => {
-    //     cate.preventDefault();
-    //     category.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categoryContents.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categoryDisease.classList.add("tapActive");
-    //     diseaseChoice.classList.add("tapActive");
-    // });
-    // categorySurgery.addEventListener("click", (cate) => {
-    //     cate.preventDefault();
-    //     category.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categoryContents.forEach((e) => {
-    //         e.classList.remove("tapActive");
-    //     });
-    //     categorySurgery.classList.add("tapActive");
-    //     surgeryChoice.classList.add("tapActive");
-    // });
 
+    //카테고리 내용 선택
     categoryCircleLab.forEach((e, i) => {
         e.addEventListener("click", ()=>{
             categoryCircle.forEach(rem => {
@@ -322,6 +404,8 @@
             categoryCircle[i].classList.add("tapActive");
         });
     });
+
+
 
 </script>
 </html>

@@ -1,6 +1,14 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+
+
+    $myMemberID = $_SESSION['myMemberID'];
+
+    $mySql = "SELECT * FROM myMember WHERE myMemberID = {$myMemberID}";
+    $myResult = $connect -> query($mySql);
+
+    $myInfo = $myResult -> fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +40,13 @@
         <h2 class="blind">loginBanner</h2>
         <div class="lB__inner">
             <figure class="MyprofileL">
-                <img src="../asset/img/profile.png" alt="프로필">
+                <img src="../asset/img/profile/<?=$myInfo['youImgFile']?>" alt="프로필사진">
                     <figcaption><?=$_SESSION['youName']?>님 어서오세요!</figcaption>
                 <a href="../php/logout.php">LOGOUT</a>
             </figure>
             <div class="Myprofile">
                 <ul>
-                    <li>최근 접속 기록 : 00/ 00/ 00</li>
+                    <li>가입일 : <?=date('Y-m-d', $myInfo['regTime'] )?></li>
                     <li><a href="#">나의 정보</a></li>
                     <li><a href="#">나의 반려견</a></li>
                     <li>나의 글 : 00개</li>
@@ -93,7 +101,6 @@
                     <span><a href="board.php">취소</a></span>
                 </div>
             </form>
-
         </div>        
     </section>
     <!-- //boardWrite -->

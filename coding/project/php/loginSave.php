@@ -61,7 +61,8 @@
                                 // var_dump($info);
                                 // echo "</pre>";
 
-                                Header("Location: main.php");
+                                // Header("Location: main.php");
+                                echo "<script>location.href ='main.php';</script>";
                             }
                         } else {
                             msg("에러발생 - 관리자에게 문의하세요!");

@@ -28,7 +28,8 @@
 </head>
 <body>
 <?php include "../include/header.php"?>
-    <div class="join__inner">
+    <div class="join__popup">
+        <div class="join__inner">
             <h2>회원 가입</h2>
             <form action="join_complete.php" name="join" method="post" onSubmit="return joinChecks()">
                 <fieldset>
@@ -54,20 +55,20 @@
                                 </span>
                             </div>
                             <div class="id_box">
-                                <label class="blind" for="youID">ID</label>
-                                <input type="text" id="youID" name="youID" placeholder="ID" required>
+                                <label class="blind" for="joinYouID">ID</label>
+                                <input type="text" id="joinYouID" name="joinYouID" placeholder="ID" required>
                                 <a href="#3" class="ID_confirm" onclick="IDChecking()">중복확인</a>
-                                <p class="msg" id="youIDComment"><!-- * 아이디가 이미 존재합니다. --></p>
+                                <p class="msg" id="joinYouIDComment"><!-- * 아이디가 이미 존재합니다. --></p>
                             </div>
                             <div>
-                                <label class="blind" for="youPass">비밀번호</label>
-                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" required>
-                                <p class="msg" id="youPassComment"><!-- * 비밀번호 존재합니다. --></p>
+                                <label class="blind" for="joinYouPass">비밀번호</label>
+                                <input type="password" id="joinYouPass" name="joinYouPass" placeholder="비밀번호" required>
+                                <p class="msg" id="joinYouPassComment"><!-- * 비밀번호 존재합니다. --></p>
                             </div>
                             <div class="info_youPassc">
-                                <label class="blind" for="youPassC">비밀번호 확인</label>
-                                <input type="password" id="youPassC" name="youPassC" placeholder="비밀번호 확인" required>
-                                <p class="msg" id="youPassCComment"><!-- * 이메일이 존재합니다. --></p>
+                                <label class="blind" for="joinYouPassC">비밀번호 확인</label>
+                                <input type="password" id="joinYouPassC" name="youPassC" placeholder="비밀번호 확인" required>
+                                <p class="msg" id="joinYouPassCComment"><!-- * 이메일이 존재합니다. --></p>
                             </div>
                             <h3>E-mail</h3>
                             <div>
@@ -93,6 +94,7 @@
                 </svg>
             </a></div>
         </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
 
@@ -100,12 +102,12 @@
         let IDCheck = false;
 
         function IDChecking(){
-            let youID = $("#youID").val();
+            let youID = $("#joinYouID").val();
 
             console.log(youID)
 
             if(youID == null || youID == ''){
-                $("#youIDComment").text("아이디를 입력해주세요!!");
+                $("#joinYouIDComment").text("아이디를 입력해주세요!!");
             } else {
                 $.ajax({
                     type : "POST",
@@ -115,10 +117,10 @@
 
                     success : function(data){
                         if(data.result == "good"){
-                            $("#youIDComment").text("사용 가능한 아이디입니다.");
+                            $("#joinYouIDComment").text("사용 가능한 아이디입니다.");
                             IDCheck = true;
                         } else {
-                            $("#youIDComment").text("이미 존재하는 아이디입니다.");
+                            $("#joinYouIDComment").text("이미 존재하는 아이디입니다.");
                             IDCheck = false;
                         }
                     },
@@ -153,57 +155,57 @@
             }
 
             // 아이디 공백 검사
-            if($("#youID").val() == ""){
-                $("#youIDComment").text("아이디를 입력해주세요!");
+            if($("#joinYouID").val() == ""){
+                $("#joinYouIDComment").text("아이디를 입력해주세요!");
                 return false;
             }
 
             // 아이디 유효성 검사
             let getyouID = RegExp(/^[A-Za-z0-9_\.\-]/);
-            if(!getyouID.test($("#youID").val())){
-                $("#youIDComment").text("아이디를 형식에 맞게 작성해주세요!");
-                $("#youID").val("");
+            if(!getyouID.test($("#joinYouID").val())){
+                $("#joinYouIDComment").text("아이디를 형식에 맞게 작성해주세요!");
+                $("#joinYouID").val("");
                 return false;
             }
 
             // 아이디 중복 검사
             if(IDCheck == false){
-                $("#youIDComment").text("아이디 중복 검사를 해주세요!");
+                $("#joinYouIDComment").text("아이디 중복 검사를 해주세요!");
                 return false;
             }
 
             // 비밀번호 공백 검사
-            if($("#youPass").val() == ""){
-                $("#youPassComment").text("비밀번호를 입력해주세요!");
+            if($("#joinYouPass").val() == ""){
+                $("#joinYouPassComment").text("비밀번호를 입력해주세요!");
                 return false;
             }
 
             // 비밀번호 유효성 검사
-            let getYouPass = $("#youPass").val();
+            let getYouPass = $("#joinYouPass").val();
             let getYouPassNum = getYouPass.search(/[0-9]/g);
             let getYouPassEng = getYouPass.search(/[a-z]/ig);
             let getYouPassSpe = getYouPass.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
             if(getYouPass.length < 8 || getYouPass.length > 20){
-                $("#youPassComment").text("8자리 ~ 20자리 이내로 입력해주세요~");
+                $("#joinYouPassComment").text("8자리 ~ 20자리 이내로 입력해주세요~");
                 return false;
             } else if (getYouPass.search(/\s/) != -1){
-                $("#youPassComment").text("비밀번호는 공백없이 입력해주세요!");
+                $("#joinYouPassComment").text("비밀번호는 공백없이 입력해주세요!");
                 return false;
             } else if (getYouPassNum < 0 || getYouPassEng < 0 || getYouPassSpe < 0 ){
-                $("#youPassComment").text("영문, 숫자, 특수문자를 혼합하여 입력해주세요!");
+                $("#joinYouPassComment").text("영문, 숫자, 특수문자를 혼합하여 입력해주세요!");
                 return false;
             }
 
             // 확인 비밀번호 공백 확인
-            if($("#youPassC").val() == ""){
-                $("#youPassCComment").text("확인 비밀번호를 입력해주세요!");
+            if($("#joinYouPassC").val() == ""){
+                $("#joinYouPassCComment").text("확인 비밀번호를 입력해주세요!");
                 return false;
             }
 
             // 비밀번호가 동일한지 체크
-            if($("#youPassC").val() !== $("#youPassC").val()){
-                $("#youPassCComment").text("비밀번호가 동일하지 않습니다.");
+            if($("#joinYouPassC").val() !== $("#joinYouPassC").val()){
+                $("#joinYouPassCComment").text("비밀번호가 동일하지 않습니다.");
                 return false;
             }
 

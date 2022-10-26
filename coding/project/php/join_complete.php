@@ -34,8 +34,8 @@
 
                         $youName = $_POST["youName"];
                         $youGender = $_POST["youGender"];
-                        $youID = $_POST["youID"];
-                        $youPass = $_POST["youPass"];
+                        $youID = $_POST["joinYouID"];
+                        $youPass = $_POST["joinYouPass"];
                         $youEmail = $_POST["youEmail"];
                         $youPhone = $_POST["youPhone"];
                         $regTime = time();
@@ -49,7 +49,7 @@
 
 
                         // 회원가입
-                        $sql = "INSERT INTO myMember (youName, youGender, youID, youPass, youEmail, youPhone , regTime) VALUES('$youName', '$youGender','$youID', '$youPass', '$youEmail', '$youPhone', '$regTime')";
+                        $sql = "INSERT INTO myMember (youName, youGender, youID, youPass, youEmail, youPhone , youImgFile , regTime) VALUES('$youName', '$youGender','$youID', '$youPass', '$youEmail', '$youPhone', 'basic.jpg' , '$regTime')";
                         $result = $connect -> query($sql);
 
 
@@ -62,7 +62,7 @@
                     ?>
             </div>
             <div class="go_login">
-                <a href="../php/loginpopup.php">로그인 하러가기!</a>
+                <a href="../php/main.php">로그인 하러가기!</a>
             </div>
             <div class="close_btn"><a href="main.php">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
