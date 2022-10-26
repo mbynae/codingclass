@@ -1,0 +1,87 @@
+.item__top {
+    display: flex;
+    justify-content: space-between;
+}
+.item__top01 > img {
+    width: 425px;
+    height: 425px;
+}
+.item__top01 figcaption > h3 {
+    color: #303030;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.item__top01 figcaption > h2 {
+    color: #505050;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.item__top01 figcaption > p {
+    color: #757575;
+    font-size: 16px;
+}
+
+.item__mid {
+    display: flex;
+    justify-content: space-between;
+}
+.item__mid01 > img {
+    width: 425px;
+    height: 425px;
+    margin-top: 50px;
+}
+.item__mid01 figcaption > h3 {
+    color: #303030;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.item__mid01 figcaption > h2 {
+    color: #505050;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.item__mid01 figcaption > p {
+    color: #757575;
+    font-size: 16px;
+}
+
+.item__bot {
+    display: flex;
+    justify-content: space-between;
+}
+.item__bot01 > img {
+    width: 425px;
+    height: 425px;
+    margin-top: 50px;
+}
+.item__bot01 figcaption > h3 {
+    color: #303030;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.item__bot01 figcaption > h2 {
+    color: #505050;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.item__bot01 figcaption > p {
+    color: #757575;
+    font-size: 16px;
+}
+
+.petShop__pages {
+    margin: 70px 0 20px 0;
+}
+.petShop__pages ul {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.petShop__pages ul li a {
+    padding: 13px 10px;
+    color: #757575;
+}
+.petShop__pages ul li.active a {
+    color: #303030;
+}

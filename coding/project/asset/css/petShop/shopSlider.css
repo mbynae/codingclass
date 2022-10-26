@@ -1,0 +1,30 @@
+.shopSlider__wrap {
+    margin-top: 69px;
+}
+.shopSlider {
+    width: 1920px;
+    height: 1080px;
+}
+.shopSlider > img {
+    position: relative;
+}
+.shopSlider figcaption {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+.shopSlider figcaption > h2 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+}
+.shopSlider figcaption > p {
+    font-weight: 300;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}

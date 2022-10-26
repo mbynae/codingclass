@@ -1,0 +1,21 @@
+.shopCate__inner > h2 {
+    font-size: 40px;
+    color: #505050;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.shopCate ul {
+    margin-top: 30px;
+    text-align: center;
+}
+.shopCate ul li {
+    display: inline;
+    justify-content: space-between;
+    padding: 5px 10px;
+    /* background-color: #000; */
+    margin: 0 50px;
+}
+.shopCate ul li a {
+    color: #303030;
+}
