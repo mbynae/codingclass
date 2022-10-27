@@ -1,13 +1,13 @@
-@import url('https://webfontworld.github.io/DungGeunMo/DungGeunMo.css');
+@import url("https://webfontworld.github.io/DungGeunMo/DungGeunMo.css");
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'DungGeunMo';
+    font-family: "DungGeunMo";
     font-weight: normal;
     cursor: none;
-} 
+}
 
 body {
     width: 100%;
@@ -37,8 +37,6 @@ body {
     color: #fff;
     transform: translateY(1px);
 }
-
-
 
 #footer {
     position: fixed;
@@ -75,8 +73,8 @@ body {
 }
 .icon2 {
     position: absolute;
-    left: 200px;
-    top: 100px;
+    left: 100px;
+    top: 230px;
     width: 65px;
 }
 .icon2 img {
@@ -92,8 +90,8 @@ body {
 }
 .icon3 {
     position: absolute;
-    left: 300px;
-    top: 100px;
+    left: 100px;
+    top: 360px;
     width: 65px;
 }
 .icon3 img {
@@ -109,8 +107,8 @@ body {
 }
 .icon4 {
     position: absolute;
-    left: 400px;
-    top: 100px;
+    left: 100px;
+    top: 480px;
     width: 65px;
 }
 .icon4 img {
@@ -126,8 +124,8 @@ body {
 }
 .icon5 {
     position: absolute;
-    left: 500px;
-    top: 100px;
+    left: 100px;
+    top: 600px;
     width: 65px;
 }
 .icon5 img {
@@ -150,7 +148,7 @@ body {
     height: 10px;
     z-index: 10000;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     user-select: none;
     pointer-events: none;
 }
@@ -160,24 +158,23 @@ body {
     height: 25px;
     background: #223547;
     position: relative;
-  }
-  .Windowbar_closeBtn {
+}
+.Windowbar_closeBtn {
     width: 20px;
     height: 20px;
     background: url(../img/gameWindowbarBtn.svg) no-repeat center / cover;
     position: absolute;
     right: 5px;
     top: 2.5px;
-  }
+}
 
-  .close {
+.close {
     display: none;
-  }
-
-
+}
 
 #footer .agent {
-
 }
-.mac #footer {}
-.window #footer {}
+.mac #footer {
+}
+.window #footer {
+}

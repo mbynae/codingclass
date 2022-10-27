@@ -1,246 +1,211 @@
 .container {
-  padding: 20px 0 !important;
+    padding: 0 !important;
 }
 #searchType {
-  width: 100%;
-  height: 200px;
-  margin-top: 80px !important;
-  position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 80px !important;
+    position: relative;
 }
 .searchBox {
-  max-width: 555px;
-  width: 100%;
-  height: 50px;
-  background-color: #f0f0f0;
-  border-radius: 50px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    max-width: 555px;
+    width: 100%;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .searchBox__form {
-  display: flex;
+    display: flex;
 }
 .searchBox_inner {
-  height: 100%;
+    height: 100%;
 }
 .searchBtn {
-  position: absolute;
-  left: 30px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 25px;
-  height: 25px;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
 
-  margin-right: 10px;
+    margin-right: 10px;
 }
 .searchBtn img {
-  width: 23px;
-  height: 23px;
-  padding-right: 10px;
-  cursor: pointer;
-  border-right: 1px solid #757575;
+    width: 23px;
+    height: 23px;
+    padding-right: 10px;
+    cursor: pointer;
+    border-right: 1px solid #757575;
 }
 
 input[id="search"] {
-  position: absolute;
-  left: 62px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: auto;
-  border: 0;
-  width: 85%;
-  color: #757575;
-  background-color: inherit;
-  font-size: 22px;
+    position: absolute;
+    left: 62px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    border: 0;
+    width: 85%;
+    color: #757575;
+    background-color: inherit;
+    font-size: 22px;
 }
 input[id="search"]:focus {
-  outline: none;
+    outline: none;
 }
 #search {
 }
 .searchTag__box {
-  display: flex;
-  position: absolute;
-  bottom: -25px;
-  left: 20px;
+    display: flex;
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
 }
 .searchTag {
-  padding: 0 10px;
+    padding: 0 10px;
 }
 .searchTag a {
-  font-size: 12px;
-  color: #6cc4b3;
+    font-size: 12px;
+    color: #6cc4b3;
 }
 
-/* mainSliderType */
-#mainSliderType {
-  width: 100%;
-  height: 500px;
-  background: #666;
-  margin-bottom: 50px;
-  background: url("../../img/hospital_mainBanner.jpg") no-repeat center / cover;
-}
-.slider__text {
-  width: 25%;
-  margin: 260px 0 0 115px;
-}
-.slider__textName {
-  width: 245px;
-  position: relative;
-  margin-bottom: 20px;
-}
-.slider__textName h3 {
-  font-size: 32px;
-  color: #6cc4b3;
-  /* margin-right: 5px; */
-}
-.slider__textName > span a {
-  background: url("../../img/hospital_mainIcon.svg") no-repeat;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 19px;
-  right: 0;
-}
-.slider__textName .slider__tag {
-  font-size: 16px;
-  color: #757575;
-  margin-right: 10px;
-  /* position: absolute;
-    left: 0;
-    bottom: -18px; */
-}
-.slider__textName .slider__tag span {
-}
-.slider__text p {
-  font-size: 20px;
-  color: #505050;
-  line-height: 1.4;
-  font-weight: 200;
-  margin-bottom: 60px;
-}
-.slider__text a {
-  font-size: 16px;
-  color: #6cc4b3;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 5px;
+/* TitleType */
+#TitleType {
+    height: 285px;
+    background: #666;
+    margin-bottom: 100px;
+    background: #f9fafb;
 }
 
-/* 병원정보 */
-#hospitalInfo {
-  padding: 0 !important;
+.title__inner {
+    padding: 50px 0;
+    text-align: center;
+}
+.title__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.title__name span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.65874 10.2809C2.46748 9.31148 3.4659 8.51766 4.59263 7.94818C10.5914 4.97062 16.8548 8.99636 17.4585 15.3985C17.6416 17.1271 17.3484 18.8728 16.6108 20.4467C15.84 22.055 14.4219 23.4448 12.8599 23.8739C11.2979 24.3029 9.64858 23.6169 9.13733 22.1295C8.9195 21.4769 8.82453 20.7896 8.85728 20.1025C8.90096 19.4037 8.95493 18.6869 8.52332 18.0883C8.33294 17.833 8.08808 17.6232 7.80654 17.4743C7.40053 17.2319 6.93585 17.1054 6.46298 17.1086C5.99012 17.1117 5.52717 17.2444 5.12444 17.4923C4.42309 17.9136 3.65492 18.4094 2.79685 18.2861C2.22126 18.1825 1.69678 17.8896 1.30677 17.4537C-0.799865 15.2623 -0.121631 12.4132 1.65874 10.2809Z' fill='%2396DAD1'/%3E%3Cpath d='M12.7909 0.0611687C10.1833 -0.452646 7.81976 2.37333 9.51791 4.6855C9.88007 5.18037 10.3848 5.55275 10.9645 5.75275C11.5442 5.95275 12.1712 5.97082 12.7614 5.80453C13.3517 5.63824 13.877 5.29554 14.2671 4.82234C14.6571 4.34914 14.8932 3.76805 14.9438 3.15691C15.0568 1.83383 14.15 0.330921 12.7909 0.0611687Z' fill='%2396DAD1'/%3E%3Cpath d='M19.542 4.2256C16.9318 3.71178 14.5708 6.53776 16.269 8.84993C16.631 9.3447 17.1355 9.71706 17.715 9.91717C18.2945 10.1173 18.9213 10.1356 19.5114 9.96957C20.1016 9.80359 20.627 9.46126 21.0172 8.98842C21.4074 8.51559 21.6439 7.93483 21.6949 7.3239C21.8079 5.99826 20.8985 4.51076 19.542 4.2256Z' fill='%2396DAD1'/%3E%3Cpath d='M22.4352 12.0512C20.4185 11.3472 18.4249 13.3973 18.9849 15.4321C19.4011 16.9427 21.2354 17.8881 22.7075 17.3486C25.3639 16.3723 24.8912 12.9041 22.4352 12.0512Z' fill='%2396DAD1'/%3E%3Cpath d='M4.71871 1.11971C2.69942 0.41578 0.708407 2.46334 1.26847 4.49804C1.68209 6.01123 3.51897 6.95407 4.99105 6.41457C7.6449 5.44089 7.16447 1.97007 4.71871 1.11971Z' fill='%2396DAD1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.title__name h2 {
+    font-size: 32px;
+    color: #6cc4b3;
 }
 
-.hospital__view {
-  display: flex;
-  background-color: #f9fafb;
-  margin-bottom: 35px;
+.title__inner > span {
+    display: inline-block;
+    font-size: 16px;
+    color: #6cc4b3;
+    margin-bottom: 20px;
+}
+.title__inner p {
+    max-width: 600px;
+    padding: 0 20px;
+    margin: 0 auto;
+    line-height: 1.4;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.title__inner a {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #6cc4b3;
+    padding: 3px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 1px rgba(222, 222, 222, 0.25);
 }
 
-.map__img {
+/* infomationType */
+#informationType {
+    width: 100%;
 }
-.map__img img {
-  width: 555px;
-  height: 400px;
-}
-
-.hospital__text {
-}
-.hospital__textPad {
-  padding: 20px;
-  width: 555px;
-  height: 360px;
-  position: relative;
-}
-.hospital__textPad h3 {
-  font-size: 32px;
-  font-weight: 500;
-  color: #6cc4b3;
-  margin-bottom: 10px;
-}
-.hospital__textPad a {
-}
-.hospital__textPad address {
-  font-size: 20px;
-  color: #6cc4b3;
-  margin-bottom: 20px;
-}
-.hospital__textPad p {
-  font-size: 20px;
-  font-weight: 300;
-  color: #505050;
-  line-height: 1.4;
-}
-.hosital__tag {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-}
-.hosital__tag span {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #505050;
-  font-weight: 300;
+#informationType h2 {
+    font-size: 32px;
+    color: #6cc4b3;
+    margin-bottom: 50px;
 }
 
-/* 병원 세부내용 */
-.infomation {
-  width: 100%;
-  background: #f9fafb;
-  margin-bottom: 80px;
+.disease__box {
+}
+.disease__info {
+    width: 74.5%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}
+.disease__info:nth-child(odd) {
+    float: left;
+}
+.disease__info:nth-child(even) {
+    float: right;
 }
 
-.info__inner {
-  padding: 30px 0;
+.disease__info img {
+    width: 142px;
+    height: 130px;
 }
-.info__inner span {
-}
-.info__inner h4 {
-  font-size: 20px;
-  color: #6cc4b3;
-  text-align: center;
-  margin-bottom: 20px;
+.disease__info:nth-child(odd) img {
+    margin-right: 40px;
 }
 
-.info__contents {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.disease__info .text__box {
+    width: 100%;
+    max-width: 832px;
+    height: 150px;
+    background-color: inherit;
+    background: url(../../img/speakingboxL.png) no-repeat center / cover;
+    filter: drop-shadow(3px 3px 12px rgba(206, 206, 206, 0.3));
+    position: relative;
 }
-.operation {
-  width: 50%;
-  padding-left: 110px;
-}
-.operation:first-child {
-  border-right: 1px dashed #6cc4b3;
-}
-.operation h5 {
-  font-size: 20px;
-  color: #6cc4b3;
-  margin-bottom: 30px;
-}
-.operation .info_list {
-  display: flex;
-}
-.operation .info_list ul {
-}
-.operation .info_list ul:first-child {
-  margin-right: 60px;
-}
-.operation .info_list ul li {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.operation .info_list ul:first-child li {
-  color: #6cc4b3;
-}
-.operation .info_list ul:last-child li {
-  color: #757575;
+.disease__info:nth-child(even) .text__box {
+    background: url(../../img/speakingboxR.png) no-repeat center / cover;
+    margin-right: 40px;
 }
 
-#boardComment {
-  border-bottom: 0 !important;
+.disease__info .text__box .information {
+    position: absolute;
+    top: 27px;
+}
+.disease__info:nth-child(odd) .text__box .information {
+    left: 60px;
+}
+.disease__info:nth-child(even) .text__box .information {
+    left: 20px;
+}
+.disease__info .text__box .information h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #6cc4b3;
+    margin-bottom: 15px;
+}
+.disease__info .text__box .information ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.disease__info .text__box .information li {
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    color: #757575;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-right: 10px;
+}
+.disease__info .text__box .information li em {
+    color: #6cc4b3;
 }

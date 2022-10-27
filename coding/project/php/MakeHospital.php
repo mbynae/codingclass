@@ -1,10 +1,10 @@
 <main id="main">
         <section id="HosWrite">
-            <h2>블로그 글쓰기</h2>
+            <h2>병원 쓰기</h2>
             <div class="container">
-                <form action="HosWriteSave.php" name="HosWrite" method="post" enctype="multipart/form-data">
+                <form action="MakeHospitalSave.php" name="HosWrite" method="post" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>블로그 게시글 작성 영역</legend>
+                        <legend>병원 게시글 작성 영역</legend>
                         <div>
                             <label for="HosCategory">카테고리</label>
                             <select name="HosCategory" id="HosCategory">
