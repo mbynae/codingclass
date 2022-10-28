@@ -33,9 +33,9 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a href="#">A.hopsital</a></li>
-                    <li><a href="#">disease</a></li>
-                    <li><a href="../php/board.php">community</a></li>
+                    <li><a href="hospitalMain.php">A.hopsital</a></li>
+                    <li><a href="diseaseMain.php">disease</a></li>
+                    <li><a href="board.php">community</a></li>
                     <li><a href="#">pet shop</a></li>
                     <?php if( isset($_SESSION['myMemberID']) ){ ?>
                     <li><a href="#" class="black">mypage</a></li>

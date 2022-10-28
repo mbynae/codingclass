@@ -1,0 +1,80 @@
+.line {
+    width: 1360px;
+    height: 10px;
+    background: #F9FAFB;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+.itemExplanation__inner {
+    display: flex;
+    justify-content: center;
+}
+.explanation__cate {
+    margin-top: 70px;
+    margin-right: 150px;
+}
+.explanation__cate ul li {
+    margin-bottom: 20px;
+}
+.explanation__cate ul li a {
+    font-weight: 300;
+    font-size: 16px;
+    color: #505050;
+}
+.Explanation__info {
+    margin-top: 65px;
+}
+.Explanation__img {
+    background-image: url(../../img/Explanation__img.jpg);
+    width: 667px;
+    height: 540px;
+}
+.Explanation__desc {
+    padding: 30px 0px 0px 35px;
+}
+.Explanation__desc > h3 {
+    font-size: 16px;
+    color: #505050;
+}
+.Explanation__desc > h2 {
+    font-size: 28px;
+    color: #505050;
+}
+.Explanation__desc > h4 {
+    font-size: 14px;
+    color: #505050;
+    font-weight: 300;
+}
+.Explanation__desc > p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    transform: translate(20%,700%);
+}
+.Explanation__more {
+    margin-top: 50px;
+}
+.Explanation__more > h2 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #505050;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.Explanation__more > h2:nth-child(2) {
+    margin-bottom: 50px;
+}
+.Explanation__more > h3 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #505050;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.Explanation__more > p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #505050;
+    text-align: center;
+    margin-top: 40px;
+}

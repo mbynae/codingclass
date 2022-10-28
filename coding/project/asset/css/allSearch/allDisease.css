@@ -1,0 +1,112 @@
+.allDisease__top {
+    display: flex;
+    justify-content: space-between;
+}
+.allDisease__top > h2 {
+    color: #6CC4B3;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.allDisease__top > p {
+    padding-top: 35px;
+    padding-right: 28px;
+}
+.allDisease__top > p a {
+    font-weight: 500;
+    font-size: 14px;
+    color: #757575;
+}
+.allDisease__top > p a img {
+    width: 18px;
+    height: 4px;
+    padding-top: 11px;
+    padding-left: 3px;
+}
+.allDisease__box {
+    display: flex;
+    margin-bottom: 20px;
+}
+.allDisease__text {
+    width: 670px;
+    height: 110px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 1px rgba(222, 222, 222, 0.25);
+    border-radius: 10px;
+    padding: 10px 24px 32px 24px;
+    display: flex;
+}
+.allDisease__text .allDisease__desc > h2 {
+    height: 27px;
+}
+.allDisease__text .allDisease__desc > h2 a {
+    color: #6CC4B3;
+    font-size: 18px;
+    font-weight: 500;
+}
+.allDisease__text .allDisease__desc > h3 a {
+    color: #757575;
+    font-size: 14px;
+}
+.allDisease__text .allDisease__desc > p {
+    padding-right: 20px;
+}
+.allDisease__text .allDisease__desc > p a {
+    margin-top: 31.5px;
+    color: #505050;
+    font-size: 14px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.allDisease__text figure img {
+    margin-top: 10px;
+    width: 110px;
+    height: 110px;
+}
+
+.allDisease__text2 {
+    width: 670px;
+    height: 110px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 1px rgba(222, 222, 222, 0.25);
+    border-radius: 10px;
+    padding: 10px 24px 32px 24px;
+    display: flex;
+    margin-left: 20px;
+}
+.allDisease__text2 .allDisease__desc > h2 {
+    height: 27px;
+}
+.allDisease__text2 .allDisease__desc > h2 a {
+    color: #6CC4B3;
+    font-size: 18px;
+    font-weight: 500;
+}
+.allDisease__text2 .allDisease__desc > h3 a {
+    color: #757575;
+    font-size: 14px;
+}
+.allDisease__text2 .allDisease__desc > p {
+    padding-right: 20px;
+}
+.allDisease__text2 .allDisease__desc > p a {
+    margin-top: 31.5px;
+    color: #505050;
+    font-size: 14px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.allDisease__text2 figure img {
+    margin-top: 10px;
+    width: 110px;
+    height: 110px;
+}

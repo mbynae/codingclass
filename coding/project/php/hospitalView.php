@@ -9,6 +9,10 @@
 
     $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
+    $HoscommentSql = "SELECT * FROM HosComment WHERE HosID = {$HosID} ORDER BY HosID";
+    $HoscommentResult = $connect -> query($HoscommentSql);
+    $commentInfo = $HoscommentResult -> fetch_array(MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -54,7 +58,7 @@
     <section id="hospitalInfo" class="container">
       <article class="hospital__view">
         <div class="map__img">
-          <img src="../asset/img/hospitalCard_cont1.jpg" alt="" />
+          <img src="../asset/img/hospital/<?=$HosInfo['HosImgFile']?>" alt="이미지" />
         </div>
         <div class="hospital__text">
           <div class="hospital__textPad">
@@ -79,14 +83,14 @@
                     <h5>운영정보</h5>
                     <div class="info_list">
                         <ul>
-                        <li>영업시간</li>
-                        <li>전문분야</li>
-                        <li>주차</li>
+                            <li>영업시간</li>
+                            <li>전문분야</li>
+                            <li>주차</li>
                         </ul>
                         <ul>
-                        <li><?=$HosInfo['HosTime']?></li>
-                        <li><?=$HosInfo['HosSpecialty1']?>, <?=$HosInfo['HosSpecialty2']?></li>
-                        <li><?=$HosInfo['HosParking']?></li>
+                            <li><?=$HosInfo['HosTime']?></li>
+                            <li><?=$HosInfo['HosSpecialty1']?>, <?=$HosInfo['HosSpecialty2']?></li>
+                            <li><?=$HosInfo['HosParking']?></li>
                         </ul>
                     </div>
                 </div>
@@ -94,14 +98,14 @@
                     <h5>케어서비스</h5>
                     <div class="info_list">
                         <ul>
-                        <li>부가서비스</li>
-                        <li>전화번호</li>
-                        <li>이메일</li>
+                            <li>부가서비스</li>
+                            <li>전화번호</li>
+                            <li>이메일</li>
                         </ul>
                         <ul>
-                        <li><?=$HosInfo['HosService1']?>, <?=$HosInfo['HosService2']?></li>
-                        <li><?=$HosInfo['HosPhone']?></li>
-                        <li><?=$HosInfo['HosEmail']?></li>
+                            <li><?=$HosInfo['HosService1']?>, <?=$HosInfo['HosService2']?></li>
+                            <li><?=$HosInfo['HosPhone']?></li>
+                            <li><?=$HosInfo['HosEmail']?></li>
                         </ul>
                     </div>
                 </div>
@@ -149,34 +153,34 @@
         </div>
         <table>
             <tbody>
-            <!-- <?php
-                        foreach($commentResult as $comment){ ?>
-                            <tr>
-                                <td class="com__td">
-                                    <div id="Comment<?=$comment['myCommentID']?>">
-                                        <div class="com__top">
-                                            <?=$comment['commentName']?>
-                                            <em><?=date('Y-m-d', $comment['regTime'])?></em>
-                                            <div class="com__like">
-                                                <img src="../asset/img/like.svg" alt="">
-                                                <p>5</p>
-                                                <img src="../asset/img/dislike.svg" alt="">
-                                                <p>0</p>
-                                            </div>
-                                        </div>
-                                        <div class="com__table__p">
-                                            <p><?=$comment['commentMsg']?></p>
-                                        </div>
-                                        <div class="comment__del">
-                                            <a href="#" class="comment__del__del">댓글 삭제</a>
-                                            <a href="#" class="comment__del__mod">댓글 수정</a>
+                <?php
+                    foreach($HoscommentResult as $Hoscomment){ ?>
+                        <tr>
+                            <td class="com__td">
+                                <div id="Comment<?=$Hoscomment['HosID']?>">
+                                    <div class="com__top">
+                                        <?=$Hoscomment['commentName']?>
+                                        <em><?=date('Y-m-d', $Hoscomment['regTime'])?></em>
+                                        <div class="com__like">
+                                            <img src="../asset/img/like.svg" alt="">
+                                            <p>5</p>
+                                            <img src="../asset/img/dislike.svg" alt="">
+                                            <p>0</p>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                    <?php } ?> -->
+                                    <div class="com__table__p">
+                                        <p><?=$Hoscomment['commentMsg']?></p>
+                                    </div>
+                                    <div class="comment__del">
+                                        <a href="#" class="comment__del__del">댓글 삭제</a>
+                                        <a href="#" class="comment__del__mod">댓글 수정</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                <?php } ?>
                 <tr>
-                    <td class="com__td">
+                    <!-- <td class="com__td">
                     <div class="com__top">
                         누군가님
                         <em>2020 / 10 / 05</em>
@@ -229,7 +233,7 @@
                         <p>믿을만한 의사 선생님이 있어서 좋았습니다</p>
                     </div>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </section>
@@ -280,12 +284,12 @@
         });
     </script>
     <script>
+
         const commentName = $("#commentName");    // 댓글 이름
         const commentPass = $("#commentPass");    // 댓글 비밀번호
         const commentWrite = $("#commentWrite");  // 댓글
 
         let commentID = "";
-
 
         // 댓글 삭제 버튼 클릭시
         $(".comment__del__del").click(function(e){
@@ -303,7 +307,6 @@
             $(".comment__delete").hide();
         })
 
-        console.log(commentID)
         // 댓글 삭제 버튼 --> 삭제 버튼 클릭
 
         $("#commentDeleteButton").click(function(){
@@ -315,7 +318,7 @@
                 $("#commentDeletePass").focus();
             } else {
                 $.ajax({
-                    url: "hosCommentDelete.php",
+                    url: "HosCommentDelete.php",
                     method: "POST",
                     dataType: "json",
                     data: {
@@ -352,6 +355,7 @@
 
         // 댓글 수정 버튼 --> 수정 버튼 클릭
         $("#commentModifyButton").click(function(){
+            
 
             let number = commentID.replace(/[^0-9]/g, "");
 
@@ -361,7 +365,7 @@
 
             } else {
                 $.ajax({
-                    url: "hosCommentModify.php",
+                    url: "HosCommentModify.php",
                     method: "POST",
                     dataType: "json",
                     data: {
@@ -381,7 +385,9 @@
                     }
                 })
             }
-        })
+    })
+
+
 
         // 댓글 쓰기 버튼
         $("#commentBtn").click(function(){
@@ -390,11 +396,11 @@
                 $("#commentWrite").focus();
             } else {
                 $.ajax({
-                    url: "hosCommentWrite.php",
+                    url: "HosCommentWrite.php",
                     method: "POST",
                     dataType : "json",
                     data: {
-                        "boardID": <?=$myBoardID?>,
+                        "HosID": <?=$HosID?>,
                         "name": commentName.val(),
                         "pass": commentPass.val(),
                         "msg": commentWrite.val()
@@ -410,6 +416,6 @@
                     }
                 })
             }
-        })
+            })
     </script>
 </html>

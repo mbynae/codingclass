@@ -33,7 +33,7 @@
 
     <style>
         .myPage__inner {
-            margin-top: 80px;
+            margin-top: 80px !important;
             display: flex;
             justify-content: space-between;
         }
@@ -213,13 +213,13 @@
                     </div>
                     <div class="profile__box">
                         <p>My Information</p>
-                        <img src="../../asset/img/Group 231.svg" alt="">
+                        <img src="../asset/img/Group 231.svg" alt="">
                     </div>
-                    <img class="winimal" src="../../asset/img/winimal.svg" alt="">
+                    <img class="winimal" src="../asset/img/winimal.svg" alt="">
                 </div>                
             </div>
             <div class="card">
-                <img src="../../asset/img/mypageImg.jpg" alt="">
+                <img src="../asset/img/mypageImg.jpg" alt="">
             </div>
         </div>
     </section>

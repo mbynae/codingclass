@@ -1,58 +1,28 @@
-// <공통 선택자>
-const loginpopupLoginBtn = document.querySelector(".login");
-const loginPopup = document.querySelector(".login__popup");
-const agreePopup = document.querySelector(".agree__popup");
-const joinPopup = document.querySelector(".join__popup");
+//로그인창 닫기
+const login = document.querySelector(".header__menu .login");
+const loginpopup = document.querySelector(".login__popup");
+const closeBtn = document.querySelector(".close_btn");
 
-const popupArray = [loginPopup, agreePopup, joinPopup];
-
-// <로그인 팝업창>
-
-// 로그인 눌렀을 시 활성화
-loginpopupLoginBtn.addEventListener("click", () => {
-  loginPopup.classList.remove("close");
+login.addEventListener("click", (e) => {
+    e.preventDefault();
+    loginpopup.style.display = "block";
+    document.querySelector("body").classList.add("scrollStop");
+});
+closeBtn.addEventListener("click", () => {
+    loginpopup.style.display = "none";
+    document.querySelector("body").classList.remove("scrollStop");
 });
 
-// // 회원가입 눌렀을 시 약관 동의 창 이동
-// const loginpopupjoinBtn = document.querySelector(".loginpopup_joinBtn");
+// 헤더바 색깔 조절
+const headerType = document.getElementById("headerType");
+window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
 
-// loginpopupjoinBtn.addEventListener("click", () => {
-//     loginPopup.classList.add("close");
-//     agreePopup.classList.remove("close");
-// });
-
-// <약관 동의 팝업창>
-const agree_cancelBtn = document.querySelector(".cancel_btn");
-
-// 취소 클릭 시 로그인 창으로 이동
-// agree_cancelBtn.addEventListener("click", () => {
-//     agreePopup.classList.add("close");
-//     loginPopup.classList.remove("close");
-
-//     agree_checkAll.checked = false;
-//     aggre_checkArray.forEach((e, i, a) => {
-//         a[i].checked = false;
-//     })
-// });
-
-//확인 클릭 시 회원가입창으로 이동
-// function confirmButton(){
-//     const btn = document.querySelector(".confirm_btn");
-//     let btnContents = btn.innerText;
-
-//     if(aggre_checkArray[0].checked == true && aggre_checkArray[1].checked ){
-//         btn.addEventListener("click", () => {
-//             // agreePopup.classList.add("close");
-//             // joinPopup.classList.remove("close");
-//             alert("실행")
-//         });
-//     }
-// };
-// confirmButton();
-
-// <닫기 버튼>
-// close_btn.forEach((e, i, a) => {
-//     // e.addEventListener("click", () => {
-//         //     popupArray[i].classList.add("close");
-//         // });
-// });
+    if (scrollTop > 0) {
+        headerType.style.backgroundColor = "#fff";
+        headerType.style.borderBottom = "1px solid #f5f5f5";
+    } else {
+        headerType.style.backgroundColor = "transparent";
+        headerType.style.borderBottom = "0";
+    }
+});

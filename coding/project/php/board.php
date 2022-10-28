@@ -1,6 +1,7 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
 
     $myMemberID = $_SESSION['myMemberID'];
 
@@ -8,6 +9,8 @@
     $myResult = $connect -> query($mySql);
 
     $myInfo = $myResult -> fetch_array(MYSQLI_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,27 +39,7 @@
 
 <body>
 
-    <!-- boardLoginBanner -->
-    <section id="boardLoginBanner" class="loginBanner">
-        <h2 class="blind">loginBanner</h2>
-        <div class="lB__inner">
-            <figure class="MyprofileL">
-                <img src="../asset/img/profile/<?=$myInfo['youImgFile']?>" alt="프로필사진">
-                    <figcaption><?=$_SESSION['youName']?>님 어서오세요!</figcaption>
-                <a href="../php/logout.php">LOGOUT</a>
-            </figure>
-            <div class="Myprofile">
-                <ul>
-                    <li>가입일 : <?=date('Y-m-d', $myInfo['regTime'] )?></li>
-                    <li><a href="#">나의 정보</a></li>
-                    <li><a href="#">나의 반려견</a></li>
-                    <li>나의 글 : 00개</li>
-                    <li>댓글 수 : 00개</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- //boardLoginBanner -->
+    <?php include "../include/loginBanner.php"?>
 
     <!-- boardImageType -->
     <section id="boardImageType" class="imageType">

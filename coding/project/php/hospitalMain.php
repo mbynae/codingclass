@@ -5,8 +5,21 @@
     $HosSql = "SELECT * FROM Hospital";
     $HosResult = $connect -> query($HosSql);
 
-    // $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
+    $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
+    $hosCategory = $_GET['category'];
+
+
+    if(isset($_GET['category'])){
+        $category = $_GET['category'];
+        $HosSql = "SELECT * FROM Hospital WHERE hosCategory='$category'";
+        
+    } else {
+        $HosSql = "SELECT * FROM Hospital";
+    }
+
+    $allCategory = "SELECT DISTINCT HosCategory FROM Hospital";
+    $allResult = $connect -> query($allCategory);
 ?>
 
 
@@ -20,7 +33,15 @@
 
     <link rel="stylesheet" href="../asset/css/hospital/hospital_main.css">
     <style>
-        
+        .category__contents div > a {
+            color: #6cc4b3;
+        }
+        .category__contents div {
+            color: #6cc4b3;
+            line-height: 60px;
+            cursor: pointer;
+            font-size: 16px;
+        }
                
         
     </style>
@@ -63,7 +84,7 @@
             <p>
                 배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
             </p>
-            <a href="#">더 알아보기</a>
+            <a href="hospitalView.php?page=<?=$HosInfo['HosID']?>">더 알아보기</a>
         </div>
     </section>
 
@@ -82,65 +103,78 @@
                         <li><a href="#" class="cate3">수술</a></li>
                     </nav>
                 </div>
-                <form action="#" name="" method="" onsubmit="">
-                    <fieldset>
-                        <!-- 지역 카테고리 -->
-                        <div class="category__contents regionCho tapActive">
-                            <div>
-                                <label for="region1">서울</label>
-                                <input type="radio" id="region1" name="region" value="서울">
+                <div>
+                    <!-- 지역 카테고리 -->
+                    <div class="category__contents regionCho tapActive">
+                        <?php
+                        
+                            foreach($allResult as $all){ ?>
+                                <div>
+                                    <a href="hospitalMain.php?category=<?=$all['HosCategory']?>"><?=$all['HosCategory']?></a>
+                                </div>
+                        <?php }
+                            ?>
+                          
+                            <!-- <div>
+                                <a href="#">서울</a>
                             </div>
                             <div>
-                                <label for="region2">경기도</label>
-                                <input type="radio" id="region2" name="region" value="경기도">
+                                <a href="#">경기도</a>
                             </div>
                             <div>
-                                <label for="region3">인천</label>
-                                <input type="radio" id="region3" name="region" value="인천">
+                                <a href="#">인천</a>
                             </div>
                             <div>
-                                <label for="region4">충청도</label>
-                                <input type="radio" id="region4" name="region" value="충청도">
+                                <a href="#">충청도</a>
+                            </div>
+                            <div>                                
+                                <a href="#">강원도</a>
                             </div>
                             <div>
-                                <label for="region5">전라도</label>
-                                <input type="radio" id="region5" name="region" value="전라도">
+                                <a href="#">강원도</a>
                             </div>
                             <div>
-                                <label for="region6">강원도</label>
-                                <input type="radio" id="region6" name="region" value="강원도">
+                                <a href="#">경상도</a>
                             </div>
                             <div>
-                                <label for="region7">경상도</label>
-                                <input type="radio" id="region7" name="region" value="경상도">
-                            </div>
-                            <div>
-                                <label for="region8">제주도</label>
-                                <input type="radio" id="region8" name="region" value="제주도">
-                            </div>
+                                <a href="#">제주도</a>
+                            </div> -->
                         </div>
                         <!-- 질병 카테고리 -->
                         <div class="category__contents diseaseCho">
                             <div>
-                                <label for="region1">서울</label>
-                                <input type="radio" id="region1" name="region" value="서울">
+                                <label for="disease1">파보</label>
+                                <input type="radio" id="disease1" name="disease1" value="파보">
+                            </div>
+                            <div>
+                                <label for="disease2">홍역</label>
+                                <input type="radio" id="disease2" name="disease2" value="홍역">
+                            </div>
+                            <div>
+                                <label for="disease3">방광암</label>
+                                <input type="radio" id="disease3" name="disease3" value="방광암">
+                            </div>
+                            <div>
+                                <label for="disease4">골육종</label>
+                                <input type="radio" id="disease4" name="disease4" value="골육종">
                             </div>
                         </div>
                         <!-- 수술명 카테고리 -->
                         <div class="category__contents surgeryCho">
                             <div>
-                                <label for="region1">서울</label>
-                                <input type="radio" id="region1" name="region" value="서울">
+                                <label for="Operation1">슬개골</label>
+                                <input type="radio" id="Operation1" name="Operation1" value="슬개골">
+                            </div>
+                            <div>
+                                <label for="Operation2">중성화</label>
+                                <input type="radio" id="Operation2" name="Operation2" value="중성화">
+                            </div>
+                            <div>
+                                <label for="Operation3">내시경</label>
+                                <input type="radio" id="Operation3" name="Operation3" value="내시경">
                             </div>
                         </div>
-                        <div class="category__confirm">
-                            <button>NO</span>
-                            <span>|</span>
-                            <button type="submit">YES</span>
-                        </div>
-                    </fieldset>
-                </form>
-
+                </div>
             </div>
         </div>
 
@@ -158,14 +192,13 @@
                 $viewLimit = ($viewNum * $page) - $viewNum;
 
 
-                $HosSql = "SELECT * FROM Hospital ORDER BY HosID DESC LIMIT {$viewLimit}, {$viewNum}";
+                $HosSql .= " ORDER BY HosID DESC LIMIT {$viewLimit}, {$viewNum}";
                 $HosResult = $connect -> query($HosSql);
 
-                // echo $HosSql;
 
                 $count = $HosResult -> num_rows;
 
-                if($HosResult){
+                if($HosSql){
                     $count = $HosResult -> num_rows;
         
                     if($count > 0 ){
@@ -279,7 +312,14 @@
         <div class="board__pages">
                 <ul>
 <?php
-    $sql = "SELECT count(HosID) FROM Hospital";
+    if(isset($_GET['category'])){
+        $sql = "SELECT count(HosID) FROM Hospital WHERE HosCategory = '$category'";
+        
+    } else {
+        $sql = "SELECT count(HosID) FROM Hospital";
+    }
+
+
     $result = $connect -> query($sql);
 
     $HosCount = $result -> fetch_array(MYSQLI_ASSOC);
@@ -361,6 +401,10 @@
     const surgeryChoice = document.querySelector(".surgeryCho");
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
+
+
+
+
 
     //카테고리 선택
     category.forEach((cate, index) => {

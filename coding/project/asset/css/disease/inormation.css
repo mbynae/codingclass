@@ -1,81 +1,92 @@
+/* InfomationType */
 #infomationType {
     width: 100%;
+    /* height: 1000px; */
     margin-bottom: 100px;
-}
-.Info_textBox {
-    background: #F9FAFB;
+  }
+  .Info_textBox {
+    background: #f9fafb;
     padding: 10px 0 30px 0;
-}
-#infomationType h2 {
+    margin-bottom: 70px;
+  }
+  #infomationType h2 {
     font-size: 20px;
     font-weight: 500;
-    color: #6CC4B3;
+    color: #6cc4b3;
     text-align: center;
     width: 50%;
     padding: 6px 0 20px 0;
     margin: 0 auto 30px auto;
     line-height: 40px;
-    border-bottom: 1px dashed #6CC4B3;
-}
-.category__box {
+    border-bottom: 1px dashed #6cc4b3;
+  }
+  .category__box {
     text-align: center;
-}
-.category__title {
-}
-.category__title h3 {
+  }
+  .category__title h3 {
     font-size: 16px;
-    color: #6CC4B3;
+    color: #6cc4b3;
     margin-bottom: 10px;
-}
-.category__titleChoice {
+  }
+  .category__titleChoice {
     font-size: 20px;
-    color: #6CC4B3;
+    color: #6cc4b3;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
-.category__titleChoice li {
+  }
+  .category__titleChoice li {
     padding: 0 30px;
-}
-.category__titleChoice span {
+  }
+  .category__titleChoice span {
     margin-top: 1px;
-}
-.category__titleChoice li a {
+  }
+  .category__titleChoice li a {
     font-size: 18px;
     color: #757575;
-}
-.category__titleChoice li a.tapActive {
-    color: #6CC4B3;
-}
-.category__contents {
-    width: 50%;
+  }
+  
+  .category__titleChoice li a.tapActive {
+    color: #6cc4b3;
+  }
+  .category__contents {
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 16px;
-    color: #6CC4B3;
+    display: none;
     margin-bottom: 30px;
-}
-.category__contents li {
+  }
+  .category__contents.tapActive {
+    display: block;
+  }
+  .category__contents input[type="radio"] {
+    display: none;
+  }
+  .category__contents div {
+    display: inline-block;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background-color: #fff;
+    margin: 0 10px;
+  }
+  .category__contents div.tapActive {
+    border: 1px solid #6cc4b3;
+  }
+  .category__contents div label {
+    color: #6cc4b3;
     line-height: 60px;
     cursor: pointer;
-}
-.category__confirm {
-}
-.category__confirm span {
+    font-size: 16px;
+  }
+  .category__confirm {
+  }
+  .category__confirm button {
+    background: inherit;
     font-size: 16px;
     color: #757575;
-}
-.category__confirm span:nth-child(1),
-.category__confirm span:nth-child(2){
+    cursor: pointer;
+  }
+  .category__confirm button:nth-child(1) {
     margin-right: 10px;
-}
-.category__confirm span a {
-    font-size: 16px;
-    color: #757575;
-}
+  }
+  .category__confirm span {
+    margin-left: 8px;

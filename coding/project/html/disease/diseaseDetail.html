@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>병원 메인 페이지</title>
+        <title>질병 상세 페이지</title>
 
         <!-- php 넣을시 삭제 -->
         <link rel="stylesheet" href="../../asset/css/butler.css" />
@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="../../asset/css/login/login.css" />
         <!-- 여기까지 삭제 -->
 
-        <link rel="stylesheet" href="../../asset/css/hospital/hospital_detail.css" />
+        <link rel="stylesheet" href="../../asset/css/disease/disease_detail.css" />
     </head>
 
     <body>
@@ -263,11 +263,18 @@
         const surgeryChoice = document.querySelector(".surgeryCho");
         const categoryCircle = document.querySelectorAll(".category__contents > div");
         const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
+        const categoryCircleInp = document.querySelectorAll(".category__contents > div > input");
 
         //카테고리 선택
         category.forEach((cate, index) => {
             cate.addEventListener("click", (link) => {
                 link.preventDefault();
+                categoryCircleInp.forEach((input) => {
+                    input.checked = false;
+                });
+                categoryCircle.forEach((label) => {
+                    label.classList.remove("tapActive");
+                });
                 category.forEach((all) => {
                     all.classList.remove("tapActive");
                     cate.classList.add("tapActive");

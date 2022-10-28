@@ -1,0 +1,27 @@
+#allSearchCate {
+    background: #F9FAFB;
+    margin-top: 120px;
+}
+.allSearchCate__inner ul li > img {
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 17px;
+    height: 13px;
+}
+.allSearchCate__inner ul {
+    text-align: center;
+}
+.allSearchCate__inner ul li {
+    display: inline;
+}
+.allSearchCate__inner ul li a{
+    color: #505050;
+    font-size: 16px;
+    padding: 6px 35px;
+    background: #fff;
+    border-radius: 30px;
+    margin: 0 10px;
+}
+.allSearchCate__inner ul li.active a {
+    color: #6CC4B3;
+}

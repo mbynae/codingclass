@@ -9,6 +9,8 @@
     $sql .= "youPass varchar(20) NOT NULL,";
     $sql .= "youEmail varchar(20) NOT NULL,";
     $sql .= "youPhone varchar(20) NOT NULL,";
+    $sql .= "youImgFile varchar(100) NOT NULL,";
+    $sql .= "youImgSize varchar(100) NULL,";
     $sql .= "regTime int(20) NOT NULL,";
     $sql .= "PRIMARY KEY (myMemberID)";
     $sql .= ") charset=utf8;";

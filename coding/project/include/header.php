@@ -32,15 +32,15 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a href="#">A.hopsital</a></li>
-                    <li><a href="#">Disease</a></li>
+                    <li><a href="../php/hospitalMain.php">A.hopsital</a></li>
+                    <li><a href="../php/diseaseMain.php">Disease</a></li>
                     <li><a href="../php/board.php">Community</a></li>
                     <li><a href="#">Pet shop</a></li>
                     <?php if( isset($_SESSION['myMemberID']) ){ ?>
                     <li><a href="../php/mypage.php" class="black">My page</a></li>
                     <li><a href="../php/logout.php">LOGOUT</a></li>
                 <?php } else { ?>                    
-                    <li><a href="../php/loginpopup.php" class="login">LOGIN</a></li>
+                    <li><a href="../php/main.php" class="login">LOGIN</a></li>
                 <?php } ?>
                 </ul>
             </nav>
@@ -53,7 +53,7 @@
         </div>
     </header>
 
-    <div class="login__popup">
+    <div class="login__popup close">
         <div class="login__inner">
             <div class="login__header">
                 <h3>winimal Login</h3>
