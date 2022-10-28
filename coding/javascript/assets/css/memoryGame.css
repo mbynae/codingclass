@@ -1,146 +1,149 @@
 .memory__wrap {
-    display: flex;
+  display: flex;
+}
+.memory__wrap.close {
+  display: none;
 }
 .memory__inner {
-    width: 678px;
-    height: 678px;
-    border: 4px solid #fff;
-    border-right: 0;
-    background: #eece9d;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    box-shadow: 0 0 0.2rem #dda550;
-    /* position: absolute;
+  width: 678px;
+  height: 678px;
+  border: 4px solid #fff;
+  border-right: 0;
+  background: #eece9d;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 0 0.2rem #dda550;
+  /* position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, 15%); */
 }
 .memory__card {
-    padding: 20px;
+  padding: 20px;
 }
 .memory__card .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .memory__card .cards li {
-    list-style: none;
-    width: 150px;
-    height: 150px;
-    /* background: #fff; */
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 500px;
+  list-style: none;
+  width: 150px;
+  height: 150px;
+  /* background: #fff; */
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500px;
 }
 .memory__card .cards li img {
-    width: 100%;
+  width: 100%;
 }
 .memory__card .cards li .view {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(255, 255, 255);
-    /* box-shadow: 1px 1px 3px 1px #f5f5f5; */
-    backface-visibility: hidden;
-    padding: 10%;
-    border-radius: 20px;
-    transition: all 0.6s;
-    user-select: none; /* 이 두 개로 클릭시 이벤트 버블링 방지*/
-    pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  /* box-shadow: 1px 1px 3px 1px #f5f5f5; */
+  backface-visibility: hidden;
+  padding: 10%;
+  border-radius: 20px;
+  transition: all 0.6s;
+  user-select: none; /* 이 두 개로 클릭시 이벤트 버블링 방지*/
+  pointer-events: none;
 }
 
 .memory__card .cards li .front {
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .memory__card .cards li.flip .front {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 .memory__card .cards li .back {
-    transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 .memory__card .cards li.flip .back {
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .memory__card .cards li.shakeX {
-    animation: shakeX 1s 1;
+  animation: shakeX 1s 1;
 }
 .memory__card .cards li.shakeY {
-    animation: shakeY 1s 1;
+  animation: shakeY 1s 1;
 }
 
 @keyframes shakeX {
-    from,
-    to {
-        transform: translate3d(0, 0, 0);
-    }
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: translate3d(-10px, 0, 0);
-    }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
 
-    20%,
-    40%,
-    60%,
-    80% {
-        transform: translate3d(10px, 0, 0);
-    }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
 }
 .animate__shakeX {
-    animation-name: shakeX;
+  animation-name: shakeX;
 }
 
 @keyframes shakeY {
-    from,
-    to {
-        transform: translate3d(0, 0, 0);
-    }
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: translate3d(0, -10px, 0);
-    }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(0, -10px, 0);
+  }
 
-    20%,
-    40%,
-    60%,
-    80% {
-        transform: translate3d(0, 10px, 0);
-    }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(0, 10px, 0);
+  }
 }
 .animate__shakeY {
-    animation-name: shakeY;
+  animation-name: shakeY;
 }
 
 .memory__pannel {
-    width: 400px;
-    height: 678px;
-    border: 4px solid #fff;
-    border-left: 2px dashed #dda550;
-    background: #eece9d;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 0 0.2rem #dda550;
+  width: 400px;
+  height: 678px;
+  border: 4px solid #fff;
+  border-left: 2px dashed #dda550;
+  background: #eece9d;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 0 0.2rem #dda550;
 }
 
 .memory__pannel__inner {
-    padding: 20px;
+  padding: 20px;
 }
 
 .memory__gameTitle {
-    height: 250px;
-    background: #666;
-    margin-bottom: 30px;
+  height: 250px;
+  background: #666;
+  margin-bottom: 30px;
 }
 .memory__gamecont {
-    width: 300px;
-    height: 350px;
-    background: #f5f5f5;
-    margin: 0 auto;
+  width: 300px;
+  height: 350px;
+  background: #f5f5f5;
+  margin: 0 auto;
 }

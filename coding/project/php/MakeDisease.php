@@ -37,7 +37,7 @@
                         <div>
                             <label for="DisDetails">질병 정보</label>
                             <textarea name="DisDetails" id="DisDetails" placeholder="질병의 정보를 적어주세요." required></textarea>
-                        </div>
+                        </div><br>
                         
                         <div>
                             <label for="DisPreventName1">예방법1</label>
@@ -70,7 +70,7 @@
                         <div>
                             <label for="DisPreventCont4">예방 내용4</label>
                             <textarea type="DisPreventCont4" name="DisPreventCont4" id="DisPreventCont4" placeholder="네번째 예방 내용을 적어주세요"></textarea>
-                        </div>
+                        </div><br>
 
                         <div>
                             <label for="DisCauseName1">발생원인1</label>
@@ -103,7 +103,7 @@
                         <div>
                             <label for="DisCauseCont4">발생원인 내용4</label>
                             <textarea type="DisCauseCont4" name="DisCauseCont4" id="DisCauseCont4" placeholder="네번째 발생원인 내용을 적어주세요"></textarea>
-                        </div>
+                        </div><br>
 
                         <div>
                             <label for="DisEarlySymptom1">초기증상1</label>
@@ -120,12 +120,12 @@
                         <div>
                             <label for="DisEarlySymptom4">초기증상4</label>
                             <textarea type="DisEarlySymptom4" name="DisEarlySymptom4" id="DisEarlySymptom4" placeholder="네번째 초기증상을 적어주세요"></textarea>
-                        </div>
+                        </div><br>
 
                         <div>
                             <label for="DisSurgeryReason">수술이 필요한 이유</label>
                             <textarea type="DisSurgeryReason" name="DisSurgeryReason" id="DisSurgeryReason" placeholder="이유를 적어주세요"></textarea>
-                        </div>
+                        </div><br>
 
                         <div>
                             <label for="DisAfterCare1">초기증상4</label>
@@ -142,7 +142,7 @@
                         <div>
                             <label for="DisAfterCare4">초기증상4</label>
                             <textarea type="DisAfterCare4" name="DisAfterCare4" id="DisAfterCare4" placeholder="수술 후 관리법을 적어주세요"></textarea>
-                        </div>
+                        </div><br>
                         <button type="submit" value="저장하기">저장하기</button>
                     </fieldset>
                 </form>
