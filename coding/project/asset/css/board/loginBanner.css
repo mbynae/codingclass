@@ -1,0 +1,81 @@
+#loginBanner {
+    font-family: 'SCoreDream';
+    width: 100%;
+    margin: 0 auto;
+}
+.lB__inner {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lB__inner figure {
+    display: flex;
+    align-items: center;
+    color: #6cc4b3;
+    margin-right: 60px;
+    position: relative;
+}
+.lB__inner figure img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.lB__inner figure figcaption {
+    font-size: 20px;
+}
+.lB__inner figure a {
+    font-size: 14px;
+    color: #757575;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.Myprofile {}
+.Myprofile li {
+    /* margin-bottom: 10px; */
+    display: inline-block;
+    font-size: 16px;
+    color: #757575;
+    margin-right: 20px;
+    text-decoration: underline 1px dashed #6cc4b3;
+    text-underline-offset : 8px;
+    margin-bottom: 10px;
+}
+.Myprofile li:last-child {
+    margin-right: 0;
+}
+.Myprofile li a {
+    font-size: 16px;
+    color: #757575;
+    text-decoration: underline 1px dashed #6cc4b3;
+    text-underline-offset : 8px;
+}
+
+@media (max-width: 1200px){
+    #loginBanner {
+        width: 96%;
+    }
+}
+@media (max-width: 1024px){
+    .lB__inner figure {
+        margin-right: 40px;
+    }
+    .lB__inner figure figcaption {
+        display: none;
+    }
+    .lB__inner figure a {
+        top: 60px;
+        right: 12px;
+    }
+}
+@media (max-width: 768px){
+    .lB__inner {
+        margin-top: 100px;
+    }
+}
+@media (max-width: 480px){
+    .lB__inner {
+        margin-top: 60px;
+    }
+}

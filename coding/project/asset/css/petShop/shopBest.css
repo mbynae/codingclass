@@ -6,104 +6,32 @@
     color: #505050;
 }
 
-.best__top {
+.best__all {
     display: flex;
     justify-content: space-between;
 }
 
-.best__bottom {
-    display: flex;
-    justify-content: space-between;
+.best__img a > img {
+    width: 95%;
 }
-
-.best__img01 {
-    width: 425px;
-    height: 393px;
-}
-.best__img01 figcaption > h2 a {
+.best__img figcaption > h2 a {
     margin-top: 10px;
     font-size: 18px;
     color: #505050;
 }
-.best__img01 figcaption > p {
+.best__img figcaption > p {
     font-weight: 300;
     color: #505050;
 }
 
-.best__img02 {
-    width: 425px;
-    height: 622px;
-    color: #505050;
-}
-.best__img02 figcaption > h2 a {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #505050;
-}
-.best__img02 figcaption > p {
-    font-weight: 300;
-    color: #505050;
-}
-
-.best__img03 {
-    width: 425px;
-    height: 521px;
-}
-.best__img03 figcaption > h2 a {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #505050;
-}
-.best__img03 figcaption > p {
-    font-weight: 300;
-    color: #505050;
-}
-
-.best__img04 {
-    width: 425px;
-    height: 614px;
-    color: #505050;
-    transform: translateY(-21%);
-}
-.best__img04 figcaption > h2 a {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #505050;
-}
-.best__img04 figcaption > p {
-    font-weight: 300;
-    color: #505050;
+.best__img a > img:nth-child(4) {
+    transform: translateY(-26%);
 }
 
 .best__img05 {
-    width: 425px;
-    height: 385px;
-    transform: translateY(23.7%);
-    color: #505050;
-}
-.best__img05 figcaption > h2 a {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #505050;
-}
-.best__img05 figcaption > p {
-    font-weight: 300;
-    color: #505050;
+    transform: translateY(16%);
 }
 
 .best__img06 {
-    width: 425px;
-    height: 486px;
-    transform: translateY(-1%);
-    color: #505050;
-    
-}
-.best__img06 figcaption > h2 a {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #505050;
-}
-.best__img06 figcaption > p {
-    font-weight: 300;
-    color: #505050;
+    transform: translateY(-7.5%);
 }

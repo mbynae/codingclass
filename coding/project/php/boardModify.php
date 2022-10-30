@@ -70,7 +70,7 @@
                                 echo "<label for='boardTitle'>제목 : </label><input type='text' name='boardTitle' id='boardTitle' maxlength='30' value='".$info['boardTitle']."' required></div>";
                                 echo "<div class='border_titleCate'><div class='selectBox'><select name='boardCate' id='boardCate'>";
                                 echo "<option value=''>카테고리1</option><option value='카테고리2'>카테고리2</option><option value='카테고리3'>카테고리3</option></select></div></div></div>";
-                                echo "<div class='board_writeBox'><label for='boardWriteCont' class='ir'>내용</label><textarea name='boardWriteCont' id='boardWriteCont' placeholder='글을 작성해주세요.' required>".$info['boardContents']."</textarea></div>";
+                                echo "<div class='board_writeBox'><label for='boardWriteCont' class='ir'>내용</label><textarea name='boardContents' id='boardContents' placeholder='글을 작성해주세요.' required>".$info['boardContents']."</textarea></div>";
                                 echo "<div class='board_btn'><div><label for='youPass' class='ir'>비밀번호</label><input type='password' name='youPass' id='boardPass' placeholder='비밀번호를 입력해주세요.' autocomplete='off' minlength='8' required></div>";
                             }
                         ?>

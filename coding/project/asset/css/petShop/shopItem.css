@@ -1,76 +1,37 @@
-.item__top {
+.shopItem__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-.item__top01 > img {
-    width: 425px;
-    height: 425px;
+.item__img {
+    margin-bottom: 30px;
 }
-.item__top01 figcaption > h3 {
-    color: #303030;
-    font-size: 16px;
-    margin-top: 10px;
+.item__img a > img{
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
 }
-.item__top01 figcaption > h2 {
-    color: #505050;
-    font-size: 16px;
+.item__img figcaption > h3 {
     margin-top: 5px;
 }
-.item__top01 figcaption > p {
-    color: #757575;
-    font-size: 16px;
-}
-
-.item__mid {
-    display: flex;
-    justify-content: space-between;
-}
-.item__mid01 > img {
-    width: 425px;
-    height: 425px;
-    margin-top: 50px;
-}
-.item__mid01 figcaption > h3 {
+.item__img figcaption > h3 a {
     color: #303030;
     font-size: 16px;
-    margin-top: 10px;
 }
-.item__mid01 figcaption > h2 {
+.item__img figcaption > h2 {
+    margin-top: -5px;
+}
+.item__img figcaption > h2 a {
     color: #505050;
     font-size: 16px;
-    margin-top: 5px;
 }
-.item__mid01 figcaption > p {
-    color: #757575;
-    font-size: 16px;
-}
-
-.item__bot {
-    display: flex;
-    justify-content: space-between;
-}
-.item__bot01 > img {
-    width: 425px;
-    height: 425px;
-    margin-top: 50px;
-}
-.item__bot01 figcaption > h3 {
-    color: #303030;
-    font-size: 16px;
-    margin-top: 10px;
-}
-.item__bot01 figcaption > h2 {
-    color: #505050;
-    font-size: 16px;
-    margin-top: 5px;
-}
-.item__bot01 figcaption > p {
+.item__img figcaption > p a {
     color: #757575;
     font-size: 16px;
 }
 
 .petShop__pages {
-    margin: 70px 0 20px 0;
+    margin: 20px 0 50px 0;
 }
 .petShop__pages ul {
     text-align: center;

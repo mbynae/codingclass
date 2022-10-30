@@ -20,3 +20,18 @@ window.addEventListener("scroll", () => {
         headerType.style.borderBottom = "0";
     }
 });
+
+//로그인창 닫기
+const login = document.querySelector(".header__menu .login");
+const loginpopup = document.querySelector(".login__popup");
+const closeBtn = document.querySelector(".close_btn");
+
+login.addEventListener("click", (e)=>{
+    e.preventDefault();
+    loginpopup.style.display = "block";
+    document.querySelector("body").classList.add("scrollStop");
+});
+closeBtn.addEventListener("click", ()=>{
+    loginpopup.style.display = "none";
+    document.querySelector("body").classList.remove("scrollStop");
+});

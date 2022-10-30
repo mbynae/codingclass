@@ -30,14 +30,16 @@
         $result = $connect -> query($sql);
 
 
+        
+        
         $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
-
+        
 
         if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){
             $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
             $connect -> query($sql);
         } else {
-            echo "<script>alert('작성자만 수정 가능합니다! 비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!!')</script>";
+            echo "<script>alert('작성자만 수정 가능합니다! 비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!!'); history.back(1);</script>";
         }
 
         

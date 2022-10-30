@@ -1,11 +1,5 @@
-.shopSlider__wrap {
-    margin-top: 69px;
-}
-.shopSlider {
-    width: 1920px;
-    height: 1080px;
-}
-.shopSlider > img {
+.shopSlider a > img {
+    width: 100%;
     position: relative;
 }
 .shopSlider figcaption {

@@ -1,0 +1,37 @@
+/* imageType */
+.imageType {
+    margin-top: 100px;
+    width: 100%;
+}
+.imageType__inner {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.imageType__inner h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #6cc4b3;
+}
+.imageType__inner p {
+    font-size: 30px;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px){
+
+}
+@media (max-width: 1024px){
+    .imageType__inner p {
+        font-size: 25px;
+    }
+}
+@media (max-width: 768px){
+    .imageType__inner p {
+        font-size: 22px;
+        word-break: keep-all;
+    }
+}
+@media (max-width: 480px){
+
+}

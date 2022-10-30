@@ -1,15 +1,17 @@
 .petShopInfo__inner {
     margin-top: 10px;
     display: flex;
+    justify-content: space-between;
 }
-
 .itemInfo {
     padding-top: 60px;
 }
 
 .itemImg figure > img {
-    width: 100%;
+    width: 630px;
     height: 500px;
+    margin-right: 20px;
+    object-fit: cover;
 }
 .itemInfo_name > h3 {
     font-size: 24px;
@@ -35,7 +37,7 @@
     border-top: 1px solid #cecece;
     border-bottom: 1px solid #cecece;
     display: flex;
-    padding: 15px 0;    
+    padding: 15px 0 12px 0;
 }
 .itemInfo__review > h3 {
     font-size: 16px;

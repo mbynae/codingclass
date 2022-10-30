@@ -11,7 +11,7 @@
 }
 .explanation__cate {
     margin-top: 70px;
-    margin-right: 150px;
+    margin-right: 200px;
 }
 .explanation__cate ul li {
     margin-bottom: 20px;
@@ -24,13 +24,10 @@
 .Explanation__info {
     margin-top: 65px;
 }
-.Explanation__img {
-    background-image: url(../../img/Explanation__img.jpg);
-    width: 667px;
+.Explanation__img > img {
+    object-fit: cover;
+    width: 100%;
     height: 540px;
-}
-.Explanation__desc {
-    padding: 30px 0px 0px 35px;
 }
 .Explanation__desc > h3 {
     font-size: 16px;

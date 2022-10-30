@@ -1,0 +1,120 @@
+.imageType__inner p {
+    margin-bottom: 70px;
+}
+#boardWrite {
+    /* margin-bottom: 110px; */
+}
+.board__wrap {
+
+}
+
+
+/* 제목 박스 */
+.border_titleBox {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #757575;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.border_titleBox .titleBox {
+    width: 70%;
+    color: #6CC4B3;
+    font-size: 24px;
+    transform: translateY(7px);
+}
+.border_titleBox input[id="boardTitle"]{
+    width: 80%;
+    border: 0;
+    background-color: inherit;
+    color: #6CC4B3;
+    font-size: 24px;
+}
+.border_titleBox input[id="boardTitle"]:focus {
+    outline: none;
+}
+
+.border_titleCate {
+    display: flex;
+    justify-content: end;
+}
+.selectBox{
+    margin-right: 20px;
+    background-color: inherit;
+}
+#boardCate {
+    box-shadow: 3px 3px 8px 1px rgba(229, 229, 229, 0.25);
+    border: 0;
+    border-radius: 15px;
+    padding: 7px 100px 7px 20px;
+    font-size: 16px;
+    color: #6CC4B3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+#boardCate:focus {
+    outline: none;
+}
+
+.imgAttachBox {
+    margin-top: 7px;
+}
+.imgAttachBox label {
+    border: 0;
+    padding: 7px 100px 7px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px 1px rgba(229, 229, 229, 0.25);
+    font-size: 16px;
+    color: #6CC4B3;
+    cursor: pointer;
+}
+#boardImg {
+    display: none;
+}
+
+
+/* 내용 박스 */
+.board_writeBox {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.board_writeBox > textarea {
+    background-color: #f9f9f9;
+    width: inherit;
+    height: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #505050;
+    font-size: 18px;
+    border: none;
+    resize: none;
+}
+.board_writeBox > textarea::placeholder {color: #ccc;}
+.board_writeBox > textarea:focus {
+    outline: none;
+}
+
+
+/* 버튼 박스 */
+.board_btn {
+    float: right;
+    margin-right: 20px;
+}
+.board_btn > button {
+    font-size: 18px;
+    color: #505050;
+    background-color: inherit;
+    cursor: pointer;
+}
+.board_btn > span {
+    font-size: 20px;
+    font-weight: 300;
+}
+.board_btn > span a {
+    font-weight: 400;
+    font-size: 18px;
+    color: #505050;
+}

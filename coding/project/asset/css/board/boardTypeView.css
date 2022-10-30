@@ -1,0 +1,419 @@
+.board__inner {
+    margin-top: 10px;
+}
+
+/* 카테고리 및 날짜 선택 */
+.Option {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.Option_category {
+    width: 340px;
+    font-family: inherit;
+    border: 1px solid #6cc4b3;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #6cc4b3;
+    display: flex;
+}
+.Option_category:first-child {
+    margin-right: 20px;
+}
+.Option_category p {
+    width: 40%;
+    border-right: 1px dashed #6cc4b3;
+    line-height: 27px;
+    text-align: center;
+}
+.Option_category select  {
+    width: 60%;
+    margin-left: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../img/arrow.svg) no-repeat 90% 50%;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: #6cc4b3;
+    cursor: pointer;
+}
+.Option_category select:focus {
+    outline: none;
+}
+.Option_category select option {
+    font-family: inherit;
+    font-size: 18px;
+    color: #6cc4b3;
+}
+#searchOption2 {
+    width: 80%;
+    appearance: none;
+    padding-left: 18px;
+    background: url(../../img/arrow.svg) no-repeat 91% 50%;
+    border: none;
+    font-family: inherit;
+    font-size: 18px;
+    color: #6cc4b3;
+    cursor: pointer;
+}
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button  { 
+    display: none;
+} 
+input[type="date"]::-webkit-calendar-picker-indicator { 
+    background: transparent;
+    z-index: 1;
+} 
+input[type="date"]:focus {
+    outline: none;
+}
+
+/* 테이블 공통 */
+table tbody tr td:nth-child(2) a {
+    color: #505050;
+    font-size: 16px;
+}
+
+/* 인기글 테이블*/
+.board_ranking {
+    margin: 50px 0 70px 0;
+}
+.board_ranking h3 {
+    padding-bottom: 5px;
+    font-size: 24px;
+    font-weight: 200;
+    color: #6cc4b3;
+    border-bottom: 1px solid #6cc4b3;
+}
+.ranking__inner {
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 6px 2px rgba(222, 222, 222, 0.25);
+}
+.ranking__inner span {
+    font-size: 20px;
+    color: #505050;
+}
+.weekBest {
+    margin-right: 30px;
+    padding-right: 30px;
+    color: #505050;
+    border-right: 1px dashed #6CC4B3;   
+    cursor: pointer;
+}
+.MonthBest {
+    color: #505050;
+    cursor: pointer;
+}
+.ranking__inner table {
+    width: 100%;
+    margin-top: 20px;
+}
+.ranking__inner > span.active {
+    color: #6CC4B3;
+}
+.bestTableCol:nth-child(1){
+    max-width: 960px;
+}
+.bestTableCol:nth-child(2){
+    width: 90px;
+}
+.bestTableCol:nth-child(3){
+    width: 120px;
+}
+.board_ranking_tr td {
+    padding-top: 10px;
+    color: #505050;
+    font-weight: 400;
+}
+.board_ranking_tr td:first-child {
+    font-size: 16px;
+    padding-right: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+} 
+.board_ranking_tr td:nth-child(2), 
+.board_ranking_tr td:nth-child(3){
+    font-size: 16px;
+    text-align: right;
+}
+.board_ranking_tr td:nth-child(2) {
+    padding-right: 20px;
+}
+
+/* 메인 테이블 */
+.board__table {
+    width: 100%;
+    padding: 20px;
+    margin-top: 0 50px 0 0;
+    text-align: center;
+}
+.table {
+    width: 100%;
+}
+.mainTableCol:nth-child(1){
+    width: 55px;
+}
+.mainTableCol:nth-child(2){}
+.mainTableCol:nth-child(3){
+    width: 100px;
+}
+.mainTableCol:nth-child(4){
+    width: 140px;
+}
+.mainTableCol:nth-child(5){
+    width: 60px;
+}
+
+.table thead {
+    color: #6cc4b3;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.table tr td {
+    border-bottom: 1px dashed #6cc4b3;
+    color: #505050;
+    padding: 20px 0;
+}
+.table tr th:nth-child(1),
+.table tr td:nth-child(1){
+    padding-right: 15px;
+}
+.table tr td:nth-child(2){
+    padding-right: 25px;
+    max-width:200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table tr th:nth-child(3),
+.table tr td:nth-child(3){
+    padding-right: 40px;
+}
+.table tr th:nth-child(4),
+.table tr td:nth-child(4){
+    padding-right: 30px;
+}
+.table tr td:nth-child(1),
+.table tr td:nth-child(3),
+.table tr td:nth-child(4),
+.table tr td:nth-child(5){
+    text-align: center;
+}
+
+.main_table_body tr td:nth-child(3) p {
+    /* border-left: 1px solid #505050; */
+}
+.table tr:last-child td {
+    border-bottom: none;
+}
+.borad__table td a {
+    color: #505050;
+    font-size: 18px;
+}
+
+.borad__pages {
+    margin: 70px 0 20px 0;
+}
+.borad__pages ul {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.borad__pages ul li a {
+    padding: 13px 10px;
+    color: #505050;
+}
+.borad__pages ul li.active a {
+    color: #6cc4b3;
+}
+.search__box {
+    text-align: center;
+    border-radius: 15px;
+    position: relative;
+}
+.search-txt {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: 1px solid #6cc4b3;
+    font-size: 16px;
+}
+.search-btn {
+    font-size: 16px;
+    color: #6cc4b3;
+    background-color: #fff;
+}
+.search-btn:hover {
+    cursor: pointer;
+}
+.board_write {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    padding: 3px 16px;
+    border: 1px solid #6cc4b3;
+    border-radius: 20px;
+    transition: all 0.3s;
+    color: #6cc4b3;
+}
+
+.search-txt:focus {
+    outline: none;
+}
+input:required {
+    font-family: 'SCoreDream';
+    color: #505050;
+}
+
+.close_btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+}
+
+@media (max-width: 1200px){
+    
+}
+@media (max-width: 1024px){
+    .mainTableCol:nth-child(1){
+        width: 45px;
+    }
+    .mainTableCol:nth-child(2){}
+    .mainTableCol:nth-child(3){
+        width: 80px;
+    }
+    .mainTableCol:nth-child(4){
+        width: 120px;
+    }
+    .mainTableCol:nth-child(5){
+        width: 40px;
+    }
+    .table tr th:nth-child(1),
+    .table tr td:nth-child(1){
+        padding-right: 5px;
+    }
+    .table tr td:nth-child(2){
+        padding-right: 15px;
+        max-width:200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .table tr th:nth-child(3),
+    .table tr td:nth-child(3){
+        padding-right: 20px;
+    }
+    .table tr th:nth-child(4),
+    .table tr td:nth-child(4){
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 768px){
+    .Option {
+        flex-direction: column;
+    }
+    .Option_category {
+        margin: 0 auto;
+        width: 18rem;
+        font-size: 0.9rem;
+    }
+    .Option_category:first-child {
+        margin: 0 auto 10px auto;
+    }
+    .Option_category select {
+        font-size: 0.9rem;
+    }
+    .Option_category select option {
+        font-size: 0.9rem !important;
+    }
+    .Option_category:last-child p {
+        padding-right: 26px;
+    } 
+
+    .board_ranking_tr {
+        position: relative;
+        display: flex;
+    }
+    .bestTableCol:nth-child(1){
+        max-width: auto;
+        width: 100%;
+    }
+    .board_ranking_tr td:nth-child(1){
+        margin-bottom: 15px;
+    }
+    .board_ranking_tr td:nth-child(2), 
+    .board_ranking_tr td:nth-child(3){
+        font-size: 12px;
+        position: absolute;
+        left: 0;
+        top: 24px;
+    }
+    .board_ranking_tr td:nth-child(3){
+        left: 80px;
+    }
+
+    .table {
+        border-top: 1px solid #6CC4B3;
+    }
+    .table thead {
+        display: none;
+    }
+    .main_table_body tr {
+        position: relative;
+    }
+    .table tr td {
+        padding: 7px 0 20px 0;
+    }
+    .table tr td:nth-child(2){
+        width: 100%;
+    }
+    .table tr td:nth-child(3),
+    .table tr td:nth-child(4){
+        position: absolute;
+        left: 28px;
+        top: 24px;
+        font-size: 13px;
+        border: none;
+    }
+    .table tr td:nth-child(4){
+        left: 90px;
+    }
+    .table tr td:nth-child(5){
+        display: none;
+    }
+    
+    .borad__pages {
+        margin-top: 30px;
+    }
+
+    #searchOption2 {
+        font-size: 0.9rem;
+    }
+    .board_write {
+        bottom: 48px;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 480px){
+    .board_write {
+        font-size: 0.8rem;
+        bottom: 48px;
+        margin-bottom: 2px;
+        margin-right: 12px;
+    }
+}

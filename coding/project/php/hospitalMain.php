@@ -53,25 +53,159 @@
     <!-- //header -->
 
     <section id="searchType" class="container">
-        <div class="searchBox">
-            <form action="" method="POST" class="searchBox__form">
-                <div class="searchBox_inner">
-                    <button class="searchBtn">
-                        <img src="../asset/img/searchBtn.svg" alt="찾기 버튼">
-                    </button>
-                    <input type="text" name="search" id="search" placeholder="궁금하신 내용을 검색해주세요." required>
+        <?php include "../include/searchBox.php"?>
+    </section>
+
+
+    <section id="mainSliderType" class="container">
+        <div id="slider__inner">
+            <div id="hos__slider">
+            <?php
+                if(isset($_GET['page'])){
+                    $slipage = (int) $_GET['page'];
+                } else {
+                    $slipage = 1;
+                }
+
+                $sliviewNum =6;
+                $sliviewLimit = ($sliviewNum * $slipage) - $sliviewNum;
+
+
+                $HosSql .= " ORDER BY HosID DESC LIMIT {$sliviewLimit}, {$sliviewNum}";
+                $sliHosResult = $connect -> query($HosSql);
+
+                $slicount = $sliHosResult -> num_rows;
+
+                if($HosSql){
+                    $slicount = $HosResult -> num_rows;
+        
+                    if($slicount > 0 ){
+                        for($i=1; $i <= $slicount; $i++){
+                            $sliHos = $sliHosResult -> fetch_array(MYSQLI_ASSOC);
+                            echo "<div class='slider__item' style='background-image: url(../asset/img/hospital/".$sliHos['HosImgFile'].")'>";
+                                echo "<div class='slider__text'>";
+                                    echo "<div class='slider__textName'>";
+                                        echo "<h3>".$sliHos['HosName']."</h3>";
+                                        echo "<span><a href='hospitalView.php?page=".$sliHos['HosID']."' class='blind'>버튼</a></span>";
+                                        echo "<div class='slider__tag'>";
+                                            echo "<span>#수술</span>";
+                                            echo "<span>#예방접종</span>";
+                                        echo "</div>";
+                                    echo "</div>";
+                                    echo "<p>".$sliHos['HosCon1']."</p>";
+                                    echo "<a href='hospitalView.php?page=".$sliHos['HosID']."'>더 알아보기</a>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                }
+            ?>
+
+                <!-- <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner01.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="blind">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
                 </div>
-                <ul class="searchTag__box">
-                    <li class="searchTag"><a href="#">#중성화</a></li>
-                    <li class="searchTag"><a href="#">#유행병</a></li>
-                    <li class="searchTag"><a href="#">#겨울</a></li>
-                    <li class="searchTag"><a href="#">#동물병원</a></li>
-                </ul>
-            </form>
+                <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner02.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="ir">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner03.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="ir">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner04.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="ir">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner05.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="ir">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
+                </div>
+                <div class="slider__item" style="background-image: url(../asset/img/hospital_mainBanner06.jpg)">
+                    <div class="slider__text">
+                        <div class="slider__textName">
+                            <h3>배곧도담병원</h3>
+                            <span><a href="#" class="ir">버튼</a></span>
+                            <div class="slider__tag">
+                                <span>#수술</span>
+                                <span>#예방접종</span>
+                            </div>
+                        </div>
+                        <p>
+                            배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
+                        </p>
+                        <a href="#">더 알아보기</a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="slider__buttons">
+                <button id="prev"></button>
+                <button id="next"></button>
+            </div>
         </div>
     </section>
 
-    <section id="mainSliderType" class="container">
+    <!-- <section id="mainSliderType" class="container">
         <div class="slider__text">
             <div class="slider__textName">
                 <h3>배곧도담병원</h3>
@@ -86,7 +220,7 @@
             </p>
             <a href="hospitalView.php?page=<?=$HosInfo['HosID']?>">더 알아보기</a>
         </div>
-    </section>
+    </section> -->
 
     <section id="infomationType" class="container">
         <!-- 카테고리 박스 -->
@@ -387,8 +521,21 @@
 
 </body>
 
-<script src="../asset/js/header_hamburger.js"></script>
+<!-- <script src="../asset/js/header_hamburger.js"></script> -->
 <script>
+
+    //슬라이더 효과
+    document.getElementById("next").onclick = function(){
+        let lists = document.querySelectorAll(".slider__item");
+        document.getElementById("hos__slider").appendChild(lists[0]);
+        console.log(document.getElementById("hos__slider"))
+    }
+
+    document.getElementById("prev").onclick = function(){
+        let lists = document.querySelectorAll('.slider__item');
+        document.getElementById("hos__slider").prepend(lists[lists.length-1]);
+    }
+
 
     //카테고리 선택 선택자
     const category = document.querySelectorAll(".category__titleChoice li a");

@@ -78,18 +78,80 @@ input[id="search"]:focus {
 #mainSliderType {
   width: 100%;
   height: 800px;
-  background: #666;
+  background-color: #eaeaea;
   margin-bottom: 50px;
-  background: url("../../img/hospital_mainBanner.jpg");
+  /* overflow: hidden; */
+  position: relative;
 }
+.slider__inner {
+  position: relative;
+  padding: 50px;
+  background-color: #f5f5f5;
+  box-shadow: 0 30px 50px #dbdbdb;
+}
+.hos__slider {
+  width: max-content;
+  margin-top: 50px;
+}
+.slider__item {
+  width: 200px;
+  height: 300px;
+  background-position: 50% 50%;
+  display: inline-block;
+  transition: 0.5s;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 20px;
+  box-shadow: 0 30px 50px #505050;
+}
+.slider__item:nth-child(1),
+.slider__item:nth-child(2){
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+.slider__item:nth-child(3){
+  left: 50%;
+}
+.slider__item:nth-child(4){
+  left: calc(50% + 220px);
+}
+.slider__item:nth-child(5){
+  left: calc(50% + 440px);
+}
+.slider__item:nth-child(n+6){
+  left: calc(50% + 660px);
+  opacity: 0;
+}
+
 .slider__text {
+  position: absolute;
+  top: 50%;
+  left: 100px;
   width: 25%;
-  margin: 260px 0 0 115px;
+  text-align: left;
+  padding: 0;
+  transform: translate(0, -50%);
+  display: none;
+}
+.slider__item:nth-child(2) .slider__text {
+  display: block;
+  z-index: 11111;
 }
 .slider__textName {
   width: 245px;
   position: relative;
   margin-bottom: 20px;
+
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 1 forwards;
 }
 .slider__textName h3 {
   font-size: 32px;
@@ -100,34 +162,89 @@ input[id="search"]:focus {
   background: url("../../img/hospital_mainIcon.svg") no-repeat;
   width: 20px;
   height: 20px;
+  overflow: hidden;
   position: absolute;
   top: 19px;
-  right: 0;
+  left: 185px;
 }
 .slider__textName .slider__tag {
   font-size: 16px;
   color: #757575;
   margin-right: 10px;
-  /* position: absolute;
-  left: 0;
-  bottom: -18px; */
-}
-.slider__textName .slider__tag span {
 }
 .slider__text p {
   font-size: 20px;
   color: #505050;
   line-height: 1.4;
   font-weight: 200;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 0.3s 1 forwards;
 }
-.slider__text a {
+.slider__text > a {
   font-size: 16px;
   color: #6cc4b3;
   padding: 0 20px;
   background-color: #fff;
   border-radius: 5px;
+  opacity: 0;
+  animation: showcontents 1s ease-in-out 0.7s 1 forwards;
+  cursor: pointer;
+  position: absolute;
+  top: 260px;
 }
+@keyframes showcontent {
+  from {
+      opacity: 0;
+      transform: translate(0, 100px);
+      filter:blur(33px)
+  } to {
+      opacity: 1;
+      transform: translate(0, 0);
+      filter:blur(0)
+  }
+}
+@keyframes showcontents {
+  from {
+      opacity: 0;
+      top: 360px;
+      filter:blur(33px)
+  } to {
+      opacity: 1;
+      top:260px;
+      filter:blur(0)
+  }
+}
+.slider__buttons {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  z-index: 2222;
+}
+.slider__buttons #prev {
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='30' height='30' viewBox='0 0 18 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 -0.710669 0.703526 0.710669 4 19.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 0.710669 0.703526 -0.710669 4 11.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M4 15.1422L14 5.14215' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 15.5131L14 25.5131' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.slider__buttons #next {
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='30' height='30' viewBox='0 0 18 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 -0.710669 0.703526 0.710669 4 19.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 0.710669 0.703526 -0.710669 4 11.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M4 15.1422L14 5.14215' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 15.5131L14 25.5131' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: inherit;
+  transform: scaleX(-1);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 
 /* InfomationType */
 #infomationType {

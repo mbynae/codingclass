@@ -1,21 +1,38 @@
-/* footer */
-.footer {
+#footer {
     margin-top: 50px;
-    background-color: #fafafa;
-    height: 80px;
 }
-.footer h2 {
-    padding-top: 27px;
-    text-align: center;
-    font-size: 16px;
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__left > h2 {
+    color: #A0A0A0;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.footer__left ul {
+    margin-bottom: 30px;
+}
+.footer__left ul li {
     color: #757575;
+    font-size: 12px;
 }
-.footer button {
-    font-size: 16px;
-    background-color: #fafafa;
-    margin-left: 20px;
-}
-.footer button a {
+.footer__left h3 {
     color: #757575;
-    font-family: 'ScoreDream';
+    font-size: 12px;
+}
+.footer__left > p {
+    margin-top: 30px;
+    color: #757575;
+    font-size: 12px;
+}
+
+.footer__right {
+    padding-top: 228px;
+}
+.footer__right ul li {
+    padding: 10px;
+    display: inline;
+    color: #757575;
+    font-size: 12px;
 }

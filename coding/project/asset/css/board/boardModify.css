@@ -1,0 +1,115 @@
+.board__modify {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+.board__wrap h3 {
+    font-size: 32px;
+    border-bottom: 1px solid #6cc4b3;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #505050;
+}
+.Option {
+    width: 78%;
+    text-align: left;
+    margin-top: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #6cc4b3;
+}
+.Write__option {
+    font-family: 'SCoreDream';
+    font-weight: 400;
+}
+.Write__option:focus {
+    outline: none;
+}
+.Option:first-child select {
+    margin-right: 20px;
+}
+.Option select {
+    margin-top: 25px;
+    margin-right: 20px;
+    width: 300px;
+    border: 1px solid #6cc4b3;
+    background: url(../../img/arrow.svg) no-repeat 93.5% 50%;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #6cc4b3;
+    padding: 2px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.button {
+    border: 1px solid #6cc4b3;
+    box-sizing: border-box;
+    padding: 2px 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.button a {
+    color: #6cc4b3;
+}
+.image {
+    text-align: right;
+    width: 20%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.board__contents {
+    height: 500px;
+    background: #F9F9F9;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+}
+.board__contents > p {
+    color: #505050;
+    font-size: 18px;
+}
+.button2 {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+.button2 a {
+    font-size: 18px;
+    color: #505050;
+}
+.button2 a:first-child {
+    border-right: 1px solid #505050;
+    margin-right: 10px;
+    padding-right: 8px;
+}
+
+@media (max-width: 1200px) {
+    .Option select {
+        margin-top: 22px;
+        margin-right: 20px;
+        width: 240px;
+        font-size: 16px;
+        padding: 2px 20px;
+    }
+}
+@media (max-width: 1095px) {
+    .Option select {
+        margin-top: 22px;
+        margin-right: 20px;
+        width: 160px;
+        font-size: 16px;
+        padding: 2px 20px;
+        margin-bottom: 2px;
+    }
+}
+@media (max-width: 776px) {
+    .Option select {
+        margin-top: 22px;
+        margin-right: 20px;
+        width: 160px;
+        font-size: 16px;
+        padding: 2px 20px;
+        margin-bottom: 2px;
+    }
+}
