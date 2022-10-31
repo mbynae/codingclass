@@ -1,6 +1,7 @@
 <?php
 
     include "../connect/connect.php";
+    include "../connect/session.php";
 
     $DisSql = "SELECT * FROM Disease";
     $DisResult = $connect -> query($DisSql);
@@ -27,27 +28,61 @@
         <link rel="stylesheet" href="../asset/css/disease/inormation.css" />
 
         <style>
-            /* diseaseSlider */
-            #diseaseSlider {
-                margin-bottom: 120px;
+           /* diseaseSlider */
+           #diseaseSlider {
+                margin: 80px 0 60px 0;
             }
             .diseaseSlider__inner {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
+                position: relative;
             }
-            .diseaseSlider__inner > img {
-                line-height: 150px;
-                width: 18px;
-                cursor: pointer;
+            .slider__box {
+                width: 1200px;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
             }
             .diseaseSlider__card {
-                width: 25%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 320px;
                 padding: 20px;
                 box-shadow: 2px 2px 8px 1px rgba(210, 210, 210, 0.25);
                 border-radius: 20px;
+                transition: 0.5s;
+                cursor: pointer;
             }
-            .diseaseSlider__card > h3 {
+            .diseaseSlider__card a {
+                color: #6cc4b3;
+                font-size: 20px;
+            }
+            .diseaseSlider__card:hover {
+                background-color: #6cc4b3;
+            }
+            .diseaseSlider__card:hover a {
+                color: #fff;
+            }
+            .diseaseSlider__card:hover a .diseaseSlider__card__bottom {
+                color: #fff;
+            }
+            .diseaseSlider__card:nth-child(1) {
+                left: calc(50% - 800px);
+            }
+            .diseaseSlider__card:nth-child(2) {
+                left: calc(50% - 400px);
+            }
+            .diseaseSlider__card:nth-child(4) {
+                left: calc(50% + 400px);
+            }
+            .diseaseSlider__card:nth-child(5) {
+                left: calc(50% + 800px);
+            }
+
+            .diseaseSlider__card a h3 {
                 font-size: 20px;
                 color: #6cc4b3;
                 margin-bottom: 20px;
@@ -57,6 +92,19 @@
                 justify-content: space-between;
                 color: #757575;
                 font-size: 14px;
+            }
+            .prev,
+            .next {
+                line-height: 150px;
+                width: 18px;
+                cursor: pointer;
+                position: absolute;
+            }
+            .prev {
+                left: 40px;
+            }
+            .next {
+                right: 40px;
             }
 
             /* diseaseTap */
@@ -159,6 +207,65 @@
         </div>
     </section>
 
+    <section id="diseaseSlider">
+        <div class="diseaseSlider__inner container">
+            <div class="slider__view">
+                <div class="slider__box">
+                    <?php
+                        for($i=1; $i <= 5; $i++){
+                            $Dis = $DisResult -> fetch_array(MYSQLI_ASSOC);
+                            
+                            echo "<div class='diseaseSlider__card'><a href='diseaseView.php?page=".$Dis['DisID']."'";
+                                echo "<h3>".$Dis['DisName']."</h3>";
+                                echo "<div class='diseaseSlider__card__bottom'>";
+                                    echo "<p>평균가</p>";
+                                    echo "<p>".$Dis['DisCurePrice']."원</p>";
+                                echo "</div>";
+                            echo "</a></div>";
+                        }
+                    ?>
+                    <!-- <div class="diseaseSlider__card">
+                        <h3>강아지 종합백신</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>35000원</p>
+                        </div>
+                    </div>
+                    <div class="diseaseSlider__card">
+                        <h3>안과</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>21,000원</p>
+                        </div>
+                    </div>
+                    <div class="diseaseSlider__card">
+                        <h3>슬개골 탈구 수술</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>1,135,000원</p>
+                        </div>
+                    </div>
+                    <div class="diseaseSlider__card">
+                        <h3>슬개골 탈구 수술2</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>1,135,000원</p>
+                        </div>
+                    </div>
+                    <div class="diseaseSlider__card">
+                        <h3>슬개골 탈구 수술3</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>1,135,000원</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <img src="../asset/img/LeftLine.svg" alt="" class="prev" />
+            <img src="../asset/img/RightLine.svg" alt="" class="next" />
+        </div>
+    </section>
+
     <section id="infomationType" class="container">
         <div class="Info_textBox">
             <h2>질병 알아보기</h2>
@@ -247,49 +354,6 @@
             </div>
         </div>
     </section>
-
-    <section id="diseaseSlider">
-        <div class="diseaseSlider__inner container">
-            <img src="../asset/img/LeftLine.svg" alt="" />
-                
-                <?php
-                    for($i=1; $i <= 3; $i++){
-                        $Dis = $DisResult -> fetch_array(MYSQLI_ASSOC);
-                        
-                        echo "<div class='diseaseSlider__card'>";
-                            echo "<h3>".$Dis['DisName']."</h3>";
-                            echo "<div class='diseaseSlider__card__bottom'>";
-                                echo "<p>평균가</p>";
-                                echo "<p>".$Dis['DisCurePrice']."원</p>";
-                            echo "</div>";
-                        echo "</div>";
-                    }
-                ?>
-            <!-- <div class="diseaseSlider__card">
-                <h3>강아지 종합백신</h3>
-                <div class="diseaseSlider__card__bottom">
-                    <p>평균가</p>
-                    <p>35000원</p>
-                </div>
-            </div>
-            <div class="diseaseSlider__card">
-                <h3>안과</h3>
-                <div class="diseaseSlider__card__bottom">
-                    <p>평균가</p>
-                    <p>21,000원</p>
-                </div>
-            </div>
-            <div class="diseaseSlider__card">
-                <h3>슬개골 탈구 수술</h3>
-                <div class="diseaseSlider__card__bottom">
-                    <p>평균가</p>
-                    <p>1,135,000원</p>
-                </div>
-            </div> -->
-            <img src="../asset/img/RightLine.svg" alt="" />
-        </div>
-    </section>
-
 
     <section id="diseaseTap">
         <div class="diseaseTap__inner container">
@@ -463,6 +527,26 @@
             }
         });
     });
+
+
+    // 슬라이드
+
+    document.querySelector(".next").onclick = function () {
+        let lists = document.querySelectorAll(".diseaseSlider__card");
+        document.querySelector(".slider__box").appendChild(lists[0]);
+    };
+
+    document.querySelector(".prev").onclick = function () {
+        let lists = document.querySelectorAll(".diseaseSlider__card");
+        document.querySelector(".slider__box").prepend(lists[lists.length - 1]);
+    };
+
+    function autoSlider() {
+        setInterval(() => {
+            document.querySelector(".next").click();
+        }, 3000);
+    }
+    autoSlider();
 
 
 </script>

@@ -5,6 +5,10 @@
     $HosSql = "SELECT * FROM Hospital";
     $HosResult = $connect -> query($HosSql);
 
+    
+    $HosSql2 = "SELECT * FROM Hospital";
+    $HosResult2 = $connect -> query($HosSql2);
+
     $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
     $hosCategory = $_GET['category'];
@@ -71,12 +75,12 @@
                 $sliviewLimit = ($sliviewNum * $slipage) - $sliviewNum;
 
 
-                $HosSql .= " ORDER BY HosID DESC LIMIT {$sliviewLimit}, {$sliviewNum}";
-                $sliHosResult = $connect -> query($HosSql);
+                $HosSql2 .= " ORDER BY HosID DESC LIMIT {$sliviewLimit}, {$sliviewNum}";
+                $sliHosResult = $connect -> query($HosSql2);
 
                 $slicount = $sliHosResult -> num_rows;
 
-                if($HosSql){
+                if($HosSql2){
                     $slicount = $HosResult -> num_rows;
         
                     if($slicount > 0 ){
@@ -528,7 +532,6 @@
     document.getElementById("next").onclick = function(){
         let lists = document.querySelectorAll(".slider__item");
         document.getElementById("hos__slider").appendChild(lists[0]);
-        console.log(document.getElementById("hos__slider"))
     }
 
     document.getElementById("prev").onclick = function(){
