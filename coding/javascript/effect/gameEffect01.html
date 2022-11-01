@@ -36,6 +36,7 @@
 
         <!-- 메모리게임 -->
         <link rel="stylesheet" href="../assets/css/memoryGame.css" />
+        <link rel="stylesheet" href="../assets/css/memorychar.css" />
     </head>
 
     <body>
@@ -818,8 +819,40 @@
                 </div>
                 <div class="memory__pannel">
                     <div class="memory__pannel__inner">
-                        <div class="memory__gameTitle"></div>
-                        <div class="memory__gamecont"></div>
+                        <div class="memory__gameTitle">
+                            <div class="memory__titleBox">
+                                <h3>같은 그림<br />찾기!</h3>
+                            </div>
+                            <div class="catani">
+                                <div class="cat body bodySlant earsBasic">
+                                    <div class="face"></div>
+                                    <div class="features"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="memory__gamecont">
+                            <div class="memory__contBox">
+                                <div class="memory__timer">
+                                    <div class="memory__timer__name">Time</div>
+                                    <div class="memory__timer__sec"><em>00</em>초 남았습니다.</div>
+                                </div>
+                                <div class="memory__startBtn">
+                                    <button><em>START!</em></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory__alert close">
+                    <div class="memory__alert__inner">
+                        <p>게임이 끝났습니다!</p>
+                        <span>총 <em>X</em>개 맞추셨습니다!</span>
+                        <div class="score__text">
+                            <p class="lowScore close">노오력 해야겠네요ㅋㅋ</p>
+                            <p class="highScore close">올~ 아깝군요.</p>
+                            <p class="peferctScore close">오! 축하합니다 Perfect!</p>
+                        </div>
+                        <div class="scoreClose">닫기</div>
                     </div>
                 </div>
             </div>

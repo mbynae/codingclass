@@ -4,6 +4,8 @@
 
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
+const memoryStartBtn = memoryWrap.querySelector(".memory__startBtn button");
+const memoryTimer = document.querySelector(".memory__timer__sec em");
 
 let cardOne, cardTwo;
 let disableDeck = false;
@@ -90,9 +92,74 @@ function shuffledCard() {
         imgTag.src = `../assets/memory/memoryCard0${arr[index]}.png`;
     });
 }
-shuffledCard();
 
 // 카드 클릭
 memoryCards.forEach((card) => {
     card.addEventListener("click", flipCard);
 });
+
+// 버튼 클릭 시 스타트
+memoryStartBtn.addEventListener("click", () => {
+    shuffledCard();
+    preTimeStart();
+    memoryTimer.innerText = "08";
+});
+
+// 준비 시간 출력
+function preTimeStart() {
+    let pretime = 8,
+        timer;
+
+    // 시간 설정하기
+    function reduceTime() {
+        pretime--;
+        MemoryTime();
+        console.log(pretime);
+    }
+
+    timer = setInterval(reduceTime, 1000);
+
+    // 시간 설정
+
+    // 시간 표시하기
+    function MemoryTime() {
+        if (pretime <= 0) {
+            memoryTimer.innerText = "00";
+            clearInterval(timer);
+            setTimeout(memoryTimeStart, 200);
+        } else if (pretime >= 0 && pretime < 10) {
+            memoryTimer.innerText = "0" + pretime;
+        } else {
+            memoryTimer.innerText = pretime;
+        }
+    }
+}
+
+// 게임 스타트 시간
+function memoryTimeStart() {
+    let pretime = 60,
+        timer;
+
+    // 시간 설정하기
+    function reduceTime() {
+        pretime--;
+        MemoryTime();
+        console.log(pretime);
+    }
+
+    timer = setInterval(reduceTime, 1000);
+
+    // 시간 설정
+
+    // 시간 표시하기
+    function MemoryTime() {
+        if (pretime <= 0) {
+            memoryTimer.innerText = "00";
+            clearInterval(timer);
+        } else if (pretime >= 0 && pretime < 10) {
+            memoryTimer.innerText = "0" + pretime;
+        } else {
+            memoryTimer.innerText = pretime;
+        }
+    }
+}

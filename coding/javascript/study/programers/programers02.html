@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>프로그래머스02</title>
+        <link rel="stylesheet" href="../../assets/css/style.css" />
+        <link rel="stylesheet" href="../../assets/css/dracula.css" />
+
+        <style>
+            .t_tableBox {
+                width: 25%;
+            }
+            .t_tableBox h4 {
+                font-size: 18px;
+            }
+            .t_tableBox .t_table tbody tr td {
+                text-align: center;
+            }
+            .t_codeBox summary {
+                cursor: pointer;
+            }
+            .t_code {
+                margin-bottom: 20px;
+            }
+            .t_underline {
+                text-decoration: underline;
+            }
+            .t_codeBox {
+                display: inline-block;
+                border: 1px solid #f5f5f5;
+                padding: 5px 10px;
+                width: 100%;
+                background-color: #fcd59b;
+                color: #fff;
+                border-radius: 5px;
+            }
+            .t_box {
+                border: 1px solid #fcd59b;
+            }
+            .t_link_array {
+                display: flex;
+                justify-content: center;
+            }
+            .t_link:first-child {
+                margin-right: 40px;
+            }
+
+            .mt20 {
+                margin-top: 20px !important;
+            }
+            .mt30 {
+                margin-top: 30px !important;
+            }
+            .mt40 {
+                margin-top: 40px !important;
+            }
+            .mt160 {
+                margin-top: 160px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">Javascript</a></h1>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <div class="main_top">
+                    <h2 class="t_tit">프로그래머스 : 나머지가 1이 되는 수 찾기</h2>
+                    <p class="t_desc2">주어진 자연수를 나눌 시 나머지가 1이 되는 최소값을 구하는 문제입니다.</p>
+
+                    <hr />
+
+                    <h3 class="t_tit2">문제 설명</h3>
+                    <p class="t_box" style="margin-bottom: 40px">
+                        자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수
+                        있습니다.<br /><br />
+
+                        제한사항<br />
+                        &nbsp; 3 ≤ n ≤ 1,000,000<br />
+                    </p>
+                    <div class="t_tableBox">
+                        <h4>입출력 예</h4>
+                        <table class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>n</th>
+                                    <th>결과</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 파트 탑 -->
+
+                <div class="main_content1" style="margin: 50px 0 15px 0">
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">1. 해설</h4>
+                    <div class="t_codeBox">
+                        <details>
+                            <summary>소스보기</summary>
+                            <div class="t_code">
+                                <pre><code class="language-js">function solution(n) {
+    for(x=0; x&lt;=n; x++){
+        if(n%x == 1){
+            return x;
+        }
+    }
+}
+</code></pre>
+                            </div>
+                        </details>
+                    </div>
+                    <p class="t_desc" style="margin-top: 20px !important">
+                        반복문으로 n을 x로 나누고 조건문을 사용해 n%x == 1이 되는 값을 return으로 반환하면 간단히 끝납니다.<br />
+                        return은 반환과 동시에 함수의 종료도 의미하므로 반복문이 지속되지 않고 최소값을 찾을 때 종료됩니다.
+                    </p>
+                </div>
+                <!-- 컨텐츠 파트1 -->
+
+                <hr style="margin-top: 60px" />
+
+                <div class="main_content1" style="margin: 50px 0 15px 0">
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">2. 다른 해설</h4>
+                    <div class="t_codeBox">
+                        <details>
+                            <summary>소스보기</summary>
+                            <div class="t_code">
+                                <pre><code class="language-js">function solution(n, x = 1) {    
+    while (x++) {
+        if (n % x === 1) {
+            return x;
+        }
+    }    
+}
+</code></pre>
+                            </div>
+                        </details>
+                    </div>
+                    <p class="t_desc" style="margin-top: 20px !important">
+                        반복문은 여러가지 있으면 그중 while문은 조건을 바로 써줄 수 있습니다. 하지만 for문이나 forEach문과 다르게 끝을 지정해주지 않으면 계속 연산하게 되므로 반드시 끝을 지정해줘야
+                        합니다. 여기서 return에서 함수가 종료되어 끝이 지정되어있습니다.
+                    </p>
+                </div>
+                <!-- 컨텐츠 파트2 -->
+            </div>
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
