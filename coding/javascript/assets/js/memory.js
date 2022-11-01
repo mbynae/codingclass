@@ -6,10 +6,12 @@ const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
 const memoryStartBtn = memoryWrap.querySelector(".memory__startBtn button");
 const memoryTimer = document.querySelector(".memory__timer__sec em");
+const loadingBox = document.querySelector(".loading__box");
 
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0;
+let timer = "";
 
 let sound = ["../audio/match.mp3", "../audio/unmatch.mp3", "../audio/success.mp3"];
 let soundMatch = new Audio(sound[0]);
@@ -43,7 +45,7 @@ function matchCards(img1, img2) {
         matchedCard++;
 
         if (matchedCard == 8) {
-            alert("게임 오버");
+            memoryEnd();
         }
 
         cardOne.removeEventListener("click", flipCard);
@@ -100,26 +102,24 @@ memoryCards.forEach((card) => {
 
 // 버튼 클릭 시 스타트
 memoryStartBtn.addEventListener("click", () => {
+    loadingBox.classList.add("close");
     shuffledCard();
     preTimeStart();
     memoryTimer.innerText = "08";
 });
 
+
 // 준비 시간 출력
 function preTimeStart() {
-    let pretime = 8,
-        timer;
+    let pretime = 8;
 
     // 시간 설정하기
     function reduceTime() {
         pretime--;
         MemoryTime();
-        console.log(pretime);
     }
 
     timer = setInterval(reduceTime, 1000);
-
-    // 시간 설정
 
     // 시간 표시하기
     function MemoryTime() {
@@ -135,27 +135,25 @@ function preTimeStart() {
     }
 }
 
+
 // 게임 스타트 시간
 function memoryTimeStart() {
-    let pretime = 60,
-        timer;
+    let pretime = 10;
 
     // 시간 설정하기
     function reduceTime() {
         pretime--;
         MemoryTime();
-        console.log(pretime);
     }
 
     timer = setInterval(reduceTime, 1000);
 
-    // 시간 설정
-
     // 시간 표시하기
     function MemoryTime() {
-        if (pretime <= 0) {
+        if (pretime <= 0 || matchedCard == 8) {
             memoryTimer.innerText = "00";
             clearInterval(timer);
+            memoryEnd();
         } else if (pretime >= 0 && pretime < 10) {
             memoryTimer.innerText = "0" + pretime;
         } else {
@@ -163,3 +161,35 @@ function memoryTimeStart() {
         }
     }
 }
+
+
+
+const memoryAlert = document.querySelector(".memory__alert");
+const lowScore = document.querySelector(".lowScore");
+const highScore = document.querySelector(".highScore");
+const peferctScore = document.querySelector(".peferctScore");
+const scoreClose = document.querySelector(".scoreClose");
+
+let memoryScore = document.querySelector(".memory__alert__inner > span em");
+
+// 종료시 알람
+function memoryEnd(){
+    memoryAlert.classList.remove("close");
+    memoryScore.innerText = matchedCard;
+
+    if(matchedCard <= 4){
+        lowScore.classList.remove("close");
+    } else if(matchedCard > 4 && matchedCard <= 7){
+        highScore.classList.remove("close");
+    } else if(matchedCard == 8){
+        peferctScore.classList.remove("close");
+    }
+}
+
+// 알람창 닫기
+scoreClose.addEventListener("click", () => {
+    memoryAlert.classList.add("close");
+    lowScore.classList.add("close");
+    highScore.classList.add("close");
+    highScore.classList.add("close");
+});

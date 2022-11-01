@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>프로그래머스01</title>
+        <title>프로그래머스04</title>
         <link rel="stylesheet" href="../../assets/css/style.css" />
         <link rel="stylesheet" href="../../assets/css/dracula.css" />
 
@@ -69,39 +69,36 @@
         <main id="main">
             <div class="document">
                 <div class="main_top">
-                    <h2 class="t_tit">프로그래머스 : 제목</h2>
+                    <h2 class="t_tit">프로그래머스 : 짝수와 홀수</h2>
                     <p class="t_desc2">개요</p>
 
                     <hr />
 
                     <h3 class="t_tit2">문제 설명</h3>
                     <p class="t_box" style="margin-bottom: 40px">
-                        문제 적기<br /><br />
+                        정수 num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하는 함수, solution을 완성해주세요.<br /><br />
 
                         제한사항<br />
-                        &nbsp; <br />
-                        &nbsp;
+                        &nbsp; num은 int 범위의 정수입니다.<br />
+                        &nbsp; 0은 짝수입니다.
                     </p>
                     <div class="t_tableBox">
                         <h4>입출력 예</h4>
                         <table class="t_table">
                             <thead>
                                 <tr>
-                                    <th>변수1</th>
-                                    <th>변수2</th>
+                                    <th>num</th>
                                     <th>결과</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>3</td>
+                                    <td>odd</td>
                                 </tr>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>4</td>
+                                    <td>even</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -115,35 +112,40 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
-
+                                <pre><code class="language-js">function solution(num) {
+    if (num%2 == 0){
+            var answer = 'Even';
+    } else {
+            var answer = 'Odd';
+    }
+    return answer;
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">조건문에서 %를 사용해 2를 나눈 값이 0일때와 아닐때를 각각 even, odd로 반환하면 끝나는 문제입니다.</p>
                 </div>
                 <!-- 컨텐츠 파트1 -->
 
                 <hr style="margin-top: 60px" />
 
                 <div class="main_content1" style="margin: 50px 0 15px 0">
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">1. 해설</h4>
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">2. 삼항연산자 사용</h4>
                     <div class="t_codeBox">
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
-
+                                <pre><code class="language-js">function evenOrOdd(num) {
+    return (num%2) ? 'Odd': 'Even';
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">조건문은 삼항연산자를 통해 좀 더 간단히 줄일 수 있습니다.</p>
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 삼항 연산자</h4>
+                    <p class="t_box">　 A ? B : C 는 A 조건을 만족 시 B를 실행하고 아니면 C를 실행합니다.</p>
                 </div>
                 <!-- 컨텐츠 파트2 -->
             </div>

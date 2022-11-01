@@ -1,3 +1,5 @@
+
+/* 댕댕이 */
 .body {
     width: 90px;
     height: 100px;
@@ -63,7 +65,7 @@
     background-color: #000;
     border-radius: 50%;
     box-shadow: 44px 0 #000;
-    animation: blink 8s infinite linear;
+    animation: blink 4s infinite linear;
 }
 .cat .face:before,
 .cat .face:after {
@@ -92,14 +94,14 @@
     box-shadow: 0 5px #000, 48px 0 #000, 48px 5px #000;
 }
 .cat .features:after {
-    left: 30px;
+    left: 29px;
     top: -6px;
     width: 6px;
     height: 6px;
     background-color: #000;
     border-radius: 50%;
     box-shadow: 2px 0 #000, 1px 1px #000;
-    animation: yawn 8s infinite linear;
+    animation: yawn 4s infinite linear;
 }
 .cat .features:before {
     top: 10px;
@@ -146,3 +148,6 @@
         box-shadow: 2px 0 #000, 1px 1px #000, 0px 16px transparent, 2px 16px transparent, 1px 18px transparent;
     }
 }
+
+
+
