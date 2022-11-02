@@ -1,5 +1,6 @@
 @import url("https://webfontworld.github.io/goodchoice/Jalnan.css");
 @import url(https://fonts.googleapis.com/css?family=Nunito:700);
+@import url("https://webfontworld.github.io/jikji/JGaeguJaengyi.css");
 
 em {
     font-style: normal;
@@ -262,7 +263,7 @@ em {
 }
 .memory__startBtn button:hover em {
     color: #fff;
-    animation: switch 1s infinite 0.6s; 
+    animation: switch 1s infinite 0.6s;
 }
 .memory__startBtn button:hover:before {
     transform: translateX(0);
@@ -292,9 +293,10 @@ em {
     text-align: center;
 }
 .memory__alert__inner > p {
-    font-size: 45px;
+    font-family: "JGaeguJaengyi";
+    font-size: 50px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-weight: 700;
 }
 .memory__alert__inner > span {
@@ -310,144 +312,150 @@ em {
     color: #08041d;
 }
 .memory__alert__inner .score__text {
-    font-size: 25px;
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 .memory__alert__inner .score__text .lowScore {
     color: #251e0d;
+    font-family: "JGaeguJaengyi";
 }
 .memory__alert__inner .score__text .highScore {
     color: #9c602e;
+    font-family: "JGaeguJaengyi";
 }
 .memory__alert__inner .score__text .peferctScore {
     color: #cc3f3f;
+    font-family: "JGaeguJaengyi";
 }
 .scoreClose {
+    font-family: "Jalnan";
     font-size: 20px;
+    font-weight: 500;
     display: inline-block;
     padding: 5px 30px;
     border-radius: 10px;
     background-color: #eba64d;
     border: 2px solid #9c602e;
     cursor: pointer;
+    transition: all 0.3s;
 }
-
-
-
-
-
-
-
-
+.scoreClose:hover {
+    background-color: #9c602e;
+    color: #fff;
+}
 
 /* 로딩애옹 */
 .loading__cat {
-position: relative;
-width: 100%;
-max-width: 20em;
-overflow: hidden;
-background-color: #e6dcdc;
+    position: relative;
+    width: 100%;
+    max-width: 20em;
+    overflow: hidden;
+    background-color: #e6dcdc;
 }
 .loading__cat::before {
-content: "";
-display: block;
-padding-bottom: 100%;
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
 .loading__cat:hover > * {
--webkit-animation-play-state: paused;
-        animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 .loading__cat:active > * {
--webkit-animation-play-state: running;
-        animation-play-state: running;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
 }
 
-.cat__body, .cat__tail, .cat__head {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
--webkit-animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
-        animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+.cat__body,
+.cat__tail,
+.cat__head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+    animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
 }
-.cat__body::before, .cat__tail::before, .cat__head::before {
-content: "";
-position: absolute;
-width: 50%;
-height: 50%;
-background-size: 200%;
-background-repeat: no-repeat;
-background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
+.cat__body::before,
+.cat__tail::before,
+.cat__head::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
 }
 
 .cat__head::before {
-top: 0;
-right: 0;
-background-position: 100% 0%;
-transform-origin: 0% 100%;
-transform: rotate(90deg);
+    top: 0;
+    right: 0;
+    background-position: 100% 0%;
+    transform-origin: 0% 100%;
+    transform: rotate(90deg);
 }
 
 .cat__tail {
--webkit-animation-delay: 0.2s;
-        animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .cat__tail::before {
-left: 0;
-bottom: 0;
-background-position: 0% 100%;
-transform-origin: 100% 0%;
-transform: rotate(-30deg);
+    left: 0;
+    bottom: 0;
+    background-position: 0% 100%;
+    transform-origin: 100% 0%;
+    transform: rotate(-30deg);
 }
 
 .cat__body {
--webkit-animation-delay: 0.1s;
-        animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 .cat__body:nth-of-type(2) {
--webkit-animation-delay: 0.2s;
-        animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .cat__body::before {
-right: 0;
-bottom: 0;
-background-position: 100% 100%;
-transform-origin: 0% 0%;
+    right: 0;
+    bottom: 0;
+    background-position: 100% 100%;
+    transform-origin: 0% 0%;
 }
 
 @-webkit-keyframes rotating {
-from {
-    transform: rotate(720deg);
-}
-to {
-    transform: none;
-}
+    from {
+        transform: rotate(720deg);
+    }
+    to {
+        transform: none;
+    }
 }
 
 @keyframes rotating {
-from {
-    transform: rotate(720deg);
-}
-to {
-    transform: none;
-}
+    from {
+        transform: rotate(720deg);
+    }
+    to {
+        transform: none;
+    }
 }
 .loading__box {
-display: flex;
-flex: 1;
-flex-direction: column;
-justify-content: flex-start;
-justify-content: center;
-align-items: center;
-background-color: #e6dcdc;
-width: 100%;
-height: 100%;
-border-top-left-radius: 18px;
-border-bottom-left-radius: 18px;
-position: absolute;
-left: 0;
-top: 0;;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6dcdc;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .loading__box.close {
     display: none;
@@ -458,7 +466,29 @@ top: 0;;
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 700;
-    color: #EC6D76;
+    color: #ec6d76;
+}
+
+.screenAni {
+    animation: rightmove 1s 1 forwards;
+}
+
+@keyframes rightmove {
+    0% {
+        transform: scaleX(1, 1);
+    }
+    25% {
+        transform: scaleX(0.75, 1);
+    }
+    50% {
+        transform: scaleX(0.5, 1);
+    }
+    25% {
+        transform: scaleX(0.25, 1);
+    }
+    25% {
+        transform: scaleX(0%);
+    }
 }

@@ -1,134 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        .loading__cat {
-        position: relative;
-        width: 100%;
-        max-width: 20em;
-        overflow: hidden;
-        background-color: #e6dcdc;
-        }
-        .loading__cat::before {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-        }
-        .loading__cat:hover > * {
-        -webkit-animation-play-state: paused;
-                animation-play-state: paused;
-        }
-        .loading__cat:active > * {
-        -webkit-animation-play-state: running;
-                animation-play-state: running;
-        }
-
-        .cat__body, .cat__tail, .cat__head {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        -webkit-animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
-                animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
-        }
-        .cat__body::before, .cat__tail::before, .cat__head::before {
-        content: "";
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        background-size: 200%;
-        background-repeat: no-repeat;
-        background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
-        }
-
-        .cat__head::before {
-        top: 0;
-        right: 0;
-        background-position: 100% 0%;
-        transform-origin: 0% 100%;
-        transform: rotate(90deg);
-        }
-
-        .cat__tail {
-        -webkit-animation-delay: 0.2s;
-                animation-delay: 0.2s;
-        }
-        .cat__tail::before {
-        left: 0;
-        bottom: 0;
-        background-position: 0% 100%;
-        transform-origin: 100% 0%;
-        transform: rotate(-30deg);
-        }
-
-        .cat__body {
-        -webkit-animation-delay: 0.1s;
-                animation-delay: 0.1s;
-        }
-        .cat__body:nth-of-type(2) {
-        -webkit-animation-delay: 0.2s;
-                animation-delay: 0.2s;
-        }
-        .cat__body::before {
-        right: 0;
-        bottom: 0;
-        background-position: 100% 100%;
-        transform-origin: 0% 0%;
-        }
-
-        @-webkit-keyframes rotating {
-        from {
-            transform: rotate(720deg);
-        }
-        to {
-            transform: none;
-        }
-        }
-
-        @keyframes rotating {
-        from {
-            transform: rotate(720deg);
-        }
-        to {
-            transform: none;
-        }
-        }
-        .loading__box {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: flex-start;
-        justify-content: center;
-        align-items: center;
-        background-color: #e6dcdc;
-        
-        }
-        .loading__text {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-            font-weight: 700;
-            color: crimson;
-        }
-    </style>
-</head>
-<body>
-    <div class="loading__box">
-        <div class="loading__cat">
-            <div class="cat__body"></div>
-            <div class="cat__body"></div>
-            <div class="cat__tail"></div>
-            <div class="cat__head"></div>
-            <span class="loading__text">준비중</span>
-        </div>
-    </div>
-</body>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="https://webfontworld.github.io/binggrae/Binggrae2.css" rel="stylesheet" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Binggrae2";
+            }
+            .fixed {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .scrollTop {
+                position: fixed;
+                left: 10px;
+                top: 10px;
+                width: 60px;
+                height: 40px;
+                background: rgba(0, 0, 0, 0.3);
+                text-align: center;
+                line-height: 40px;
+                z-index: 100000;
+                font-weight: 700;
+            }
+            /* layout */
+            #contents {
+            }
+            #section1 {
+                height: 10000px;
+            }
+            #section2 {
+            }
+            #section3 {
+            }
+            #section4 {
+            }
+            #section5 {
+            }
+            #section6 {
+            }
+            /* sec1 */
+            .sec1_text1 {
+                font-size: 8vw;
+                font-weight: 400;
+                white-space: nowrap;
+            }
+            .sec1_text2 {
+                font-size: 8vw;
+                font-weight: 400;
+                white-space: nowrap;
+            }
+            .sec1_text3 {
+                width: 100%;
+                height: 100vh;
+                background: url(https://images.unsplash.com/photo-1661783758573-e1fac356dba2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1129&q=80);
+                background-size: cover;
+                background-position: center;
+            }
+            .sec1_text4 {
+                width: 50vw;
+                height: 50vw;
+                border-radius: 50%;
+                background: #000;
+                color: #fff;
+                text-align: center;
+                line-height: 50vw;
+                font-size: 8vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scrollTop">0</div>
+        <main id="contents">
+            <section id="section1">
+                <div class="sec1">
+                    <div class="sec1_text1 fixed" data-0="top: 50%; opacity: 1" data-550="top: 30%; opacity: 0">안녕하세요!</div>
+                    <div
+                        class="sec1_text2 fixed"
+                        data-500="top: 70%; opacity: 0; transform: translate(-50%, -50%) scale(1)"
+                        data-1000="top: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1)"
+                        data-1500="top: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0)"
+                    >
+                        프론트엔드 개발자입니다!
+                    </div>
+                    <div class="sec1_text3 fixed" data-1300="width: 0%; transform: translate(-50%, -50%) rotate(360deg)" data-2300="width: 100%; transform: translate(-50%, -50%) rotate(0deg)"></div>
+                    <div class="sec1_text4 fixed" data-2000="transform: translate(-50%, -50%) scale(0) rotate(-360deg)" data-2500="transform: translate(-50%, -50%) scale(1) rotate(0deg)">
+                        HELLO!:손:
+                    </div>
+                </div>
+            </section>
+            <!-- //section1 -->
+            <section id="section2"></section>
+            <!-- //section2 -->
+            <section id="section3"></section>
+            <!-- //section3 -->
+            <section id="section4"></section>
+            <!-- //section4 -->
+            <section id="section5"></section>
+            <!-- //section5 -->
+            <section id="section6"></section>
+            <!-- //section6 -->
+        </main>
+        <!-- //contents -->
+        <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+        <script>
+            const s = skrollr.init();
+            function scroll() {
+                let scrollTop = window.scrollY;
+                document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+                requestAnimationFrame(scroll);
+            }
+            scroll();
+        </script>
+    </body>
 </html>
