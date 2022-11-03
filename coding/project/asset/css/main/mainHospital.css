@@ -1,6 +1,6 @@
 #main_hospital {
     width: 100%;
-    background: #F9FAFB;
+    background: #f5f5f5;
     padding-bottom: 200px;
 }
 
@@ -22,8 +22,9 @@
 .hospi__titleCont span {
     display: inline-block;
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
     margin-bottom: 20px;
+    font-family: 'Alfa Slab One', cursive;
 }
 .hospi__titleCont p {
     font-size: 32px;
@@ -34,13 +35,17 @@
 }
 .hospi__titleCont a {
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
     padding: 5px 55px;
-    background-color: #FCFCFC;
+    background-color: #fff;
     box-shadow: 2px 2px 8px rgba(222, 222, 222, 0.25);
-    border-radius: 10px;
+    border-radius: 20px;
+    transition: all 0.5s;
 }
-
+.hospi__titleCont a:hover {
+    background: #26675B;
+    color: #fff;
+}
 .hospi__contents {
     width: 1020px;
     padding-left: 10%;
@@ -85,7 +90,7 @@
 }
 .hospi__text address {
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     font-weight: 300;
     margin-bottom: 20px;
 }

@@ -19,7 +19,7 @@
 }
 .border_titleBox .titleBox {
     width: 70%;
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 24px;
     transform: translateY(7px);
 }
@@ -27,7 +27,7 @@
     width: 80%;
     border: 0;
     background-color: inherit;
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 24px;
 }
 .border_titleBox input[id="boardTitle"]:focus {
@@ -48,7 +48,7 @@
     border-radius: 15px;
     padding: 7px 100px 7px 20px;
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -67,7 +67,7 @@
     border-radius: 15px;
     box-shadow: 3px 3px 8px 1px rgba(229, 229, 229, 0.25);
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     cursor: pointer;
 }
 #boardImg {

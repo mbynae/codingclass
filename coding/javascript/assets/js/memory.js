@@ -102,7 +102,7 @@ memoryCards.forEach((card) => {
 
 // 버튼 클릭 시 스타트
 memoryStartBtn.addEventListener("click", () => {
-    loadingBox.classList.add("close");
+    loadingBox.classList.add("screenAni");
     shuffledCard();
     preTimeStart();
     memoryTimer.innerText = "08";
@@ -192,4 +192,8 @@ scoreClose.addEventListener("click", () => {
     lowScore.classList.add("close");
     highScore.classList.add("close");
     highScore.classList.add("close");
+    loadingBox.classList.remove("screenAni");
 });
+
+//로딩창 애니메이션 
+    

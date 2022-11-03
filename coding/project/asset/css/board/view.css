@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     color: #757575;
-    border-bottom: 1px dashed #6CC4B3;
+    border-bottom: 1px dashed #26675B;
     margin-bottom: 30px;
 }
 .view__top > h2 {
@@ -27,7 +27,7 @@
     display: flex;
 }
 .like {
-    border-right: 1px solid #6CC4B3;
+    border-right: 1px solid #26675B;
     height: 24px;
     width: 155px;
     margin-right: 10px;

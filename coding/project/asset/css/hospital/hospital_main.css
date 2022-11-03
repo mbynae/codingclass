@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 .container {
   padding: 20px 0 !important;
 }
 #searchType {
   width: 100%;
   height: 200px;
-  margin-top: 80px !important;
+  margin-top: 40px !important;
   position: relative;
 }
 .searchBox {
   max-width: 555px;
   width: 100%;
   height: 50px;
-  background-color: #f0f0f0;
+  border: 1px solid #26675B;
   border-radius: 50px;
   position: absolute;
   left: 50%;
@@ -31,7 +33,6 @@
   transform: translate(-50%, -50%);
   width: 25px;
   height: 25px;
-
   margin-right: 10px;
 }
 .searchBtn img {
@@ -39,9 +40,12 @@
   height: 23px;
   padding-right: 10px;
   cursor: pointer;
-  border-right: 1px solid #757575;
+  background: #F9FAFB;
+  border-right: 1px solid #26675B;
 }
-
+.searchBox_inner input::placeholder {
+  font-size: 22px;
+}
 input[id="search"] {
   position: absolute;
   left: 62px;
@@ -71,7 +75,7 @@ input[id="search"]:focus {
 }
 .searchTag a {
   font-size: 12px;
-  color: #6cc4b3;
+  color: #26675B;
 }
 
 /* mainSliderType */
@@ -105,8 +109,8 @@ input[id="search"]:focus {
   z-index: 1;
   top: 50%;
   transform: translate(0, -50%);
-  border-radius: 20px;
-  box-shadow: 0 30px 50px #505050;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 2px #b3b3b350;
 }
 .slider__item:nth-child(1),
 .slider__item:nth-child(2){
@@ -135,12 +139,14 @@ input[id="search"]:focus {
 .slider__text {
   position: absolute;
   top: 50%;
-  left: 100px;
+  left: 270px;
   width: 25%;
   text-align: left;
   padding: 0;
   transform: translate(0, -50%);
   display: none;
+  padding: 10px 10px 5px 10px;
+  border-radius: 10px;
 }
 .slider__item:nth-child(2) .slider__text {
   display: block;
@@ -156,7 +162,8 @@ input[id="search"]:focus {
 }
 .slider__textName h3 {
   font-size: 32px;
-  color: #6cc4b3;
+  color: #26675B;
+  font-weight: 600;
   /* margin-right: 5px; */
 }
 .slider__textName > span a {
@@ -167,32 +174,37 @@ input[id="search"]:focus {
   position: absolute;
   top: 19px;
   left: 185px;
+  margin-left: 5px;
 }
 .slider__textName .slider__tag {
   font-size: 16px;
-  color: #757575;
+  color: #fff;
   margin-right: 10px;
+  font-weight: 300;
 }
 .slider__text p {
   font-size: 20px;
-  color: #505050;
+  color: #fff;
   line-height: 1.4;
-  font-weight: 200;
-  margin-bottom: 20px;
+  font-weight: 400;
+  margin-bottom: 70px;
   opacity: 0;
   animation: showcontent 1s ease-in-out 0.3s 1 forwards;
 }
 .slider__text > a {
   font-size: 16px;
-  color: #6cc4b3;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 5px;
+  color: #fff;
+  padding: 3px 30px;
+  background-color: #26675B;
+  border-radius: 20px;
   opacity: 0;
   animation: showcontents 1s ease-in-out 0.7s 1 forwards;
   cursor: pointer;
-  position: absolute;
-  top: 260px;
+  transition: all 0.5s;
+}
+.slider__text > a:hover {
+  color: #26675B;
+  background: #fff;
 }
 @keyframes showcontent {
   from {
@@ -223,26 +235,21 @@ input[id="search"]:focus {
   z-index: 2222;
 }
 .slider__buttons #prev {
-  width: 50px;
-  height: 50px;
-  background-image: url("data:image/svg+xml,%0A%3Csvg width='30' height='30' viewBox='0 0 18 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 -0.710669 0.703526 0.710669 4 19.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 0.710669 0.703526 -0.710669 4 11.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M4 15.1422L14 5.14215' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 15.5131L14 25.5131' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 30px;
+  background-image: url(../../img/hospital/prev.svg);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
   background-color: inherit;
-  opacity: 0.7;
   cursor: pointer;
 }
 .slider__buttons #next {
-  width: 50px;
-  height: 50px;
-  background-image: url("data:image/svg+xml,%0A%3Csvg width='30' height='30' viewBox='0 0 18 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 -0.710669 0.703526 0.710669 4 19.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='3' y1='-3' x2='16.8997' y2='-3' transform='matrix(0.703526 0.710669 0.703526 -0.710669 4 11.1422)' stroke='%23D6D6D6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M4 15.1422L14 5.14215' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 15.5131L14 25.5131' stroke='%23484747' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 30px;
+  background-image: url(../../img/hospital/next.svg);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
   background-color: inherit;
-  transform: scaleX(-1);
-  opacity: 0.7;
   cursor: pointer;
 }
 
@@ -251,88 +258,166 @@ input[id="search"]:focus {
 #infomationType {
   width: 100%;
   /* height: 1000px; */
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 .Info_textBox {
-  background: #f9fafb;
   padding: 10px 0 30px 0;
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
 #infomationType h2 {
   font-size: 20px;
   font-weight: 500;
-  color: #6cc4b3;
+  color: #26675B;
   text-align: center;
   width: 50%;
   padding: 6px 0 20px 0;
   margin: 0 auto 30px auto;
   line-height: 40px;
-  border-bottom: 1px dashed #6cc4b3;
+  border-bottom: 1px dashed #bbbbbb;
 }
 .category__box {
-  text-align: center;
+  width: 1360px;
+  margin: 0 auto;
+  border-top: 1px solid #26675B;
+  border-bottom: 1px solid #26675B;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.category__box fieldset {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 120%;
 }
 .category__title h3 {
   font-size: 16px;
-  color: #6cc4b3;
+  color: #26675B;
   margin-bottom: 10px;
 }
 .category__titleChoice {
+  margin-top: 20px;
+  width: 100%;
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
   display: flex;
-  justify-content: center;
   margin-bottom: 20px;
+  border-right: 2px solid #26675B;
 }
 .category__titleChoice li {
   padding: 0 30px;
+  transition: all 0.5s;
+}
+.category__titleChoice li:hover {
+  transform: scale(1.03);
 }
 .category__titleChoice span {
-  margin-top: 1px;
+  background: #000;
+  width: 1px;
+  height: 50px;
 }
 .category__titleChoice li a {
-  font-size: 18px;
-  color: #757575;
+  font-size: 14px;
+  color: #26675B;
+  font-weight: 600;
+}
+.cate1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cate2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cate3 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cate1 > img {
+  width: 70px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+.cate2 > img {
+  width: 70px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+.cate3 > img {
+  width: 70px;
+  height: 50px;
+  margin-bottom: 5px;
 }
 
 .category__titleChoice li a.tapActive {
-  color: #6cc4b3;
+  color: #26675B;
 }
 .category__contents {
   margin: 0 auto;
   display: none;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-left: 50px;
 }
 .category__contents.tapActive {
   display: block;
+  padding-top: 30px;
+  align-items: center;
 }
 .category__contents input[type="radio"] {
   display: none;
 }
 .category__contents div {
-  display: inline-block;
+  display: inline;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background-color: #fff;
   margin: 0 10px;
+  transition: all 0.5s;
+  text-align: center;
 }
-.category__contents div.tapActive {
-  border: 1px solid #6cc4b3;
+.category__contents div:hover {
 }
 .category__contents div label {
-  color: #6cc4b3;
+  color: #26675B;
   line-height: 60px;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.5s;
+  font-weight: 500;
+  position: relative;
+}
+
+.category__contents div label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #26675B;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+.category__contents div label:hover::before {
+  transform: scaleX(1);
 }
 .category__confirm {
+  width: 20%;
+  text-align: center;
+  margin-right: 100px;
 }
 .category__confirm button {
   background: inherit;
-  font-size: 16px;
-  color: #757575;
+  font-size: 14px;
+  color: #26675B;
   cursor: pointer;
+  font-family: 'Alfa Slab One', cursive;
+  transition: all 0.5s;
+}
+.category__confirm button:hover {
+  transform: scale(1.1);
 }
 .category__confirm button:nth-child(1) {
   margin-right: 10px;
@@ -351,32 +436,33 @@ input[id="search"]:focus {
   margin-bottom: 50px;
 }
 .hospital__card img {
-  width: 440px;
-  height: 300px;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
   margin-bottom: 10px;
+  transition: all 0.5s;
+}
+.hospital__card img:hover {
+  transform: scale(1.02);
 }
 .hospital__cardText {
-  display: flex;
   justify-content: space-between;
-  position: relative;
 }
 .hospital__cardText h4 {
-  font-size: 20px;
-  color: #6cc4b3;
+  font-size: 16px;
+  color: #26675B;
+  font-weight: 500;
 }
 .hospital__cardText address {
-  font-size: 16px;
-  color: #6cc4b3;
-}
-.hospital__cardText .hospital__cardTag {
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
+  margin-top: 4px;
+  font-size: 14px;
+  color: #26675B;
+  font-weight: 400;
 }
 .hospital__cardTag span {
   color: #757575;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   margin-right: 8px;
 }
 .board__pages {
@@ -393,5 +479,5 @@ input[id="search"]:focus {
     color: #505050;
 }
 .board__pages ul li.active a {
-    color: #6cc4b3;
+    color: #26675B;
 }

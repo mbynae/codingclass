@@ -13,10 +13,10 @@
     padding: 8px 20px;
     font-family: inherit;
     background: url(../img/arrow.png) no-repeat 95% 50%;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     border-radius: 25px;
     font-size: 20px;
-    color: #6cc4b3;
+    color: #26675B;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -28,7 +28,7 @@
     padding-bottom: 5px;
     font-size: 24px;
     font-weight: 200;
-    color: #6cc4b3;
+    color: #26675B;
     border-bottom: 1px solid #757575;
 }
 .ranking__inner {
@@ -49,7 +49,7 @@
 }
 .MonthBest {
     margin-left: 30px;
-    color: #6cc4b3;
+    color: #26675B;
 }
 .ranking__inner table {
     width: 100%;
@@ -81,7 +81,7 @@
 }
 
 .table thead {
-    color: #6cc4b3;
+    color: #26675B;
     font-size: 16px;
     margin-bottom: 20px;
 }
@@ -89,7 +89,7 @@
     color: #505050;
 }
 .table tr td {
-    border-bottom: 1px dashed #6cc4b3;
+    border-bottom: 1px dashed #26675B;
     color: #505050;
     padding: 20px 0;
 }
@@ -144,7 +144,7 @@
     color: #505050;
 }
 .borad__pages ul li.active a {
-    color: #6cc4b3;
+    color: #26675B;
 }
 .search__box {
     text-align: center;
@@ -156,12 +156,12 @@
     height: 30px;
     border-radius: 20px;
     padding-left: 20px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     font-size: 16px;
 }
 .search-btn {
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     background-color: #fff;
 }
 .search-btn:hover {
@@ -177,24 +177,24 @@
     height: 30px;
     border-radius: 20px;
     padding-left: 20px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     font-size: 16px;
 }
 
 .search-btn {
     font-size: 16px;
-    color: #6cc4b3;
-    background-color: #fff;
+    color: #26675B;
+    background-color: inherit;
 }
 .board_write {
     position: absolute;
     right: 0;
     bottom: 1px;
     padding: 3px 16px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     border-radius: 20px;
     transition: all 0.3s;
-    color: #6cc4b3;
+    color: #26675B;
 }
 #searchOption1:focus {
     outline: none;

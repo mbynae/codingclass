@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 /* headerType */
 #headerType {
     width: 100%;
@@ -12,7 +14,6 @@
     border-bottom: 1px solid #f5f5f5;
 }
 .header__inner {
-    /* margin-top: 40px; */
     height: 80px;
     display: flex;
     align-items: center;
@@ -20,13 +21,12 @@
     box-sizing: border-box;
 }
 .header__logo {
-    /* font-size: 30px; */
-    /* padding-left: 7px; */
     z-index: 1000;
 }
 .header__logo a {
-    color: #6cc4b3;
-    font-weight: 200;
+    font-family: 'Alfa Slab One', cursive;
+    color: #26675B;
+    font-weight: 400;
     font-size: 30px;
 }
 .header__logo em {
@@ -58,7 +58,7 @@
     padding-right: 0;
 }
 .header__menu li a:hover {
-    color: #6cc4b3;
+    color: #26675B;
     border-radius: 5px;
     transition: color 0.3s;
 }
@@ -89,7 +89,7 @@
     right: 0;
     height: 2px;
     border-radius: 2px;
-    background: #6CC4B3;
+    background: #26675B;
     transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6), width 0.2s ease 0.2s;
 }
 .ham_menu input {

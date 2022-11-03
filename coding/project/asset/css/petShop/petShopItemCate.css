@@ -2,6 +2,10 @@
     margin-top: 80px;
     background: #F9FAFB;
 }
+.itemCate .cateOne a {
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 400;
+}
 .cateOne {
     margin-right: 20px;
     padding: 0 !important;

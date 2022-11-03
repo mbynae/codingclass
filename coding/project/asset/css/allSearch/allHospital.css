@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 .allHospital__top {
     display: flex;
     justify-content: space-between;
 }
 .allHospital__top > h2 {
-    color: #6CC4B3;
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 400;
+    color: #26675B;
     margin-top: 30px;
     margin-left: 25px;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 24px;
 }
 .allHospital__top > p {
     padding-top: 35px;
@@ -39,12 +43,16 @@
     background: #fff;
     margin-bottom: 20px;
     display: flex;
+    transition: all 0.5s;
+}
+.allHospital__text:hover {
+    transform: scale(1.02);
 }
 .allHospital__text .allHospital__desc > h2 {
     height: 27px;
 }
 .allHospital__text .allHospital__desc > h2 a {
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 18px;
     font-weight: 500;
 }

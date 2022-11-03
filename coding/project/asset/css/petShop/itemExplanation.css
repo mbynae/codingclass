@@ -32,6 +32,7 @@
 .Explanation__desc > h3 {
     font-size: 16px;
     color: #505050;
+    font-family: 'Alfa Slab One', cursive;
 }
 .Explanation__desc > h2 {
     font-size: 28px;
@@ -43,10 +44,12 @@
     font-weight: 300;
 }
 .Explanation__desc > p {
+    top: 50%;
+    left: 50%;
     font-size: 16px;
-    color: #fff;
+    color: #505050;
     font-weight: 300;
-    transform: translate(20%,700%);
+    transform: translate(4%,700%);
 }
 .Explanation__more {
     margin-top: 50px;

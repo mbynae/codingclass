@@ -14,6 +14,9 @@
                 box-sizing: border-box;
                 font-family: "TmoneyRoundWind";
             }
+            a {
+                text-decoration: none;
+            }
             /* body::before {
                 position: fixed;
                 width: 100%;
@@ -136,9 +139,42 @@
             .sec2_line1 {
                 width: 100%;
                 height: 5px;
-                top: 70%;
+                top: 65%;
                 background-color: #fff;
                 position: relative;
+            }
+            .sec2_line2 {
+                width: 0%;
+                height: 100%;
+                background-color: rgb(48, 61, 231);
+            }
+            .sec2_sliderText {
+                display: flex;
+                font-size: 70px;
+                color: #fff;
+            }
+            .sec2_slider {
+                width: 350px;
+                height: 200px;
+                border: 2px solid #fff;
+                border-radius: 10px;
+                background-color: #FED75A;
+                font-size: 40px;
+                text-align: center;
+                line-height: 200px;
+                cursor: pointer;
+                transition: background-color 0.5s ease-in-out;
+            }
+            .sec2_slider a {
+                color: #9e252d;
+                font-weight: 700;
+                transition: color 0.5s ease-in-out;
+            }
+            .sec2_slider:hover {
+                background-color: #098a3f;
+            }
+            .sec2_slider:hover a {
+                color: #fff;
             }
             /* .sec1_line1_arrow {
                 width: 32px;
@@ -308,14 +344,104 @@
                 data-11800="transform: translate(-50%, -50%)  scaleX(0); transform-origin: left"
                 data-12600="transform: translate(-50%, -50%)  scaleX(1); transform-origin: right"
             >
-                <div class="sec2_line1 fixed"></div>
+                <div class="sec2_line1 fixed">
+                    <div class="sec2_line2 fixed"></div>
+                </div>
             </div>
 
-            <!-- 첫번째 박스 -->
+            
+            <!-- 슬라이더 박스 -->
+            <div class="sec2_sliderText fixed"
+                data-11800="top:20%; transform: translate(-50%, -50%)  scaleX(1)"
+            >
+                <div class="sec2_text1"
+                    data-12100="opacity:0; transform: translate(0, 50%)"
+                    data-12300="opacity:1; transform: translate(0, -50%)"
+                    data-12500="opacity:1; transform: translate(0, 0%)"
+                >저</div>
+                <div class="sec2_text1"
+                    data-12300="opacity:0; transform: translate(0, 50%)"
+                    data-12500="opacity:1; transform: translate(0, -50%)"
+                    data-12700="opacity:1; transform: translate(0, 0%)"
+                >는</div>
+                <div class="sec2_text1"
+                    data-12500="opacity:0; transform: translate(0, 50%)"
+                    data-12700="opacity:1; transform: translate(0, -50%)"
+                    data-12900="opacity:1; transform: translate(0, 0%)"
+                >이</div>
+                <div class="sec2_text1"
+                    data-12700="opacity:0; transform: translate(0, 50%)"
+                    data-12900="opacity:1; transform: translate(0, -50%)"
+                    data-13100="opacity:1; transform: translate(0, 0%)"
+                >렇</div>
+                <div class="sec2_text1"
+                    data-12900="opacity:0; transform: translate(0, 50%)"
+                    data-13100="opacity:1; transform: translate(0, -50%)"
+                    data-13300="opacity:1; transform: translate(0, 0%)"
+                >게</div>
+                <div class="sec2_text1"
+                    data-13100="opacity:0; transform: translate(0, 50%)"
+                    data-13300="opacity:1; transform: translate(0, -50%)"
+                    data-13500="opacity:1; transform: translate(0, 0%)"
+                >배</div>
+                <div class="sec2_text1"
+                    data-13300="opacity:0; transform: translate(0, 50%)"
+                    data-13500="opacity:1; transform: translate(0, -50%)"
+                    data-13700="opacity:1; transform: translate(0, 0%)"
+                >웠</div>
+                <div class="sec2_text1"
+                    data-13500="opacity:0; transform: translate(0, 50%)"
+                    data-13700="opacity:1; transform: translate(0, -50%)"
+                    data-13900="opacity:1; transform: translate(0, 0%)"
+                >습</div>
+                <div class="sec2_text1"
+                    data-13700="opacity:0; transform: translate(0, 50%)"
+                    data-13900="opacity:1; transform: translate(0, -50%)"
+                    data-14100="opacity:1; transform: translate(0, 0%)"
+                >니</div>
+                <div class="sec2_text1"
+                    data-13900="opacity:0; transform: translate(0, 50%)"
+                    data-14100="opacity:1; transform: translate(0, -50%)"
+                    data-14300="opacity:1; transform: translate(0, 0%)"
+                >다</div>
+            </div>
+
+
             <div class="sec2_slider s_box1 fixed"
-                data-12800="top: 30%; left: 69.96%; transform: translate(-50%, -50%) scaleX(0) scaleY(1); transform-origin: left"
-                data-13400="top: 30%; left: 69.96%; transform: translate(-50%, -50%) scaleX(1) scaleY(1); transform-origin: right"
-            ></div>
+                data-12800="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-16000="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-16010="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="http://piowm123.dothome.co.kr/javascript/index.html" target="_blank">JAVASCRIPT</a></div>
+
+            <div class="sec2_slider s_box2 fixed"
+                data-13400="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-16600="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-16610="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="http://piowm123.dothome.co.kr/javascript/effect/gameEffect01.html" target="_blank">EFFECT</a></div>
+
+            <div class="sec2_slider s_box2 fixed"
+                data-14000="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-17200="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-17210="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="http://piowm123.dothome.co.kr/phpClass/main/main.php" target="_blank">PHP</a></div>
+
+            <div class="sec2_slider s_box2 fixed"
+                data-14600="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-17800="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-17810="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="https://taupe-centaur-77389e.netlify.app/" target="_blank">REACT</a></div>
+
+            <div class="sec2_slider s_box2 fixed"
+                data-15200="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-18400="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-18410="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="https://vueclass66.web.app/" target="_blank">VUE</a></div>
+
+            <div class="sec2_slider s_box2 fixed"
+                data-15800="opacity:1; left: -10%; transform: translate(-50%, -50%)"
+                data-19000="opacity:1; left: 110%; transform: translate(-50%, -50%)"
+                data-19010="opacity:0; left: 110%; transform: translate(-50%, -50%)"
+            ><a href="http://piowm123.dothome.co.kr/project/php/main.php" target="_blank">SITE</a></div>
             </section>
 
             <!--section2-->
@@ -373,6 +499,13 @@
                 } else {
                     document.querySelectorAll(".sec1_text7").forEach(e => {
                         e.style.color = "#000";
+                    });
+                }
+
+                if(scrollTop >= 12800){
+                    document.querySelector(".sec2_line2").addEventListener("wheel", (e) => {
+                        e.target.style.width = "1.61%";
+                        console.log(e.target)
                     });
                 }
                 requestAnimationFrame(scroll); //1분에 60번 실행시키는 함수로 브라우저에 최적화 할 수 있음

@@ -1,9 +1,11 @@
 #footer {
     margin-top: 50px;
+    margin-bottom: 10px;
 }
 .footer__inner {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #d3d3d3;
 }
 .footer__left > h2 {
     color: #A0A0A0;

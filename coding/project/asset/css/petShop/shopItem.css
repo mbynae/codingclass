@@ -15,8 +15,9 @@
     margin-top: 5px;
 }
 .item__img figcaption > h3 a {
-    color: #303030;
+    color: #26675B;
     font-size: 16px;
+    font-family: 'Alfa Slab One', cursive;
 }
 .item__img figcaption > h2 {
     margin-top: -5px;
@@ -31,7 +32,7 @@
 }
 
 .petShop__pages {
-    margin: 20px 0 50px 0;
+    margin: 20px 0 70px 0;
 }
 .petShop__pages ul {
     text-align: center;

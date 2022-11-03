@@ -21,6 +21,7 @@ body {
     font-family: 'SCoreDream';
     font-weight: 400;
     overflow-x: hidden;
+    background: #F9FAFB;
 }
 input::placeholder {
     font-family: 'SCoreDream';

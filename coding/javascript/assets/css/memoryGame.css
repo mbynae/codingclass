@@ -220,11 +220,33 @@ em {
     border-radius: 5px;
     background-color: #fff;
 }
+.push__alert {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.push__alert p {
+    font-family: "Jalnan";
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    text-align: center;
+}
+.push__alert .arrow {
+    margin: 0 auto;
+    width: 65px;
+    height: 62px;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='74' height='70' viewBox='0 0 74 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.4645 68.5355C35.4171 70.4882 38.5829 70.4882 40.5355 68.5355L72.3553 36.7157C74.308 34.7631 74.308 31.5973 72.3553 29.6447C70.4027 27.692 67.2369 27.692 65.2843 29.6447L37 57.9289L8.71573 29.6447C6.76311 27.692 3.59728 27.692 1.64466 29.6447C-0.307962 31.5973 -0.307962 34.7631 1.64466 36.7157L33.4645 68.5355ZM32 61L32 65L42 65L42 61L32 61Z' fill='%23223547'/%3E%3Cpath d='M33.4645 40.5355C35.4171 42.4882 38.5829 42.4882 40.5355 40.5355L72.3553 8.71573C74.308 6.76311 74.308 3.59728 72.3553 1.64466C70.4027 -0.307962 67.2369 -0.307962 65.2843 1.64466L37 29.9289L8.71573 1.64466C6.76311 -0.307959 3.59728 -0.307959 1.64466 1.64466C-0.307962 3.59728 -0.307962 6.76311 1.64466 8.71573L33.4645 40.5355ZM32 34L32 37L42 37L42 34L32 34Z' fill='%23223547'/%3E%3C/svg%3E ");
+    background-size: cover;
+    margin-bottom: -20px;
+    animation: opacity 0.3s infinite;
+}
 
 .memory__startBtn {
     display: inline-block;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
 }
 .memory__startBtn button {
     color: #d3a653;
@@ -235,7 +257,8 @@ em {
     position: relative;
     display: block;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
+    padding: 0 20px;
     height: 80px;
     margin: 1rem auto;
     border: 4px solid #d3a653;
@@ -457,9 +480,9 @@ em {
     left: 0;
     top: 0;
 }
-.loading__box.close {
+/* .loading__box.close {
     display: none;
-}
+} */
 .loading__text {
     position: absolute;
     left: 50%;
@@ -473,22 +496,23 @@ em {
 
 .screenAni {
     animation: rightmove 1s 1 forwards;
+    transform-origin: right;
 }
 
 @keyframes rightmove {
     0% {
-        transform: scaleX(1, 1);
+        transform: scaleX(1);
     }
-    25% {
-        transform: scaleX(0.75, 1);
-    }
-    50% {
-        transform: scaleX(0.5, 1);
-    }
-    25% {
-        transform: scaleX(0.25, 1);
-    }
-    25% {
-        transform: scaleX(0%);
+    /* 25% {
+        transform: scale(0.75, 1);
+    } */
+    /* 50% {
+        transform: scale(0.5, 1);
+    } */
+    /* 75% {
+        transform: scale(0.25, 1);
+    } */
+    100% {
+        transform: scaleX(0);
     }
 }

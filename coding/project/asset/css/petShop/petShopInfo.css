@@ -16,6 +16,7 @@
 .itemInfo_name > h3 {
     font-size: 24px;
     color: #505050;
+    font-family: 'Alfa Slab One', cursive;
 }
 .itemInfo_name > h2 {
     font-size: 40px;
@@ -28,7 +29,7 @@
 .itemInfo_name > h4 {
     margin-top: 15px;
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
 }
 
 .itemInfo__review {
@@ -67,12 +68,13 @@
 }
 .item__btn > h2 {
     font-size: 16px;
-    color: #6CC4B3 !;
-    background: #F9FAFB;
+    color: #26675B;
+    background: #fff;
     padding: 10px 126px;
+    border-radius: 5px;
 }
 .item__btn > h2 a{
-    color: #6CC4B3;
+    color: #26675B;
 }
 .item__btn > h2:last-child {
     margin-left: 20px;

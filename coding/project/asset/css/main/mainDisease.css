@@ -1,11 +1,10 @@
 #main_disease {
     width: 100%;
-    /* height: 2200px; 임시 */
-    background: #FDFEFF;
     margin-bottom: 100px;
 }
 .disease_box {
     padding-top: 140px;
+    padding-bottom: 140px;
 }
 
 .disease__title {
@@ -23,8 +22,9 @@
 .disease__titleCont span {
     display: inline-block;
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
     margin-bottom: 20px;
+    font-family: 'Alfa Slab One', cursive;
 }
 .disease__titleCont p {
     font-size: 32px;
@@ -35,13 +35,17 @@
 }
 .disease__titleCont a {
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
     padding: 5px 55px;
-    background-color: #FCFCFC;
+    background-color: #fff;
     box-shadow: 2px 2px 8px rgba(222, 222, 222, 0.25);
-    border-radius: 10px;
+    border-radius: 20px;
+    transition: all 0.5s;
 }
-
+.disease__titleCont a:hover {
+    background: #26675B;
+    color: #fff;
+}
 .disease__contents1 {
     width: 1020px;
     padding-right: 10%;
@@ -53,7 +57,7 @@
 .disease__card {
     width: 440px;
     height: 300px;
-    background-color: #FDFEFF;
+    background-color: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +79,7 @@
 }
 .disease__cardConts h4 {
     font-size: 28px;
-    color: #6CC4B3;
+    color: #26675B;
     font-weight: 500;
     margin-bottom: 23px;
 }
@@ -116,8 +120,9 @@
 .disease2__Title span {
     display: inline-block;
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
     margin-bottom: 20px;
+    font-family: 'Alfa Slab One', cursive;
 }
 .disease2__Title p {
     font-size: 32px;
@@ -135,7 +140,7 @@
 .slider__category {
     max-width: 120px;
     font-size: 14px;
-    color: #6CC4B3;
+    color: #26675B;
     padding: 2px 23px;
     margin: 0 auto 30px auto;
     text-align: center;
@@ -191,7 +196,7 @@
 }
 .slider__contents p {
     font-size: 18px;
-    color: #6CC4B3;
+    color: #26675B;
     margin-bottom: 20px;
     transition: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
 
@@ -220,7 +225,7 @@
 }
 .slider.nonfocus .slider__contents p {
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     margin-bottom: 10px;
 
 }

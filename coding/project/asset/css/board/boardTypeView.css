@@ -11,10 +11,10 @@
 .Option_category {
     width: 340px;
     font-family: inherit;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     border-radius: 25px;
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     display: flex;
 }
 .Option_category:first-child {
@@ -22,7 +22,7 @@
 }
 .Option_category p {
     width: 40%;
-    border-right: 1px dashed #6cc4b3;
+    border-right: 1px dashed #26675B;
     line-height: 27px;
     text-align: center;
 }
@@ -36,7 +36,7 @@
     border: none;
     font-family: inherit;
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     cursor: pointer;
 }
 .Option_category select:focus {
@@ -45,7 +45,7 @@
 .Option_category select option {
     font-family: inherit;
     font-size: 18px;
-    color: #6cc4b3;
+    color: #26675B;
 }
 #searchOption2 {
     width: 80%;
@@ -55,7 +55,7 @@
     border: none;
     font-family: inherit;
     font-size: 18px;
-    color: #6cc4b3;
+    color: #26675B;
     cursor: pointer;
 }
 input[type="date"]::-webkit-clear-button,
@@ -84,8 +84,8 @@ table tbody tr td:nth-child(2) a {
     padding-bottom: 5px;
     font-size: 24px;
     font-weight: 200;
-    color: #6cc4b3;
-    border-bottom: 1px solid #6cc4b3;
+    color: #26675B;
+    border-bottom: 1px solid #26675B;
 }
 .ranking__inner {
     padding: 20px;
@@ -101,7 +101,7 @@ table tbody tr td:nth-child(2) a {
     margin-right: 30px;
     padding-right: 30px;
     color: #505050;
-    border-right: 1px dashed #6CC4B3;   
+    border-right: 1px dashed #26675B;   
     cursor: pointer;
 }
 .MonthBest {
@@ -113,7 +113,7 @@ table tbody tr td:nth-child(2) a {
     margin-top: 20px;
 }
 .ranking__inner > span.active {
-    color: #6CC4B3;
+    color: #26675B;
 }
 .bestTableCol:nth-child(1){
     max-width: 960px;
@@ -172,12 +172,12 @@ table tbody tr td:nth-child(2) a {
 }
 
 .table thead {
-    color: #6cc4b3;
+    color: #26675B;
     font-size: 16px;
     margin-bottom: 20px;
 }
 .table tr td {
-    border-bottom: 1px dashed #6cc4b3;
+    border-bottom: 1px dashed #26675B;
     color: #505050;
     padding: 20px 0;
 }
@@ -232,7 +232,7 @@ table tbody tr td:nth-child(2) a {
     color: #505050;
 }
 .borad__pages ul li.active a {
-    color: #6cc4b3;
+    color: #26675B;
 }
 .search__box {
     text-align: center;
@@ -244,12 +244,12 @@ table tbody tr td:nth-child(2) a {
     height: 30px;
     border-radius: 20px;
     padding-left: 20px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     font-size: 16px;
 }
 .search-btn {
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     background-color: #fff;
 }
 .search-btn:hover {
@@ -260,10 +260,10 @@ table tbody tr td:nth-child(2) a {
     right: 0;
     bottom: 1px;
     padding: 3px 16px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     border-radius: 20px;
     transition: all 0.3s;
-    color: #6cc4b3;
+    color: #26675B;
 }
 
 .search-txt:focus {
@@ -368,7 +368,7 @@ input:required {
     }
 
     .table {
-        border-top: 1px solid #6CC4B3;
+        border-top: 1px solid #26675B;
     }
     .table thead {
         display: none;

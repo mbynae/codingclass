@@ -19,7 +19,7 @@
 }
 .border_titleBox .titleBox {
     width: 70%;
-    color: #6CC4B3 !important;
+    color: #26675B !important;
     font-size: 24px !important;
     transform: translateY(7px);
 }
@@ -27,7 +27,7 @@
     width: 80%;
     border: 0;
     background-color: inherit;
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 24px;
 
 }
@@ -49,7 +49,7 @@
     border-radius: 15px;
     padding: 7px 100px 7px 20px;
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -68,7 +68,7 @@
     border-radius: 15px;
     box-shadow: 3px 3px 8px 1px rgba(229, 229, 229, 0.25);
     font-size: 16px;
-    color: #6CC4B3;
+    color: #26675B;
     cursor: pointer;
 }
 #boardImg {
@@ -82,7 +82,7 @@
     margin-bottom: 10px;
 }
 .board_writeBox > textarea {
-    background-color: #f9f9f9;
+    border: 1px solid #26675B;
     width: inherit;
     height: 600px;
     padding: 30px;
@@ -90,7 +90,6 @@
     box-sizing: border-box;
     color: #505050;
     font-size: 18px;
-    border: none;
     resize: none;
     font-weight: 300;
 }

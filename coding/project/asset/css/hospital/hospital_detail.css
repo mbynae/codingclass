@@ -11,7 +11,7 @@
   max-width: 555px;
   width: 100%;
   height: 50px;
-  background-color: #f0f0f0;
+  border: 1px solid #26675B;
   border-radius: 50px;
   position: absolute;
   left: 50%;
@@ -31,7 +31,7 @@
   transform: translate(-50%, -50%);
   width: 25px;
   height: 25px;
-
+  background: #F9FAFB;
   margin-right: 10px;
 }
 .searchBtn img {
@@ -39,9 +39,11 @@
   height: 23px;
   padding-right: 10px;
   cursor: pointer;
-  border-right: 1px solid #757575;
+  border-right: 1px solid #26675B;
 }
-
+.searchBox_inner input::placeholder {
+  font-size: 22px;
+}
 input[id="search"] {
   position: absolute;
   left: 62px;
@@ -71,7 +73,7 @@ input[id="search"]:focus {
 }
 .searchTag a {
   font-size: 12px;
-  color: #6cc4b3;
+  color: #26675B;
 }
 
 /* mainSliderType */
@@ -93,7 +95,7 @@ input[id="search"]:focus {
 }
 .slider__textName h3 {
   font-size: 32px;
-  color: #6cc4b3;
+  color: #26675B;
   /* margin-right: 5px; */
 }
 .slider__textName > span a {
@@ -123,7 +125,7 @@ input[id="search"]:focus {
 }
 .slider__text a {
   font-size: 16px;
-  color: #6cc4b3;
+  color: #26675B;
   padding: 0 20px;
   background-color: #fff;
   border-radius: 5px;
@@ -136,8 +138,8 @@ input[id="search"]:focus {
 
 .hospital__view {
   display: flex;
-  background-color: #f9fafb;
   margin-bottom: 35px;
+  border-radius: 20px;
 }
 
 .map__img {
@@ -145,6 +147,7 @@ input[id="search"]:focus {
 .map__img img {
   width: 555px;
   height: 400px;
+  border-radius: 30px;
 }
 
 .hospital__text {
@@ -154,18 +157,19 @@ input[id="search"]:focus {
   width: 555px;
   height: 360px;
   position: relative;
+  margin-left: 30px;
 }
 .hospital__textPad h3 {
   font-size: 32px;
   font-weight: 500;
-  color: #6cc4b3;
+  color: #26675B;
   margin-bottom: 10px;
 }
 .hospital__textPad a {
 }
 .hospital__textPad address {
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
   margin-bottom: 20px;
 }
 .hospital__textPad p {
@@ -194,13 +198,15 @@ input[id="search"]:focus {
 }
 
 .info__inner {
+  border-top: 1px solid #26675B;
+  border-bottom: 1px solid #26675B;
   padding: 30px 0;
 }
 .info__inner span {
 }
 .info__inner h4 {
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -215,11 +221,11 @@ input[id="search"]:focus {
   padding-left: 110px;
 }
 .operation:first-child {
-  border-right: 1px dashed #6cc4b3;
+  border-right: 1px dashed #26675B;
 }
 .operation h5 {
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
   margin-bottom: 30px;
 }
 .operation .info_list {
@@ -235,7 +241,7 @@ input[id="search"]:focus {
   margin-bottom: 20px;
 }
 .operation .info_list ul:first-child li {
-  color: #6cc4b3;
+  color: #26675B;
 }
 .operation .info_list ul:last-child li {
   color: #757575;

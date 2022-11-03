@@ -1,6 +1,6 @@
 .mini__img {
-    margin-top: 50px;
-    height: 100px;
+    margin-top: 30px;
+    height: 80px;
     background-image: url(../../img/shopMini01.jpg);
     position: relative;
 
@@ -15,5 +15,5 @@
     line-height: 1.4;
     color: #fff;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
 }

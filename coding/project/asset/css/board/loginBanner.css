@@ -12,7 +12,7 @@
 .lB__inner figure {
     display: flex;
     align-items: center;
-    color: #6cc4b3;
+    color: #26675B;
     margin-right: 60px;
     position: relative;
 }
@@ -38,7 +38,7 @@
     font-size: 16px;
     color: #757575;
     margin-right: 20px;
-    text-decoration: underline 1px dashed #6cc4b3;
+    text-decoration: underline 1px dashed #26675B;
     text-underline-offset : 8px;
     margin-bottom: 10px;
 }
@@ -48,7 +48,7 @@
 .Myprofile li a {
     font-size: 16px;
     color: #757575;
-    text-decoration: underline 1px dashed #6cc4b3;
+    text-decoration: underline 1px dashed #26675B;
     text-underline-offset : 8px;
 }
 

@@ -5,7 +5,7 @@
 }
 .board__wrap h3 {
     font-size: 32px;
-    border-bottom: 1px solid #6cc4b3;
+    border-bottom: 1px solid #26675B;
     padding-bottom: 10px;
     margin-bottom: 30px;
     color: #505050;
@@ -15,7 +15,7 @@
     text-align: left;
     margin-top: 0;
     box-sizing: border-box;
-    border-bottom: 1px solid #6cc4b3;
+    border-bottom: 1px solid #26675B;
 }
 .Write__option {
     font-family: 'SCoreDream';
@@ -31,25 +31,25 @@
     margin-top: 25px;
     margin-right: 20px;
     width: 300px;
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     background: url(../../img/arrow.svg) no-repeat 93.5% 50%;
     border-radius: 25px;
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     padding: 2px 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 .button {
-    border: 1px solid #6cc4b3;
+    border: 1px solid #26675B;
     box-sizing: border-box;
     padding: 2px 15px;
     border-radius: 20px;
     box-sizing: border-box;
 }
 .button a {
-    color: #6cc4b3;
+    color: #26675B;
 }
 .image {
     text-align: right;

@@ -1,5 +1,5 @@
 #allSearchCate {
-    background: #F9FAFB;
+    background: #033118;
     margin-top: 120px;
 }
 .allSearchCate__inner ul li > img {
@@ -21,7 +21,18 @@
     background: #fff;
     border-radius: 30px;
     margin: 0 10px;
+    transition: all 0.5s;
 }
 .allSearchCate__inner ul li.active a {
-    color: #6CC4B3;
+    color: #26675B;
+}
+.allSearchCate__inner ul li.active a:hover {
+    color: #fff;
+    background: #26675B;
+}
+.allSearchCate__inner ul li img {
+    transition: all 0.5s;
+}
+.allSearchCate__inner ul li img:hover {
+    transform: scale(1.2);
 }
