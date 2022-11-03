@@ -137,6 +137,7 @@ em {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 0 0 0.2rem #dda550;
+    position: relative;
 }
 
 .memory__pannel__inner {
@@ -247,6 +248,8 @@ em {
     left: 50%;
     top: 70%;
     transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
 }
 .memory__startBtn button {
     color: #d3a653;
@@ -257,10 +260,8 @@ em {
     position: relative;
     display: block;
     overflow: hidden;
-    width: 100%;
-    padding: 0 20px;
+    width: 210px;
     height: 80px;
-    margin: 1rem auto;
     border: 4px solid #d3a653;
     border-radius: 20px;
     z-index: 1;
@@ -503,16 +504,21 @@ em {
     0% {
         transform: scaleX(1);
     }
-    /* 25% {
-        transform: scale(0.75, 1);
-    } */
-    /* 50% {
-        transform: scale(0.5, 1);
-    } */
-    /* 75% {
-        transform: scale(0.25, 1);
-    } */
     100% {
         transform: scaleX(0);
     }
+}
+
+.memory__closeBtn {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #dda550;
+    border-radius: 50%;
+    position: absolute;
+    right: -27px;
+    top: -27px;
+    cursor: pointer;
+}
+.memory__closeBtn:hover {
+    background-color:#d3a653 !important;
 }

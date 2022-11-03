@@ -5,8 +5,13 @@
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
 const memoryStartBtn = memoryWrap.querySelector(".memory__startBtn button");
-const memoryTimer = document.querySelector(".memory__timer__sec em");
-const loadingBox = document.querySelector(".loading__box");
+const memoryStartText = memoryWrap.querySelector(".memory__startBtn button em");
+const currentalert1 = memoryWrap.querySelector(".currentalert1");
+const currentalert2 = memoryWrap.querySelector(".currentalert2");
+const memoryTimeBox = memoryWrap.querySelector(".memory__timer");
+const memoryTimer = memoryWrap.querySelector(".memory__timer__sec em");
+const loadingBox = memoryWrap.querySelector(".loading__box");
+const pushAlert = memoryWrap.querySelector(".push__alert");
 
 let cardOne, cardTwo;
 let disableDeck = false;
@@ -106,6 +111,7 @@ memoryStartBtn.addEventListener("click", () => {
     shuffledCard();
     preTimeStart();
     memoryTimer.innerText = "08";
+    rightUI();
 });
 
 
@@ -127,6 +133,7 @@ function preTimeStart() {
             memoryTimer.innerText = "00";
             clearInterval(timer);
             setTimeout(memoryTimeStart, 200);
+            setTimeout(rightUI, 200);
         } else if (pretime >= 0 && pretime < 10) {
             memoryTimer.innerText = "0" + pretime;
         } else {
@@ -193,7 +200,23 @@ scoreClose.addEventListener("click", () => {
     highScore.classList.add("close");
     highScore.classList.add("close");
     loadingBox.classList.remove("screenAni");
+    rightUI();
 });
 
-//로딩창 애니메이션 
+// ui 변화
+function rightUI(){
+    if(memoryStartText.innerText.includes("START!")){
+        pushAlert.classList.add("close");
+        memoryTimeBox.classList.remove("close");
+        memoryStartText.innerText = "암기시간";
+        memoryStartBtn.disabled = true;
+    } else if (memoryStartText.innerText.includes("암기시간")){
+        memoryStartText.innerText = "진행중";
+    } else {
+        pushAlert.classList.remove("close");
+        memoryTimeBox.classList.add("close");
+        memoryStartText.innerText = "START!";
+        memoryStartBtn.disabled = false;
+    }
+}
     
