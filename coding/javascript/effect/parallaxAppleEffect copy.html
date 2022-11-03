@@ -44,10 +44,9 @@
             #contents {
             }
             #section1 {
-                height: 11800px; /*영역이 없기 때문에 가상요소를 줘야된다.*/
+                height: 20000px; /*영역이 없기 때문에 가상요소를 줘야된다.*/
             }
             #section2 {
-                height: 10000px;
             }
             #section3 {
             }
@@ -136,13 +135,14 @@
             .sec2_line1 {
                 width: 100%;
                 height: 5px;
-                top: 70%;
                 background-color: #fff;
                 position: relative;
             }
-            /* .sec1_line1_arrow {
+            .sec1_line1_arrow {
                 width: 32px;
                 height: 63px;
+                background-image: url("data:image/svg+xml,%0A%3Csvg width='42' height='73' viewBox='0 0 42 73' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.5355 40.5355C42.4882 38.5829 42.4882 35.4171 40.5355 33.4645L8.71573 1.64466C6.7631 -0.307958 3.59728 -0.307958 1.64466 1.64466C-0.307963 3.59729 -0.307963 6.76311 1.64466 8.71573L29.9289 37L1.64466 65.2843C-0.307958 67.2369 -0.307958 70.4027 1.64466 72.3553C3.59729 74.308 6.76311 74.308 8.71573 72.3553L40.5355 40.5355ZM35 42L37 42L37 32L35 32L35 42Z' fill='white'/%3E%3C/svg%3E%0A");
+                background-size: cover;
                 position: fixed;
                 top: -29.8px;
                 right: 0;
@@ -162,6 +162,20 @@
                 height: 12vw;
                 border: 4px solid #fff;
                 background-color: #FED75A;
+            }
+            .sec1_borderBox::before {
+                
+            }
+            /* .sec1_text2 {
+                font-size: 8vw;
+                white-space: nowrap;
+            }
+            .sec1_text3 {
+                width: 100%;
+                height: 100vh;
+                background: url(https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+                background-size: cover;
+                background-position: center;
             } */
 
         </style>
@@ -308,16 +322,23 @@
                 data-11800="transform: translate(-50%, -50%)  scaleX(0); transform-origin: left"
                 data-12600="transform: translate(-50%, -50%)  scaleX(1); transform-origin: right"
             >
-                <div class="sec2_line1 fixed"></div>
+                <div class="sec2_line1 fixed">
+                    <div class="sec1_line1_arrow"></div>
+                </div>
+                <!-- <div class="sec1_sublineH fixed"
+                    data-12600="top: 34%; transform: translate(-50%, -50%)  scaleX(1) scaleY(0); transform-origin: bottom"
+                    data-12800="top: 34%; transform: translate(-50%, -50%) scaleX(1) scaleY(1); transform-origin: top"
+                    data-13600="top: 34%; left: 60%; transform: translate(-50%, -50%) scaleX(1) scaleY(1); transform-origin: top"
+                >
+                </div> -->
             </div>
 
             <!-- 첫번째 박스 -->
-            <div class="sec2_slider s_box1 fixed"
+            <!-- <div class="sec1_borderBox fixed"
                 data-12800="top: 30%; left: 69.96%; transform: translate(-50%, -50%) scaleX(0) scaleY(1); transform-origin: left"
                 data-13400="top: 30%; left: 69.96%; transform: translate(-50%, -50%) scaleX(1) scaleY(1); transform-origin: right"
-            ></div>
+            ></div> -->
             </section>
-
             <!--section2-->
             <section id="section3"></section>
             <!--section3-->
