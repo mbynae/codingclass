@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>프로그래머스01</title>
+        <title>프로그래머스07</title>
         <link rel="stylesheet" href="../../assets/css/style.css" />
         <link rel="stylesheet" href="../../assets/css/dracula.css" />
 
@@ -69,39 +69,39 @@
         <main id="main">
             <div class="document">
                 <div class="main_top">
-                    <h2 class="t_tit">프로그래머스 : 제목</h2>
-                    <p class="t_desc2">개요</p>
+                    <h2 class="t_tit">프로그래머스 : 음양 더하기</h2>
+                    <p class="t_desc2">참거짓을 판별하여 정수에 양수, 음수를 붙이고 합을 구하는 문제입니다.</p>
 
                     <hr />
 
                     <h3 class="t_tit2">문제 설명</h3>
                     <p class="t_box" style="margin-bottom: 40px">
-                        문제 적기<br /><br />
+                        어떤 정수들이 있습니다. 이 정수들의 절댓값을 차례대로 담은 정수 배열 absolutes와 이 정수들의 부호를 차례대로 담은 불리언 배열 signs가 매개변수로 주어집니다. 실제 정수들의 합을 구하여 return 하도록 solution 함수를 완성해주세요.<br /><br />
 
                         제한사항<br />
-                        &nbsp; <br />
-                        &nbsp;
+                        &nbsp; absolutes의 길이는 1 이상 1,000 이하입니다. - absolutes의 모든 수는 각각 1 이상 1,000 이하입니다.<br />
+                        &nbsp; signs의 길이는 absolutes의 길이와 같습니다. - signs[i] 가 참이면 absolutes[i] 의 실제 정수가 양수임을, 그렇지 않으면 음수임을 의미합니다.
                     </p>
                     <div class="t_tableBox">
                         <h4>입출력 예</h4>
                         <table class="t_table">
                             <thead>
                                 <tr>
-                                    <th>변수1</th>
-                                    <th>변수2</th>
+                                    <th>absolutes</th>
+                                    <th>signs</th>
                                     <th>결과</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[4,7,12]</td>
+                                    <td>[true,false,true]</td>
+                                    <td>9</td>
                                 </tr>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[1,2,3]</td>
+                                    <td>[false,false,true]</td>
+                                    <td>0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -115,15 +115,23 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
+                                <pre><code class="language-js">function solution(absolutes, signs) {
+    var answer = 0;
 
+    absolutes.forEach((e,i) => {
+        if(signs[i]){
+            answer += absolutes[i]
+        } else {
+            answer -= absolutes[i]
+        }
+    })
+    return answer;
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">반복문과 if문을 통해 signs[i]의 참거짓 판별을 하고 참일 시 absolutes[i]의 합을, 거짓일 시 차를 하면 됩니다.</p>
                 </div>
                 <!-- 컨텐츠 파트1 -->
 
@@ -135,15 +143,15 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
+                                <pre><code class="language-js">function solution(absolutes, signs) {
 
+    return absolutes.reduce((acc, val, i) => acc + (signs[i] ? val : -val), 0);
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">if문을 삼항연사자로 줄이고 reduce 메서드로 합을 구한 방식입니다. 이렇게 쓸 시 더 간단하게 한줄로 구성할 수 있습니다.</p>
                 </div>
                 <!-- 컨텐츠 파트2 -->
             </div>

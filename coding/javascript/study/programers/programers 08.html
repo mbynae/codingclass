@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>프로그래머스01</title>
+        <title>프로그래머스08</title>
         <link rel="stylesheet" href="../../assets/css/style.css" />
         <link rel="stylesheet" href="../../assets/css/dracula.css" />
 
@@ -69,39 +69,41 @@
         <main id="main">
             <div class="document">
                 <div class="main_top">
-                    <h2 class="t_tit">프로그래머스 : 제목</h2>
-                    <p class="t_desc2">개요</p>
+                    <h2 class="t_tit">프로그래머스 : 내적</h2>
+                    <p class="t_desc2">두 배열의 위치값이 같은 수를 곱해 합을 구하는 문제입니다.</p>
 
                     <hr />
 
                     <h3 class="t_tit2">문제 설명</h3>
                     <p class="t_box" style="margin-bottom: 40px">
-                        문제 적기<br /><br />
+                        길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.<br>
+
+                        이때, a와 b의 내적은 a[0]*b[0] + a[1]*b[1] + ... + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)<br /><br />
 
                         제한사항<br />
-                        &nbsp; <br />
-                        &nbsp;
+                        &nbsp; a, b의 길이는 1 이상 1,000 이하입니다.<br />
+                        &nbsp; a, b의 모든 수는 -1,000 이상 1,000 이하입니다.
                     </p>
                     <div class="t_tableBox">
                         <h4>입출력 예</h4>
                         <table class="t_table">
                             <thead>
                                 <tr>
-                                    <th>변수1</th>
-                                    <th>변수2</th>
+                                    <th>a</th>
+                                    <th>b</th>
                                     <th>결과</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[1,2,3,4]</td>
+                                    <td>[-3,-1,0,2]</td>
+                                    <td>3</td>
                                 </tr>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[-1,0,1]</td>
+                                    <td>[1,0,-1]</td>
+                                    <td>-2</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -115,15 +117,19 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
-
+                                <pre><code class="language-js">function solution(a, b) {
+    var answer = 0;
+    
+    a.forEach((e, i) => {
+        answer += a[i] * b[i];
+    });
+    return answer;
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">반복문을 통해 a와 b값을 곱해 더하는 매우 간단한 문제입니다. </p>
                 </div>
                 <!-- 컨텐츠 파트1 -->
 
@@ -135,15 +141,14 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
-
+                                <pre><code class="language-js">function solution(a, b) {
+    return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">저번처럼 reduce 메서드를 이용하면 한줄로 줄일 수 있습니다.</p>
                 </div>
                 <!-- 컨텐츠 파트2 -->
             </div>

@@ -69,39 +69,36 @@
         <main id="main">
             <div class="document">
                 <div class="main_top">
-                    <h2 class="t_tit">프로그래머스 : 제목</h2>
-                    <p class="t_desc2">개요</p>
+                    <h2 class="t_tit">프로그래머스 : 두 개 뽑아서 더하기</h2>
+                    <p class="t_desc2">배열 안에서 중복되지 않는 경우의 수를 전부 구하는 문제입니다.</p>
 
                     <hr />
 
                     <h3 class="t_tit2">문제 설명</h3>
                     <p class="t_box" style="margin-bottom: 40px">
-                        문제 적기<br /><br />
+                        정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.<br /><br />
 
                         제한사항<br />
-                        &nbsp; <br />
-                        &nbsp;
+                        &nbsp; 1. numbers의 길이는 2 이상 100 이하입니다.<br>
+                        　　- numbers의 모든 수는 0 이상 100 이하입니다.
                     </p>
                     <div class="t_tableBox">
                         <h4>입출력 예</h4>
                         <table class="t_table">
                             <thead>
                                 <tr>
-                                    <th>변수1</th>
-                                    <th>변수2</th>
+                                    <th>numbers</th>
                                     <th>결과</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[2,1,3,4,1]</td>
+                                    <td>[2,3,4,5,6,7]</td>
                                 </tr>
                                 <tr>
-                                    <td>값1</td>
-                                    <td>값2</td>
-                                    <td>결과</td>
+                                    <td>[5,0,2,7]</td>
+                                    <td>[2,5,7,9,12]</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -115,37 +112,39 @@
                         <details>
                             <summary>소스보기</summary>
                             <div class="t_code">
-                                <pre><code class="language-js">
+                                <pre><code class="language-js">function solution(numbers) {
+    let answer = [ ];
 
+    for(let i=0; i &lt; numbers.length; i++){
+        for(let j=i+1; j &lt; numbers.length; j++){
+            answer.push(numbers[i]+numbers[j]);
+        }
+    }
+        
+    return [...new Set(answer)].sort(function(a,b){return a-b});
+}
 </code></pre>
                             </div>
                         </details>
                     </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
+                    <p class="t_desc" style="margin-top: 20px !important">
+                        이중 for문을 사용해 배열에서 2개의 수가 더해지는 모든 경우의 수를 구해 push( ) 메서드로 새 배열을 구합니다.<br>
+                        구한 배열값은 다시 중복되지 않는 수만 선택해 새 배열로 만드는 Set( )메서드를 사용하고 이 값을 sort로 정렬하면 정답이 됩니다.
+                    </p>
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ Set( ) 메서드</h4>
+                    <div class="t_box">
+                        set 객체는 중복되지 않는 유일한 값들의 집합이다.<br>
+                        set 객체는 다음과 같은 특징을 가진다.<br>
+                        <ol>
+                            <li>　1. 동일한 값을 중복하여 포함할수 없다.</li>
+                            <li>　2. 요소 순서에 의미가 없다.</li>
+                            <li>　3. 인덱스로 요소에 접근할 수 없다.</li>
+                        </ol><br>
+                        이러한 set 객체는 수학적 집합을 구현하기위한 자료구조이다.<br>
+                        그래서 set을 통해 교집합, 합집합, 차집합, 여집합 등을 구현할 수 있다.
+                    </div>
                 </div>
                 <!-- 컨텐츠 파트1 -->
-
-                <hr style="margin-top: 60px" />
-
-                <div class="main_content1" style="margin: 50px 0 15px 0">
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">2. 다른 풀이</h4>
-                    <div class="t_codeBox">
-                        <details>
-                            <summary>소스보기</summary>
-                            <div class="t_code">
-                                <pre><code class="language-js">
-
-</code></pre>
-                            </div>
-                        </details>
-                    </div>
-                    <p class="t_desc" style="margin-top: 20px !important">해설 설명</p>
-                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">※ 개념</h4>
-                    <p class="t_box">　 설명</p>
-                </div>
-                <!-- 컨텐츠 파트2 -->
             </div>
         </main>
         <!-- //main -->
