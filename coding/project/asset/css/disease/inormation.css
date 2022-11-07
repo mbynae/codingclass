@@ -69,7 +69,19 @@
     margin: 0 10px;
     transition: all 0.5s;
   }
+  .category__contents div a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: all 0.5s;
+  }
   .category__contents div.tapActive:hover {
+    background: #26675B;
+  }
+  .category__contents div.tapActive:hover a {
     background: #26675B;
   }
   .category__contents div label {

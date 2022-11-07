@@ -43,6 +43,7 @@
     background: #fff;
     margin-bottom: 20px;
     display: flex;
+    justify-content: space-between;
     transition: all 0.5s;
 }
 .allHospital__text:hover {

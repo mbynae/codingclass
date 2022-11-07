@@ -8,6 +8,20 @@
 
     // $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
+    $DisCategory = $_GET['category'];
+
+
+    if(isset($_GET['category'])){
+        $category = $_GET['category'];
+        $DisSql2 = "SELECT * FROM Disease WHERE DisCategory='$category'";
+        
+    } else {
+        $DisSql2 = "SELECT * FROM Disease";
+    }
+
+    $allCategory = "SELECT DISTINCT DisCategory FROM Disease";
+    $allResult = $connect -> query($allCategory);
+
 ?>
 
 
@@ -189,22 +203,6 @@
     <!-- //header -->
 
     <section id="searchType" class="container">
-        <!-- <div class="searchBox">
-            <form action="" method="POST" class="searchBox__form">
-                <div class="searchBox_inner">
-                    <button class="searchBtn">
-                        <img src="../asset/img/searchBtn.svg" alt="찾기 버튼" />
-                    </button>
-                    <input type="text" name="search" id="search" placeholder="병명을 입력해주세요 ex) 골육증" required />
-                </div>
-                <ul class="searchTag__box">
-                    <li class="searchTag"><a href="#">#중성화</a></li>
-                    <li class="searchTag"><a href="#">#유행병</a></li>
-                    <li class="searchTag"><a href="#">#겨울</a></li>
-                    <li class="searchTag"><a href="#">#동물병원</a></li>
-                </ul>
-            </form>
-        </div> -->
         <?php include "../include/disSearchBox.php"?>
     </section>
 
@@ -347,11 +345,6 @@
                         <input type="radio" id="disease__name8" name="disease__name" value="질병8" />
                     </div>
                 </div>
-                <div class="category__confirm">
-                    <span><a href="#">NO</a></span>
-                    <span>|</span>
-                    <span><a href="#" class="Yes" data-name="">YES</a></span>
-                </div>
             </div>
         </div>
     </section>
@@ -374,7 +367,8 @@
                     $viewLimit = ($viewNum * $page) - $viewNum;
 
 
-                    $DisSql = "SELECT * FROM Disease ORDER BY DisID DESC LIMIT {$viewLimit}, {$viewNum}";
+                    // $DisSql .= "SELECT * FROM Disease ORDER BY DisID DESC LIMIT {$viewLimit}, {$viewNum}";
+                    $DisSql .= " ORDER BY DisID DESC LIMIT {$viewLimit}, {$viewNum}";
                     $DisResult = $connect -> query($DisSql);
 
                     // echo $DisSql;
@@ -480,7 +474,7 @@
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
     const categoryCircleInp = document.querySelectorAll(".category__contents > div > input");
-    const ChoiceYes = document.querySelector(".Yes");
+    const asdsad = "<? echo $Discategory; ?>";
 
     //카테고리 선택
     category.forEach((cate, index) => {
@@ -505,28 +499,13 @@
         })
     });
 
+
     //카테고리 내용 선택
     categoryCircleLab.forEach((e, i) => {
-        e.addEventListener("click", ()=>{
-            categoryCircle.forEach(rem => {
-                rem.classList.remove("tapActive");
-            })
-            categoryCircle[i].classList.add("tapActive");
-            ChoiceYes.dataset.name = e.innerText;
-        });
-    });
-
-
-    const bodyKeyword = document.querySelectorAll(".bodyKeyword");
-
-    bodyKeyword.forEach((e) => {
-        ChoiceYes.addEventListener("click", (choice) => {
-            choice.preventDefault();
-            e.parentNode.style.display = "block";
-            if(choice.target.dataset.name !== e.innerText){
-                e.parentNode.style.display = "none";
-            }
-        });
+        console.log(categoryCircleInp.value)
+        e.innerHTML = "<a href='diseaseMain.php?category=" + e.innerText + "'>" + e.innerText + "</a>";
+        // e.addEventListener("click", ()=>{
+        // });
     });
 
 

@@ -24,7 +24,7 @@
             }
         </style>
 
-        <!-- <link rel="stylesheet" href="../assets/css/bg.css" /> -->
+        <link rel="stylesheet" href="../assets/css/bg.css" />
         <link rel="stylesheet" href="../assets/css/game.css" />
         <link rel="stylesheet" href="../assets/css/music.css" />
 
@@ -869,7 +869,6 @@
                         <div class="scoreClose">닫기</div>
                     </div>
                 </div>
-                
             </div>
             <!-- 카드 맞추기 게임 플레이어 -->
         </div>
@@ -935,9 +934,10 @@
             const gameIcon = document.querySelectorAll("#main > div");
             const musicPlayer = document.getElementById("music__player");
             const searchGame = document.getElementById("search__game");
+            const memoryGame = document.querySelector(".memory__wrap");
             const WindowbarCloseBtn = document.querySelectorAll(".Windowbar_closeBtn");
 
-            const ArrayGame = [musicPlayer, searchGame];
+            const ArrayGame = [musicPlayer, searchGame, memoryGame];
 
             window.addEventListener("mousemove", (e) => {
                 // mouseCursor.style.left = e.clientX - 10 + "px";   //단위를 붙여줘야 실행 됨 (-25는 커서의 위치를 원 가운데로 위치하게 함)
