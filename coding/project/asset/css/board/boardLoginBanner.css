@@ -4,7 +4,7 @@
     margin: 0 auto;
 }
 .lB__inner {
-    margin-top: 80px;
+    margin-top: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,8 @@
     width: 60px;
     height: 60px;
     margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #26675B;
 }
 .lB__inner figure figcaption {
     font-size: 20px;

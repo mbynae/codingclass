@@ -31,9 +31,9 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
     position: relative;
-    color: #6cc4b3;
+    color: #26675B;
     padding-bottom: 20px;
-    border-bottom: 0.5px dashed #6cc4b3;
+    border-bottom: 0.5px dashed #26675B;
 }
 .login__welcome > h3 {
     color: #757575;
@@ -96,7 +96,7 @@ input[type="checkbox"] + label {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 input[type="checkbox"] + label::after {
     content: "✔";
@@ -110,7 +110,7 @@ input[type="checkbox"] + label::after {
     top: -2px;
 }
 input[id="loginBox"]:checked + label::after {
-    color: #6cc4b3;
+    color: #26675B;
 }
 .login__contents .loginBox_btn {
     display: flex;
@@ -139,7 +139,7 @@ input:required {
 }
 .login__contents .loginBox_btn button {
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     background: #fff;
     cursor: pointer;
 }
@@ -157,7 +157,7 @@ input::placeholder {
     font-size: 16px;
 }
 .login__footer .footer_btn {
-    border-top: 1px dashed #6cc4b3;
+    border-top: 1px dashed #26675B;
     display: flex;
     justify-content: space-between;
 }
@@ -168,7 +168,7 @@ input::placeholder {
     text-align: center;
 }
 .login__footer .footer_btn li:first-child {
-    border-right: 1px dashed #6cc4b3;
+    border-right: 1px dashed #26675B;
 }
 .login__footer .footer_btn a {
     display: inline-block;

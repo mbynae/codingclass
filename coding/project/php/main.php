@@ -13,14 +13,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>어서오세요 winimal에</title>
+    <title>메인 페이지</title>
 
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="../asset/css/reset.css">
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/header.css">
-    <link rel="stylesheet" href="../asset/css/footer.css">
 
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="../asset/css/main/mainBanner.css">
@@ -70,22 +69,7 @@
             </div>
         </div>
         <div class="bannerSearch__box">
-            <div class="searchBox">
-                <form action="" method="POST" class="searchBox__form">
-                    <div class="searchBox_inner">
-                        <button class="searchBtn">
-                            <img src="../asset/img/searchBtn.svg" alt="찾기 버튼">
-                        </button>
-                        <input type="text" name="search" id="search" placeholder="궁금하신 내용을 검색해주세요." required>
-                    </div>
-                    <ul class="searchTag__box">
-                        <li class="searchTag"><a href="#">#중성화</a></li>
-                        <li class="searchTag"><a href="#">#유행병</a></li>
-                        <li class="searchTag"><a href="#">#겨울</a></li>
-                        <li class="searchTag"><a href="#">#동물병원</a></li>
-                    </ul>
-                </form>
-            </div>
+            <?php include "../include/searchBox.php"?>
         </div>
     </section>
 
@@ -98,7 +82,7 @@
                         혹시 전문 동물 병원에 대해
                         알아보고 싶으신가요??
                     </p>
-                    <a href="#">더 알아보기</a>
+                    <a href="hospitalMain.php">더 알아보기</a>
                 </div>
             </div>
             <div class="hospi__contents">
@@ -106,7 +90,7 @@
                     <div class="hospi__text">
                         <div class="hospi__textCont">
                             <span>
-                                <a href="#"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
+                                <a href="hospitalMain.php"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
                                 <h4>디오빌 동물병원</h4>
                             </span>
                             <address>경기도 시흥시 배곧로 4820</address>
@@ -128,7 +112,7 @@
                     <div class="hospi__text">
                         <div class="hospi__textCont">
                             <span>
-                                <a href="#"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
+                                <a href="hospitalMain.php"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
                                 <h4>배곧도담 동물병원</h4>
                             </span>
                             <address>경기도 시흥시 배곧 1로 47-11</address>
@@ -164,7 +148,7 @@
                     <div class="hospi__text">
                         <div class="hospi__textCont">
                             <span>
-                                <a href="#"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
+                                <a href="hospitalMain.php"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
                                 <h4>미소로 동물병원</h4>
                             </span>
                             <address>경기도 수원시 탑동 521</address>
@@ -178,7 +162,7 @@
                     <div class="hospi__text">
                         <div class="hospi__textCont">
                             <span>
-                                <a href="#"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
+                                <a href="hospitalMain.php"><img src="../asset/img/hospitalCard_icon.svg" alt=""></a>
                                 <h4>위드동물병원</h4>
                             </span>
                             <address>경기 시흥시 정왕대로 2111</address>
@@ -200,12 +184,12 @@
         <div class="disease_box container">
             <div class="disease__title reveal">
                 <div class="disease__titleCont">
-                    <span>disease</span>
+                    <span>Disease</span>
                     <p>
                         우리 반려동물들이 조심해야 할
                         다양한 질병들을 알려드릴게요.
                     </p>
-                    <a href="#">더 알아보기</a>
+                    <a href="diseaseMain.php">더 알아보기</a>
                 </div>
             </div>
             <div class="disease__contents1">
@@ -267,42 +251,42 @@
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
                                     <div>CATEGORY</div>
                                     <p>Disease</p>
-                                    <a href="#">MORE</a>
+                                    <a href="diseaseMain.php">MORE</a>
                                 </div>
                             </div>
                         </div>
@@ -456,8 +440,32 @@
     </script>
 
     <script>
+        //로그인창 닫기
+    const login = document.querySelector(".header__menu .login");
+    const loginpopup = document.querySelector(".login__popup");
+    const closeBtn = document.querySelector(".close_btn");
 
+    login.addEventListener("click", (e)=>{
+        e.preventDefault();
+        loginpopup.style.display = "block";
+        document.querySelector("body").classList.add("scrollStop");
+    })
+    closeBtn.addEventListener("click", ()=>{
+        loginpopup.style.display = "none";
+        document.querySelector("body").classList.remove("scrollStop");
+    })
 
+    // 헤더바 색깔 조절
+    const headerType = document.getElementById("headerType");
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.scrollY;
+
+        if(scrollTop > 0){
+            headerType.style.backgroundColor = "#fff";
+        } else {
+            headerType.style.backgroundColor = "transparent";
+        }
+    });
     </script>
 </body>
 </html>

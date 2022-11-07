@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../asset/css/reset.css">
     <link rel="stylesheet" href="../../asset/css/common.css">
     <link rel="stylesheet" href="../../asset/css/header.css">
+    <link rel="stylesheet" href="../../asset/css/footer.css">
     <link rel="stylesheet" href="../../asset/css/font.css">
 
     <link rel="stylesheet" href="../../asset/css/login/idPassCommon.css">
@@ -69,7 +70,7 @@
         </div>
     </section>
 
-    <section id="mainSliderType" class="container">
+    <section id="mainSliderType">
         <div id="slider__inner">
             <div id="hos__slider">
                 <div class="slider__item" style="background-image: url(../../asset/img/hospital_mainBanner01.jpg)">
@@ -175,20 +176,30 @@
             </div>
         </div>
     </section>
-
-    <section id="infomationType" class="container">
+    <section id="infomationType">
         <!-- 카테고리 박스 -->
         <div class="Info_textBox">
-            <h2>동물병원 알아보기</h2>
             <div class="category__box">
                 <div class="category__title">
-                    <h3>Catetory</h3>
                     <nav class="category__titleChoice">
-                        <li><a href="#" class="cate1 tapActive">지역</a></li>
-                        <span>|</span>
-                        <li><a href="#" class="cate2">병명</a></li>
-                        <span>|</span>
-                        <li><a href="#" class="cate3">수술</a></li>
+                        <li>
+                            <a href="#" class="cate1 tapActive">
+                                <img src="../../asset/img/hospital/pin.svg" alt="">
+                                지역
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="cate2">
+                                <img src="../../asset/img/hospital/disease.svg" alt="">
+                                병명
+                            </a>
+                        </li>   
+                        <li>
+                            <a href="#" class="cate3">
+                                <img src="../../asset/img/hospital/surgery.svg" alt="">
+                                수술
+                            </a>
+                        </li>
                     </nav>
                 </div>
                 <form action="#" name="" method="" onsubmit="">
@@ -244,7 +255,6 @@
                         </div>
                         <div class="category__confirm">
                             <button>NO</span>
-                            <span>|</span>
                             <button type="submit">YES</span>
                         </div>
                     </fieldset>
@@ -254,7 +264,7 @@
         </div>
 
         <!-- 이미지 박스 -->
-        <div class="hospital__contBox">
+        <div class="hospital__contBox container">
             <div class="hospital__card">
                 <img src="../../asset/img/hospitalCard_cont1.jpg" alt="">
                 <div class="hospital__cardText">
@@ -356,6 +366,37 @@
             </div>
         </div>
     </section>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer__inner container">
+            <div class="footer__left">
+                <h2>winimal animal service</h2>
+                <ul>
+                    <li>010-1234-5678</li>
+                    <li>Mon-Fri / 09 : 00am ~ 17 : 00pm</li>
+                    <li>점심시간 12 : 00am ~ 14 : 00pm</li>
+                    <li>토요일, 일요일, 공휴일 휴무</li>
+                </ul>
+    
+                <h2>winimal information service</h2>
+    
+                <h3>국민은행 : 854126-02-555666  예금주 : 위니멀</h3>
+                <h3>wnimal@naver.com</h3>
+
+                <p>사업자등록번호.000-00-00000  통신판매업신고.2022-경기시흥-0111호  개인정보관리책임. 누군가</p>
+            </div>
+
+            <div class="footer__right">
+                <ul>
+                    <li>문의하기</li>
+                    <li>Privacy Policy</li>
+                    <li>Agreement</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
 
     <!-- php에 넣을시 삭제할것 -->
     <div class="login__popup close">

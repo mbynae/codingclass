@@ -29,14 +29,14 @@
 .search_choice {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px dashed #6CC4B3;
+    border-bottom: 1px dashed #26675B;
     /* margin-bottom: 20px; */
 }
 .method {
     width: 72px;
     height: 96px;
     padding: 27px 39px;
-    border: 1px solid #6CC4B3;
+    border: 1px solid #26675B;
     border-radius: 10px;
     position: relative;
     margin-bottom: 20px;

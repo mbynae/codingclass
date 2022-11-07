@@ -48,6 +48,9 @@
 .searchBox_inner {
     height: 100%;
 }
+.searchBox_inner input::placeholder {
+    font-size: 22px;
+}
 .searchBtn {
     position: absolute;
     left: 30px;

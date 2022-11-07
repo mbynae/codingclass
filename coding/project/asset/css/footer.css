@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #d3d3d3;
+    padding-top: 25px;
 }
 .footer__left > h2 {
     color: #A0A0A0;
@@ -30,7 +31,7 @@
 }
 
 .footer__right {
-    padding-top: 228px;
+    padding-top: 223px;
 }
 .footer__right ul li {
     padding: 10px;

@@ -44,7 +44,6 @@
                 ";
         }
     }
-    echo $sql;
 
     $result = $connect -> query($sql);
     $result = move_uploaded_file($HosImgTmp, $HosImgDir.$HosImgName);

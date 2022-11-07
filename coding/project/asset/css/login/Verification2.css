@@ -7,7 +7,7 @@
     width: 100%;
 }
 .contentBox {
-    border-bottom: 1px dashed #6CC4B3;
+    border-bottom: 1px dashed #26675B;
     padding-bottom: 19px;
     margin-bottom: 20px;
 }
@@ -52,7 +52,7 @@ input:required {
 }
 .searchIdBox {
     width: 100%;
-    border-bottom: 1px dashed #6CC4B3;
+    border-bottom: 1px dashed #26675B;
     padding-bottom: 30px;
     margin-bottom: 20px;
 }

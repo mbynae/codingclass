@@ -20,7 +20,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>병원 메인 페이지</title>
+        <title>병원 상세보기 페이지</title>
         <link rel="stylesheet" href="../asset/css/hospital/hospital_detail.css"/>
         <link rel="stylesheet" href="../asset/css/board/boardComment.css" />
     </head>
@@ -52,7 +52,7 @@
     </section>
 
     <!-- 슬라이드 -->
-    <section id="mainSliderType" class="container"></section>
+    <section id="mainSliderType"></section>
 
     <!-- 병원 정보 -->
     <section id="hospitalInfo" class="container">
@@ -238,6 +238,10 @@
         </table>
     </section>
     <!-- //boardComment -->
+
+    <!-- footer -->
+    <?php include "../include/footer.php"?>
+    <!-- //footer -->
 
     </body>
 

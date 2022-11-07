@@ -12,7 +12,7 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     border-radius: 15px;
-    border: 1px solid #6CC4B3;
+    border: 1px solid #26675B;
     color: #505050;
 }
 .login__inner {
@@ -33,7 +33,7 @@
     /* margin-bottom: 15px; */
 }
 .tab_menu em {
-    color: #6CC4B3;
+    color: #26675B;
 }
 .tab_menu > span {
     display: inline-block;
@@ -52,7 +52,7 @@
     margin-left: 5px;
 }
 .tab_menu > span.active {
-    color: #6CC4B3;
+    color: #26675B;
 }
 .search_IDcontents {
 
@@ -62,7 +62,7 @@
 }
 .user_search {
     font-size: 16px;
-    border-bottom: 1px dashed #6CC4B3;
+    border-bottom: 1px dashed #26675B;
     border-style: dashed 20px;
     padding-bottom: 5px;
     margin-bottom: 9px;

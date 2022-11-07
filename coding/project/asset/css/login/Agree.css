@@ -14,7 +14,7 @@
     padding: 30px;
     box-sizing: border-box;
     position: relative;
-    border: 1px solid #6CC4B3;
+    border: 1px solid #26675B;
 }
 .agree__header h2 {
     font-size: 24px;
@@ -96,7 +96,7 @@ input[id="agreeCheck1"]:checked + label::after,
 input[id="agreeCheck2"]:checked + label::after,
 input[id="agreeCheck3"]:checked + label::after,
 input[id="agreeCheckAll"]:checked + label::after {
-    color: #6CC4B3;
+    color: #26675B;
 }
 .checkAll {
     text-align: center;
@@ -132,7 +132,7 @@ input[id="agreeCheckAll"]:checked + label::after {
     width: 400px;
     height: 120px;
     border-radius: 10px;
-    border: 1px solid #6CC4B3;
+    border: 1px solid #26675B;
     background-color: #fff;
     position: fixed;
     top: 50%;

@@ -35,7 +35,7 @@
                     <li><a href="../php/hospitalMain.php">A.hopsital</a></li>
                     <li><a href="../php/diseaseMain.php">Disease</a></li>
                     <li><a href="../php/board.php">Community</a></li>
-                    <li><a href="#">Pet shop</a></li>
+                    <li><a href="../php/petShopMain.php">Pet shop</a></li>
                     <?php if( isset($_SESSION['myMemberID']) ){ ?>
                     <li><a href="../php/mypage.php" class="black">My page</a></li>
                     <li><a href="../php/logout.php">LOGOUT</a></li>
@@ -111,7 +111,7 @@
 
 </body>
 
-<script src="../asset/js/header_hamburger.js"></script>
+<script src="../../asset/js/header_hamburger.js"></script>
 <script>
     
 </script>

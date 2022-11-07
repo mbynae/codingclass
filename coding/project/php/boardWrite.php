@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="../asset/css/board/boardImageType.css">
     <link rel="stylesheet" href="../asset/css/board/boardWriteModify.css">
     <!-- <link rel="stylesheet" href="../asset/css/footer.css"> -->
+
+    <style>
+        .boardTitle {
+            font-size: 24px;
+            color: #757575;
+        }
+    </style>
 </head>
 
 <!-- header -->
@@ -73,7 +80,7 @@
                 <legend class="ir">게시판 영역입니다.</legend>
                 <div class="border_titleBox">
                     <div class="titleBox">
-                        <label for="boardTitle">제목 : </label>
+                        <label class="boardTitle" for="boardTitle">제목 : </label>
                         <input type="text" name="boardTitle" id="boardTitle" maxlength="30" required>
                     </div>
                     <div class="border_titleCate">

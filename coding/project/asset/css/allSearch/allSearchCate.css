@@ -1,6 +1,15 @@
 #allSearchCate {
-    background: #033118;
     margin-top: 120px;
+}
+.allSearchCate__inner {
+    border-bottom: 1px solid #26675B;
+}
+.allSearchCate__inner h3 {
+    font-size: 20px;
+  font-family: 'Alfa Slab One', cursive;
+  text-align: center;
+  color: #26675B;
+  margin-bottom: 20px;
 }
 .allSearchCate__inner ul li > img {
     padding-top: 5px;
@@ -19,6 +28,7 @@
     font-size: 16px;
     padding: 6px 35px;
     background: #fff;
+    border: 1px solid #26675B;
     border-radius: 30px;
     margin: 0 10px;
     transition: all 0.5s;

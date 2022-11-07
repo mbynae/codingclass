@@ -22,6 +22,7 @@
     </head>
 
     <link rel="stylesheet" href="../asset/css/disease/disease_detail.css" />
+    <link rel="stylesheet" href="../asset/css//footer.css" />
 
 <body>
 
@@ -63,10 +64,10 @@
     </section>
 
     <section id="informationType" class="container">
-            <h2 class="butler800">Patella Information</h2>
+            <h2>Patella Information</h2>
             <div class="disease__box">
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img01.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img01.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3><?=$DisInfo['DisName']?>이란?</h3>
@@ -86,10 +87,10 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img02.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img02.svg" alt="질병설명1" />
                 </div>
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img03.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img03.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3>발생 원인</h3>
@@ -110,10 +111,10 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img04.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img04.svg" alt="질병설명1" />
                 </div>
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img05.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img05.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3><?=$DisInfo['DisName']?> 수술이 필요한 이유는?</h3>
@@ -133,12 +134,39 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img06.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img06.svg" alt="질병설명1" />
                 </div>
             </div>
         </section>
 
-        <?php include "../include/footer.php"?>
+        <footer id="footer">
+        <div class="footer__inner  container">
+            <div class="footer__left" style="padding: 20px;">
+                <h2>winimal animal service</h2>
+                <ul>
+                    <li>010-1234-5678</li>
+                    <li>Mon-Fri / 09 : 00am ~ 17 : 00pm</li>
+                    <li>점심시간 12 : 00am ~ 14 : 00pm</li>
+                    <li>토요일, 일요일, 공휴일 휴무</li>
+                </ul>
+    
+                <h2>winimal information service</h2>
+    
+                <h3>국민은행 : 854126-02-555666  예금주 : 위니멀</h3>
+                <h3>wnimal@naver.com</h3>
+
+                <p>사업자등록번호.000-00-00000  통신판매업신고.2022-경기시흥-0111호  개인정보관리책임. 누군가</p>
+            </div>
+
+            <div class="footer__right" style="margin-top: 20px;">
+                <ul>
+                    <li>문의하기</li>
+                    <li>Privacy Policy</li>
+                    <li>Agreement</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

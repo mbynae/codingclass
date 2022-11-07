@@ -26,14 +26,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>통합검색</title>
+    <title>통합 검색</title>
     <style>
     </style>
 
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/reset.css">
-    <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/header.css">
     <link rel="stylesheet" href="../asset/css/footer.css">
@@ -72,7 +71,7 @@
     <section id="allHospital">
         <div class="allHospital__inner container">
             <div class="allHospital__top">
-                <h2 class="butler800">A.Hsospital</h2>
+                <h2>A.Hsospital</h2>
                 <p>
                     <a href="hospitalMain.php?category=<?=$search?>">
                         더보기
@@ -120,7 +119,7 @@
                 </div> -->
     
             <div class="allDisease__top">
-                <h2 class="butler800">A.Disease</h2>
+                <h2>A.Disease</h2>
                 <p>
                     <a href="diseaseMain.php?category=<?=$search?>">
                         더보기

@@ -47,7 +47,7 @@
             <h2>COMMUNITY</h2>
             <p>위니멀 커뮤니티에서 다양한 사람들과 좋은 정보를 나눠보세요!</p>
             <figure>
-                <img src="../../asset/img/mainBanner.jpg" alt="">
+                <img src="../asset/img/mainBanner.png" alt="">
             </figure>
         </div>
 

@@ -28,8 +28,8 @@
         <div class="Myprofile">
             <ul>
                 <li>가입일 : <?=date('Y-m-d', $myInfo['regTime'] )?></li>
-                <li><a href="#">나의 정보</a></li>
-                <li><a href="#">나의 반려견</a></li>
+                <li><a href="../php/mypage.php">나의 정보</a></li>
+                <li><a href="../php/mypage.php">나의 반려견</a></li>
                 <li>나의 글 : <?=$BoInfo["count(*)"]?>개</li>
                 <li>댓글 수 : <?=$CoInfo["count(*)"]?>개</li>
             </ul>

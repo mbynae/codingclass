@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판 글 쓰기</title>
+    <title>게시판 글 수정</title>
 
     <link rel="stylesheet" href="../asset/css/reset.css">
     <link rel="stylesheet" href="../asset/css/common.css">
@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="../asset/css/board/boardImageType.css">
     <link rel="stylesheet" href="../asset/css/board/boardWriteModify.css">
     <link rel="stylesheet" href="../asset/css/footer.css">
+
+    <style>
+        .boardModifyTitle {
+            font-size: 24px;
+            color: #505050;
+        }
+    </style>
 </head>
 
 <!-- header -->
@@ -67,7 +74,7 @@
                                 $info = $result -> fetch_array(MYSQLI_ASSOC);
 
                                 echo "<div style='display:none'><label for='myBoardID'>번호</label><input type='text' name='myBoardID' id='myBoardID' value ='".$info['myBoardID']."'></div>";
-                                echo "<label for='boardTitle'>제목 : </label><input type='text' name='boardTitle' id='boardTitle' maxlength='30' value='".$info['boardTitle']."' required></div>";
+                                echo "<label class='boardModifyTitle' for='boardTitle'>제목 : </label><input type='text' name='boardTitle' id='boardTitle' maxlength='30' value='".$info['boardTitle']."' required></div>";
                                 echo "<div class='border_titleCate'><div class='selectBox'><select name='boardCate' id='boardCate'>";
                                 echo "<option value=''>카테고리1</option><option value='카테고리2'>카테고리2</option><option value='카테고리3'>카테고리3</option></select></div></div></div>";
                                 echo "<div class='board_writeBox'><label for='boardWriteCont' class='ir'>내용</label><textarea name='boardContents' id='boardContents' placeholder='글을 작성해주세요.' required>".$info['boardContents']."</textarea></div>";
@@ -76,7 +83,7 @@
                         ?>
                     
                         <!-- <label for="boardTitle">제목 : </label>
-                        <input type="text" name="boardTitle" id="boardTitle" maxlength="30" required>
+                        <input class="boardModifyTitle" type="text" name="boardTitle" id="boardTitle" maxlength="30" required>
                     </div>
                     <div class="border_titleCate">
                         <div class="selectBox">

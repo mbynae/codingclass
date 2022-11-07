@@ -7,6 +7,19 @@
     $shopResult = $connect -> query($shopSql);
 
     $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
+
+    $shopCate = $_GET['category'];
+
+    if(isset($_GET['category'])){
+        $shopCate = $_GET['category'];
+        $shopSql = "SELECT * FROM petShop WHERE shopCate='$shopCate'";
+        
+    } else {
+        $shopSql = "SELECT * FROM petShop";
+    }
+
+    $petShopCate = "SELECT DISTINCT shopCate FROM petShop";
+    $shopResult = $connect -> query($petShopCate);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +33,6 @@
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/reset.css">
-    <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/petShop/petShopItemCate.css">
     <link rel="stylesheet" href="../asset/css/petShop/petShopInfo.css">
@@ -45,13 +57,19 @@
     <section id="petShopItemCate">
         <div class="petShopItemCate__inner container">
             <ul class="itemCate">
-                <li class="butler800 cateOne"><a href="#">CATEGORY</a></li>
+                <?php
+                    foreach($shopResult as $shop){ ?>
+                        <il>
+                            <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
+                        </il>
+                <?php }?>
+                <!-- <li class="cateOne"><a href="#">CATEGORY</a></li>
                 <li><a href="#">의류 / 악세서리</a></li>
                 <li><a href="#">미용 / 케어</a></li>
                 <li><a href="#">배변 / 위생</a></li>
                 <li><a href="#">간식 / 영양제</a></li>
                 <li><a href="3">산책 / 놀이</a></li>
-                <li><a href="#">목욕</a></li>
+                <li><a href="#">목욕</a></li> -->
             </ul>
         </div>
     </section>
@@ -80,10 +98,10 @@
                 </div>
                 <div class="itemInfo__link">
                     <h2>Link</h2>
-                    <p><em></em><?=$shopInfo['shopItemLink01']?></p>
-                    <p><?=$shopInfo['shopItemLink02']?></p>
-                    <p><?=$shopInfo['shopItemLink03']?></p>
-                    <p><?=$shopInfo['shopItemLink04']?></p> 
+                    <a href="<?=$shopInfo['shopItemLink01']?>"><p><em></em><?=$shopInfo['shopItemLink01']?></p></a>
+                    <a href="<?=$shopInfo['shopItemLink02']?>"><p><?=$shopInfo['shopItemLink02']?></p></a>
+                    <a href="<?=$shopInfo['shopItemLink03']?>"><p><?=$shopInfo['shopItemLink03']?></p></a>
+                    <a href="<?=$shopInfo['shopItemLink04']?>"><p><?=$shopInfo['shopItemLink04']?></p></a> 
                 </div>
                 <div class="item__btn">
                     <h2><a href="#">장바구니</a></h2>

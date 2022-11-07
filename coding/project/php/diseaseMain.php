@@ -1,22 +1,25 @@
 <?php
-
-    include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/connect.php";
 
     $DisSql = "SELECT * FROM Disease";
     $DisResult = $connect -> query($DisSql);
 
-    // $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
+    $DisSql2 = "SELECT * FROM Disease";
+    $DisResult2 = $connect -> query($DisSql2);
 
-    $DisCategory = $_GET['category'];
+
+    $DisInfo = $DisResult -> fetch_array(MYSQLI_ASSOC);
+
+    $disCategory = $_GET['category'];
 
 
     if(isset($_GET['category'])){
         $category = $_GET['category'];
-        $DisSql2 = "SELECT * FROM Disease WHERE DisCategory='$category'";
+        $DisSql = "SELECT * FROM Disease WHERE DisCategory='$category'";
         
     } else {
-        $DisSql2 = "SELECT * FROM Disease";
+        $DisSql = "SELECT * FROM Disease";
     }
 
     $allCategory = "SELECT DISTINCT DisCategory FROM Disease";
@@ -44,7 +47,7 @@
         <style>
            /* diseaseSlider */
            #diseaseSlider {
-                margin: 80px 0 60px 0;
+                margin: 0px 0 20px 0;
             }
             .diseaseSlider__inner {
                 display: flex;
@@ -71,11 +74,11 @@
                 cursor: pointer;
             }
             .diseaseSlider__card a {
-                color: #6cc4b3;
+                color: #26675B;
                 font-size: 20px;
             }
             .diseaseSlider__card:hover {
-                background-color: #6cc4b3;
+                background-color: #26675B;
             }
             .diseaseSlider__card:hover a {
                 color: #fff;
@@ -98,7 +101,7 @@
 
             .diseaseSlider__card a h3 {
                 font-size: 20px;
-                color: #6cc4b3;
+                color: #26675B;
                 margin-bottom: 20px;
             }
             .diseaseSlider__card__bottom {
@@ -120,12 +123,18 @@
             .next {
                 right: 40px;
             }
+            .Info_textBox em {
+                font-family: 'SCoreDream';
+                font-weight: 700;
+                color: #26675B;
+                margin-right: 10px;
+            }
 
             /* diseaseTap */
             .diseaseTap__inner > h2 {
                 text-align: center;
                 font-size: 32px;
-                color: #6cc4b3;
+                color: #26675B;
                 margin-bottom: 30px;
             }
             .diseaseTap__card__wrap {
@@ -142,27 +151,24 @@
                 box-shadow: 2px 2px 8px 2px rgba(222, 222, 222, 0.25);
                 border-radius: 30px;
             }
-            .diseaseTap__card:last-child {
-                margin-bottom: 40px;
-            }
             .diseaseTap__card img {
                 display: block;
                 left: 50%;
                 margin: 0 auto;
-                width: 200px;
-                height: 200px;
+                width: 80px;
+                height: 80px;
                 margin-top: 25px;
                 border-radius: 20px;
             }
             .diseaseTap__card > h3 {
                 margin-top: 15px;
                 text-align: center;
-                color: #6cc4b3;
+                color: #26675B;
             }
             .diseaseTap__card > P {
                 margin-top: 10px;
                 text-align: center;
-                color: #6cc4b3;
+                color: #26675B;
                 font-size: 12px;
                 margin-bottom: 20px;
             }
@@ -192,7 +198,7 @@
                 color: #505050;
             }
             .board__pages ul li.active a {
-                color: #6cc4b3;
+                color: #26675B;
             }
         </style>
     </head>
@@ -203,113 +209,53 @@
     <!-- //header -->
 
     <section id="searchType" class="container">
-        <?php include "../include/disSearchBox.php"?>
-    </section>
-
-    <section id="diseaseSlider">
-        <div class="diseaseSlider__inner container">
-            <div class="slider__view">
-                <div class="slider__box">
-                    <?php
-                        for($i=1; $i <= 5; $i++){
-                            $Dis = $DisResult -> fetch_array(MYSQLI_ASSOC);
-                            
-                            echo "<div class='diseaseSlider__card'><a href='diseaseView.php?page=".$Dis['DisID']."'";
-                                echo "<h3>".$Dis['DisName']."</h3>";
-                                echo "<div class='diseaseSlider__card__bottom'>";
-                                    echo "<p>평균가</p>";
-                                    echo "<p>".$Dis['DisCurePrice']."원</p>";
-                                echo "</div>";
-                            echo "</a></div>";
-                        }
-                    ?>
-                    <!-- <div class="diseaseSlider__card">
-                        <h3>강아지 종합백신</h3>
-                        <div class="diseaseSlider__card__bottom">
-                            <p>평균가</p>
-                            <p>35000원</p>
-                        </div>
-                    </div>
-                    <div class="diseaseSlider__card">
-                        <h3>안과</h3>
-                        <div class="diseaseSlider__card__bottom">
-                            <p>평균가</p>
-                            <p>21,000원</p>
-                        </div>
-                    </div>
-                    <div class="diseaseSlider__card">
-                        <h3>슬개골 탈구 수술</h3>
-                        <div class="diseaseSlider__card__bottom">
-                            <p>평균가</p>
-                            <p>1,135,000원</p>
-                        </div>
-                    </div>
-                    <div class="diseaseSlider__card">
-                        <h3>슬개골 탈구 수술2</h3>
-                        <div class="diseaseSlider__card__bottom">
-                            <p>평균가</p>
-                            <p>1,135,000원</p>
-                        </div>
-                    </div>
-                    <div class="diseaseSlider__card">
-                        <h3>슬개골 탈구 수술3</h3>
-                        <div class="diseaseSlider__card__bottom">
-                            <p>평균가</p>
-                            <p>1,135,000원</p>
-                        </div>
-                    </div> -->
+        <!-- <div class="searchBox">
+            <form action="" method="POST" class="searchBox__form">
+                <div class="searchBox_inner">
+                    <button class="searchBtn">
+                        <img src="../asset/img/searchBtn.svg" alt="찾기 버튼" />
+                    </button>
+                    <input type="text" name="search" id="search" placeholder="병명을 입력해주세요 ex) 골육증" required />
                 </div>
-            </div>
-            <img src="../asset/img/LeftLine.svg" alt="" class="prev" />
-            <img src="../asset/img/RightLine.svg" alt="" class="next" />
-        </div>
+                <ul class="searchTag__box">
+                    <li class="searchTag"><a href="#">#중성화</a></li>
+                    <li class="searchTag"><a href="#">#유행병</a></li>
+                    <li class="searchTag"><a href="#">#겨울</a></li>
+                    <li class="searchTag"><a href="#">#동물병원</a></li>
+                </ul>
+            </form>
+        </div> -->
+        <?php include "../include/disSearchBox.php"?>
     </section>
 
     <section id="infomationType" class="container">
         <div class="Info_textBox">
-            <h2>질병 알아보기</h2>
+            <h2><em><?=$_GET['category']?></em>Disease</h2>
             <div class="category__box">
                 <div class="category__title">
-                    <h3>Catetory</h3>
-                    <nav class="category__titleChoice">
-                        <li><a href="#" class="tapActive">부위</a></li>
-                        <span>|</span>
-                        <li><a href="#">병명</a></li>
-                    </nav>
-                </div>
+                        <nav class="category__titleChoice">
+                            <li>
+                                <a href="#" class="cate1 tapActive">
+                                    <img src="../asset/img/hospital/pin.svg" alt="">
+                                    부위
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="cate2">
+                                    <img src="../asset/img/hospital/disease.svg" alt="">
+                                    병명
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
                 <div class="category__contents body tapActive">
-                    <div>
-                        <label for="body1">머리</label>
-                        <input type="radio" id="body1" name="body" value="머리" />
-                    </div>
-                    <div>
-                        <label for="body2">얼굴</label>
-                        <input type="radio" id="body2" name="body" value="얼굴" />
-                    </div>
-                    <div>
-                        <label for="body3">눈</label>
-                        <input type="radio" id="body3" name="body" value="눈" />
-                    </div>
-                    <div>
-                        <label for="body4">코</label>
-                        <input type="radio" id="body4" name="body" value="코" />
-                    </div>
-                    <div>
-                        <label for="body5">입</label>
-                        <input type="radio" id="body5" name="body" value="입" />
-                    </div>
-                    <div>
-                        <label for="body6">몸</label>
-                        <input type="radio" id="body6" name="body" value="몸" />
-                    </div>
-                    <div>
-                        <label for="body7">다리</label>
-                        <input type="radio" id="body7" name="body" value="다리" />
-                    </div>
-                    <div>
-                        <label for="body8">기타</label>
-                        <input type="radio" id="body8" name="body" value="기타" />
-                    </div>
+                    <?php                        
+                        foreach($allResult as $all){ ?>
+                            <div>
+                                <a href="diseaseMain.php?category=<?=$all['DisCategory']?>"><?=$all['DisCategory']?></a>
+                            </div>
+                    <?php }
+                        ?>
                 </div>
                 <div class="category__contents disease__name">
                     <div>
@@ -349,6 +295,39 @@
         </div>
     </section>
 
+    <section id="diseaseSlider">
+        <div class="diseaseSlider__inner container" style="padding: 0";>
+            <div class="slider__view">
+                <div class="slider__box">
+                    <?php
+                        for($i=1; $i <= 5; $i++){
+                            $Dis = $DisResult2 -> fetch_array(MYSQLI_ASSOC);
+                            
+                            echo "<div class='diseaseSlider__card'><a href='diseaseView.php?page=".$Dis['DisID']."'";
+                                echo "<h3>".$Dis['DisName']."</h3>";
+                                echo "<div class='diseaseSlider__card__bottom'>";
+                                    echo "<p>평균가</p>";
+                                    echo "<p>".$Dis['DisCurePrice']."원</p>";
+                                echo "</div>";
+                            echo "</a></div>";
+                        }
+                    ?>
+                    <!-- <div class="diseaseSlider__card">
+                        <h3>강아지 종합백신</h3>
+                        <div class="diseaseSlider__card__bottom">
+                            <p>평균가</p>
+                            <p>35000원</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- <img src="../asset/img/LeftLine.svg" alt="" class="prev" />
+            <img src="../asset/img/RightLine.svg" alt="" class="next" /> -->
+        </div>
+    </section>
+
+    
+
     <section id="diseaseTap">
         <div class="diseaseTap__inner container">
             <h2>
@@ -367,7 +346,6 @@
                     $viewLimit = ($viewNum * $page) - $viewNum;
 
 
-                    // $DisSql .= "SELECT * FROM Disease ORDER BY DisID DESC LIMIT {$viewLimit}, {$viewNum}";
                     $DisSql .= " ORDER BY DisID DESC LIMIT {$viewLimit}, {$viewNum}";
                     $DisResult = $connect -> query($DisSql);
 
@@ -375,7 +353,7 @@
 
                     $count = $DisResult -> num_rows;
 
-                    if($DisResult){
+                    if($DisSql){
                         $count = $DisResult -> num_rows;
             
                         if($count > 0 ){
@@ -391,7 +369,7 @@
                             }
                         }
                     }
-                ?>
+                ?>                
             </div>
             <div class="board__pages">
                 <ul>
@@ -474,7 +452,9 @@
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
     const categoryCircleInp = document.querySelectorAll(".category__contents > div > input");
-    const asdsad = "<? echo $Discategory; ?>";
+    const ChoiceYes = document.querySelector(".Yes");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
     //카테고리 선택
     category.forEach((cate, index) => {
@@ -499,34 +479,50 @@
         })
     });
 
+    // //카테고리 내용 선택
+    // categoryCircleLab.forEach((e, i) => {
+    //     e.addEventListener("click", ()=>{
+    //         categoryCircle.forEach(rem => {
+    //             rem.classList.remove("tapActive");
+    //         })
+    //         categoryCircle[i].classList.add("tapActive");
+    //         ChoiceYes.dataset.name = e.innerText;
+    //     });
+    // });
 
-    //카테고리 내용 선택
-    categoryCircleLab.forEach((e, i) => {
-        console.log(categoryCircleInp.value)
-        e.innerHTML = "<a href='diseaseMain.php?category=" + e.innerText + "'>" + e.innerText + "</a>";
-        // e.addEventListener("click", ()=>{
-        // });
-    });
+
+    // const bodyKeyword = document.querySelectorAll(".bodyKeyword");
+
+    // bodyKeyword.forEach((e) => {
+    //     ChoiceYes.addEventListener("click", (choice) => {
+    //         choice.preventDefault();
+    //         e.parentNode.style.display = "block";
+    //         if(choice.target.dataset.name !== e.innerText){
+    //             e.parentNode.style.display = "none";
+    //         }
+    //     });
+    // });
 
 
     // 슬라이드
 
-    document.querySelector(".next").onclick = function () {
-        let lists = document.querySelectorAll(".diseaseSlider__card");
-        document.querySelector(".slider__box").appendChild(lists[0]);
-    };
+    // document.querySelector(".next").onclick = function() {
+    //     let lists = document.querySelectorAll(".diseaseSlider__card");
+    //     document.querySelector(".slider__box").appendChild(lists[0]);
+    // };
 
-    document.querySelector(".prev").onclick = function () {
-        let lists = document.querySelectorAll(".diseaseSlider__card");
-        document.querySelector(".slider__box").prepend(lists[lists.length - 1]);
-    };
+    // document.querySelector(".prev").onclick = function() {
+    //     let lists = document.querySelectorAll(".diseaseSlider__card");
+    //     document.querySelector(".slider__box").prepend(lists[lists.length - 1]);
+    // };
 
-    function autoSlider() {
-        setInterval(() => {
-            document.querySelector(".next").click();
-        }, 3000);
-    }
-    autoSlider();
+
+    // function autoSlider() {
+    //     setInterval(() => {
+    //         document.querySelector(".next").click();
+    //     }, 3000);
+    // }
+    // autoSlider();
 
 
 </script>

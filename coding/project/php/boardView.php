@@ -231,6 +231,9 @@
                                     <div class="com__table__p">
                                         <p><?=$comment['commentMsg']?></p>
                                     </div>
+                                    <?php
+                                    if($_SESSION['myMemberID'])
+                                    ?>
                                     <div class="comment__del">
                                         <a href="#" class="comment__del__del">댓글 삭제</a>
                                         <a href="#" class="comment__del__mod">댓글 수정</a>
@@ -491,7 +494,7 @@
                 },
                 success: function(data){
                     console.log(data);
-                    location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
+                    // location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
                     
                 },
                 error: function(request, status, error){

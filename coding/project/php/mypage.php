@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>어서오세요 winimal에</title>
+    <title>마이 페이지</title>
 
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="../../asset/css/reset.css">
@@ -56,6 +56,7 @@
         .profile__header img {
             width: 60px;
             margin-right: 10px;
+            border-radius: 50%;
         }
         .profile__contents h3 {
             margin-top: 20px;
@@ -123,15 +124,18 @@
         }
         .information__card h4 {
             margin-bottom: 20px;
+            color: #505050;
         }
         .information__card p {
             font-size: 38px;
+            color: #505050;
         }
         .information__card span {
             color: #6cc4b3;
         }
         .information__card:first-child p {
             margin-bottom: 48px;
+            color: #505050;
         }
         .information__card form {
             padding: 20px 44px;
@@ -187,7 +191,9 @@
             font-weight: 200;
             font-size: 14px;
         }
-
+        .input:focus {
+            outline: none;
+        }
 
 
     </style>
