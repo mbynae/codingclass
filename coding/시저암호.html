@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const s = "AB";
+        const n = 1;        
+
+        function solution(s, n) {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            
+            s.split("").forEach((e) => {
+                const string = alphabet.indexOf(e.toLowerCase());
+                
+                if(e === e.toUpperCase()){
+                    console.log(alphabet.toUpperCase().charAt(string+n))
+                } else if(e === e.toLowerCase()){
+                    console.log(alphabet.charAt(string+n))
+                }
+            })
+        }
+        solution(s, n);
+    </script>
+</body>
+</html>
