@@ -1,0 +1,150 @@
+.tetris__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tetris__outer {
+    height: 720px;
+    width: 500px;
+    background-color:rgba(0, 102, 255, 0.5);
+    border: 4px solid #fff;
+    border-radius: 10px;
+    position: relative;
+    transform: translateY(15%);
+}
+
+.tetris__scoreBox {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 102, 255, 0.5);
+    position: absolute;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    top: -5px;
+    left: -157px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scoreBox__inner {
+    width: 125px;
+    height: 125px;
+    background: #000;
+    border-radius: 10px;
+}
+.scoreBox_text {
+    padding: 25px 0;
+    text-align: center;
+}
+.scoreBox_text h5 {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    
+}
+.scoreBox_text span {
+    color: #fff;
+    font-size: 25px;
+}
+
+.tetris__menubar {
+    width: 150px;
+    height: 500px;
+    background: rgba(0, 102, 255, 0.5);
+    position: absolute;
+    top: -5px;
+    right: -157px;
+    border: 4px solid #fff;
+    border-radius: 10px;
+}
+
+
+.tetris__inner {
+    width: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/sampleBg.jpg) no-repeat center / cover;
+    /* display: none; */
+}
+.tetris__start {}
+.tetris__restart {}
+.tetris__play {}
+.playground {
+
+}
+.playground > ul {
+    border: 2px solid #fff;
+}
+.playground > ul > li {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+}
+.playground > ul > li > ul {
+    display: flex;
+}
+.playground > ul > li > ul li {
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.Tmino {
+    background-image: url(../img/Tmino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
+    /* border: 6px #a042a2 outset !important; */
+    /* background-color: #cc55ce; */
+}
+.Lmino {
+    background-image: url(../img/Lmino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #ff861a outset !important;
+    background-color: #ff7900; */
+}
+.Jmino {
+    background-image: url(../img/Jmino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #1a74c4 outset !important;
+    background-color: #0065bd; */
+}
+.Zmino {
+    background-image: url(../img/Zmino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #ef3e4d outset !important;
+    background-color: #ed2939; */
+}
+.Smino {
+    background-image: url(../img/Smino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #78c53e outset !important;
+    background-color: #69be28; */
+}
+.Omino {
+    background-image: url(../img/Omino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #fed01a outset !important;
+    background-color: #fecb00; */
+}
+.Imino {
+    background-image: url(../img/Imino-basic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    /* border: 6px #1aa9de outset !important;
+    background-color: #009fda; */
+}

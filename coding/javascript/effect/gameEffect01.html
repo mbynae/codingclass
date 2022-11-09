@@ -24,7 +24,7 @@
             }
         </style>
 
-        <link rel="stylesheet" href="../assets/css/bg.css" />
+        <!-- <link rel="stylesheet" href="../assets/css/bg.css" /> -->
         <link rel="stylesheet" href="../assets/css/game.css" />
         <link rel="stylesheet" href="../assets/css/music.css" />
 
@@ -37,6 +37,9 @@
         <!-- 메모리게임 -->
         <link rel="stylesheet" href="../assets/css/memoryGame.css" />
         <link rel="stylesheet" href="../assets/css/memorychar.css" />
+
+        <!-- 테트리스 게임 -->
+        <link rel="stylesheet" href="../assets/css/tetrisGame.css" />
     </head>
 
     <body>
@@ -870,7 +873,36 @@
                     </div>
                 </div>
             </div>
-            <!-- 카드 맞추기 게임 플레이어 -->
+            <!-- // 카드 맞추기 게임 플레이어 -->
+
+            <!-- 테트리스 게임 -->
+            <div class="tetris__wrap">
+                <div class="tetris__outer">
+                    <div class="tetris__inner">
+                        <!-- <div class="tetris__start"></div>
+                        <div class="tetris__restart"></div> -->
+                        <div class="tetris__play">
+                            <div class="playground">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tetris__scoreBox">
+                        <div class="scoreBox__inner">
+                            <div class="scoreBox_text">
+                                <h5>SCORE</h5>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tetris__menubar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- 뮤직플레이어 스크립트 -->
@@ -880,6 +912,7 @@
         <script src="../assets/js/gsap.min.js.js"></script>
         <script src="../assets/js/music.js"></script>
         <script src="../assets/js/memory.js"></script>
+        <script src="../assets/js/tetris.js"></script>
 
         <!-- 서치게임 스크립트 -->
         <script src="../assets/js/searchgame.js"></script>
