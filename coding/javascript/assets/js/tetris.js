@@ -65,13 +65,13 @@ const blocks = {
 
 // 시작하기
 function init(){
-    tempMovingItem = {...movingItem};
+    // tempMovingItem = {...movingItem};
 
-    for(let i=0; i<rows; i++){
-        prependNewLine();   //블록 라인 만들기
-    }
-    // renderBlocks();     //블록 출력하기
-    generateNewBlock(); //새로운 블럭 만들기
+    // for(let i=0; i<rows; i++){
+    //     prependNewLine();   //블록 라인 만들기
+    // }
+    // // renderBlocks();     //블록 출력하기
+    // generateNewBlock(); //새로운 블럭 만들기
 }
 
 // 블록 만들기

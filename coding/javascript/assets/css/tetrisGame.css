@@ -33,24 +33,25 @@
     border-radius: 10px;
 }
 .scoreBox_text {
-    padding: 25px 0;
+    /* padding: 25px 0; */
     text-align: center;
 }
 .scoreBox_text h5 {
     color: #fff;
-    font-size: 27px;
+    font-size: 35px;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+    transform: translatey(4%) skewy(-15deg);
     
 }
 .scoreBox_text span {
     color: #fff;
-    font-size: 25px;
+    font-size: 30px;
 }
 
-.tetris__menubar {
+.tetris__nextBox {
     width: 150px;
-    height: 500px;
+    height: 200px;
     background: rgba(0, 102, 255, 0.5);
     position: absolute;
     top: -5px;

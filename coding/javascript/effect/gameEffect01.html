@@ -24,7 +24,7 @@
             }
         </style>
 
-        <!-- <link rel="stylesheet" href="../assets/css/bg.css" /> -->
+        <link rel="stylesheet" href="../assets/css/bg.css" />
         <link rel="stylesheet" href="../assets/css/game.css" />
         <link rel="stylesheet" href="../assets/css/music.css" />
 
@@ -895,14 +895,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tetris__menubar">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <div class="tetris__nextBox">
+                        <div class="nextBox__inner">
+                            <div class="nextBox__text">
+                                <h5>NEXT</h5>
+                                <span></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- 테트리스 게임 -->
         </div>
 
         <!-- 뮤직플레이어 스크립트 -->
@@ -961,6 +964,7 @@
             });
             $("#music__player").draggable();
             $("#search__game").draggable();
+            $(".tetris__wrap").draggable();
 
             // 선택자
             const mouseCursor = document.querySelector(".mouse_cursor");
