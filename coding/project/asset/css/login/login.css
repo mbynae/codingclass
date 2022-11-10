@@ -33,7 +33,7 @@ body {
     position: relative;
     color: #26675B;
     padding-bottom: 20px;
-    border-bottom: 0.5px dashed #26675B;
+    /* border-bottom: 0.5px dashed #26675B; */
 }
 .login__welcome > h3 {
     color: #757575;

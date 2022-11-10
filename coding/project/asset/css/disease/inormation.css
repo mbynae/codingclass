@@ -1,4 +1,7 @@
 /* InfomationType */
+.container {
+  padding: 0 !important;
+}
 #infomationType {
     width: 100%;
   }

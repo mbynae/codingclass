@@ -17,7 +17,8 @@
 .item__img figcaption > h3 a {
     color: #26675B;
     font-size: 16px;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: "SCoreDream";
+    font-weight: 600;
 }
 .item__img figcaption > h2 {
     margin-top: -5px;

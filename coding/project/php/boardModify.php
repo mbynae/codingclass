@@ -58,7 +58,7 @@
 
     <!-- boardWrite -->
     <section id="boardWrite">
-        <div class="board__wrap container">
+        <div class="board__wrap container" style="padding: 0 !important;">
             <form action="boardModifySave.php" name="boardModify" method="post">
                 <legend class="ir">게시판 영역입니다.</legend>
                 <div class="border_titleBox">                    

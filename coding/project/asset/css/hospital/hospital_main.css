@@ -77,7 +77,9 @@ input[id="search"]:focus {
   font-size: 12px;
   color: #26675B;
 }
-
+.slider__tag span {
+  margin-right: 5px;
+}
 /* mainSliderType */
 #mainSliderType {
   width: 100%;
@@ -92,6 +94,11 @@ input[id="search"]:focus {
   padding: 50px;
   background-color: #f5f5f5;
   box-shadow: 0 30px 50px #dbdbdb;
+}
+.slider__textName > h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #505050;
 }
 .hos__slider {
   width: max-content;
@@ -237,7 +244,7 @@ input[id="search"]:focus {
 .slider__buttons #prev {
   width: 30px;
   height: 30px;
-  background-image: url(../../img/hospital/prev.svg);
+  background-image: url(../../img/prev.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: inherit;
@@ -246,7 +253,7 @@ input[id="search"]:focus {
 .slider__buttons #next {
   width: 30px;
   height: 30px;
-  background-image: url(../../img/hospital/next.svg);
+  background-image: url(../../img/next.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: inherit;
@@ -491,7 +498,7 @@ input[id="search"]:focus {
   margin-right: 8px;
 }
 .board__pages {
-    margin: 70px 0 20px 0;
+    margin-top: 40px;
 }
 .board__pages ul {
     text-align: center;

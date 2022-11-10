@@ -18,9 +18,11 @@
 
     <link rel="stylesheet" href="../asset/css/login/idPassCommon.css">
     <link rel="stylesheet" href="../asset/css/login/login.css">
-    <style>
-               
-        
+    <style>       
+        .loginBox {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -80,7 +82,7 @@
                         </div>
                         <div>
                             <input type="checkbox" name="loginBox" id="loginBox" class="login__box">
-                            <label for="loginBox">로그인 상태 유지</label>
+                            <label class="loginBox" for="loginBox">로그인 상태 유지</label>
                         </div>
                         <div class="loginBox_btn">
                             <div class="btn_login">
@@ -102,8 +104,8 @@
             <div class="close_btn">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
-                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
-                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
+                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#26675B" stroke-linecap="round"/>
+                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#26675B" stroke-linecap="round"/>
                 </svg>
             </div>
         </div>

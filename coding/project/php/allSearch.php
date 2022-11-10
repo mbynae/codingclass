@@ -43,10 +43,10 @@
     <link rel="stylesheet" href="../asset/css/allSearch/allDisease.css">
     <style>
         .searchNon {
-            font-size: 40px;
+            font-size: 32px;
             text-align: center;
-            margin: 200px 0;
-            color: #505050;
+            margin: 350px 0 250px 0;
+            color: #757575;
         }
         .allHospital__text {
             justify-content: space-between !important;
@@ -69,7 +69,7 @@
 
     <!-- allHospital -->
     <section id="allHospital">
-        <div class="allHospital__inner container">
+        <div class="allHospital__inner container" style="padding: 0px !important;">
             <div class="allHospital__top">
                 <h2>A.Hsospital</h2>
                 <p>

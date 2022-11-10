@@ -45,7 +45,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-               
+              
         
     </style>
 </head>
@@ -235,19 +235,19 @@
                     <nav class="category__titleChoice">
                         <li>
                             <a href="#" class="cate1 tapActive">
-                                <img src="../asset/img/hospital/pin.svg" alt="">
+                                <img src="../asset/img/pin.svg" alt="">
                                 지역
                             </a>
                         </li>
                         <li>
                             <a href="#" class="cate2">
-                                <img src="../asset/img/hospital/disease.svg" alt="">
+                                <img src="../asset/img/disease.svg" alt="">
                                 병명
                             </a>
                         </li>   
                         <li>
                             <a href="#" class="cate3">
-                                <img src="../asset/img/hospital/surgery.svg" alt="">
+                                <img src="../asset/img/surgery.svg" alt="">
                                 수술
                             </a>
                         </li>

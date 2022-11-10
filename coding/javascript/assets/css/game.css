@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-family: "DungGeunMo";
     font-weight: normal;
-    cursor: none;
+    /* cursor: none; */
 }
 
 body {

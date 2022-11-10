@@ -16,7 +16,8 @@
 .itemInfo_name > h3 {
     font-size: 24px;
     color: #505050;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: "SCoreDream";
+    font-weight: 600;
 }
 .itemInfo_name > h2 {
     font-size: 40px;

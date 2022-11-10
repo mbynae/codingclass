@@ -52,7 +52,9 @@
     </section>
 
     <!-- 슬라이드 -->
-    <section id="mainSliderType"></section>
+    <section id="mainSliderType">
+        <img src="../asset/img/hospital_mainBanner.jpg" alt="">
+    </section>
 
     <!-- 병원 정보 -->
     <section id="hospitalInfo" class="container">

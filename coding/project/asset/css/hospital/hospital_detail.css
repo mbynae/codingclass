@@ -80,10 +80,12 @@ input[id="search"]:focus {
 #mainSliderType {
   width: 100%;
   height: 500px;
-  background: #666;
   margin-bottom: 50px;
-  background: url("../../img/hospital_mainBanner.jpg") no-repeat center / cover;
+}
+#mainSliderType > img {
   object-fit: cover;
+  width: 100%;
+  height: 500px;
 }
 .slider__text {
   width: 25%;
