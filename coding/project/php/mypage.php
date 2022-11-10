@@ -51,12 +51,13 @@
             display: flex;
         }
         .profile__header h1 {
-            margin-top: 18px;
+            margin-top: 14px;
         }
         .profile__header img {
             width: 60px;
             margin-right: 10px;
             border-radius: 50%;
+            border: 2px solid #26675B;
         }
         .profile__contents h3 {
             margin-top: 20px;
@@ -97,9 +98,13 @@
         }
 
         /* information */
+        #information {
+            margin-bottom: 70px;
+        }
         .information__inner {
             position: relative;
-            background: #F9FAFB;
+            background: #fff;
+            padding: 30px 20px 40px 20px !important;
         }
         .information__inner h3 {
             text-align: center;
@@ -117,6 +122,7 @@
             display: flex;
             justify-content: space-between;
             padding: 50px 340px;
+            background: #fff;
         }
         .information__card {
             width: 48%;
@@ -156,13 +162,13 @@
             display: flex;
             position: absolute;
             left: 47%;
-            bottom: 10px;
+            bottom: 25px;
         }
         .button span {
             margin-right: 25px;
         }
         .button_yes {
-            background: #F9FAFB;
+            background: #fff;
             cursor: pointer;
         }
 
@@ -233,7 +239,7 @@
     <section id="information">
         <div class="information__inner container">
             <h3>My  Information open</h3>
-            <a class="closeBtn" href="#">Close</a>
+            <a class="closeBtn" href="#"></a>
             <div class="information__wrap">
                 <div class="information__card">
                     <h4>INFORMATION</h4>
@@ -284,7 +290,7 @@
         
     </section>
 
-    <section id="sliderType">
+    <!-- <section id="sliderType">
         <div class="slider__inner container">
             <div class="slider">
                 <img src="../../asset/img/Recent.svg" alt="">
@@ -301,7 +307,7 @@
                 <img src="../../asset/img/slider03.jpg" alt="">
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- footer -->
     <?php include "../include/footer.php"?>

@@ -3,6 +3,7 @@
 .allHospital__top {
     display: flex;
     justify-content: space-between;
+    margin-top: 120px;
 }
 .allHospital__top > h2 {
     font-family: 'Alfa Slab One', cursive;

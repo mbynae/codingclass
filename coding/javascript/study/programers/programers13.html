@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>프로그래머스13</title>
+        <link rel="stylesheet" href="../../assets/css/style.css" />
+        <link rel="stylesheet" href="../../assets/css/dracula.css" />
+
+        <style>
+            .t_tableBox {
+                width: 25%;
+            }
+            .t_tableBox h4 {
+                font-size: 18px;
+            }
+            .t_tableBox .t_table tbody tr td {
+                text-align: center;
+            }
+            .t_codeBox summary {
+                cursor: pointer;
+            }
+            .t_code {
+                margin-bottom: 20px;
+            }
+            .t_underline {
+                text-decoration: underline;
+            }
+            .t_codeBox {
+                display: inline-block;
+                border: 1px solid #f5f5f5;
+                padding: 5px 10px;
+                width: 100%;
+                background-color: #fcd59b;
+                color: #fff;
+                border-radius: 5px;
+            }
+            .t_box {
+                border: 1px solid #fcd59b;
+            }
+            .t_link_array {
+                display: flex;
+                justify-content: center;
+            }
+            .t_link:first-child {
+                margin-right: 40px;
+            }
+
+            .mt20 {
+                margin-top: 20px !important;
+            }
+            .mt30 {
+                margin-top: 30px !important;
+            }
+            .mt40 {
+                margin-top: 40px !important;
+            }
+            .mt160 {
+                margin-top: 160px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">Javascript</a></h1>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <div class="main_top">
+                    <h2 class="t_tit">프로그래머스 : 폰켓몬</h2>
+                    <p class="t_desc2">중복되지 않는 배열값을 최대 절반 선택하는 경우의 수를 구하는 문제입니다.</p>
+
+                    <hr />
+
+                    <h3 class="t_tit2">문제 설명</h3>
+                    <p class="t_box" style="margin-bottom: 40px">
+                        당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.<br>
+                        홍 박사님 연구실의 폰켓몬은 종류에 따라 번호를 붙여 구분합니다. 따라서 같은 종류의 폰켓몬은 같은 번호를 가지고 있습니다. 예를 들어 연구실에 총 4마리의 폰켓몬이 있고, 각 폰켓몬의 종류 번호가 [3번, 1번, 2번, 3번]이라면 이는 3번 폰켓몬 두 마리, 1번 폰켓몬 한 마리, 2번 폰켓몬 한 마리가 있음을 나타냅니다. 이때, 4마리의 폰켓몬 중 2마리를 고르는 방법은 다음과 같이 6가지가 있습니다.<br>
+                        <br>
+                        첫 번째(3번), 두 번째(1번) 폰켓몬을 선택<br>
+                        첫 번째(3번), 세 번째(2번) 폰켓몬을 선택<br>
+                        첫 번째(3번), 네 번째(3번) 폰켓몬을 선택<br>
+                        두 번째(1번), 세 번째(2번) 폰켓몬을 선택<br>
+                        두 번째(1번), 네 번째(3번) 폰켓몬을 선택<br>
+                        세 번째(2번), 네 번째(3번) 폰켓몬을 선택<br>
+                        이때, 첫 번째(3번) 폰켓몬과 네 번째(3번) 폰켓몬을 선택하는 방법은 한 종류(3번 폰켓몬 두 마리)의 폰켓몬만 가질 수 있지만, 다른 방법들은 모두 두 종류의 폰켓몬을 가질 수 있습니다. 따라서 위 예시에서 가질 수 있는 폰켓몬 종류 수의 최댓값은 2가 됩니다.<br>
+                        당신은 최대한 다양한 종류의 폰켓몬을 가지길 원하기 때문에, 최대한 많은 종류의 폰켓몬을 포함해서 N/2마리를 선택하려 합니다. N마리 폰켓몬의 종류 번호가 담긴 배열 nums가 매개변수로 주어질 때, N/2마리의 폰켓몬을 선택하는 방법 중, 가장 많은 종류의 폰켓몬을 선택하는 방법을 찾아, 그때의 폰켓몬 종류 번호의 개수를 return 하도록 solution 함수를 완성해주세요.<br /><br />
+
+                        제한사항<br />
+                        &nbsp; nums는 폰켓몬의 종류 번호가 담긴 1차원 배열입니다.<br />
+                        &nbsp; nums의 길이(N)는 1 이상 10,000 이하의 자연수이며, 항상 짝수로 주어집니다.
+                        &nbsp; 폰켓몬의 종류 번호는 1 이상 200,000 이하의 자연수로 나타냅니다.
+                        &nbsp; 가장 많은 종류의 폰켓몬을 선택하는 방법이 여러 가지인 경우에도, 선택할 수 있는 폰켓몬 종류 개수의 최댓값 하나만 return 하면 됩니다.
+                    </p>
+                    <div class="t_tableBox">
+                        <h4>입출력 예</h4>
+                        <table class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>nums</th>
+                                    <th>결과</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[3,1,2,3]</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>[3,3,3,2,2,4]</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>[3,3,3,2,2,2]</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 파트 탑 -->
+
+                <div class="main_content1" style="margin: 50px 0 15px 0">
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">1. 해설</h4>
+                    <div class="t_codeBox">
+                        <details>
+                            <summary>소스보기</summary>
+                            <div class="t_code">
+                                <pre><code class="language-js">function solution(nums) {
+    var answer = [];   
+    for(let i=0; i&lt;nums.length; i++){
+        if(!answer.includes(nums[i])){
+            answer.push(nums[i]);
+            if(answer.length == nums.length/2){
+                break;
+            }
+        }
+    }
+    return answer.length;
+}
+</code></pre>
+                            </div>
+                        </details>
+                    </div>
+                    <p class="t_desc" style="margin-top: 20px !important">
+                        배열값의 최대 절반값에 해당하는 중복되지 않는 경우의 수를 구하는 문제로 반복문을 통해 배열에 포함되지 않는 값을 push 메서드로 추가합니다.
+                        배열 수의 절반이 될때 중지되야 하므로 answer.length가 nums.length/2 넘지 않도록 해야합니다.
+                    </p>
+                </div>
+                <!-- 컨텐츠 파트1 -->
+
+                <hr style="margin-top: 60px" />
+
+                <div class="main_content1" style="margin: 50px 0 15px 0">
+                    <h4 class="t_tit3" style="font-size: 18px; margin: 25px 0 15px 0">2. 다른 풀이</h4>
+                    <div class="t_codeBox">
+                        <details>
+                            <summary>소스보기</summary>
+                            <div class="t_code">
+                                <pre><code class="language-js">function solution(nums) {
+    const max = nums.length / 2;
+    const arr = [...new Set(nums)];
+    
+    return arr.length > max ? max : arr.length
+}
+</code></pre>
+                            </div>
+                        </details>
+                    </div>
+                    <p class="t_desc" style="margin-top: 20px !important">
+                        Set( ) 메서드로 중복되지 않는 경우에만 모아서 새 배열을 만드는 방식입니다.<br>
+                        삼항연산자로 반환할 배열의 길이가 nums의 길이보다 크면 배열 길이의 절반만큼 반환하고 아닐시 배열 길이 그대로 반환하도록 하는 정석적이고 좋은 풀이법입니다.
+                    
+                    </p>
+                </div>
+                <!-- 컨텐츠 파트2 -->
+            </div>
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <a href="mailto:piowm123@gmail.com">piowm123@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

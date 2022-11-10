@@ -141,7 +141,7 @@
 
         <footer id="footer">
         <div class="footer__inner  container">
-            <div class="footer__left" style="padding: 20px;">
+            <div class="footer__left">
                 <h2>winimal animal service</h2>
                 <ul>
                     <li>010-1234-5678</li>
@@ -158,7 +158,7 @@
                 <p>사업자등록번호.000-00-00000  통신판매업신고.2022-경기시흥-0111호  개인정보관리책임. 누군가</p>
             </div>
 
-            <div class="footer__right" style="margin-top: 20px;">
+            <div class="footer__right">
                 <ul>
                     <li>문의하기</li>
                     <li>Privacy Policy</li>

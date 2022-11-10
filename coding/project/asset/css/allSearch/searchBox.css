@@ -2,7 +2,7 @@
   	background: inherit;
   	margin: 0 auto;
   	width: 555px;
-  	height: 130px;
+  	height: 114px;
 }
 #searchBox {
   	transform: translate(36%);
@@ -55,7 +55,9 @@
   input[id="search"]:focus {
     outline: none;
   }
-  #search {
+  input[id="search"]::placeholder {
+    font-size: 22px;
+    color: #757575;
   }
   .searchTag__box {
     display: flex;

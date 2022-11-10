@@ -1,14 +1,6 @@
 .imageType__inner p {
     margin-bottom: 70px;
 }
-#boardWrite {
-    /* margin-bottom: 110px; */
-}
-.board__wrap {
-
-}
-
-
 /* 제목 박스 */
 .border_titleBox {
     display: flex;
@@ -104,6 +96,7 @@
     float: right;
     margin-right: 20px;
     display: flex;
+    margin-bottom: 70px;
 }
 .board_btn > button {
     font-size: 18px;
