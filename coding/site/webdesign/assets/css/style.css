@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+em {
+    font-style: normal;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* header */
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+}
+.header_logo {
+    padding: 28px 0;
+}
+.header_logo a {
+    font-size: 33px;
+    font-weight: 700;
+    color: #BF6565;
+}
+.header_menubar {
+
+}
+.header_menubar nav {
+    width: 100%;
+    height: 45px;
+}
+.header_menubar nav > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.header_menubar nav > ul > li {
+    position: relative;
+}
+.header_menubar nav > ul > li > a {
+    text-align: center;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+.header_menubar nav > ul > li > a:hover {
+    background-color: #BF6565;
+    color: #fff;
+}
+.submenu {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    transform-origin: top;
+    transform: scaleY(0);
+    z-index: 1;
+    transition: all 0.3s;
+    
+}
+.submenu li {
+}
+.submenu a {
+    text-align: center;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    height: 45px;
+    transition: all 0.2s;
+}
+.submenu a:hover {
+    background-color: #ca7f7f;
+    color: #fff;
+}
+.header_menubar:hover .submenu {
+    top: 45px;
+    transform: scaley(1);
+}
+
+
+
+
+/* main */
+#main {
+    width: 100%;
+}
+
+/* slider */
+#slideSection {
+    width: 100%;
+    height: 300px;
+}
+.slider_wrap {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.slider_inner {
+    width: 100%;
+    height: 1200px;
+}
+.slider {
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/slide.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* banner */
+#bannerSection {
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+.notice_box {
+    width: 33.3333%;
+    height: 200px;
+}
+.notice_tab {
+    width: 100%;
+    height: 45px;
+}
+.notice_textBox {
+    width: 100%;
+    height: 155px;
+    background-color: #666;
+}
+.notice_gallery {
+    width: 100%;
+    height: 155px;
+    background-color: #dedede;
+}
+.tab_text {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.left {
+    padding: 10px;
+    cursor: pointer;
+}
+.right {
+    padding: 10px;
+    cursor: pointer;
+}
+.active {
+    background-color: #fff5f5;
+}
+.notice_textBox {
+    background-color: #fff5f5;
+    padding: 10px;
+}
+.notice_textBox li {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.1;
+}
+.notice_textBox li span {
+    display: block;
+    width:260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice_textBox li span a {
+    font-size: 16px;
+}
+.notice_gallery {
+    padding: 10px;
+    background-color: #fff5f5;
+}
+.notice_gallery figure {
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+.notice_gallery figure a {
+    display: block;
+}
+.notice_gallery figure a img {
+    width: 121px;
+    height: 121px;
+}
+.close {
+    display: none;
+}
+
+.banner1_box {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #dedede;
+}
+
+.banner2_box {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #666;
+}
+
+
+
+
+#footer {
+    padding: 0 28px;
+    width: 100%;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+}
+.footer_logo {
+    padding: 28px 0;
+}
+.footer_logo a {
+    font-size: 33px;
+    font-weight: 700;
+    color: #333333;
+    opacity: 0.6;
+}
+.copyright {}
+.link_icon {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.link_icon a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.link_icon li:nth-child(1) a {
+    background-image: url(../img/facebookIcon.jpg);
+}
+.link_icon li:nth-child(2) a {
+    background-image: url(../img/facebookicon2.jpg);
+}
+.link_icon li:nth-child(3) a {
+    background-image: url(../img/facebookIcon3.jpg);
+}
