@@ -1,5 +1,6 @@
 const tetrisWrap = document.querySelector(".tetris__wrap");
 const playground = tetrisWrap.querySelector(".playground > ul");
+const tStartBtn = document.querySelector(".t_start") ;
 
 // varuables
 let rows = 13;
@@ -71,8 +72,15 @@ function init(){
         prependNewLine();   //블록 라인 만들기
     }
     // renderBlocks();     //블록 출력하기
-    generateNewBlock(); //새로운 블럭 만들기
+
+    // tStartBtn.addEventListener("click", () => {
+        generateNewBlock(); //새로운 블럭 만들기
+        tetrisMove();
+    // });
+
 }
+
+
 
 // 블록 만들기
 function prependNewLine(){
@@ -207,30 +215,29 @@ function dropBlock(){
 }
 
 // 이벤트
-document.addEventListener("keydown", e => {
-    switch(e.keyCode){
-        case 39: 
-            moveBlock("left", 1)
-            break;
-        case 37: 
-            moveBlock("left", -1)
-            break;
-        case 40: 
-            moveBlock("top", 1)
-            break;
-        case 38: 
-            changeDirection()
-            break;
-        case 32: 
-            dropBlock()
-            break;
-        default:
-            break;
-    }
-});
-
-
-
+function tetrisMove(){
+    document.addEventListener("keydown", e => {
+        switch(e.keyCode){
+            case 39: 
+                moveBlock("left", 1)
+                break;
+            case 37: 
+                moveBlock("left", -1)
+                break;
+            case 40: 
+                moveBlock("top", 1)
+                break;
+            case 38: 
+                changeDirection()
+                break;
+            case 32: 
+                dropBlock()
+                break;
+            default:
+                break;
+        }
+    });
+}
 
 
 
