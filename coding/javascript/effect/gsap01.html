@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0px;
+        }
+
+        #contents > section {
+            min-height: 90vh;
+        }
+        #section1 {
+            background: rgb(195,221,100);
+            background: linear-gradient(90deg, rgba(195,221,100,1) 1%, rgba(224,221,107,1) 6%, rgba(249,224,57,1) 11%, rgba(207,222,90,1) 26%, rgba(0,212,255,1) 100%);
+        }
+        #section2 {
+            background: #6190E8;  /* fallback for old browsers */
+            background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        #section3 {
+            background: #FFAFBD;  /* fallback for old browsers */
+            background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        #section4 {
+            background: #f4c4f3;  /* fallback for old browsers */
+            background: linear-gradient(to right, #fc67fa, #f4c4f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        #section5 {
+            background: #3a7bd5;  /* fallback for old browsers */
+            background: linear-gradient(to right, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        #section6 {
+            background: #CC95C0;  /* fallback for old browsers */
+            background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color:  orange;
+            transition: background-color 1s;
+        }
+        .square.white {
+            background-color: white;
+        }
+        .square2 {
+            width: 200px;
+            height: 200px;
+            background-color:  rgb(0, 217, 255);
+        }
+
+        .panel {
+            height: 100vh;
+            background-color: beige;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(221, 154, 154);
+        }
+        .box-red {
+            background-color: red;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            transition: all 600ms ease-in-out;
+            background-color: tan;
+            color: #009efd;
+            text-align: center;
+        }
+        li {
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .not-active {
+            background: #fff;
+            color: #6a11cb;
+        }
+    </style>
+</head>
+<body>
+    <main id="contents">
+        <!-- <section id="section1"></section>
+        <section id="section2">
+            <div class="square"></div>
+            <div class="square2"></div>
+        </section>
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+        <section id="section6"></section> -->
+
+        <nav>
+            <ul>
+                <li>about</li>
+                <li>work</li>
+                <li>contact</li>
+            </ul>
+        </nav>
+
+        <div class="panel">
+            The gsap object serves as the access point for most of GSAP's functionality. It's just a generic object with various methods and properties that create and control Tweens and Timelines (the key players in all of GSAP).
+        </div>
+        <!-- <div class="box"></div>
+        <div class="panel"></div> -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        // 6. scrollTrigger.create
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.create({
+            trigger: ".panel",
+            start: "top 6%",
+            markers: true,
+            toggleClass: {targets: "nav", className: "not-active"},
+            onEnter: ()=>console.log("onEnter"),
+            onLeave: ()=>console.log("onLeave"),
+            onEnterBack: ()=>console.log("onEnterBack"),
+            onLeaveBack: ()=>console.log("onLeaveBack")
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //기본 스크롤트리거
+        // gsap.registerPlugin(ScrollTrigger);
+        // gsap.to(".square", {
+        //     // x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         pin: true,
+        //         // pin: ".square",
+        //         // pinSpacing: true,
+        //         pinSpacing: false,
+        //         // end: () => `+=${document.querySelector(".square").offsetHeight}`,   //요소 높이값만큼 end를 처리함 가로모드 할때 필요
+        //         markers: {
+        //             startColor: "blue",
+        //             endColor: "purple",
+        //             fontSize: "30px"
+        //         },
+        //         toggleClass: "white",
+        //         toggleActions: "restart none none none"
+        //         //              onEnter onLeave onEnterBack onLeaveBack
+        //         //  play, pause, resume, reset, restart, complete, reveres, none
+        //     },
+        // })
+
+        // 1. toggleClass, toggleActions
+        // gsap.to(".square", {
+        //     x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         // end: () => `+=${document.querySelector(".square").offsetHeight}`,   //요소 높이값만큼 end를 처리함 가로모드 할때 필요
+        //         markers: {
+        //             startColor: "blue",
+        //             endColor: "purple",
+        //             fontSize: "30px"
+        //         },
+        //         toggleClass: "white",
+        //         toggleActions: "restart reverse restart reverse"
+        //         //              onEnter onLeave onEnterBack onLeaveBack
+        //         //  play, pause, resume, reset, restart, complete, reveres, none
+        //     },
+        // })
+
+        //2. scrub : 스크롤할때마다 애니메이션 주는 기능
+            // scrub: true,
+            //scrub: 4,
+
+        //3. pin : 고정시켜주는 기능
+            // pin: true,
+            // pin: ".square",
+            // pinSpacing: true,
+            // pinSpacing: false,
+
+        // 4. timeline (여러가지 효과를 한번에 순차적으로 발동하게 해줌)
+
+        // gsap.to(".square", {x: 1000, duration: 2, rotation: 100, borderRadius: 0})
+        // gsap.to(".square", {y: 500, duration: 2, skewY: 3, rotation: 300, borderRadius: 100, delay: 2})
+        // gsap.to(".square", {x: 0, duration: 2, skewX: 2, width: 400, rotation: 200, delay: 4})
+        // gsap.to(".square", {y: 0, duration: 2, skewX: 1, skewY: 1, width: 200, rotation: 0, delay: 6})
+
+
+        // const tl = gsap.timeline({repeat: 2, yoyo: true});
+        // tl.to(".square", {x: 1000, duration: 2, rotation: 100, ease: "elastic", borderRadius: 0})
+        // .to(".square", {y: 500, duration: 2, skewY: 3, rotation: 300, ease: "elastic", borderRadius: 100})
+        // .to(".square", {x: 0, duration: 2, skewX: 2, width: 400, ease: "elastic", rotation: 200})
+        // .to(".square", {y: 0, duration: 2, skewX: 1, skewY: 1, width: 200, rotation: 0})
+
+
+        //5. 스크롤트리거에 timeline을 연동시키기
+        // const tl = gsap.timeline({
+        // scrollTrigger : {
+        //     trigger: ".square",
+        //     markers: true,
+        //     start: "top 60%",
+        //     end: "top 30%",
+        //     scrub: 4
+        // }
+        // })
+        // tl.to(".square", {x: 1000, duration: 2, rotation: 100, borderRadius: 0})
+        //     .to(".square", {y: 500, duration: 2, skewY: 3, rotation: 300, borderRadius: 100})
+        //     .to(".square", {x: 0, duration: 2, skewX: 2, width: 400, rotation: 200})
+        //     .to(".square", {y: 0, duration: 2, skewX: 1, skewY: 1, width: 200, rotation: 0})
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .horizontalWrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .horizontalSection {
+            overscroll-behavior: none;
+            width: 500%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .section {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .section1{
+            /* background-image: url("https://images.unsplash.com/photo-1668463876833-339717e58c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"); */
+            background-color: red;
+        }
+        .section2{
+            /* background-image: url("https://images.unsplash.com/photo-1668302766145-bc8bc49870ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"); */
+            background-color: orange;
+        }
+        .section3{
+            /* background-image: url("https://images.unsplash.com/photo-1668475314128-77e400108c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"); */
+            background-color: green;
+        }
+        .section4{
+            /* background-image: url("https://images.unsplash.com/photo-1668439649621-aeb686b4b493?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"); */
+            background-color: burlywood;
+        }
+        .section5{
+            /* background-image: url("https://images.unsplash.com/photo-1668525330295-e75a2ccd962f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"); */
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div class="horizontalWrap">
+        <div class="horizontalSection">
+            <section class="section section1"></section>
+            <section class="section section2"></section>
+            <section class="section section3"></section>
+            <section class="section section4"></section>
+            <section class="section section5"></section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const sections = gsap.utils.toArray(".section")  //gsap로 여러개 선택방법
+
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length -1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".horizontalWrap",
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length -1),
+                end: "+=5000",
+                // markers: true
+            }
+        });
+    </script>
+</body>
+</html>
