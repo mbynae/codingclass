@@ -1,0 +1,44 @@
+/** @format */
+
+#bannerType {
+    margin-top: 25px;
+    position: relative;
+}
+
+#bannerType h2 {
+    position: absolute;
+    left: 24%;
+    top: 30%;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 45px;
+    font-style: italic;
+}
+
+.roomSearch {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    gap: 10px;
+    border: 1px solid #f1e3c4;
+    padding: 14px 10px;
+    background: #fff;
+    border-radius: 20px;
+    color: #666;
+}
+
+.roomSearch img {
+    width: 25px;
+    height: 25px;
+}
+
+.home,
+.calender,
+.guest {
+    border-right: 1px solid #000;
+    padding-right: 20px;
+}
