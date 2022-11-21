@@ -5,40 +5,107 @@
     position: relative;
 }
 
-#bannerType h2 {
+.bannerInput {
     position: absolute;
-    left: 24%;
-    top: 30%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+.bannerInput h2 {
     font-weight: 600;
     color: #fff;
     margin-left: 10px;
     font-size: 45px;
     font-style: italic;
 }
-
 .roomSearch {
-    position: absolute;
-    left: 30%;
-    top: 50%;
     display: flex;
     justify-content: start;
     text-align: center;
-    gap: 10px;
+    /* gap: 10px; */
     border: 1px solid #f1e3c4;
-    padding: 14px 10px;
+    /* padding: 14px 10px; */
+    width: 1020px;
+    height: 60px;
     background: #fff;
     border-radius: 20px;
     color: #666;
+    font-size: 25px;
 }
 
+.roomSearch label {
+    font-size: 20px;
+    color: #666;
+}
 .roomSearch img {
     width: 25px;
     height: 25px;
+    margin: 0 10px;
+}
+
+.roomSearch .home {
+    width: 34%;
+}
+
+.roomSearch input {
+    /* width: 200%; */
+    height: 100%;
+    font-size: 20px;
+    color: #666;
+    background-color: inherit;
+    border: 0;
+}
+.roomSearch input:focus {
+    outline: 0;
+}
+#region {
+    width: 100%;
+}
+
+.roomSearch input[type="date"] {
+    position: relative;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 37%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    background: transparent;
+    z-index: 1;
+    padding-left: 120px;
+    cursor: pointer;
+}
+.date_hyphen {
+    margin-left: -20px;
+    margin-right: 5px;
+}
+
+.calender {
+    width: 33%;
+}
+
+.guest select {
+    border: 0;
+    font-size: 20px;
+    color: #666;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.guest select:focus {
+    outline: none;
 }
 
 .home,
 .calender,
 .guest {
-    border-right: 1px solid #000;
-    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f1e3c4;
+}
+.searchBtn {
+    background-color: inherit;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
 }

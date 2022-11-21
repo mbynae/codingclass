@@ -1,0 +1,517 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link
+            href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- META -->
+        <meta name="author" content="chanmi" />
+        <meta name="description" content="숙소 리액트 사이트 만들기입니다." />
+        <meta
+            name="keyword"
+            content="사이트, 만들기, 튜토리얼, 숙소사이트, 프로젝트"
+        />
+        <meta name="robots" content="all" />
+
+        <!-- ICON -->
+        <link rel="icon" href="assets/img/logo.png" />
+        <link rel="shortcut icon" href="assets/img/logo.png" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="256x256"
+            href="assets/img/logo.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="assets/img/logo.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/img/logo.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/img/logo.png"
+        />
+    </head>
+    <body>
+        <div class="all score">
+            <div class="left">
+                <aside id="aside" class="active">
+                    <div class="aside__inner">
+                        <div class="menu">
+                            <img src="assets/img/menu.jpg" alt="" />
+                        </div>
+                        <div class="region">
+                            <img src="assets/img/seoul.jpg" alt="서울" />
+                            <img src="assets/img/daegu.jpg" alt="대구" />
+                            <img src="assets/img/daejeon.jpg" alt="대전" />
+                            <img src="assets/img/busan.jpg" alt="부산" />
+                            <img src="assets/img/gyeongju.jpg" alt="경주" />
+                            <img src="assets/img/jeonju.jpg" alt="전주" />
+                            <img src="assets/img/jeju.jpg" alt="제주" />
+                            <img src="assets/img/gangneung.jpg" alt="강릉" />
+                        </div>
+                    </div>
+                </aside>
+                <div class="region_box">
+                    <div class="region_name">
+                        <li>서울</li>
+                        <li>대구</li>
+                        <li>대전</li>
+                        <li>부산</li>
+                        <li>경주</li>
+                        <li>전주</li>
+                        <li>제주</li>
+                        <li>강릉</li>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <header id="header">
+                    <img src="assets/img/logo.png" alt="로고이미지" />
+                </header>
+                <section id="bannerType">
+                    <img src="assets/img/banner.jpg" alt="배너이미지" />
+                    <div class="bannerInput">
+                        <h2 class="poppins">
+                            Find your travel moments and leave!
+                        </h2>
+                        <form action="/" method="GET">
+                            <fieldset class="roomSearch">
+                                <legend class="ir">호텔 검색</legend>
+                                <div class="home">
+                                    <label for="region"></label>
+                                    <img
+                                        src="assets/img/home.svg"
+                                        alt="집이미지"
+                                    />
+                                    <input
+                                        type="text"
+                                        id="region"
+                                        name="region"
+                                        placeholder="도시 또는 호텔을 입력해주세요."
+                                        required
+                                    />
+                                </div>
+                                <div class="calender">
+                                    <img
+                                        src="assets/img/calender.svg"
+                                        alt="달력이미지"
+                                    />
+                                    <input
+                                        type="date"
+                                        id="start_date"
+                                        name="start_date"
+                                        value="2022-11-21"
+                                        required
+                                    />
+                                    <span class="date_hyphen">-</span>
+                                    <input
+                                        type="date"
+                                        id="last_date"
+                                        name="last_date"
+                                        value="2022-11-23"
+                                        required
+                                    />
+                                    <!-- <span>11/18 금 - 11/19 토</span> -->
+                                </div>
+                                <div class="guest">
+                                    <img
+                                        src="assets/img/person.svg"
+                                        alt="사람이미지"
+                                    />
+                                    <label for="room">객실</label>
+                                    <select id="room" name="room" required>
+                                        <option value="1개">1개</option>
+                                        <option value="2개">2개</option>
+                                        <option value="3개">3개</option>
+                                        <option value="4개">4개</option>
+                                    </select>
+                                    <!-- <span>객실 1개, 투숙객 2명</span> -->
+                                    <label for="tourist">투숙객</label>
+                                    <select
+                                        id="tourist"
+                                        name="tourist"
+                                        required
+                                    >
+                                        <option value="1명">1명</option>
+                                        <option value="2명">2명</option>
+                                        <option value="3명">3명</option>
+                                        <option value="4명">4명</option>
+                                        <option value="5명">5명</option>
+                                        <option value="단체">단체</option>
+                                    </select>
+                                </div>
+                                <button class="searchBtn">
+                                    <img
+                                        src="assets/img/search.svg"
+                                        alt="검색이미지"
+                                    />
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
+                <section id="contentsType" class="container">
+                    <div class="resionTop">
+                        <h2>Recommended Hotels in Seoul</h2>
+                        <div class="checkinDate">
+                            <img
+                                src="assets/img/resionCalender.svg"
+                                alt="달력"
+                            />
+                            Wed 11/17
+                        </div>
+                        <div class="checkoutDate">
+                            <img
+                                src="assets/img/resionCalender.svg"
+                                alt="달력"
+                            />
+                            Wed 11/18
+                        </div>
+                        <div class="resion__inner">
+                            <div class="resionTopCard resionCard1">
+                                <img
+                                    src="assets/img/resionTop01.jpg"
+                                    alt="호텔룸"
+                                />
+                                <div class="resionDesc">
+                                    <div class="descTitle">
+                                        Seogwipo-si의 아파트
+                                    </div>
+                                    <div class="bed">침대1개</div>
+                                    <div class="price">
+                                        <em>₩1,510,703</em> ₩865,561/월
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resionTopCard resionCard2">
+                                <img
+                                    src="assets/img/resionTop02.jpg"
+                                    alt="호텔룸"
+                                />
+                                <div class="resionDesc">
+                                    <div class="descTitle">
+                                        Seogwipo-si의 아파트
+                                    </div>
+                                    <div class="bed">침대1개</div>
+                                    <div class="price">
+                                        <em>₩1,510,703</em> ₩865,561/월
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resionTopCard resionCard3">
+                                <img
+                                    src="assets/img/resionTop03.jpg"
+                                    alt="호텔룸"
+                                />
+                                <div class="resionDesc">
+                                    <div class="descTitle">
+                                        Seogwipo-si의 아파트
+                                    </div>
+                                    <div class="bed">침대1개</div>
+                                    <div class="price">
+                                        <em>₩1,510,703</em> ₩865,561/월
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resionTopCard resionCard4">
+                                <img
+                                    src="assets/img/resionTop04.jpg"
+                                    alt="호텔룸"
+                                />
+                                <div class="resionDesc">
+                                    <div class="descTitle">
+                                        Seogwipo-si의 아파트
+                                    </div>
+                                    <div class="bed">침대1개</div>
+                                    <div class="price">
+                                        <em>₩1,510,703</em> ₩865,561/월
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resionTopCard resionCard5">
+                                <img
+                                    src="assets/img/resionTop05.jpg"
+                                    alt="호텔룸"
+                                />
+                                <div class="resionDesc">
+                                    <div class="descTitle">
+                                        Seogwipo-si의 아파트
+                                    </div>
+                                    <div class="bed">침대1개</div>
+                                    <div class="price">
+                                        <em>₩1,510,703</em> ₩865,561/월
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resionBom__card">
+                            <h2>서울 인근 숙소</h2>
+                            <div class="resionbomDate">
+                                11월 17일 목 ~ 11월 18일 금
+                            </div>
+                            <div class="resionBom__inner">
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom01.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom02.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom03.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom04.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom05.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom06.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom07.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom08.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom09.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom10.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom11.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resionBomCard">
+                                    <img
+                                        src="assets/img/resionBom12.jpg"
+                                        alt="호텔룸"
+                                    />
+                                    <div class="resionBomdesc">
+                                        <div class="resionBomTitle">
+                                            Seogwipo-si의 아파트
+                                            <span class="star">★ 4.52</span>
+                                        </div>
+                                        <div class="bed">침대1개</div>
+                                        <div class="price">
+                                            <em>₩1,510,703</em>₩865,561/월
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <img src="assets/img/footerLogo.png" alt="로고" />
+                </div>
+                <div class="footer__center">
+                    <div class="top">
+                        <p>
+                            AirCnC is part of Booking Holdings site, <br />
+                            the national leader in online travel & related
+                            services.
+                        </p>
+                    </div>
+                    <div class="bom">
+                        <div class="address">
+                            Address 경기도 안산시 상록구 고잔동 라인아트학원
+                        </div>
+                        <div class="phone">Phone 010-1234-5678</div>
+                        <div class="mail">E-mail piowm123@gmail.com</div>
+                        <div class="copy">
+                            copyrightⓒ 2022 All rights reserved by me
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <div class="site">Site / Currency</div>
+                    <select name="country" id="country">
+                        <option value="south korea">south korea</option>
+                    </select>
+                    <select name="currency" id="currency">
+                        <option value="korea won">korea won</option>
+                    </select>
+                    <div class="sns">
+                        <img src="assets/img/netlify.jpg" alt="netlify" />
+                        <img src="assets/img/github.jpg" alt="github" />
+                        <img src="assets/img/figma.jpg" alt="figma" />
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/asideMenu.js"></script>
+    </body>
+</html>

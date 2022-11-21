@@ -1,0 +1,92 @@
+.resionTop {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.resionTop h2 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 85px;
+  font-weight: 500;
+  font-size: 30px;
+  color: #505050;
+}
+
+.checkinDate,
+.checkoutDate {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 100px;
+}
+
+.checkinDate img {
+  width: 20px;
+}
+.checkoutDate img {
+  width: 20px;
+}
+
+.resion__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  vertical-align: top;
+  margin-bottom: 130px;
+}
+
+.resionTopCard {
+  width: 19%;
+}
+
+.resionCard3 img {
+  margin-top: -15px;
+  height: 250px;
+}
+
+.resionDesc {
+  margin-top: 6px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.resionDesc .descTitle {
+  font-size: 16px;
+}
+
+.price em {
+  text-decoration: line-through;
+  color: #666;
+  margin-right: 5px;
+}
+
+.resionBom__card h2 {
+  text-align-last: left;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.resionbomDate {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.resionBom__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.resionBomCard {
+  width: 24%;
+  margin-bottom: 50px;
+}
+
+.resionBomdesc {
+  text-align: left;
+  margin-top: 6px;
+}
+
+.resionBomdesc .star {
+  float: right;
+}

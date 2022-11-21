@@ -1,71 +1,122 @@
+/** @format */
+
 .title {
-  margin-top: 50px;
-  text-align: center;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .title h2 {
-  font-size: 40px;
-  color: #505050;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #d2d0c5;
+    font-size: 40px;
+    color: #505050;
+    padding: 0 10px 15px 10px;
+    border-bottom: 1px solid #d2d0c5;
+    display: inline-block;
 }
 
 .title p {
-  margin-top: 15px;
-  margin-bottom: 50px;
-  font-size: 20px;
-  color: #a79886;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: #a79886;
 }
 
 .card__inner {
-  display: grid;
-  grid-template-areas:
-    "card1 card3 card4"
-    "card2 card3 card5";
+    font-family: "NexonLv1Gothic";
+    display: grid;
+    grid-template-areas:
+        "card1 card3 card4"
+        "card2 card3 card5";
 
-  grid-template-columns: 260px 565px 260px;
-  grid-template-rows: 360px;
-  grid-gap: 0 20px;
+    grid-template-columns: 285px 590px 285px;
+    grid-template-rows: 340px;
+    grid-gap: 20px 20px;
+}
+
+.card {
+    width: 285px;
+    position: relative;
+    font-size: 23px;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+.card img {
+    transition: all 0.6s ease-in-out;
+}
+.card:hover img {
+    transform: scale(1.08);
+}
+.cardCenter {
+    position: relative;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+.cardCenter img {
+    transition: all 0.6s ease-in-out;
+}
+.cardCenter img:hover {
+    transform: scale(1.08);
 }
 
 .card1 {
-  grid-area: card1;
+    grid-area: card1;
 }
 .card2 {
-  grid-area: card2;
+    grid-area: card2;
 }
 .card3 {
-  grid-area: card3;
+    grid-area: card3;
 }
 .card4 {
-  grid-area: card4;
+    grid-area: card4;
 }
 .card5 {
-  grid-area: card5;
+    grid-area: card5;
+}
+
+.card_name {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
 }
 
 .selectResion {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 24px;
+    margin-bottom: 110px;
 }
 
 .contents__bom h2 {
-  margin-top: 130px;
-  text-align: center;
+    margin-top: 130px;
+    margin: 130px 0 40px 0;
+    color: #505050;
+    text-align: center;
 }
 
 .resion {
-  width: 15%;
-  margin-bottom: 15px;
-  margin-top: 30px;
-  position: relative;
+    width: 15.5%;
+    position: relative;
+    margin-bottom: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.resion img {
+    transition: all 0.6s ease-in-out;
+}
+.resion:hover img {
+    transform: scale(1.08);
 }
 
 .resion > span {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    color: #fff;
 }
