@@ -7,7 +7,12 @@
 }
 
 #header {
-    width: 84%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    height: 80px;
+    background-color: #fff;
 }
 
 .left {
@@ -21,9 +26,114 @@
 #header img {
     width: 150px;
     height: 30px;
+    margin-top: 26px;
     transform: translate(0, 10px);
     cursor: pointer;
 }
+
+/* -------------------------------- */
+#header_search {
+    position: absolute;
+    left: 46%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#header_search.close {
+    display: none;
+}
+#header_search .roomSearch {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    /* gap: 10px; */
+    border: 1px solid #f1e3c4;
+    /* padding: 14px 10px; */
+    width: 840px;
+    height: 40px;
+    background: #fff;
+    border-radius: 20px;
+    color: #666;
+    font-size: 16px;
+}
+
+#header_search .roomSearch label {
+    font-size: 16px;
+    color: #666;
+}
+#header_search .roomSearch img {
+    width: 25px;
+    height: 25px;
+    margin: -20px 10px 0 10px;
+}
+
+#header_search .roomSearch .home {
+    width: 28%;
+}
+
+#header_search .roomSearch input {
+    /* width: 200%; */
+    height: 100%;
+    font-size: 16px;
+    color: #666;
+    background-color: inherit;
+    border: 0;
+}
+#header_search .roomSearch input:focus {
+    outline: 0;
+}
+#header_search #region {
+    width: 100%;
+}
+
+#header_search .roomSearch input[type="date"] {
+    position: relative;
+}
+#header_search input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 37%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    background: transparent;
+    z-index: 1;
+    padding-left: 120px;
+    cursor: pointer;
+}
+#header_search .date_hyphen {
+    margin-left: -15px;
+    margin-right: 5px;
+}
+
+#header_search .calender {
+    width: 33%;
+}
+
+#header_search .guest select {
+    border: 0;
+    font-size: 16px;
+    color: #666;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#header_search .guest select:focus {
+    outline: none;
+}
+
+#header_search .home,
+#header_search .calender,
+#header_search .guest {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f1e3c4;
+}
+#header_search .searchBtn {
+    background-color: inherit;
+    margin: 12px auto 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* --------------------------------- */
 
 #aside {
     position: fixed;
