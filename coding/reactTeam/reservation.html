@@ -89,6 +89,76 @@
             <div class="right">
                 <header id="header">
                     <img src="assets/img/logo.png" alt="로고이미지" />
+                    <form
+                        action="/"
+                        method="GET"
+                        id="header_search"
+                        class="close"
+                    >
+                        <fieldset class="roomSearch">
+                            <legend class="ir">호텔 검색</legend>
+                            <div class="home">
+                                <label for="region"></label>
+                                <img src="assets/img/home.svg" alt="집이미지" />
+                                <input
+                                    type="text"
+                                    id="region"
+                                    name="region"
+                                    placeholder="도시/호텔을 적어주세요."
+                                    required
+                                />
+                            </div>
+                            <div class="calender">
+                                <img
+                                    src="assets/img/calender.svg"
+                                    alt="달력이미지"
+                                />
+                                <input
+                                    type="date"
+                                    id="start_date"
+                                    name="start_date"
+                                    value="2022-11-21"
+                                    required
+                                />
+                                <span class="date_hyphen">-</span>
+                                <input
+                                    type="date"
+                                    id="last_date"
+                                    name="last_date"
+                                    value="2022-11-23"
+                                    required
+                                />
+                            </div>
+                            <div class="guest">
+                                <img
+                                    src="assets/img/person.svg"
+                                    alt="사람이미지"
+                                />
+                                <label for="room">객실</label>
+                                <select id="room" name="room" required>
+                                    <option value="1개">1개</option>
+                                    <option value="2개">2개</option>
+                                    <option value="3개">3개</option>
+                                    <option value="4개">4개</option>
+                                </select>
+                                <label for="tourist">투숙객</label>
+                                <select id="tourist" name="tourist" required>
+                                    <option value="1명">1명</option>
+                                    <option value="2명">2명</option>
+                                    <option value="3명">3명</option>
+                                    <option value="4명">4명</option>
+                                    <option value="5명">5명</option>
+                                    <option value="단체">단체</option>
+                                </select>
+                            </div>
+                            <button class="searchBtn">
+                                <img
+                                    src="assets/img/search.svg"
+                                    alt="검색이미지"
+                                />
+                            </button>
+                        </fieldset>
+                    </form>
                 </header>
                 <section id="bannerType">
                     <img src="assets/img/banner.jpg" alt="배너이미지" />
@@ -176,37 +246,75 @@
                     <div class="reservation__wrap">
                         <div class="reservation__inner">
                             <div class="reservationBanner">
-                                <img
-                                    src="assets/img/reservation.jpg"
-                                    alt="호텔전경"
-                                />
-                                <div class="reservationDesc">
-                                    <div class="title">시그니엘 서울</div>
-                                    <div class="address">
-                                        서울 송파구 올림픽로 300 롯데월드타워
-                                        76-101층
-                                    </div>
-                                    <div class="checkInOut">
-                                        <em>체크인</em>체크아웃
-                                    </div>
-                                    <div class="date">
-                                        <em>11월 18일(금)</em> 11월 20일(일)
-                                    </div>
-                                    <div class="roominfo">
-                                        <div class="roomcount">
-                                            객실 수 <br />
-                                            <em>1</em>
+                                <div class="reservation_img" style="background: url('assets/img/reservation.jpg') no-repeat center / cover;">
+                                    <div class="reservationDesc">
+                                        <div class="title">시그니엘 서울</div>
+                                        <div class="address">
+                                            서울 송파구 올림픽로 300
+                                            롯데월드타워 76-101층
                                         </div>
-                                        <div class="adult">
-                                            성인 <br />
-                                            <em>2</em>
-                                        </div>
-                                        <div class="child">
-                                            어린이 <br />
-                                            <em>1</em>
+                                        <div class="chechInfo">
+                                            <form action="#">
+                                                <div class="checkInOut">
+                                                    <em>체크인</em
+                                                    ><em>체크아웃</em>
+                                                </div>
+                                                <div class="date">
+                                                    <input
+                                                        type="date"
+                                                        id="start_date"
+                                                        name="start_date"
+                                                        value="2022-11-21"
+                                                        required
+                                                    />
+                                                    <span>|</span>
+                                                    <input
+                                                        type="date"
+                                                        id="last_date"
+                                                        name="last_date"
+                                                        value="2022-11-23"
+                                                        required
+                                                    />
+                                                    <!-- <em>11월 18일(금)</em> 11월
+                                                    20일(일) -->
+                                                </div>
+                                                <div class="roominfo">
+                                                    <div class="check">
+                                                        <label for="roomcount">객실 수</label>
+                                                        <select name="roomcount" id="roomcount">
+                                                            <option value="1개">1개</option>
+                                                            <option value="2개">2개</option>
+                                                            <option value="3개">3개</option>
+                                                            <option value="4개">4개</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="check">
+                                                        <label for="adultcount">성인</label>
+                                                        <select name="adultcount" id="adultcount">
+                                                            <option value="성인1명">1명</option>
+                                                            <option value="성인2명">2명</option>
+                                                            <option value="성인3명">3명</option>
+                                                            <option value="성인4명">4명</option>
+                                                            <option value="성인4명">단체</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="check">
+                                                        <label for="childcount">어린이</label>
+                                                        <select name="childcount" id="childcount">
+                                                            <option value="어린이1명">1명</option>
+                                                            <option value="어린이2명">2명</option>
+                                                            <option value="어린이3명">3명</option>
+                                                            <option value="어린이4명">4명</option>
+                                                            <option value="어린이4명">단체</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <button class="button">
+                                                    선택 완료
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="select">선택 완료</div>
                                 </div>
                             </div>
                             <div class="roomm__package">

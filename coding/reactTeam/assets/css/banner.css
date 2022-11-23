@@ -65,7 +65,7 @@
 .roomSearch input[type="date"] {
     position: relative;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+.roomSearch input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     left: 37%;
     top: 50%;

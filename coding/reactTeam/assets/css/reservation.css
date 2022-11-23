@@ -1,123 +1,197 @@
-.reservationBanner img {
-  margin-top: 120px;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.2)
-  );
+/** @format */
+
+.reservation_img {
+    margin-top: 120px;
+    position: relative;
+    width: 1200px;
+    height: 500px;
+}
+
+.reservation_img::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1000px;
+    height: 500px;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1)
+    );
 }
 .reservationBanner {
-  position: relative;
-  margin-bottom: 55px;
+    position: relative;
+    margin-bottom: 55px;
 }
 
 .reservationDesc {
-  position: absolute;
-  top: 20%;
-  right: 5%;
-  text-align: right;
-  font-weight: 300;
+    position: absolute;
+    top: 0;
+    right: 60px;
+    /* text-align: right; */
+    font-weight: 300;
 }
 .reservationDesc .title {
-  font-size: 50px;
-  color: #303030;
-  margin-bottom: 5px;
-  font-weight: 300;
+    text-align: right;
+    font-size: 50px;
+    color: #303030;
+    margin-bottom: 5px;
+    font-weight: 300;
 }
 
 .reservationDesc .address {
-  font-weight: 300;
-  margin-bottom: 90px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 90px;
 }
 .reservationDesc .checkInOut {
-  margin-right: 50px;
-  margin-bottom: 14px;
-  font-weight: 300;
+    font-size: 20px;
+    /* margin-right: 50px; */
+    margin-bottom: 14px;
+    font-weight: 400;
 }
 
+.reservationDesc .chechInfo {
+    float: right;
+}
+.reservationDesc .checkInOut {
+    margin: 0 auto 15px auto;
+    width: 225px;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: space-between;
+}
 .reservationDesc .checkInOut em {
-  margin-right: 100px;
+    /* margin-right: 100px; */
 }
 
 .reservationDesc .date {
-  background: #f2ebd9;
-  padding: 8px 20px;
-  text-align: center;
-  font-weight: 300;
-  margin-bottom: 20px;
+    background: #f2ebd9;
+    width: 312px;
+    height: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.reservationDesc .date span {
+    font-size: 25px;
+    font-weight: 200;
+    /* margin-right: 20px; */
+    color: #a79886;
 }
 
-.reservationDesc .date em {
-  margin-right: 30px;
-  padding-right: 30px;
-  border-right: 1px solid #a79886;
+.reservationDesc input[type="date"] {
+    text-align: center;
+    width: 100%;
+    font-family: "SCoreDream";
+    font-weight: 400;
+    font-size: 16px;
+    border: 0;
+    background-color: inherit;
+    position: relative;
 }
+.reservationDesc input[type="date"]:focus {
+    outline: 0;
+}
+.reservationDesc input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    background: transparent;
+    z-index: 1;
+    padding: 130px;
+    cursor: pointer;
+}
+
+/* .reservationDesc .date em {
+    margin-right: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #a79886;
+} */
 
 .roominfo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  margin-bottom: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+.roominfo .check {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+.roominfo select {
+    display: block;
+    border: 0;
+    background-color: inherit;
+    -webkit-appearance: none; 
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+}
+.roominfo select:focus {
+    outline: none;
 }
 
-.roomcount {
-  margin-right: 30px;
-  font-weight: 300;
-}
-
-.adult {
-  margin-right: 30px;
-  font-weight: 300;
-}
-
-.child {
-  font-weight: 300;
-}
-
-.select {
-  font-weight: 300;
-  font-size: 26px;
-  color: #fff;
-  background: #a79886;
-  padding: 5px 10px;
-  width: 37%;
-  float: right;
+.chechInfo .button {
+    font-weight: 300;
+    font-size: 26px;
+    color: #fff;
+    background: #a79886;
+    padding: 5px 20px;
+    cursor: pointer;
+    float: right;
 }
 
 .roomm__package {
-  margin-top: 54px;
-  margin-bottom: 70px;
+    margin-top: 54px;
+    margin-bottom: 70px;
 }
 
 .roomm__package h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #505050;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #505050;
 }
 
 .package__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    padding: 0 54px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.package__inner .package {
+    width: 32%;
+    cursor: pointer;
 }
 
 .package__inner img {
-  margin-bottom: 6px;
+
+    margin-bottom: 6px;
 }
 
 .package__inner .name {
-  font-size: 16px;
-  color: #505050;
+    font-size: 16px;
+    color: #505050;
 }
 
 .room__place {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .room__place h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #505050;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #505050;
 }

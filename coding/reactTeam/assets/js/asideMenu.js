@@ -6,6 +6,8 @@ const regionBox = document.querySelector(".region_box");
 const headerImg = document.querySelector("#header img");
 const scroller = document.querySelector(".scroll");
 
+
+// 사이드 메뉴바 온/오프
 left.addEventListener("mouseenter", (e) => {
     aside.classList.remove("active");
     regionBox.style.left = "0";
@@ -18,6 +20,10 @@ left.addEventListener("mouseleave", (e) => {
     headerImg.style.transform = "translate(0, 10px)";
     headerImg.style.transition = "all 0.2s";
 });
+
+
+
+// 헤더 서치바 온/오프
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.scrollY;
