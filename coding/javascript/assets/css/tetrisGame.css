@@ -1,13 +1,15 @@
+/** @format */
+
 .tetris__wrap {
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     justify-content: center;
     align-items: center;
 }
 .tetris__outer {
     height: 720px;
     width: 500px;
-    background-color:rgba(0, 102, 255, 0.5);
+    background-color: rgba(0, 102, 255, 0.5);
     border: 4px solid #fff;
     border-radius: 10px;
     position: relative;
@@ -43,7 +45,6 @@
     font-weight: 700;
     margin-bottom: 16px;
     transform: translatey(4%) skewy(-15deg);
-    
 }
 .scoreBox_text span {
     color: #fff;
@@ -69,7 +70,8 @@
     border-radius: 10px;
     margin-top: 9px;
 }
-.nextBox__text {}
+.nextBox__text {
+}
 .nextBox__text h5 {
     color: #fff;
     font-size: 35px;
@@ -95,7 +97,7 @@
     bottom: -5px;
     right: -210px;
     border: 4px solid #fff;
-    border-radius: 10px; 
+    border-radius: 10px;
     display: flex;
     justify-content: center;
 }
@@ -130,9 +132,8 @@
 .t_pause {
     margin-bottom: 2.5%;
 }
-.tetris_closeBtn {}
-
-
+.tetris_closeBtn {
+}
 
 .tetris__buttonBox > .Windowbar_closeBtn {
     margin-left: 5px;
@@ -143,15 +144,10 @@
     bottom: 10px;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing:5px;
+    letter-spacing: 5px;
     text-shadow: -2px 0px #fff, 0px 2px #fff, 2px 0px #fff, 0px -2px #fff;
     z-index: 2;
-
 }
-
-
-
-
 
 .tetris__inner {
     width: 450px;
@@ -159,13 +155,14 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/sampleBg.jpg) no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../img/sampleBg.jpg) no-repeat center / cover;
     /* display: none; */
 }
 
-.tetris__play {}
+.tetris__play {
+}
 .playground {
-
 }
 .playground > ul {
     border: 2px solid #fff;
@@ -182,13 +179,13 @@
     list-style: none;
     width: 50px;
     height: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .Tmino {
     background-image: url(../img/Tmino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
     /* border: 6px #a042a2 outset !important; */
     /* background-color: #cc55ce; */
 }
@@ -196,7 +193,7 @@
     background-image: url(../img/Lmino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #ff861a outset !important;
     background-color: #ff7900; */
 }
@@ -204,7 +201,7 @@
     background-image: url(../img/Jmino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #1a74c4 outset !important;
     background-color: #0065bd; */
 }
@@ -212,7 +209,7 @@
     background-image: url(../img/Zmino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #ef3e4d outset !important;
     background-color: #ed2939; */
 }
@@ -220,7 +217,7 @@
     background-image: url(../img/Smino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #78c53e outset !important;
     background-color: #69be28; */
 }
@@ -228,7 +225,7 @@
     background-image: url(../img/Omino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #fed01a outset !important;
     background-color: #fecb00; */
 }
@@ -236,7 +233,7 @@
     background-image: url(../img/Imino-basic.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
     /* border: 6px #1aa9de outset !important;
     background-color: #009fda; */
 }

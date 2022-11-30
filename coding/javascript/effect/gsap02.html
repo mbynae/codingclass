@@ -111,61 +111,61 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
     <script>
-        // gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-        // const lenis = new Lenis({
-        //     duration: 1.2,
-        //     // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-        //     // direction: 'vertical', // vertical, horizontal
-        //     // gestureDirection: 'vertical', // vertical, horizontal, both
-        //     // smooth: true,
-        //     // mouseMultiplier: 1,
-        //     // smoothTouch: false,
-        //     // touchMultiplier: 2,
-        //     // infinite: false,
-        // })
-
-        // //get scroll value
-        // lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-        // console.log({ scroll, limit, velocity, direction, progress })
-        // })
-
-        // function raf(time) {
-        //     lenis.raf(time)
-        //     requestAnimationFrame(raf)
-        // }
-
-        // requestAnimationFrame(raf)
-
-        // const tl = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".img-wrap .img",
-        //         scrub: true
-        //     }
-        // })
-        // .to(".img", {
-        //     y: -1000,
-        //     scrub: true,
-        //     stagger: .2,
-        //     easing: "power1.out"
-        // })
-
-
-
-        // gsap.registerPlugin(ScrollTrigger);
-        const tl = gsap.timeline();
-        tl.to(".earlybox", {
-            y: -970,
-            delay: 2,
-            duration: 1.6,
-            ease: Power3.easeOut,
+        const lenis = new Lenis({
+            duration: 1.2,
+            // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            // direction: 'vertical', // vertical, horizontal
+            // gestureDirection: 'vertical', // vertical, horizontal, both
+            // smooth: true,
+            // mouseMultiplier: 1,
+            // smoothTouch: false,
+            // touchMultiplier: 2,
+            // infinite: false,
         })
-        .to(".bgbox", {
-            y: -970,
-            duration: 1.5,
-            delay:-1.2,
-            ease: Power3.easeOut,
+
+        //get scroll value
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+        console.log({ scroll, limit, velocity, direction, progress })
         })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".img-wrap .img",
+                scrub: true
+            }
+        })
+        .to(".img", {
+            y: -1000,
+            scrub: true,
+            stagger: .2,
+            easing: "power1.out"
+        })
+
+
+
+        // gsap.registerPlugin(ScrollTrigger);
+        // const tl = gsap.timeline();
+        // tl.to(".earlybox", {
+        //     y: -970,
+        //     delay: 2,
+        //     duration: 1.6,
+        //     ease: Power3.easeOut,
+        // })
+        // .to(".bgbox", {
+        //     y: -970,
+        //     duration: 1.5,
+        //     delay:-1.2,
+        //     ease: Power3.easeOut,
+        // })
     </script>
 </body>
 </html>
