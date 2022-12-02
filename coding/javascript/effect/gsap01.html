@@ -92,7 +92,7 @@
 </head>
 <body>
     <main id="contents">
-        <!-- <section id="section1"></section>
+        <section id="section1"></section>
         <section id="section2">
             <div class="square"></div>
             <div class="square2"></div>
@@ -100,9 +100,9 @@
         <section id="section3"></section>
         <section id="section4"></section>
         <section id="section5"></section>
-        <section id="section6"></section> -->
+        <section id="section6"></section>
 
-        <nav>
+        <!-- <nav>
             <ul>
                 <li>about</li>
                 <li>work</li>
@@ -112,7 +112,7 @@
 
         <div class="panel">
             The gsap object serves as the access point for most of GSAP's functionality. It's just a generic object with various methods and properties that create and control Tweens and Timelines (the key players in all of GSAP).
-        </div>
+        </div> -->
         <!-- <div class="box"></div>
         <div class="panel"></div> -->
     </main>
@@ -121,19 +121,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
     <script>
-        // 6. scrollTrigger.create
-        gsap.registerPlugin(ScrollTrigger);
+        // // 6. scrollTrigger.create
+        // gsap.registerPlugin(ScrollTrigger);
 
-        ScrollTrigger.create({
-            trigger: ".panel",
-            start: "top 6%",
-            markers: true,
-            toggleClass: {targets: "nav", className: "not-active"},
-            onEnter: ()=>console.log("onEnter"),
-            onLeave: ()=>console.log("onLeave"),
-            onEnterBack: ()=>console.log("onEnterBack"),
-            onLeaveBack: ()=>console.log("onLeaveBack")
-        })
+        // ScrollTrigger.create({
+        //     trigger: ".panel",
+        //     start: "top 6%",
+        //     markers: true,
+        //     toggleClass: {targets: "nav", className: "not-active"},
+        //     onEnter: ()=>console.log("onEnter"),
+        //     onLeave: ()=>console.log("onLeave"),
+        //     onEnterBack: ()=>console.log("onEnterBack"),
+        //     onLeaveBack: ()=>console.log("onLeaveBack")
+        // })
 
 
 
@@ -176,29 +176,29 @@
         // })
 
         // 1. toggleClass, toggleActions
-        // gsap.to(".square", {
-        //     x: 1000,
-        //     duration: 3,
-        //     scrollTrigger: {
-        //         trigger: ".square",
-        //         start: "top 70%",
-        //         end: "top 30%",
-        //         // end: () => `+=${document.querySelector(".square").offsetHeight}`,   //요소 높이값만큼 end를 처리함 가로모드 할때 필요
-        //         markers: {
-        //             startColor: "blue",
-        //             endColor: "purple",
-        //             fontSize: "30px"
-        //         },
-        //         toggleClass: "white",
-        //         toggleActions: "restart reverse restart reverse"
-        //         //              onEnter onLeave onEnterBack onLeaveBack
-        //         //  play, pause, resume, reset, restart, complete, reveres, none
-        //     },
-        // })
+        gsap.to(".square", {
+            x: 1000,
+            duration: 3,
+            scrollTrigger: {
+                trigger: ".square",
+                start: "top 70%",
+                end: "top 30%",
+                // end: () => `+=${document.querySelector(".square").offsetHeight}`,   //요소 높이값만큼 end를 처리함 가로모드 할때 필요
+                markers: {
+                    startColor: "blue",
+                    endColor: "purple",
+                    fontSize: "30px"
+                },
+                toggleClass: "white",
+                toggleActions: "restart reverse restart reverse"
+                //              onEnter onLeave onEnterBack onLeaveBack
+                //  play, pause, resume, reset, restart, complete, reveres, none
+            },
+        })
 
         //2. scrub : 스크롤할때마다 애니메이션 주는 기능
             // scrub: true,
-            //scrub: 4,
+            // scrub: 4,
 
         //3. pin : 고정시켜주는 기능
             // pin: true,
