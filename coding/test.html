@@ -1,121 +1,126 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #effect {
-            /* position: fixed;
-            left: 0;
-            top: 0;
-            top: 100vh; */
-            width: 100%;
-            height: 100vh;
-            background-color: #000;
-        }
-        .effect_view {
-            width: 100vw;
-            height: 100vh;
-            /* overflow: hidden; */
-        }
-        .effect_inner {
-            width: 500vw;
-            height: 100vh;
-            display: flex;
-            flex-wrap: nowrap;
-        }
-        .effect_title {
-            width: 100vw;
-            height: 100vh;
-        }
-        .paddingBox {
-            padding: 0 50px;
-        }
-        .effect_title h2 {
-            padding-top: 200px;
-            font-size: 200px;
-            color: #fff;
-        }
-        .effect_title .emphasis {
-            display: inline-block;
-            font-size: 260px;
-            font-weight: 100;
-            color: #14CF93;
-            margin: -80px 0 20px 580px;
-        }
-        .effect_titleLine {
+        /* PP Eiko */
+        @font-face {
             font-family: 'PP Eiko';
+            src: url('PPEiko-LightItalic.eot');
+            src: url('PPEiko-LightItalic.eot?#iefix') format('embedded-opentype'),
+                url('PPEiko-LightItalic.woff2') format('woff2'),
+                url('PPEiko-LightItalic.woff') format('woff'),
+                url('PPEiko-LightItalic.ttf') format('truetype');
             font-weight: 300;
-            font-size: 40px;
-            color: #fff;
-            float:right;
-            padding-left: 30%;
-            position: relative;
-        }
-        .effect_titleLine::before {
-            content: '';
-            width: 100%;
-            border: 1px solid #fff;
-            position: absolute;
-            right: 0;
-            bottom: -10px;
-            transform-origin: right;
-            transform: var(--border-right-transform);
-            transition: all 1.2s;
+            font-style: italic;
+            font-display: swap;
         }
 
-        .effect01 {
-            width: 100vw;
-            height: 100vh;
-            background-color: #fff;
+        @font-face {
+            font-family: 'PP Eiko';
+            src: url('PPEiko-BlackItalic.eot');
+            src: url('PPEiko-BlackItalic.eot?#iefix') format('embedded-opentype'),
+                url('PPEiko-BlackItalic.woff2') format('woff2'),
+                url('PPEiko-BlackItalic.woff') format('woff'),
+                url('PPEiko-BlackItalic.ttf') format('truetype');
+            font-weight: 900;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'PP Eiko';
+            src: url('PPEiko-Medium.eot');
+            src: url('PPEiko-Medium.eot?#iefix') format('embedded-opentype'),
+                url('PPEiko-Medium.woff2') format('woff2'),
+                url('PPEiko-Medium.woff') format('woff'),
+                url('PPEiko-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'PP Eiko';
+            src: url('PPEiko-Heavy.eot');
+            src: url('PPEiko-Heavy.eot?#iefix') format('embedded-opentype'),
+                url('PPEiko-Heavy.woff2') format('woff2'),
+                url('PPEiko-Heavy.woff') format('woff'),
+                url('PPEiko-Heavy.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'PP Eiko';
+            src: url('PPEiko-Thin.eot');
+            src: url('PPEiko-Thin.eot?#iefix') format('embedded-opentype'),
+                url('PPEiko-Thin.woff2') format('woff2'),
+                url('PPEiko-Thin.woff') format('woff'),
+                url('PPEiko-Thin.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+
+        .drawsvg,svg {width: 100%; height:100vh}
+
+        .stroke {stroke: #14CF93; stroke-width: 1px; stroke-dasharray: 0 250;
+            stroke-opacity: 1; fill: none;
+            animation: stroke_offset 8s forwards;
+            animation-timing-function: cubic-bezier(.25, .46, .45, .94)
+        }
+
+        @keyframes stroke_offset {
+            25% {stroke-dasharray: 0 250; stroke-opacity: 1
+            }
+            55% {stroke-dasharray: 250 0; stroke-opacity: .5
+            }
+            75% {stroke-dasharray: 250 0; stroke-opacity: .25
+            }
+            100% {stroke-dasharray: 250 0; stroke-opacity: 0
+            }
+        }
+
+        .fill { fill: #14CF93; fill-opacity: 0;
+            animation: fill_offset 8s forwards;
+            animation-timing-function: cubic-bezier(.25, .46, .45, .94)
+        }
+
+        @keyframes fill_offset {
+            25%, 35%, 50% {
+                fill-opacity: 0
+            }
+            70%, 90%, 100% {
+                fill-opacity: 1
+            }
+        }
+
+        #fade-text { 
+            font-size: 20vw;
+            font-family: 'PP Eiko';
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <section id="effect">
-        <div class="effect_view">
-            <div class="effect_inner">
-                <div class="effect_title efBox">
-                    <div class="paddingBox">
-                        <h2>Creative</h2>
-                        <em class="emphasis ppEiko">Script</em>
-                        <div class="effect_titleLine">20+ project</div>
-                    </div>
-                </div>
-                <div class="effect01 efBox"></div>
-            </div>
-        </div>
-    </section>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        const sections = gsap.utils.toArray(".section")  //gsap로 여러개 선택방법
-
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length -1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".horizontalWrap",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (sections.length -1),
-                    end: "+=5000",
-                // markers: true
-            }
-        });
-    </script>
+    <div class="drawsvg">
+        <svg version="1.1">
+          <symbol id="fade-text">
+            <text x="50%" y="50%" text-anchor="middle">frontend</text>
+          </symbol>
+          <g>
+            <use class="stroke" xlink:href="#fade-text"/>
+            <use class="fill" xlink:href="#fade-text"/>
+          </g>
+        </svg>					
+    </div>
 </body>
 </html>
