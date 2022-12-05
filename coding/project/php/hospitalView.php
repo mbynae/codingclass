@@ -9,10 +9,13 @@
 
     $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
+<<<<<<< Updated upstream
     $HoscommentSql = "SELECT * FROM HosComment WHERE HosID = {$HosID} ORDER BY HosID";
     $HoscommentResult = $connect -> query($HoscommentSql);
     $commentInfo = $HoscommentResult -> fetch_array(MYSQLI_ASSOC);
 
+=======
+>>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -20,7 +23,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< Updated upstream
         <title>병원 상세보기 페이지</title>
+=======
+        <title>병원 메인 페이지</title>
+>>>>>>> Stashed changes
         <link rel="stylesheet" href="../asset/css/hospital/hospital_detail.css"/>
         <link rel="stylesheet" href="../asset/css/board/boardComment.css" />
     </head>
@@ -52,15 +59,23 @@
     </section>
 
     <!-- 슬라이드 -->
+<<<<<<< Updated upstream
     <section id="mainSliderType">
         <img src="../asset/img/hospital_mainBanner.jpg" alt="">
     </section>
+=======
+    <section id="mainSliderType" class="container"></section>
+>>>>>>> Stashed changes
 
     <!-- 병원 정보 -->
     <section id="hospitalInfo" class="container">
       <article class="hospital__view">
         <div class="map__img">
+<<<<<<< Updated upstream
           <img src="../asset/img/hospital/<?=$HosInfo['HosImgFile']?>" alt="이미지" />
+=======
+          <img src="../asset/img/hospitalCard_cont1.jpg" alt="" />
+>>>>>>> Stashed changes
         </div>
         <div class="hospital__text">
           <div class="hospital__textPad">
@@ -85,6 +100,7 @@
                     <h5>운영정보</h5>
                     <div class="info_list">
                         <ul>
+<<<<<<< Updated upstream
                             <li>영업시간</li>
                             <li>전문분야</li>
                             <li>주차</li>
@@ -93,6 +109,16 @@
                             <li><?=$HosInfo['HosTime']?></li>
                             <li><?=$HosInfo['HosSpecialty1']?>, <?=$HosInfo['HosSpecialty2']?></li>
                             <li><?=$HosInfo['HosParking']?></li>
+=======
+                        <li>영업시간</li>
+                        <li>전문분야</li>
+                        <li>주차</li>
+                        </ul>
+                        <ul>
+                        <li><?=$HosInfo['HosTime']?></li>
+                        <li><?=$HosInfo['HosSpecialty1']?>, <?=$HosInfo['HosSpecialty2']?></li>
+                        <li><?=$HosInfo['HosParking']?></li>
+>>>>>>> Stashed changes
                         </ul>
                     </div>
                 </div>
@@ -100,6 +126,7 @@
                     <h5>케어서비스</h5>
                     <div class="info_list">
                         <ul>
+<<<<<<< Updated upstream
                             <li>부가서비스</li>
                             <li>전화번호</li>
                             <li>이메일</li>
@@ -108,6 +135,16 @@
                             <li><?=$HosInfo['HosService1']?>, <?=$HosInfo['HosService2']?></li>
                             <li><?=$HosInfo['HosPhone']?></li>
                             <li><?=$HosInfo['HosEmail']?></li>
+=======
+                        <li>부가서비스</li>
+                        <li>전화번호</li>
+                        <li>이메일</li>
+                        </ul>
+                        <ul>
+                        <li><?=$HosInfo['HosService1']?>, <?=$HosInfo['HosService2']?></li>
+                        <li><?=$HosInfo['HosPhone']?></li>
+                        <li><?=$HosInfo['HosEmail']?></li>
+>>>>>>> Stashed changes
                         </ul>
                     </div>
                 </div>
@@ -155,6 +192,7 @@
         </div>
         <table>
             <tbody>
+<<<<<<< Updated upstream
                 <?php
                     foreach($HoscommentResult as $Hoscomment){ ?>
                         <tr>
@@ -183,6 +221,36 @@
                 <?php } ?>
                 <tr>
                     <!-- <td class="com__td">
+=======
+            <!-- <?php
+                        foreach($commentResult as $comment){ ?>
+                            <tr>
+                                <td class="com__td">
+                                    <div id="Comment<?=$comment['myCommentID']?>">
+                                        <div class="com__top">
+                                            <?=$comment['commentName']?>
+                                            <em><?=date('Y-m-d', $comment['regTime'])?></em>
+                                            <div class="com__like">
+                                                <img src="../asset/img/like.svg" alt="">
+                                                <p>5</p>
+                                                <img src="../asset/img/dislike.svg" alt="">
+                                                <p>0</p>
+                                            </div>
+                                        </div>
+                                        <div class="com__table__p">
+                                            <p><?=$comment['commentMsg']?></p>
+                                        </div>
+                                        <div class="comment__del">
+                                            <a href="#" class="comment__del__del">댓글 삭제</a>
+                                            <a href="#" class="comment__del__mod">댓글 수정</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    <?php } ?> -->
+                <tr>
+                    <td class="com__td">
+>>>>>>> Stashed changes
                     <div class="com__top">
                         누군가님
                         <em>2020 / 10 / 05</em>
@@ -235,16 +303,23 @@
                         <p>믿을만한 의사 선생님이 있어서 좋았습니다</p>
                     </div>
                     </td>
+<<<<<<< Updated upstream
                 </tr> -->
+=======
+                </tr>
+>>>>>>> Stashed changes
             </tbody>
         </table>
     </section>
     <!-- //boardComment -->
 
+<<<<<<< Updated upstream
     <!-- footer -->
     <?php include "../include/footer.php"?>
     <!-- //footer -->
 
+=======
+>>>>>>> Stashed changes
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -290,13 +365,20 @@
         });
     </script>
     <script>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         const commentName = $("#commentName");    // 댓글 이름
         const commentPass = $("#commentPass");    // 댓글 비밀번호
         const commentWrite = $("#commentWrite");  // 댓글
 
         let commentID = "";
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         // 댓글 삭제 버튼 클릭시
         $(".comment__del__del").click(function(e){
             e.preventDefault();
@@ -313,6 +395,10 @@
             $(".comment__delete").hide();
         })
 
+<<<<<<< Updated upstream
+=======
+        console.log(commentID)
+>>>>>>> Stashed changes
         // 댓글 삭제 버튼 --> 삭제 버튼 클릭
 
         $("#commentDeleteButton").click(function(){
@@ -324,7 +410,11 @@
                 $("#commentDeletePass").focus();
             } else {
                 $.ajax({
+<<<<<<< Updated upstream
                     url: "HosCommentDelete.php",
+=======
+                    url: "hosCommentDelete.php",
+>>>>>>> Stashed changes
                     method: "POST",
                     dataType: "json",
                     data: {
@@ -361,7 +451,10 @@
 
         // 댓글 수정 버튼 --> 수정 버튼 클릭
         $("#commentModifyButton").click(function(){
+<<<<<<< Updated upstream
             
+=======
+>>>>>>> Stashed changes
 
             let number = commentID.replace(/[^0-9]/g, "");
 
@@ -371,7 +464,11 @@
 
             } else {
                 $.ajax({
+<<<<<<< Updated upstream
                     url: "HosCommentModify.php",
+=======
+                    url: "hosCommentModify.php",
+>>>>>>> Stashed changes
                     method: "POST",
                     dataType: "json",
                     data: {
@@ -391,9 +488,13 @@
                     }
                 })
             }
+<<<<<<< Updated upstream
     })
 
 
+=======
+        })
+>>>>>>> Stashed changes
 
         // 댓글 쓰기 버튼
         $("#commentBtn").click(function(){
@@ -402,11 +503,19 @@
                 $("#commentWrite").focus();
             } else {
                 $.ajax({
+<<<<<<< Updated upstream
                     url: "HosCommentWrite.php",
                     method: "POST",
                     dataType : "json",
                     data: {
                         "HosID": <?=$HosID?>,
+=======
+                    url: "hosCommentWrite.php",
+                    method: "POST",
+                    dataType : "json",
+                    data: {
+                        "boardID": <?=$myBoardID?>,
+>>>>>>> Stashed changes
                         "name": commentName.val(),
                         "pass": commentPass.val(),
                         "msg": commentWrite.val()
@@ -422,6 +531,10 @@
                     }
                 })
             }
+<<<<<<< Updated upstream
             })
+=======
+        })
+>>>>>>> Stashed changes
     </script>
 </html>

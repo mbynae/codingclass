@@ -5,6 +5,7 @@
     $HosSql = "SELECT * FROM Hospital";
     $HosResult = $connect -> query($HosSql);
 
+<<<<<<< Updated upstream
     
     $HosSql2 = "SELECT * FROM Hospital";
     $HosResult2 = $connect -> query($HosSql2);
@@ -26,6 +27,13 @@
     $allResult = $connect -> query($allCategory);
 ?>
 
+=======
+    // $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
+
+?>
+
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -36,6 +44,7 @@
 
     <link rel="stylesheet" href="../asset/css/hospital/hospital_main.css">
     <style>
+<<<<<<< Updated upstream
         .category__contents div > a {
             color: #26675B;
         }
@@ -46,6 +55,10 @@
             font-size: 16px;
         }
               
+=======
+        
+               
+>>>>>>> Stashed changes
         
     </style>
 </head>
@@ -56,6 +69,7 @@
     <!-- //header -->
 
     <section id="searchType" class="container">
+<<<<<<< Updated upstream
         <?php include "../include/searchBox.php"?>
     </section>
 
@@ -210,6 +224,27 @@
     </section>
 
     <!-- <section id="mainSliderType" class="container">
+=======
+        <div class="searchBox">
+            <form action="" method="POST" class="searchBox__form">
+                <div class="searchBox_inner">
+                    <button class="searchBtn">
+                        <img src="../asset/img/searchBtn.svg" alt="찾기 버튼">
+                    </button>
+                    <input type="text" name="search" id="search" placeholder="궁금하신 내용을 검색해주세요." required>
+                </div>
+                <ul class="searchTag__box">
+                    <li class="searchTag"><a href="#">#중성화</a></li>
+                    <li class="searchTag"><a href="#">#유행병</a></li>
+                    <li class="searchTag"><a href="#">#겨울</a></li>
+                    <li class="searchTag"><a href="#">#동물병원</a></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+
+    <section id="mainSliderType" class="container">
+>>>>>>> Stashed changes
         <div class="slider__text">
             <div class="slider__textName">
                 <h3>배곧도담병원</h3>
@@ -222,13 +257,20 @@
             <p>
                 배곧도담동물병원은 수술 및 예방 접종 전문 병원입니다. 또한 노령견을 전문으로 하는 동물 병원 입니다.
             </p>
+<<<<<<< Updated upstream
             <a href="hospitalView.php?page=<?=$HosInfo['HosID']?>">더 알아보기</a>
         </div>
     </section> -->
+=======
+            <a href="#">더 알아보기</a>
+        </div>
+    </section>
+>>>>>>> Stashed changes
 
     <section id="infomationType" class="container">
         <!-- 카테고리 박스 -->
         <div class="Info_textBox">
+<<<<<<< Updated upstream
             <h2>A.Hospital</h2>
             <div class="category__box">
                 <div class="category__title">
@@ -307,11 +349,68 @@
                             <div>
                                 <label for="disease4">골육종</label>
                                 <input type="radio" id="disease4" name="disease4" value="골육종">
+=======
+            <h2>동물병원 알아보기</h2>
+            <div class="category__box">
+                <div class="category__title">
+                    <h3>Catetory</h3>
+                    <nav class="category__titleChoice">
+                        <li><a href="#" class="cate1 tapActive">지역</a></li>
+                        <span>|</span>
+                        <li><a href="#" class="cate2">병명</a></li>
+                        <span>|</span>
+                        <li><a href="#" class="cate3">수술</a></li>
+                    </nav>
+                </div>
+                <form action="#" name="" method="" onsubmit="">
+                    <fieldset>
+                        <!-- 지역 카테고리 -->
+                        <div class="category__contents regionCho tapActive">
+                            <div>
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+                            </div>
+                            <div>
+                                <label for="region2">경기도</label>
+                                <input type="radio" id="region2" name="region" value="경기도">
+                            </div>
+                            <div>
+                                <label for="region3">인천</label>
+                                <input type="radio" id="region3" name="region" value="인천">
+                            </div>
+                            <div>
+                                <label for="region4">충청도</label>
+                                <input type="radio" id="region4" name="region" value="충청도">
+                            </div>
+                            <div>
+                                <label for="region5">전라도</label>
+                                <input type="radio" id="region5" name="region" value="전라도">
+                            </div>
+                            <div>
+                                <label for="region6">강원도</label>
+                                <input type="radio" id="region6" name="region" value="강원도">
+                            </div>
+                            <div>
+                                <label for="region7">경상도</label>
+                                <input type="radio" id="region7" name="region" value="경상도">
+                            </div>
+                            <div>
+                                <label for="region8">제주도</label>
+                                <input type="radio" id="region8" name="region" value="제주도">
+                            </div>
+                        </div>
+                        <!-- 질병 카테고리 -->
+                        <div class="category__contents diseaseCho">
+                            <div>
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+>>>>>>> Stashed changes
                             </div>
                         </div>
                         <!-- 수술명 카테고리 -->
                         <div class="category__contents surgeryCho">
                             <div>
+<<<<<<< Updated upstream
                                 <label for="Operation1">슬개골</label>
                                 <input type="radio" id="Operation1" name="Operation1" value="슬개골">
                             </div>
@@ -325,6 +424,20 @@
                             </div>
                         </div>
                     </div>
+=======
+                                <label for="region1">서울</label>
+                                <input type="radio" id="region1" name="region" value="서울">
+                            </div>
+                        </div>
+                        <div class="category__confirm">
+                            <button>NO</span>
+                            <span>|</span>
+                            <button type="submit">YES</span>
+                        </div>
+                    </fieldset>
+                </form>
+
+>>>>>>> Stashed changes
             </div>
         </div>
 
@@ -338,6 +451,7 @@
                     $page = 1;
                 }
 
+<<<<<<< Updated upstream
                 $viewNum = 8;
                 $viewLimit = ($viewNum * $page) - $viewNum;
 
@@ -349,6 +463,20 @@
                 $count = $HosResult -> num_rows;
 
                 if($HosSql){
+=======
+                $viewNum = 9;
+                $viewLimit = ($viewNum * $page) - $viewNum;
+
+
+                $HosSql = "SELECT * FROM Hospital ORDER BY HosID DESC LIMIT {$viewLimit}, {$viewNum}";
+                $HosResult = $connect -> query($HosSql);
+
+                // echo $HosSql;
+
+                $count = $HosResult -> num_rows;
+
+                if($HosResult){
+>>>>>>> Stashed changes
                     $count = $HosResult -> num_rows;
         
                     if($count > 0 ){
@@ -462,6 +590,7 @@
         <div class="board__pages">
                 <ul>
 <?php
+<<<<<<< Updated upstream
     if(isset($_GET['category'])){
         $sql = "SELECT count(HosID) FROM Hospital WHERE HosCategory = '$category'";
         
@@ -470,6 +599,9 @@
     }
 
 
+=======
+    $sql = "SELECT count(HosID) FROM Hospital";
+>>>>>>> Stashed changes
     $result = $connect -> query($sql);
 
     $HosCount = $result -> fetch_array(MYSQLI_ASSOC);
@@ -530,13 +662,20 @@
         </div> -->
     </section>
 
+<<<<<<< Updated upstream
     <!-- footer -->
     <?php include "../include/footer.php"?>
     <!-- //footer -->
+=======
+    <!-- header -->
+    <?php include "../include/footer.php"?>
+    <!-- //header -->
+>>>>>>> Stashed changes
 
 
 </body>
 
+<<<<<<< Updated upstream
 <!-- <script src="../asset/js/header_hamburger.js"></script> -->
 <script>
 
@@ -552,6 +691,11 @@
     }
 
 
+=======
+<script src="../asset/js/header_hamburger.js"></script>
+<script>
+
+>>>>>>> Stashed changes
     //카테고리 선택 선택자
     const category = document.querySelectorAll(".category__titleChoice li a");
     const categoryRegtion = document.querySelector(".cate1");
@@ -564,12 +708,15 @@
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
 
+<<<<<<< Updated upstream
     const ContentsActive = document.querySelectorAll(".category__contents a");
 
 
 
 
 
+=======
+>>>>>>> Stashed changes
     //카테고리 선택
     category.forEach((cate, index) => {
         cate.addEventListener("click", (link)=>{
@@ -590,7 +737,10 @@
     //카테고리 내용 선택
     categoryCircleLab.forEach((e, i) => {
         e.addEventListener("click", ()=>{
+<<<<<<< Updated upstream
             e.preventDefault();
+=======
+>>>>>>> Stashed changes
             categoryCircle.forEach(rem => {
                 rem.classList.remove("tapActive");
             })
@@ -598,6 +748,7 @@
         });
     });
 
+<<<<<<< Updated upstream
     ContentsActive.forEach((e, i)=> {
         e.addEventListener("click", (el, index)=> {
             ContentsActive.forEach((arr) => {
@@ -607,6 +758,8 @@
         })
     })
 
+=======
+>>>>>>> Stashed changes
 
 
 </script>
