@@ -69,6 +69,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const sections = gsap.utils.toArray(".section")  //gsap로 여러개 선택방법
+        
 
         gsap.to(sections, {
             xPercent: -100 * (sections.length -1),
