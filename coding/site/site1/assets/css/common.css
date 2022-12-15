@@ -105,7 +105,7 @@
 /* fixed */
 body.fixed {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* 간격 셋팅 */
